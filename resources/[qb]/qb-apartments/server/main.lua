@@ -13,7 +13,7 @@ AddEventHandler('apartments:server:CreateApartment', function(type, label)
         ['@label'] = label,
         ['@citizenid'] = Player.PlayerData.citizenid
     })
-    TriggerClientEvent('QBCore:Notify', src, "You got a apartment ("..label..")")
+    TriggerClientEvent('QBCore:Notify', src, "Tienes un apartamento ("..label..")")
     TriggerClientEvent("apartments:client:SpawnInApartment", src, apartmentId, type)
     TriggerClientEvent("apartments:client:SetHomeBlip", src, type)
 end)
