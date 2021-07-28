@@ -8,7 +8,7 @@ QB.Spawns = {
             z = 29.7, 
             h = 144.5 
         },
-        location = "legion",
+        location = "Legion",
         label = "Legion Square",
     },
 
@@ -20,7 +20,7 @@ QB.Spawns = {
             h = 3.5 
         },
         location = "policedp",
-        label = "Police Department",
+        label = "Comisaria",
     },
 
     ["paleto"] = {
@@ -31,7 +31,7 @@ QB.Spawns = {
             h = 45.5 
         },
         location = "paleto",
-        label = "Paleto Bay",
+        label = "Paleto (Norte)",
     },
 
     ["motel"] = {
@@ -42,6 +42,6 @@ QB.Spawns = {
             h = 163.5 
         }, 
         location = "motel",
-        label = "Motels",
+        label = "Moteles Pepi",
     },
 }

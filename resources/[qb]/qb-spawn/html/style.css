@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
-
 .container {
     font-family: 'Source Sans Pro', monospace;
 }
- 
+
 .spawn-locations {
     position: absolute;
     top: 10vh;
@@ -14,38 +13,42 @@
 
 .location {
     background-color: rgba(10, 10, 10, 0.8);
+    border-radius: 12px;
     width: 28vh;
     height: 4.5vh;
     margin-bottom: .75vh;
     transition: 0.2s;
 }
 
-.location > p {
+.location>p {
     position: relative;
     color: white;
     text-align: center;
     line-height: 4.5vh;
     font-size: 1.4vh;
+    border-radius: 12px;
 }
 
 .location:hover {
-    background-color: #ff3737a6;
+    background-color: #003635;
     transition: 0.2s;
+    border-radius: 12px;
 }
 
 .selected {
-    background-color: #b12424a6;
+    background-color: #003635;
 }
 
 .submit-spawn {
-    background-color: rgba(32, 158, 16, 0.75);
+    background-color: rgba(42, 212, 19, 0.75);
     width: 28vh;
     height: 4.5vh;
+    border-radius: 12px;
     margin-bottom: .75vh;
     transition: 0.2s;
 }
 
-.submit-spawn > p {
+.submit-spawn>p {
     position: relative;
     color: white;
     text-align: center;
@@ -54,11 +57,13 @@
     font-family: 'Lato';
     letter-spacing: 1px;
     font-weight: bold;
+    border-radius: 12px;
 }
 
 .submit-spawn:hover {
     background-color: rgba(32, 158, 16, 0.85);
     transition: 0.2s;
+    border-radius: 12px;
 }
 
 #spawn-label {
@@ -70,10 +75,11 @@
     height: 4.5vh;
     margin-bottom: .75vh;
     transition: 0.2s;
+    border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-.loclabel > p {
+.loclabel>p {
     font-family: 'Lato';
     letter-spacing: 1px;
     font-weight: bold;
@@ -82,4 +88,5 @@
     text-align: center;
     line-height: 4.5vh;
     font-size: 13px;
+    border-radius: 12px;
 }

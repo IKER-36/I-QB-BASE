@@ -25,13 +25,13 @@ $(document).ready(function() {
 
 var currentLocation = null
 
-$(document).on('click', '.location', function(evt){
+$(document).on('click', '.location', function(evt) {
     evt.preventDefault(); //dont do default anchor stuff
     var location = $(this).data('location'); //get the text
     var type = $(this).data('type'); //get the text
     var label = $(this).data('label'); //get the text
     if (type !== "lab") {
-        $("#spawn-label").html("Confirm")
+        $("#spawn-label").html("Confirmar")
         $("#submit-spawn").attr("data-location", location);
         $("#submit-spawn").attr("data-type", type);
         $("#submit-spawn").fadeIn(100)
@@ -47,13 +47,13 @@ $(document).on('click', '.location', function(evt){
     }
 });
 
-$(document).on('click', '#submit-spawn', function(evt){
+$(document).on('click', '#submit-spawn', function(evt) {
     evt.preventDefault(); //dont do default anchor stuff
     var location = $(this).data('location');
     var spawnType = $(this).data('type');
     console.log(spawnType)
     $(".container").addClass("hideContainer").fadeOut("9000");
-    setTimeout(function(){
+    setTimeout(function() {
         $(".hideContainer").removeClass("hideContainer");
     }, 900);
     if (spawnType !== "appartment") {
@@ -72,18 +72,18 @@ function setupLocations(locations, myHouses) {
     var parent = $('.spawn-locations')
     $(parent).html("");
 
-    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Where would you like to start?"><p><span id="null">Where would you like to start?</span></p></div>')
-    
-    setTimeout(function(){
-        $(parent).append('<div class="location" id="location" data-location="current" data-type="current" data-label="Last Location"><p><span id="current-location">Last Location</span></p></div>');
-        
-        $.each(locations, function(index, location){
-            $(parent).append('<div class="location" id="location" data-location="'+location.location+'" data-type="normal" data-label="'+location.label+'"><p><span id="'+location.location+'">'+location.label+'</span></p></div>')
+    $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Donde te gustaria iniciar?"><p><span id="null">Donde te gustaria iniciar?</span></p></div>')
+
+    setTimeout(function() {
+        $(parent).append('<div class="location" id="location" data-location="current" data-type="current" data-label="Ultima Ubicación"><p><span id="current-location">Ultima Ubicación</span></p></div>');
+
+        $.each(locations, function(index, location) {
+            $(parent).append('<div class="location" id="location" data-location="' + location.location + '" data-type="normal" data-label="' + location.label + '"><p><span id="' + location.location + '">' + location.label + '</span></p></div>')
         });
 
         if (myHouses != undefined) {
-            $.each(myHouses, function(index, house){
-                $(parent).append('<div class="location" id="location" data-location="'+house.house+'" data-type="house" data-label="'+house.label+'"><p><span id="'+house.house+'">'+house.label+'</span></p></div>')
+            $.each(myHouses, function(index, house) {
+                $(parent).append('<div class="location" id="location" data-location="' + house.house + '" data-type="house" data-label="' + house.label + '"><p><span id="' + house.house + '">' + house.label + '</span></p></div>')
             });
         }
 
@@ -98,8 +98,8 @@ function setupApps(apps) {
 
     $(parent).append('<div class="loclabel" id="location" data-location="null" data-type="lab" data-label="Choose a apartment"><p><span id="null">Choose a apartment</span></p></div>')
 
-    $.each(apps, function(index, app){
-        $(parent).append('<div class="location" id="location" data-location="'+app.name+'" data-type="appartment" data-label="'+app.label+'"><p><span id="'+app.name+'">'+app.label+'</span></p></div>')
+    $.each(apps, function(index, app) {
+        $(parent).append('<div class="location" id="location" data-location="' + app.name + '" data-type="appartment" data-label="' + app.label + '"><p><span id="' + app.name + '">' + app.label + '</span></p></div>')
     });
 
     $(parent).append('<div class="submit-spawn" id="submit-spawn"><p><span id="spawn-label"></span></p></div>');

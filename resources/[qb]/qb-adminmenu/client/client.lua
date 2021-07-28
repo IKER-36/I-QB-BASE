@@ -1,16 +1,16 @@
 local banlength = nil
 local banreason = 'Unknown'
 local kickreason = 'Unknown'
-local menu = MenuV:CreateMenu(false, 'Admin Menu', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test')
-local menu2 = MenuV:CreateMenu(false, 'Admin Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test1')
-local menu3 = MenuV:CreateMenu(false, 'Self Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test2')
-local menu4 = MenuV:CreateMenu(false, 'Online Players', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test3')
-local menu5 = MenuV:CreateMenu(false, 'Manage Server', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test4')
-local menu6 = MenuV:CreateMenu(false, 'Available Weather Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test5')
-local menu7 = MenuV:CreateMenu(false, 'Check Current/Add Dealers', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test6')
-local menu8 = MenuV:CreateMenu(false, 'Ban', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test7')
-local menu9 = MenuV:CreateMenu(false, 'Kick', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test8')
-local menu10 = MenuV:CreateMenu(false, 'Permissions', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test9')
+local menu = MenuV:CreateMenu(false, 'Menu Administrador', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test')
+local menu2 = MenuV:CreateMenu(false, 'Opciones Administrador', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test1')
+local menu3 = MenuV:CreateMenu(false, 'Opciones Propias', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test2')
+local menu4 = MenuV:CreateMenu(false, 'Lista Jugadores', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test3')
+local menu5 = MenuV:CreateMenu(false, 'Configuración Servidor', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test4')
+local menu6 = MenuV:CreateMenu(false, 'Opciones meteorológicas', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test5')
+local menu7 = MenuV:CreateMenu(false, 'Comprobar/Añadir vendedores', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test6')
+local menu8 = MenuV:CreateMenu(false, 'Banear', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test7')
+local menu9 = MenuV:CreateMenu(false, 'Kickear', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test8')
+local menu10 = MenuV:CreateMenu(false, 'Permisos', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv', 'test9')
 
 RegisterNetEvent('qb-admin:client:openMenu')
 AddEventHandler('qb-admin:client:openMenu', function()
@@ -25,165 +25,165 @@ local menu_button = menu:AddButton({
 })
 local menu_button2 = menu:AddButton({
     icon = '😃',
-    label = 'Player Management',
+    label = 'Gestion Jugadores',
     value = menu4,
-    description = 'View List Of Players'
+    description = 'Ver lista Jugadores'
 })
 local menu_button3 = menu:AddButton({
     icon = '😃',
-    label = 'Server Management',
+    label = 'Gestión del servidor',
     value = menu5,
-    description = 'Misc. Server Options'
+    description = 'Misc. Opciones Servidor'
 })
 
 local menu_button4 = menu2:AddButton({
     icon = '😃',
-    label = 'Self Options',
+    label = 'Opciones Propias',
     value = menu3,
-    description = 'Misc. Self Options'
+    description = 'Misc. Opciones Propias'
 })
 local menu_button5 = menu3:AddCheckbox({
     icon = '🎥',
-    label = 'NoClip',
+    label = 'No-Clip',
     value = menu3,
-    description = 'Enable/Disable NoClip'
+    description = 'Activar/Desactivar NoClip'
 })
 local menu_button6 = menu3:AddButton({
     icon = '🏥',
     label = 'Revive',
     value = menu3,
-    description = 'Revive Yourself'
+    description = 'Revivir'
 })
 local menu_button7 = menu3:AddCheckbox({
     icon = '👻',
     label = 'Invisible',
     value = menu3,
-    description = 'Enable/Disable Invisibility'
+    description = 'Activar/Desactivar Invisibilidad'
 })
 local menu_button8 = menu3:AddCheckbox({
     icon = '⚡',
-    label = 'Godmode',
+    label = 'Inmortalidad',
     value = menu3,
-    description = 'Enable/Disable God Mode'
+    description = 'Activar/Desactivar Inmortalidad'
 })
 local menu_button9 = menu3:AddCheckbox({
     icon = '🔫',
-    label = 'Delete Laser',
+    label = 'Borrar Laser',
     value = menu3,
-    description = 'Enable/Disable Laser'
+    description = 'Activar/Desactivar Laser'
 })
 local menu_button11 = menu5:AddButton({
     icon = '🌡️',
-    label = 'Weather Options',
+    label = 'Opciones del tiempo',
     value = menu6,
-    description = 'Change The Weather'
+    description = 'Cambiar el clima'
 })
 --[[ local menu_button12 = menu5:AddButton({
     icon = '😃',
-    label = 'Manage Dealers',
+    label = 'Gestionar concesionarios',
     value = menu7,
     description = 'Create/Delete Dealers'
 }) ]]
 local menu_button13 = menu5:AddSlider({
     icon = '⏲️',
-    label = 'Server Time',
+    label = 'Tiempo de Servidor',
     value = GetClockHours(),
     values = {{
         label = '00',
         value = '00',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '01',
         value = '01',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '02',
         value = '02',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '03',
         value = '03',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '04',
         value = '04',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '05',
         value = '05',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '06',
         value = '06',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '07',
         value = '07',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '08',
         value = '08',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '09',
         value = '09',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '10',
         value = '10',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '11',
         value = '11',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '12',
         value = '12',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '13',
         value = '13',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '14',
         value = '14',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '15',
         value = '15',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '16',
         value = '16',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '17',
         value = '17',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '18',
         value = '18',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '19',
         value = '19',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '20',
         value = '20',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '21',
         value = '21',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '22',
         value = '22',
-        description = 'Time'
+        description = 'Hora'
     }, {
         label = '23',
         value = '23',
-        description = 'Time'
+        description = 'Hora'
     }}
 })
 
@@ -326,8 +326,8 @@ menu_button2:On('select', function(item)
 end)
 
 menu_button13:On("select", function(item, value)
-    TriggerServerEvent("qb-weathersync:server:setTime", value, value)
-    QBCore.Functions.Notify("Time changed to " .. value .. " hs 00 min")
+    TriggerServerEvent("qb-weathersync:server:setHora", value, value)
+    QBCore.Functions.Notify("Hora changed to " .. value .. " hs 00 min")
 
 end)
 
