@@ -1,6 +1,6 @@
 RegisterServerEvent("KickForAFK")
 AddEventHandler("KickForAFK", function()
-	DropPlayer(source, "You Have Been Kicked For Being AFK")
+	DropPlayer(source, "Has sido kickeado por afk, (reinicia antes fivem) y vuelve a entrar!")
 end)
 
 QBCore.Functions.CreateCallback('qb-afkkick:server:GetPermissions', function(source, cb)
