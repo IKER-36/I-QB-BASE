@@ -4,13 +4,13 @@ Cfg = {}
 if GetConvar('voice_useNativeAudio', 'false') == 'true' then
 	-- native audio distance seems to be larger then regular gta units
 	Cfg.voiceModes = {
-		{1.0, "Susurrar"}, -- Whisper speech distance in gta distance units
+		{1.0, "Susurro"}, -- Whisper speech distance in gta distance units
 		{2.3, "Hablar"}, -- Normal speech distance in gta distance units
 		{5.0, "Gritar"} -- Shout speech distance in gta distance units
 	}
 else
 	Cfg.voiceModes = {
-		{3.0, "Susurrar"}, -- Whisper speech distance in gta distance units
+		{3.0, "Susurro"}, -- Whisper speech distance in gta distance units
 		{7.0, "Hablar"}, -- Normal speech distance in gta distance units
 		{15.0, "Gritar"} -- Shout speech distance in gta distance units
 	}
@@ -26,7 +26,7 @@ logger = {
 		end	
 	end,
 	['warn'] = function(message, ...)
-		print(('[^1ADVERTENCIA^7] ' .. message):format(...))
+		print(('[^1WARNING^7] ' .. message):format(...))
 	end,
 	['error'] = function(message, ...)
 		print(('[^1ERROR^7] ' .. message):format(...))
