@@ -19,7 +19,7 @@ end)
 
 local menu_button = menu:AddButton({
     icon = '😃',
-    label = 'Admin Options',
+    label = 'Opciones de Administrador',
     value = menu2,
     description = 'Misc. Admin Options'
 })
