@@ -45,11 +45,11 @@ QBCore.Player.CheckPlayerData = function(source, PlayerData)
 	end
 
 	PlayerData.charinfo = PlayerData.charinfo ~= nil and PlayerData.charinfo or {}
-	PlayerData.charinfo.firstname = PlayerData.charinfo.firstname ~= nil and PlayerData.charinfo.firstname or "Firstname"
-	PlayerData.charinfo.lastname = PlayerData.charinfo.lastname ~= nil and PlayerData.charinfo.lastname or "Lastname"
+	PlayerData.charinfo.firstname = PlayerData.charinfo.firstname ~= nil and PlayerData.charinfo.firstname or "Nombre"
+	PlayerData.charinfo.lastname = PlayerData.charinfo.lastname ~= nil and PlayerData.charinfo.lastname or "Apellidos"
 	PlayerData.charinfo.birthdate = PlayerData.charinfo.birthdate ~= nil and PlayerData.charinfo.birthdate or "00-00-0000"
 	PlayerData.charinfo.gender = PlayerData.charinfo.gender ~= nil and PlayerData.charinfo.gender or 0
-	PlayerData.charinfo.backstory = PlayerData.charinfo.backstory ~= nil and PlayerData.charinfo.backstory or "placeholder backstory"
+	PlayerData.charinfo.backstory = PlayerData.charinfo.backstory ~= nil and PlayerData.charinfo.backstory or "Historia"
 	PlayerData.charinfo.nationality = PlayerData.charinfo.nationality ~= nil and PlayerData.charinfo.nationality or "USA"
 	PlayerData.charinfo.phone = PlayerData.charinfo.phone ~= nil and PlayerData.charinfo.phone or "1"..math.random(111111111, 999999999)
 	PlayerData.charinfo.account = PlayerData.charinfo.account ~= nil and PlayerData.charinfo.account or "US0"..math.random(1,9).."QBUS"..math.random(1111,9999)..math.random(1111,9999)..math.random(11,99)
@@ -105,19 +105,19 @@ QBCore.Player.CheckPlayerData = function(source, PlayerData)
     }
 
 	PlayerData.job = PlayerData.job ~= nil and PlayerData.job or {}
-	PlayerData.job.name = PlayerData.job.name ~= nil and PlayerData.job.name or "unemployed"
-	PlayerData.job.label = PlayerData.job.label ~= nil and PlayerData.job.label or "Civilian"
+	PlayerData.job.name = PlayerData.job.name ~= nil and PlayerData.job.name or "Desempleado"
+	PlayerData.job.label = PlayerData.job.label ~= nil and PlayerData.job.label or "Civil"
 	PlayerData.job.payment = PlayerData.job.payment ~= nil and PlayerData.job.payment or 10
 	PlayerData.job.onduty = PlayerData.job.onduty ~= nil and PlayerData.job.onduty or true 
 	-- Added for grade system
 	PlayerData.job.isboss = PlayerData.job.isboss ~= nil and PlayerData.job.isboss or false
 	PlayerData.job.grade = PlayerData.job.grade ~= nil and PlayerData.job.grade or {}
-	PlayerData.job.grade.name = PlayerData.job.grade.name ~= nil and PlayerData.job.grade.name or "Freelancer"
+	PlayerData.job.grade.name = PlayerData.job.grade.name ~= nil and PlayerData.job.grade.name or "Persona de libre dedicación"
 	PlayerData.job.grade.level = PlayerData.job.grade.level ~= nil and PlayerData.job.grade.level or 0
 
 	PlayerData.gang = PlayerData.gang ~= nil and PlayerData.gang or {}
-	PlayerData.gang.name = PlayerData.gang.name ~= nil and PlayerData.gang.name or "none"
-	PlayerData.gang.label = PlayerData.gang.label ~= nil and PlayerData.gang.label or "No Gang Affiliaton"
+	PlayerData.gang.name = PlayerData.gang.name ~= nil and PlayerData.gang.name or "ninguno"
+	PlayerData.gang.label = PlayerData.gang.label ~= nil and PlayerData.gang.label or "Ninguna afiliación a bandas"
 
 	PlayerData.position = PlayerData.position ~= nil and PlayerData.position or QBConfig.DefaultSpawn
 	PlayerData.LoggedIn = true
@@ -446,9 +446,9 @@ QBCore.Player.Save = function(source)
 			end
 			QBCore.Player.SaveInventory(source)
 		end)
-		QBCore.ShowSuccess(GetCurrentResourceName(), PlayerData.name .." PLAYER SAVED!")
+		QBCore.ShowSuccess(GetCurrentResourceName(), PlayerData.name .." JUGADOR GUARDADO!")
 	else
-		QBCore.ShowError(GetCurrentResourceName(), "ERROR QBCORE.PLAYER.SAVE - PLAYERDATA IS EMPTY!")
+		QBCore.ShowError(GetCurrentResourceName(), "ERROR QBCORE.PLAYER.SAVE - DATOS DEL JUGADOR LLENOS!")
 	end
 end
 
