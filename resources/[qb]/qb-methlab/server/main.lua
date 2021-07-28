@@ -1,6 +1,6 @@
 Citizen.CreateThread(function()
     Config.CurrentLab = math.random(1, #Config.Locations["laboratories"])
-    print('Lab entry has been set to location: '..Config.CurrentLab)
+    -- print('Lab entry has been set to location: '..Config.CurrentLab)
 end)
 
 QBCore.Functions.CreateCallback('qb-methlab:server:GetData', function(source, cb)
