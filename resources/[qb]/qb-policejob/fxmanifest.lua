@@ -41,4 +41,4 @@ exports {
 	'IsArmoryWhitelist'
 }
 
-dependency 'qb-core'
+-- dependency 'qb-core'

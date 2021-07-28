@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
-
 .container {
     display: none;
 }
@@ -20,14 +19,15 @@
     display: none;
     position: absolute;
     width: 800px;
+    border-radius: .8vh;
     height: 550px;
     background-color: rgba(0, 0, 0, 0.9);
     top: -80%;
     margin: 0 auto;
     left: 0;
     right: 0;
-    border-bottom: 2px solid #b12424;
-    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.25);
+    border-bottom: 2px solid #eb2727;
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.25);
     box-shadow: inset 0px 0px 150px 0px rgba(255, 255, 255, 0.1);
     overflow: visible !important;
 }
@@ -37,7 +37,7 @@
     top: 0;
     width: 100%;
     height: 30px;
-    background-color: #881a1a;
+    background-color: #eb2727;
     border-bottom: 2px solid #fff;
     font-family: 'Lato' monospace;
     box-shadow: inset 0px 0px 150px 0px rgba(255, 255, 255, 0.1);
@@ -50,8 +50,8 @@
     background-color: rgba(32, 32, 32, 0.822);
     left: 10px;
     bottom: 8px;
-    border: 1px solid rgb(236, 236, 236);
-    border-radius: 3px;
+    border: 4px solid rgb(236, 236, 236);
+    border-radius: 5px;
     transition: all 0.2s ease;
 }
 
@@ -89,16 +89,17 @@
     border-radius: 4px;
 }
 
-.disconnect-server-btn > p {
+.disconnect-server-btn>p {
     color: rgb(255, 255, 255);
     font-size: 13px;
     padding-top: 5%;
     padding-left: 6px;
 }
 
-.characters-block-header > p {
+.characters-block-header>p {
     text-align: center;
     color: white;
+    border-radius: .8vh;
     line-height: 24px;
     font-family: 'Lato', monospace;
 }
@@ -110,6 +111,7 @@
     height: auto;
     left: 14%;
     top: -40%;
+    border-radius: .8vh;
     overflow: visible !important;
     /* background-color: rgba(0, 0, 0, 0.15); */
     padding: 30px;
@@ -120,14 +122,16 @@
     top: -20px;
     width: 100%;
     height: 8%;
+    border-radius: .8vh;
     right: 0;
 }
 
-.character-list-header > p {
+.character-list-header>p {
     text-align: center;
     line-height: 37px;
     font-family: 'Lato', monospace;
     letter-spacing: 2px;
+    border-radius: .8vh;
     font-weight: bold;
     color: white;
 }
@@ -141,10 +145,10 @@
     font-family: 'Lato' monospace;
     border-bottom: 4px solid #74aa3200;
     transition: .1s linear;
-    border-radius: .2vh;
+    border-radius: .8vh;
 }
 
-.character > span {
+.character>span {
     color: rgb(255, 255, 255);
     font-family: 'Lato' monospace !important;
 }
@@ -158,7 +162,7 @@
 }
 
 .char-selected {
-    background-color: #9c88ffde;
+    background-color: #ac0c0cde;
 }
 
 .disabled {
@@ -185,7 +189,7 @@
     margin-right: 10px;
 }
 
-.character-btn > p {
+.character-btn>p {
     color: white;
     text-align: center;
     text-transform: uppercase;
@@ -290,13 +294,13 @@
     width: 500px;
     height: 250px;
     top: 200px;
-    left: 70px; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    left: 70px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     border-bottom: 4px solid #b12424;
     background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 0px 19px 1px rgba(0,0,0,0.54);
+    box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.54);
     text-align: center;
     color: white;
     font-family: 'Lato', monospace;
@@ -317,12 +321,12 @@
     overflow: visible !important;
 }
 
-.characters-delete-block-header > p {
+.characters-delete-block-header>p {
     font-family: 'Lato', monospace;
     overflow: visible !important;
 }
 
-.character-delete > p {
+.character-delete>p {
     padding-top: 50px;
     font-size: 16px;
     overflow: visible !important;
@@ -369,7 +373,7 @@
     background-color: #aa3126;
 }
 
-.character-acceptdel-btn > p {
+.character-acceptdel-btn>p {
     color: white;
     text-align: center;
     padding-top: 7px;
@@ -377,7 +381,7 @@
     overflow: visible !important;
 }
 
-.character-canceldel-btn > p {
+.character-canceldel-btn>p {
     color: white;
     text-align: center;
     padding-top: 7px;
@@ -395,7 +399,7 @@
     margin-right: auto;
     left: 32px;
     background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 0px 19px 1px rgba(0,0,0,0.54);
+    box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.54);
     font-family: 'Lato', monospace;
     border-bottom: 4px solid #b12424;
 }
@@ -507,17 +511,17 @@ input[type="date"] {
     text-align: center;
 }
 
-input[type=date]::-webkit-calendar-picker-indicator{
+input[type=date]::-webkit-calendar-picker-indicator {
     display: none;
 }
 
-input[type=date]::-webkit-inner-spin-button, 
-input[type=date]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-input[type="date"]::-webkit-input-placeholder{ 
+input[type="date"]::-webkit-input-placeholder {
     visibility: hidden !important;
 }
 
@@ -545,7 +549,7 @@ input[type="date"]::-webkit-clear-button {
     right: 0;
 }
 
-.character-reg-btn > p {
+.character-reg-btn>p {
     text-align: center;
     line-height: 34px;
     color: white;
@@ -553,14 +557,18 @@ input[type="date"]::-webkit-clear-button {
     font-size: 13px;
 }
 
-.bars div{
+.bars div {
     animation-name: an-height;
     animation-duration: .6s;
     z-index: 101;
 }
+
 @keyframes an-height {
-    from{ height: 0px; }
+    from {
+        height: 0px;
+    }
 }
+
 .topbar {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
@@ -595,7 +603,7 @@ input[type="date"]::-webkit-clear-button {
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(0, 0, 0, 0.7);
-    box-shadow: 0px 0px 19px 1px rgba(0,0,0,0.54);
+    box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.54);
     font-family: 'Lato', monospace;
     border-bottom: 4px solid #b12424;
     border-radius: 0px 0px 10px 10px;
@@ -626,7 +634,7 @@ input[type="date"]::-webkit-clear-button {
     color: #ff4646;
     font-size: 12px;
     padding-left: 10px;
-    text-shadow: 0px 0px 4px rgba(0,0,0,0.35);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.35);
     font-family: 'Lato', monospace;
 }
 
@@ -635,12 +643,12 @@ input[type="date"]::-webkit-clear-button {
     top: 10px;
     left: 30px;
     font-size: 10px;
-    text-shadow: 0px 0px 4px rgba(0,0,0,0.35);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.35);
     font-family: 'Lato', monospace;
 }
 
 .welcomescreen {
-    display: block;
+    display: none;
     position: absolute;
     margin: 0 auto;
     left: 0;
@@ -648,14 +656,14 @@ input[type="date"]::-webkit-clear-button {
     top: 1%;
     height: 28%;
     width: 30%;
-	overflow: visible !important;
+    overflow: visible !important;
 }
 
-.welcomescreen > p {
+.welcomescreen>p {
     position: relative;
     color: #ffffff;
     text-align: center;
-	overflow: visible !important;
+    overflow: visible !important;
 }
 
 #welcome-titel {
@@ -690,7 +698,7 @@ input[type="date"]::-webkit-clear-button {
     background-color: #fa4b3b;
 }
 
-.continue-btn > p {
+.continue-btn>p {
     text-align: center;
     line-height: 3.6vh;
     color: white;
@@ -714,7 +722,7 @@ input[type="date"]::-webkit-clear-button {
     background-color: #fa4b3b;
 }
 
-.disconnect-btn > p {
+.disconnect-btn>p {
     text-align: center;
     line-height: 3.6vh;
     color: white;
@@ -722,20 +730,17 @@ input[type="date"]::-webkit-clear-button {
     font-family: 'Source Sans Pro', monospace;
 }
 
-::-webkit-scrollbar-track
-{
-	background-color: #F5F5F5;
+::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar
-{
-	width: 3px;
-	background-color: #b12424e5;
+::-webkit-scrollbar {
+    width: 3px;
+    background-color: #b12424e5;
 }
 
-::-webkit-scrollbar-thumb
-{
-	background-color: #b12424e5;
+::-webkit-scrollbar-thumb {
+    background-color: #b12424e5;
 }
 
 .loading-rondje {
@@ -751,7 +756,7 @@ input[type="date"]::-webkit-clear-button {
     padding: 1vh;
 }
 
-.loading-rondje > p {
+.loading-rondje>p {
     color: white;
     margin-top: 1vh;
     font-family: 'Lato';
@@ -767,7 +772,7 @@ input[type="date"]::-webkit-clear-button {
 
 .lds-ring div {
     box-sizing: border-box;
-    display: block;
+    display: none;
     position: absolute;
     width: 64px;
     height: 64px;
