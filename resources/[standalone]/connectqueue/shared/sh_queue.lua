@@ -742,7 +742,7 @@ AddEventHandler("onResourceStop", function(resource)
 end)
 
 if Config.DisableHardCap then
-    Queue:DebugPrint("^1 [Sistema de Cola] Disabling hardcap ^7")
+    Queue:DebugPrint("^1 [connectqueue] Disabling hardcap ^7")
 
     AddEventHandler("onResourceStarting", function(resource)
         if resource == "hardcap" then CancelEvent() return end
