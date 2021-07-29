@@ -17,3 +17,4 @@ Total credits to https://github.com/qbcore-framework !
 
 # TO DO
 Add Tutorial to install.
+Add readme.md in es lenguage.
