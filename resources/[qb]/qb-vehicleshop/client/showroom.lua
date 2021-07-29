@@ -6,7 +6,7 @@ local fakecar = {model = '', car = nil}
 
 vehshop = {
 	opened = false,
-	title = "Vehicle Shop",
+	title = "Concesionario",
 	currentmenu = "main",
 	lastmenu = nil,
 	currentpos = nil,
