@@ -14,7 +14,7 @@ Config = Config or {}
 Config.Gangs = {
     ["ballas"] = {
         ["VehicleSpawner"] = {
-            label = "Car Spawn",
+            label = "Sacar coche",
             coords = {x =89.04, y =-1967.09, z =20.75, h =324.12},
             ["colours"] = {
                 ["primary"] = {
@@ -36,13 +36,13 @@ Config.Gangs = {
             }
         },
         ["Stash"] = {
-            label = "Ballas Stash",
+            label = "Ballas Alijo",
             coords = {x =113.3059, y =-1970.89, z =21.3276},
         }
     },
     ["families"] = {
         ["VehicleSpawner"] = {
-            label = "Car Spawn",
+            label = "Sacar coche",
             coords = {x =-108.24, y =-1597.97, z =31.65, h =322.23},
             ["colours"] = {
                 ["primary"] = {
@@ -70,7 +70,7 @@ Config.Gangs = {
     },
     ["marabunta"] = {
         ["VehicleSpawner"] = {
-            label = "Car Spawn",
+            label = "Sacar coche",
             coords = {x =1421.77, y =-1506.75, z =60.9, h =170.31},
             ["colours"] = {
                 ["primary"] = {
@@ -92,14 +92,14 @@ Config.Gangs = {
             }
         },
         ["Stash"] = {
-            label = "Marabunta Stash",
+            label = "Marabunta Alijo",
             coords = {x =1438.95, y =-1489.91, z =66.62, h =151.24},
             
         },
     },
     ["vagos"] = {
         ["VehicleSpawner"] = {
-            label = "Car Spawn",
+            label = "Sacar coche",
             coords = {x =335.98, y =-2040.44, z =21.14, h =53.29},
             ["colours"] = {
                 ["primary"] = {
@@ -121,7 +121,7 @@ Config.Gangs = {
             }
         },
         ["Stash"] = {
-            label = "Vagos Stash",
+            label = "Vagos Alijo",
             coords = {x =344.67, y =-2022.14, z =22.39, h =318.46},
         },
     }
