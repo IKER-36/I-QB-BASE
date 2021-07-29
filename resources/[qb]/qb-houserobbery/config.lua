@@ -56,7 +56,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -67,7 +67,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -78,7 +78,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -89,7 +89,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -100,7 +100,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Mesita de noche"
             },
         }
     },
@@ -123,7 +123,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -134,7 +134,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -145,7 +145,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -156,7 +156,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -167,7 +167,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -190,7 +190,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -201,7 +201,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -212,7 +212,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -223,7 +223,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -234,7 +234,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -257,7 +257,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -268,7 +268,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -279,7 +279,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -290,7 +290,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -301,7 +301,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -324,7 +324,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -335,7 +335,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -346,7 +346,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -357,7 +357,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -368,7 +368,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -391,7 +391,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -402,7 +402,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -413,7 +413,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -424,7 +424,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -435,7 +435,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -458,7 +458,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -469,7 +469,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -480,7 +480,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -491,7 +491,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -502,7 +502,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -525,7 +525,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -536,7 +536,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -547,7 +547,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -558,7 +558,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -569,7 +569,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -592,7 +592,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -603,7 +603,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -614,7 +614,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -625,7 +625,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -636,7 +636,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -659,7 +659,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -670,7 +670,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -681,7 +681,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -692,7 +692,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -703,7 +703,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -726,7 +726,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -737,7 +737,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -748,7 +748,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -759,7 +759,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -770,7 +770,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -793,7 +793,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -804,7 +804,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -815,7 +815,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -826,7 +826,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -837,7 +837,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -860,7 +860,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -871,7 +871,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -882,7 +882,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -893,7 +893,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -904,7 +904,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -927,7 +927,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -938,7 +938,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -949,7 +949,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -960,7 +960,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -971,7 +971,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -994,7 +994,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1005,7 +1005,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1016,7 +1016,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1027,7 +1027,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1038,7 +1038,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1061,7 +1061,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1072,7 +1072,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1083,7 +1083,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1094,7 +1094,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1105,7 +1105,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1128,7 +1128,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1139,7 +1139,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1150,7 +1150,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1161,7 +1161,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1172,7 +1172,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1195,7 +1195,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1206,7 +1206,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1217,7 +1217,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1228,7 +1228,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1239,7 +1239,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },    
@@ -1262,7 +1262,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1273,7 +1273,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1284,7 +1284,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1295,7 +1295,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1306,7 +1306,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1329,7 +1329,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1340,7 +1340,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1351,7 +1351,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1362,7 +1362,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1373,7 +1373,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1396,7 +1396,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1407,7 +1407,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1418,7 +1418,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1429,7 +1429,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1440,7 +1440,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1463,7 +1463,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1474,7 +1474,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1485,7 +1485,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1496,7 +1496,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1507,7 +1507,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     }, 
@@ -1530,7 +1530,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1541,7 +1541,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1552,7 +1552,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1563,7 +1563,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1574,7 +1574,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1597,7 +1597,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1608,7 +1608,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1619,7 +1619,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1630,7 +1630,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1641,7 +1641,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1664,7 +1664,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1675,7 +1675,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1686,7 +1686,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1697,7 +1697,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1708,7 +1708,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1731,7 +1731,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1742,7 +1742,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1753,7 +1753,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1764,7 +1764,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1775,7 +1775,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },
@@ -1798,7 +1798,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [2] = {
                 ["type"] = "cabin",
@@ -1809,7 +1809,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Cabinet"
+                ["text"] = "Buscar en el Armario"
             },
             [3] = {
                 ["type"] = "kitchen",
@@ -1820,7 +1820,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search through the kitchen cabinets"
+                ["text"] = "Buscar en los armarios de la cocina"
             },
             [4] = {
                 ["type"] = "chest",
@@ -1831,7 +1831,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Search Chest"
+                ["text"] = "Buscar en el Cofre "
             },
             [5] = {
                 ["type"] = "cabin",
@@ -1842,7 +1842,7 @@ Config.Houses = {
                 },
                 ["searched"] = false,
                 ["isBusy"] = false,
-                ["text"] = "Night Stand Cabinet"
+                ["text"] = "Buscar en el Cofre "
             },
         }
     },                                                                                                                                      

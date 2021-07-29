@@ -14,7 +14,7 @@ AddEventHandler("qb-gangs:client:BeginGangCreation", function(gangName, gangLabe
         ["Stash"] = {}
     }
     isCreatingGang = true
-    TriggerEvent("chatMessage", "SYSTEM", "warning", "New Gang: "..gangName.." added, use /placestash, /placegarage,  /finishgang or /cancelgang")
+    TriggerEvent("chatMessage", "SYSTEM", "warning", "Nueva pandilla: "..gangName.." agregado, usa /placestash, /placegarage, /finishgang o /cancelgang")
 end)
 
 RegisterCommand("placestash", function()
@@ -28,12 +28,12 @@ RegisterCommand("placestash", function()
             }
 
             hasStash = true
-            QBCore.Functions.Notify("Gang Stash Placed", "success")
+            QBCore.Functions.Notify("Alijo de pandillas colocado", "success")
         else
-            QBCore.Functions.Notify("You have already placed the stash", "error")
+            QBCore.Functions.Notify("Ya has colocado el alijo", "error")
         end
     else
-        QBCore.Functions.Notify("You are not creating a gang", "error")
+        QBCore.Functions.Notify("No estas creando una pandilla", "error")
     end
 end)
 
@@ -46,10 +46,10 @@ RegisterCommand("placegarage", function()
                 action = "open"
             })
         else
-            QBCore.Functions.Notify("You have already placed the garage", "error")
+            QBCore.Functions.Notify("Ya has colocado el garaje", "error")
         end
     else
-        QBCore.Functions.Notify("You are not creating a gang", "error")
+        QBCore.Functions.Notify("No estas creando una pandilla", "error")
     end
 end)
 
@@ -60,10 +60,10 @@ RegisterCommand("finishgang", function()
             gang = nil
             hasGarage, hasStash = false, false
         else
-            QBCore.Functions.Notify("You are not finished", "error")
+            QBCore.Functions.Notify("No has terminado", "error")
         end
     else
-        QBCore.Functions.Notify("You are not creating a gang", "error")
+        QBCore.Functions.Notify("No estas creando una pandilla", "error")
     end
 end)
 
@@ -72,7 +72,7 @@ RegisterCommand("cancelgang", function()
         isCreatingGang, hasGarage, hasStash = false, false, false
         gang, name, label = nil, nil, nil
     else
-        QBCore.Functions.Notify("You are not creating a gang", "error")
+        QBCore.Functions.Notify("No estas creando una pandilla", "error")
     end
 end)
 
@@ -116,7 +116,7 @@ RegisterNUICallback("SetVehicleColour", function(data, cb)
     end
 
     hasGarage = true
-    QBCore.Functions.Notify("Garage Placed", "success")
+    QBCore.Functions.Notify("Garaje colocado", "success")
 
     cb("200 - OK")
 end)

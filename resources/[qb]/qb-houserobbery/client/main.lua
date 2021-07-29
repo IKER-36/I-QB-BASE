@@ -62,7 +62,7 @@ Citizen.CreateThread(function()
                             
                             if CurrentCops >= Config.MinimumHouseRobberyPolice then
                                 if Config.Houses[k]["opened"] then
-                                    DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], '~g~E~w~ - To Enter')
+                                    DrawText3Ds(Config.Houses[k]["coords"]["x"], Config.Houses[k]["coords"]["y"], Config.Houses[k]["coords"]["z"], '~g~E~w~ - Para entrar')
                                     if IsControlJustPressed(0, 38) then
                                         enterRobberyHouse(k)
                                     end
@@ -103,7 +103,7 @@ Citizen.CreateThread(function()
 
         if inside then
             if #(pos - vector3(Config.Houses[currentHouse]["coords"]["x"] + POIOffsets.exit.x, Config.Houses[currentHouse]["coords"]["y"] + POIOffsets.exit.y, Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + POIOffsets.exit.x, Config.Houses[currentHouse]["coords"]["y"] + POIOffsets.exit.y, Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - To leave home')
+                DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + POIOffsets.exit.x, Config.Houses[currentHouse]["coords"]["y"] + POIOffsets.exit.y, Config.Houses[currentHouse]["coords"]["z"] - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Para salir de casa')
                 if IsControlJustPressed(0, 38) then
                     leaveRobberyHouse(currentHouse)
                 end
@@ -120,10 +120,10 @@ Citizen.CreateThread(function()
                                 end
                             end
                         else
-                            DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, 'Lock Picking..')
+                            DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, 'Forzar cerraduras..')
                         end
                     else
-                        DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, 'Box is Empty..')
+                        DrawText3Ds(Config.Houses[currentHouse]["coords"]["x"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["x"], Config.Houses[currentHouse]["coords"]["y"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["y"], Config.Houses[currentHouse]["coords"]["z"] + Config.Houses[currentHouse]["furniture"][k]["coords"]["z"] - Config.MinZOffset, 'La caja está vacía..')
                     end
                 end
             end
@@ -228,10 +228,10 @@ AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
                             TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
                         end
                     else
-                        QBCore.Functions.Notify('The door is already open..', 'error', 3500)
+                        QBCore.Functions.Notify('La puerta ya esta abierta..', 'error', 3500)
                     end
                 else
-                    QBCore.Functions.Notify('Not enough Police..', 'error', 3500)
+                    QBCore.Functions.Notify('No hay suficiente policía..', 'error', 3500)
                 end
             end
         else
@@ -247,13 +247,13 @@ AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
                                     TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
                                 end
                             else
-                                QBCore.Functions.Notify('The door is already open..', 'error', 3500)
+                                QBCore.Functions.Notify('La puerta ya esta abierta..', 'error', 3500)
                             end
                         else
-                            QBCore.Functions.Notify('Not enough Police..', 'error', 3500)
+                            QBCore.Functions.Notify('No hay suficiente policía..', 'error', 3500)
                         end
                     else
-                        QBCore.Functions.Notify('It looks like you are missing something...', 'error', 3500)
+                        QBCore.Functions.Notify('Parece que te falta algo...', 'error', 3500)
                     end
                 end
             end, "screwdriverset")
@@ -280,7 +280,7 @@ function PoliceCall()
             if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then
                 gender = "Woman"
             end
-            local msg = "Attempted burglary into a house by one " .. gender .." at " .. streetLabel
+            local msg = "Intento de robo en una casa por alguien " .. gender .." en " .. streetLabel
             TriggerServerEvent("police:server:HouseRobberyCall", pos, msg, gender, streetLabel)
         end
     end
@@ -307,7 +307,7 @@ end
 function lockpickFinish(success)
     if success then
         TriggerServerEvent('qb-houserobbery:server:enterHouse', closestHouse)
-        QBCore.Functions.Notify('It worked!', 'success', 2500)
+        QBCore.Functions.Notify('Funcionó!', 'success', 2500)
     else
         if usingAdvanced then
             local itemInfo = QBCore.Shared.Items["advancedlockpick"]
@@ -323,7 +323,7 @@ function lockpickFinish(success)
             end
         end
         
-        QBCore.Functions.Notify('It did not work..', 'error', 2500)
+        QBCore.Functions.Notify('No Funcionó..', 'error', 2500)
     end
 end
 
@@ -382,7 +382,7 @@ function searchCabin(cabin)
         openingDoor = false
         ClearPedTasks(PlayerPedId())
         TriggerServerEvent('qb-houserobbery:server:SetBusyState', cabin, currentHouse, false)
-        QBCore.Functions.Notify("Process Canceled..", "error")
+        QBCore.Functions.Notify("Proceso cancelado..", "error")
         SucceededAttempts = 0
         FreezeEntityPosition(ped, false)
         SetTimeout(500, function()

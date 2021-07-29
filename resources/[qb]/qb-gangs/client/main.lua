@@ -53,10 +53,10 @@ Citizen.CreateThread(function()
 	            if stashdist < 5.0 then
 	                DrawMarker(2, v["coords"].x, v["coords"].y, v["coords"].z - 0.2 , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
 	                if stashdist < 1.5 then
-	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Stash")
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Alijo")
 	                    currentAction = "stash"
 	                elseif stashdist < 2.0 then
-	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Stash")
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Alijo")
 	                    currentAction = "none"
 	                end
 	            else
@@ -83,10 +83,10 @@ Citizen.CreateThread(function()
 	            if vehdist < 5.0 then
 	                DrawMarker(2, v["coords"].x, v["coords"].y, v["coords"].z - 0.2 , 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
 	                if vehdist < 1.5 then
-	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Garage")
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "[~g~E~w~] - Garaje")
 	                    currentAction = "garage"
 	                elseif vehdist < 2.0 then
-	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Garage")
+	                    QBCore.Functions.DrawText3D(v["coords"].x, v["coords"].y, v["coords"].z, "Garaje")
 	                    currentAction = "none"
 	                end
 	                
@@ -122,13 +122,13 @@ end, false)
 TriggerEvent("chat:removeSuggestion", "/+GangInteract")
 TriggerEvent("chat:removeSuggestion", "/-GangInteract")
 
-RegisterKeyMapping("+GangInteract", "Interaction for gang script", "keyboard", "e")
+RegisterKeyMapping("+GangInteract", "Interacción para guión de pandillas", "keyboard", "e")
 
 function GangGarage()
-    MenuTitle = "Garage"
+    MenuTitle = "Garaje"
     ClearMenu()
-    Menu.addButton("Vehicle", "VehicleList", nil)
-    Menu.addButton("Close menu", "closeMenuFull", nil) 
+    Menu.addButton("Vehiculos", "VehicleList", nil)
+    Menu.addButton("Cerrar menu", "closeMenuFull", nil) 
 end
 
 function VehicleList(isDown)
@@ -136,10 +136,10 @@ function VehicleList(isDown)
     ClearMenu()
     Vehicles = Config.Gangs[PlayerGang.name]["VehicleSpawner"]["vehicles"]
     for k, v in pairs(Vehicles) do
-        Menu.addButton(Vehicles[k], "TakeOutVehicle", k, "Garage", " Engine: 100%", " Body: 100%", " Fuel: 100%")
+        Menu.addButton(Vehicles[k], "TakeOutVehicle", k, "Garage", " Motor: 100%", " Carroceria: 100%", " Gasolina: 100%")
     end
         
-    Menu.addButton("Return", "GangGarage",nil)
+    Menu.addButton("Volver", "GangGarage",nil)
 end
 
 function TakeOutVehicle(vehicleInfo)
