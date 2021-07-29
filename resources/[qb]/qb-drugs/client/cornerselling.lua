@@ -14,8 +14,8 @@ stealData = {}
 availableDrugs = {}
 
 local policeMessage = {
-    "Suspicious situation",
-    "Possible drug dealing",
+    "Situación sospechosa",
+    "Posible tráfico de drogas",
 }
 
 RegisterNetEvent('qb-drugs:client:cornerselling')
@@ -27,24 +27,24 @@ AddEventHandler('qb-drugs:client:cornerselling', function(data)
             if not cornerselling then
                 cornerselling = true
                 LocalPlayer.state:set("inv_busy", true, true)
-                QBCore.Functions.Notify('You started selling drugs')
+                QBCore.Functions.Notify('Empezaste a vender drogas')
                 startLocation = GetEntityCoords(PlayerPedId())
                 -- TaskStartScenarioInPlace(PlayerPedId(), "CODE_HUMAN_CROSS_ROAD_WAIT", 0, false)
             else
                 cornerselling = false
                 LocalPlayer.state:set("inv_busy", false, true)
-                QBCore.Functions.Notify('You stopped selling drugs')
+                QBCore.Functions.Notify('Dejaste de vender drogas')
                 -- ClearPedTasks(PlayerPedId())
             end
         else
-            QBCore.Functions.Notify('You aren\'t carrying any weed with you..', 'error')
+            QBCore.Functions.Notify('No llevas hierba contigo..', 'error')
             LocalPlayer.state:set("inv_busy", false, true)
         end
     end)
 end)
 
 function toFarAway()
-    QBCore.Functions.Notify('Moved Too Far!', 'error')
+    QBCore.Functions.Notify('Movido demasiado lejos!', 'error')
     LocalPlayer.state:set("inv_busy", false, true)
     cornerselling = false
     hasTarget = false
@@ -78,7 +78,7 @@ Citizen.CreateThread(function()
                 local pos = GetEntityCoords(ped)
                 local pedpos = GetEntityCoords(stealingPed)
                 if #(pos - pedpos) < 1.5 then
-                    DrawText3D(pedpos.x, pedpos.y, pedpos.z, "[E] Pick up")
+                    DrawText3D(pedpos.x, pedpos.y, pedpos.z, "[E] Recoger")
                     if IsControlJustReleased(0, 38) then
                         RequestAnimDict("pickup_object")
                         while not HasAnimDictLoaded("pickup_object") do
@@ -140,7 +140,7 @@ RegisterNetEvent('qb-drugs:client:refreshAvailableDrugs')
 AddEventHandler('qb-drugs:client:refreshAvailableDrugs', function(items)
     availableDrugs = items
     if #availableDrugs <= 0 then
-        QBCore.Functions.Notify('No more drugs left to sell!', 'error')
+        QBCore.Functions.Notify('No quedan más drogas para vender!', 'error')
         cornerselling = false
         LocalPlayer.state:set("inv_busy", false, true)
     end
@@ -269,7 +269,7 @@ function SellToPed(ped)
                     end
 
                     if IsControlJustPressed(0, 47) then
-                        QBCore.Functions.Notify('Offer canceled!', 'error')
+                        QBCore.Functions.Notify('Oferta cancelada!', 'error')
                         hasTarget = false
 
                         SetPedKeepTask(ped, false)
