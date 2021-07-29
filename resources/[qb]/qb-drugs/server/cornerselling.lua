@@ -30,7 +30,7 @@ AddEventHandler('qb-drugs:server:sellCornerDrugs', function(item, amount, price)
     local AvailableDrugs = {}
     if hasItem.amount >= amount then
         
-        TriggerClientEvent('QBCore:Notify', src, 'Offer accepted!', 'success')
+        TriggerClientEvent('QBCore:Notify', src, 'Oferta aceptada!', 'success')
         Player.Functions.RemoveItem(item, amount)
         Player.Functions.AddMoney('cash', price, "sold-cornerdrugs")
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item], "remove")
