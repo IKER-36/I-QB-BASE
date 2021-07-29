@@ -4,21 +4,20 @@
 @import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
 .container {
     height: 100vh;
 }
 
 .contract-main {
-    position: absolute; 
+    position: absolute;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     border: 3px solid green;
     width: 580px;
     height: 850px;
-    right: 100px; 
-    margin-left: auto; 
-    margin-right: auto; 
+    right: 100px;
+    margin-left: auto;
+    margin-right: auto;
     top: 15%;
 }
 
@@ -41,10 +40,10 @@
     position: absolute;
     width: 70%;
     height: 85%;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     top: 10%;
     background-color: rgb(255, 255, 255);
     border: 3px solid green;
@@ -60,9 +59,9 @@
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
     width: 90%;
     height: 60px;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
+    left: 0;
+    right: 0;
+    margin-left: auto;
     margin-right: auto;
     top: 30px;
     margin-top: 14px;
@@ -127,7 +126,7 @@
     left: 35px;
     font-family: 'Source Sans Pro', sans-serif;
     color: rgb(255, 255, 255);
-    font-size: 13px;   
+    font-size: 13px;
 }
 
 #property-accept-text {
@@ -136,7 +135,7 @@
     left: 70px;
     font-family: 'Source Sans Pro', sans-serif;
     color: rgb(255, 255, 255);
-    font-size: 13px;   
+    font-size: 13px;
 }
 
 #welcome-text {
@@ -195,8 +194,11 @@
     color: green;
     font-weight: bold;
 }
+
+
 /*Decorations*/
-#decorate { 
+
+#decorate {
     font-family: 'Source Sans Pro', sans-serif;
     display: none;
     width: 100vw;
@@ -249,7 +251,7 @@
     background-color: #d83737ea;
 }
 
-.header-btn > p {
+.header-btn>p {
     color: white;
     line-height: 4.5vh;
     font-family: 'Lato';
@@ -280,7 +282,7 @@
     background-color: #d83737ea;
 }
 
-.footer-btn > p {
+.footer-btn>p {
     color: white;
     line-height: 4.5vh;
     font-family: 'Lato';
@@ -310,7 +312,7 @@
     padding: 1vh 0vh 5vh 4vh;
 }
 
-#decorate-keys > li {
+#decorate-keys>li {
     color: white;
     font-family: sans-serif;
     font-size: 11px;
@@ -326,7 +328,10 @@
     max-height: 35%;
     overflow: scroll;
     /* background-color: rgba(0, 0, 0, 0.109); */
-    top: 0; left: 10vh; bottom: 0; right: 0;
+    top: 0;
+    left: 10vh;
+    bottom: 0;
+    right: 0;
     margin: auto 0;
 }
 
@@ -346,7 +351,7 @@
 }
 
 .selected-object {
-    border-bottom: 4px solid #b12424;
+    border-bottom: 4px solid #1a55d4b9;
 }
 
 .decorate-item:hover {
@@ -373,9 +378,8 @@
     font-size: 14px;
 }
 
-
 .object-selectors {
-    position:absolute;
+    position: absolute;
     top: 4.5vh;
     left: 4.5vw;
     width: 50%;
@@ -394,29 +398,29 @@
 
 .object-select-label {
     font-family: 'Source Sans Pro', sans-serif;
-	font-weight: bold;
-	color: #FFFFFF;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
 .select-object {
     font-family: 'Source Sans Pro', sans-serif;
-	border-radius: 0px!important;
+    border-radius: 0px!important;
 }
 
 .select-object:focus {
     font-family: 'Source Sans Pro', sans-serif;
-	border: none!important;
+    border: none!important;
 }
 
 .btn-spawnobj {
     font-family: 'Source Sans Pro', sans-serif;
-	border-radius: 0px!important;
-	color: #FFFFFF;
-	background: #9e1818;
+    border-radius: 0px!important;
+    color: #FFFFFF;
+    background: #9e1818;
 }
 
 .btn-spawnobj:hover {
-	background: #d93636;
+    background: #d93636;
 }
 
 .decorate-confirm {
@@ -442,19 +446,22 @@
 
 .object-load-status {
     display: none;
-    left:48vw;
-    top:48vh;
+    left: 48vw;
+    top: 48vh;
     position: absolute;
 }
 
+
 /* OBJECT LOADER  */
+
 .lds-ring {
     display: inline-block;
     position: relative;
     width: 8.0vh;
     height: 8.0vh;
-  }
-  .lds-ring div {
+}
+
+.lds-ring div {
     box-sizing: border-box;
     display: block;
     position: absolute;
@@ -465,24 +472,28 @@
     border-radius: 50%;
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #d83737ea transparent transparent transparent;
-  }
-  .lds-ring div:nth-child(1) {
+}
+
+.lds-ring div:nth-child(1) {
     animation-delay: -0.45s;
-  }
-  .lds-ring div:nth-child(2) {
+}
+
+.lds-ring div:nth-child(2) {
     animation-delay: -0.3s;
-  }
-  .lds-ring div:nth-child(3) {
+}
+
+.lds-ring div:nth-child(3) {
     animation-delay: -0.15s;
-  }
-  @keyframes lds-ring {
+}
+
+@keyframes lds-ring {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
 #house-cam {
     display: none;

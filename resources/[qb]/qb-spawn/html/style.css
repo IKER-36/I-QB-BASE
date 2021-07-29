@@ -30,13 +30,13 @@
 }
 
 .location:hover {
-    background-color: #003635;
+    background-color: #1a55d4d3;
     transition: 0.2s;
     border-radius: 12px;
 }
 
 .selected {
-    background-color: #003635;
+    background-color: #1a55d4ce;
 }
 
 .submit-spawn {

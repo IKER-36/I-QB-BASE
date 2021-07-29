@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 .vehicle-shop {
     position: relative;
     width: 1000px;
@@ -52,8 +51,7 @@
     color: rgb(170, 170, 170);
 }
 
-
-.vehicle-category > p {
+.vehicle-category>p {
     font-family: 'Staatliches', cursive;
     text-transform: uppercase;
 }
@@ -76,7 +74,7 @@
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 6px 4px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.1);
 }
 
 .car-image {
@@ -91,7 +89,7 @@
 .vehicle-buy-btn {
     position: absolute;
     left: 5%;
-    width: 90%; 
+    width: 90%;
     bottom: 5%;
     text-align: center;
     height: 20px;
@@ -101,7 +99,7 @@
     font-size: 14px;
 }
 
-.vehicle-buy-btn > p {
+.vehicle-buy-btn>p {
     font-family: 'Roboto', cursive;
 }
 
@@ -121,20 +119,17 @@
     right: 10px;
 }
 
-::-webkit-scrollbar-track
-{
-	background-color: #F5F5F5;
+::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar
-{
-	width: 3px;
-	background-color: #b12424e5;
+::-webkit-scrollbar {
+    width: 3px;
+    background-color: #1a55d4b9e5;
 }
 
-::-webkit-scrollbar-thumb
-{
-	background-color: #b12424e5;
+::-webkit-scrollbar-thumb {
+    background-color: #1a55d4b9e5;
 }
 
 .vehicle-shop-home {
@@ -204,7 +199,7 @@
     margin-top: 10px;
 }
 
-.added-vehicle > span {
+.added-vehicle>span {
     font-family: 'Roboto Condensed', sans-serif;
     margin-left: 15px;
     font-size: 15px;
@@ -231,10 +226,10 @@
     width: 100%;
     height: 5%;
     background-color: rgb(246, 246, 246);
-	border-bottom: 1px solid #b12424e5;
+    border-bottom: 1px solid #1a55d4b9e5;
 }
 
-.map-header > p {
+.map-header>p {
     color: rgb(12, 12, 12);
     font-size: 16px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -242,12 +237,12 @@
     line-height: 25px;
 }
 
-.map-pin > img {
+.map-pin>img {
     width: 20px;
     transition: all 0.1s ease-in-out;
 }
 
-.map-pin:hover > img{
+.map-pin:hover>img {
     width: 22px;
 }
 
@@ -263,13 +258,14 @@
     left: 260px;
 }
 
+
 /* Tool Tip */
 
 .tooltip {
     position: relative;
     display: inline-block;
 }
-  
+
 .tooltip .tooltiptext {
     visibility: hidden;
     width: auto;
@@ -282,7 +278,7 @@
     bottom: 10%;
     opacity: 0;
     transition: opacity 0.3s;
-    z-index: 101;  
+    z-index: 101;
     font-size: 11px;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -291,18 +287,19 @@
     content: " ";
     position: absolute;
     top: 50%;
-    right: 100%; /* To the left of the tooltip */
+    right: 100%;
+    /* To the left of the tooltip */
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: transparent rgba(0, 0, 0, 0.75) transparent transparent;
-    z-index: 101;  
+    z-index: 101;
 }
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-    z-index: 101;  
+    z-index: 101;
 }
 
 #close-map {

@@ -23,14 +23,14 @@ body {
     position: absolute;
     width: 100%;
     height: 5%;
-    background: #b12424;
+    background: #1a55d4b9;
     text-align: center;
     top: 0;
     line-height: 0.5vh;
     z-index: 101;
 }
 
-.keys-block-header > p {
+.keys-block-header>p {
     color: white;
     font-weight: bold;
     font-size: 1vh;
@@ -95,7 +95,8 @@ input[type="text"] {
     transition: all 0.1s linear;
 }
 
-.argument:focus, .command:focus {
+.argument:focus,
+.command:focus {
     background: #262b33c5;
 }
 
@@ -127,7 +128,7 @@ input[type="text"] {
     width: 100%;
     height: 5vh;
     top: 5vh;
-    border-bottom: 2px solid #b12424;
+    border-bottom: 2px solid #1a55d4b9;
     margin-bottom: 1.2vh;
 }
 
@@ -152,12 +153,12 @@ input[type="text"] {
     height: 3vh;
     bottom: 0;
     text-align: center;
-    background: #b12424;
+    background: #1a55d4b9;
     line-height: 0.8vh;
     transition: all 0.1s linear;
 }
 
-.save-bindings > p {
+.save-bindings>p {
     color: white;
     font-weight: bold;
     font-size: 1.2vh;
