@@ -16,6 +16,12 @@ To upload changes on translations or suggestions, it will be done through "pull 
 # PROCESS 🔋
 20%
 
+# LINKS
+
+HeidiSQL: https://www.heidisql.com/installers/HeidiSQL_11.3.0.6295_Setup.exe 
+
+MariaDB: https://brouznouf.github.io/fivem-mysql-async/
+
 # CREDITS 🧾
 
 Total credits to https://github.com/qbcore-framework !
