@@ -273,7 +273,7 @@ end
 function DepotList()
     QBCore.Functions.TriggerCallback("qb-garage:server:GetDepotVehicles", function(result)
         ped = PlayerPedId();
-        MenuTitle = "Vehículos incautados:"
+        MenuTitle = "Vehiculos incautados:"
         ClearMenu()
 
         if result == nil then
