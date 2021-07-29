@@ -46,9 +46,9 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 5 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                             if not onDuty then
-                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Get on duty")
+                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Entrar en Servicio")
                             else
-                                DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Get off duty")
+                                DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Salir de Servicio")
                             end
                             if IsControlJustReleased(0, 38) then
                                 onDuty = not onDuty
@@ -71,19 +71,19 @@ Citizen.CreateThread(function()
                 for k, v in pairs(Config.Locations["evidence"]) do
                     if #(pos - vector3(v.x, v.y, v.z)) < 2 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.0 then
-                            DrawText3D(v.x, v.y, v.z, "~g~E~w~ -    Evidence stash")
+                            DrawText3D(v.x, v.y, v.z, "~g~E~w~ -  Alijo de pruebas")
                             if IsControlJustReleased(0, 38) then
-                                local drawer = Input("Which drawer do you want to look at?", "", 2)
+                                local drawer = Input("¿Qué cajón quieres mirar??", "", 2)
                                 if drawer ~= nil then
-                                    TriggerServerEvent("inventory:server:OpenInventory", "stash", " 1 | Drawer "..drawer, {
+                                    TriggerServerEvent("inventory:server:OpenInventory", "stash", " 1 | Caja "..drawer, {
                                         maxweight = 4000000,
                                         slots = 500,
                                     })
-                                    TriggerEvent("inventory:client:SetCurrentStash", " 1 | Drawer "..drawer)
+                                    TriggerEvent("inventory:client:SetCurrentStash", " 1 | Caja "..drawer)
                                 end
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                            DrawText3D(v.x, v.y, v.z, "Stash 1")
+                            DrawText3D(v.x, v.y, v.z, "Alijo 1")
                         end
                     end
                 end
@@ -91,19 +91,19 @@ Citizen.CreateThread(function()
                 for k, v in pairs(Config.Locations["evidence2"]) do
                     if #(pos - vector3(v.x, v.y, v.z)) < 2 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.0 then
-                            DrawText3D(v.x, v.y, v.z, "~g~E~w~ - evidence stash")
+                            DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Alijo de pruebas")
                             if IsControlJustReleased(0, 38) then
-                                local drawer = Input("Which drawer do you want to look at?", "", 2)
+                                local drawer = Input("¿Qué cajón quieres mirar?", "", 2)
                                 if drawer ~= nil then
-                                    TriggerServerEvent("inventory:server:OpenInventory", "stash", " 2 | Drawer "..drawer, {
+                                    TriggerServerEvent("inventory:server:OpenInventory", "stash", " 2 | Caja "..drawer, {
                                         maxweight = 4000000,
                                         slots = 500,
                                     })
-                                    TriggerEvent("inventory:client:SetCurrentStash", " 2 | Drawer "..drawer)
+                                    TriggerEvent("inventory:client:SetCurrentStash", " 2 | Caja "..drawer)
                                 end
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                            DrawText3D(v.x, v.y, v.z, "Stash 2")
+                            DrawText3D(v.x, v.y, v.z, "Alijo 2")
                         end
                     end
                 end
@@ -111,19 +111,19 @@ Citizen.CreateThread(function()
                 for k, v in pairs(Config.Locations["evidence3"]) do
                     if #(pos - vector3(v.x, v.y, v.z)) < 2 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.0 then
-                            DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Evidence stash")
+                            DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Alijo de pruebas")
                             if IsControlJustReleased(0, 38) then
-                                local drawer = Input("Which drawer do you want to look at?", "", 2)
+                                local drawer = Input("¿Qué cajón quieres mirar?", "", 2)
                                 if drawer ~= nil then
-                                    TriggerServerEvent("inventory:server:OpenInventory", "stash", " 3 | Drawer "..drawer, {
+                                    TriggerServerEvent("inventory:server:OpenInventory", "stash", " 3 | Caja "..drawer, {
                                         maxweight = 4000000,
                                         slots = 500,
                                     })
-                                    TriggerEvent("inventory:client:SetCurrentStash", " 3 | Drawer "..drawer)
+                                    TriggerEvent("inventory:client:SetCurrentStash", " 3 | Caja "..drawer)
                                 end
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                            DrawText3D(v.x, v.y, v.z, "Stash 3")
+                            DrawText3D(v.x, v.y, v.z, "Alijo 3")
                         end
                     end
                 end
@@ -131,7 +131,7 @@ Citizen.CreateThread(function()
                 for k, v in pairs(Config.Locations["trash"]) do
                     if #(pos - vector3(v.x, v.y, v.z)) < 2 then
                         if #(pos - vector3(v.x, v.y, v.z)) < 1.0 then
-                            DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Bin")
+                            DrawText3D(v.x, v.y, v.z, "~r~E~w~ - Papelera")
                             if IsControlJustReleased(0, 38) then
                                 TriggerServerEvent("inventory:server:OpenInventory", "stash", "policetrash", {
                                     maxweight = 4000000,
@@ -140,7 +140,7 @@ Citizen.CreateThread(function()
                                 TriggerEvent("inventory:client:SetCurrentStash", "policetrash")
                             end
                         elseif #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                            DrawText3D(v.x, v.y, v.z, "Bin")
+                            DrawText3D(v.x, v.y, v.z, "Papelera")
                         end
                     end
                 end
@@ -151,9 +151,9 @@ Citizen.CreateThread(function()
                              DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                              if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                                  if IsPedInAnyVehicle(PlayerPedId(), false) then
-                                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Store vehicle")
+                                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Tienda de Vehículos")
                                  else
-                                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Vehicles")
+                                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Vehiculos")
                                  end
                                  if IsControlJustReleased(0, 38) then
                                      if IsPedInAnyVehicle(PlayerPedId(), false) then
@@ -176,9 +176,9 @@ Citizen.CreateThread(function()
                             DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                                 if IsPedInAnyVehicle(PlayerPedId(), false) then
-                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Impound Vehicle")
+                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Incautar vehículo")
                                 else
-                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Police Impound")
+                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Incautación policial")
                                 end
                                 if IsControlJustReleased(0, 38) then
                                     if IsPedInAnyVehicle(PlayerPedId(), false) then
@@ -201,9 +201,9 @@ Citizen.CreateThread(function()
                             DrawMarker(2, v.x, v.y, v.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 0, 0, 222, false, false, false, true, false, false, false)
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
                                 if IsPedInAnyVehicle(PlayerPedId(), false) then
-                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Store helicopter")
+                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Tienda de Helicópteros")
                                 else
-                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take a helicopter")
+                                    DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Sacar Helicoptero")
                                 end
                                 if IsControlJustReleased(0, 38) then
                                     if IsPedInAnyVehicle(PlayerPedId(), false) then
@@ -230,13 +230,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 and IsArmoryWhitelist() then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Armory")
+                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Armario")
                                 if IsControlJustReleased(0, 38) then
                                     SetWeaponSeries()
                                     TriggerServerEvent("inventory:server:OpenInventory", "shop", "police", Config.Items)
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
-                                DrawText3D(v.x, v.y, v.z, "Armory")
+                                DrawText3D(v.x, v.y, v.z, "Armario")
                             end  
                         end
                     end
@@ -246,13 +246,13 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Personal stash")
+                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Alijo personal")
                                 if IsControlJustReleased(0, 38) then
                                     TriggerServerEvent("inventory:server:OpenInventory", "stash", "policestash_"..QBCore.Functions.GetPlayerData().citizenid)
                                     TriggerEvent("inventory:client:SetCurrentStash", "policestash_"..QBCore.Functions.GetPlayerData().citizenid)
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
-                                DrawText3D(v.x, v.y, v.z, "Personal stash")
+                                DrawText3D(v.x, v.y, v.z, "Alijo personal")
                             end  
                         end
                     end
@@ -262,18 +262,18 @@ Citizen.CreateThread(function()
                     if #(pos - vector3(v.x, v.y, v.z)) < 4.5 then
                         if onDuty then
                             if #(pos - vector3(v.x, v.y, v.z)) < 1.5 then
-                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Scan fingerprint")
+                                DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Escanear Huella Dactilar")
                                 if IsControlJustReleased(0, 38) then
                                     local player, distance = GetClosestPlayer()
                                     if player ~= -1 and distance < 2.5 then
                                         local playerId = GetPlayerServerId(player)
                                         TriggerServerEvent("police:server:showFingerprint", playerId)
                                     else
-                                        QBCore.Functions.Notify("No one nearby!", "error")
+                                        QBCore.Functions.Notify("Nadie cerca!", "error")
                                     end
                                 end
                             elseif #(pos - vector3(v.x, v.y, v.z)) < 2.5 then
-                                DrawText3D(v.x, v.y, v.z, "Finger scan")
+                                DrawText3D(v.x, v.y, v.z, "Escaner de Huellas")
                             end  
                         end
                     end
@@ -382,7 +382,7 @@ AddEventHandler('police:client:CheckStatus', function()
                     end
                 end, playerId)
             else
-                QBCore.Functions.Notify("No One Nearby", "error")
+                QBCore.Functions.Notify("Nadie cerca", "error")
             end
         end
     end)
@@ -390,20 +390,20 @@ end)
 
 function MenuImpound()
     ped = PlayerPedId();
-    MenuTitle = "Impounded"
+    MenuTitle = "Incautados"
     ClearMenu()
-    Menu.addButton("Police Impound", "ImpoundVehicleList", nil)
-    Menu.addButton("Close menu", "closeMenuFull", nil) 
+    Menu.addButton("Incautación policial", "ImpoundVehicleList", nil)
+    Menu.addButton("Cerrar menu", "closeMenuFull", nil) 
 end
 
 function ImpoundVehicleList()
     QBCore.Functions.TriggerCallback("police:GetImpoundedVehicles", function(result)
         ped = PlayerPedId();
-        MenuTitle = "Impounded Vehicles:"
+        MenuTitle = "Vehículos Incautados:"
         ClearMenu()
 
         if result == nil then
-            QBCore.Functions.Notify("There are no impounded vehicles", "error", 5000)
+            QBCore.Functions.Notify("No hay vehículos incautados", "error", 5000)
             closeMenuFull()
         else
             for k, v in pairs(result) do
@@ -411,11 +411,11 @@ function ImpoundVehicleList()
                 bodyPercent = round(v.body / 10, 0)
                 currentFuel = v.fuel
 
-                Menu.addButton(QBCore.Shared.Vehicles[v.vehicle]["name"], "TakeOutImpound", v, "Impounded", " Engine: " .. enginePercent .. "%", " Body: " .. bodyPercent.. "%", " Fuel: "..currentFuel.. "%")
+                Menu.addButton(QBCore.Shared.Vehicles[v.vehicle]["name"], "TakeOutImpound", v, "Impounded", " Motor: " .. enginePercent .. "%", " Carroceria: " .. bodyPercent.. "%", " Gasolina: "..currentFuel.. "%")
             end
         end
             
-        Menu.addButton("Back", "MenuImpound",nil)
+        Menu.addButton("Volver", "MenuImpound",nil)
     end)
 end
 
@@ -442,10 +442,10 @@ end
 
 function MenuOutfits()
     ped = PlayerPedId();
-    MenuTitle = "Outfits"
+    MenuTitle = "Vestimentas"
     ClearMenu()
-    Menu.addButton("My Outfits", "OutfitsLijst", nil)
-    Menu.addButton("Close menu", "closeMenuFull", nil) 
+    Menu.addButton("Mis vestimentas", "OutfitsLijst", nil)
+    Menu.addButton("Cerrar menu", "closeMenuFull", nil) 
 end
 
 function changeOutfit()
@@ -459,62 +459,62 @@ end
 function OutfitsLijst()
     QBCore.Functions.TriggerCallback('apartments:GetOutfits', function(outfits)
         ped = PlayerPedId();
-        MenuTitle = "My Outfits :"
+        MenuTitle = "Mis Vestimentas :"
         ClearMenu()
 
         if outfits == nil then
-            QBCore.Functions.Notify("You have no outfits saved...", "error", 3500)
+            QBCore.Functions.Notify("No tienes vestimentas guardados...", "error", 3500)
             closeMenuFull()
         else
             for k, v in pairs(outfits) do
                 Menu.addButton(outfits[k].outfitname, "optionMenu", outfits[k]) 
             end
         end
-        Menu.addButton("Back", "MenuOutfits",nil)
+        Menu.addButton("Volver", "MenuOutfits",nil)
     end)
 end
 
 function optionMenu(outfitData)
     ped = PlayerPedId();
-    MenuTitle = "What now?"
+    MenuTitle = "Ahora que?"
     ClearMenu()
 
-    Menu.addButton("Choose Outfit", "selectOutfit", outfitData) 
-    Menu.addButton("Delete Outfit", "removeOutfit", outfitData) 
-    Menu.addButton("Back", "OutfitsLijst",nil)
+    Menu.addButton("Elegir Vestimenta", "selectOutfit", outfitData) 
+    Menu.addButton("Borrar Vestimenta", "removeOutfit", outfitData) 
+    Menu.addButton("Volver", "OutfitsLijst",nil)
 end
 
 function selectOutfit(oData)
     TriggerServerEvent('clothes:selectOutfit', oData.model, oData.skin)
-    QBCore.Functions.Notify(oData.outfitname.." chosen", "success", 2500)
+    QBCore.Functions.Notify(oData.outfitname.." elegido", "success", 2500)
     closeMenuFull()
     changeOutfit()
 end
 
 function removeOutfit(oData)
     TriggerServerEvent('clothes:removeOutfit', oData.outfitname)
-    QBCore.Functions.Notify(oData.outfitname.." is deleted", "success", 2500)
+    QBCore.Functions.Notify(oData.outfitname.." ha sido borrado", "success", 2500)
     closeMenuFull()
 end
 
 function MenuGarage()
     ped = PlayerPedId();
-    MenuTitle = "Garage"
+    MenuTitle = "Garaje"
     ClearMenu()
-    Menu.addButton("Vehicles", "VehicleList", nil)
-    Menu.addButton("Close menu", "closeMenuFull", nil) 
+    Menu.addButton("Vehiculos", "VehicleList", nil)
+    Menu.addButton("Cerrar menu", "closeMenuFull", nil) 
 end
 
 function VehicleList(isDown)
     ped = PlayerPedId();
-    MenuTitle = "Vehicles:"
+    MenuTitle = "Vehiculos:"
     ClearMenu()
     for k, v in pairs(Config.Vehicles) do
-        Menu.addButton(Config.Vehicles[k], "TakeOutVehicle", k, "Garage", " Engine: 100%", " Body: 100%", " Fuel: 100%")
+        Menu.addButton(Config.Vehicles[k], "TakeOutVehicle", k, "Garage", " Motor: 100%", " Carroceria: 100%", " Gasolina: 100%")
     end
     if IsArmoryWhitelist() then
         for veh, label in pairs(Config.WhitelistedVehicles) do
-            Menu.addButton(label, "TakeOutVehicle", veh, "Garage", " Engine: 100%", " Body: 100%", " Fuel: 100%")
+            Menu.addButton(label, "TakeOutVehicle", veh, "Garage", " Motor: 100%", " Carroceria: 100%", " Gasolina: 100%")
         end
     end
         
@@ -525,7 +525,7 @@ function TakeOutVehicle(vehicleInfo)
     local coords = Config.Locations["vehicle"][currentGarage]
 
     QBCore.Functions.SpawnVehicle(vehicleInfo, function(veh)
-        SetVehicleNumberPlateText(veh, "PLZI"..tostring(math.random(1000, 9999)))
+        SetVehicleNumberPlateText(veh, "POLICIA"..tostring(math.random(1000, 9999)))
         SetEntityHeading(veh, coords.w)
         exports['LegacyFuel']:SetFuel(veh, 100.0)
         closeMenuFull()

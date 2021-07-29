@@ -27,7 +27,7 @@ function HandlespeedCam(speedCam, hasBeenBusted)
 								sprite = 488,
 								color = 1,
 								scale = 0.9,
-								text = "Speed camera #"..hasBeenBusted.." - Marked vehicle"
+								text = "Radar  #"..hasBeenBusted.." - Vehiculo marcado"
 							}
 							local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, coords.x, coords.y, coords.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
 							local street1 = GetStreetNameFromHashKey(s1)

@@ -98,7 +98,7 @@ AddEventHandler('police:client:SearchPlayer', function()
         TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", playerId)
         TriggerServerEvent("police:server:SearchPlayer", playerId)
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -109,7 +109,7 @@ AddEventHandler('police:client:SeizeCash', function()
         local playerId = GetPlayerServerId(player)
         TriggerServerEvent("police:server:SeizeCash", playerId)
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -120,7 +120,7 @@ AddEventHandler('police:client:SeizeDriverLicense', function()
         local playerId = GetPlayerServerId(player)
         TriggerServerEvent("police:server:SeizeDriverLicense", playerId)
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -132,7 +132,7 @@ AddEventHandler('police:client:RobPlayer', function()
         local playerPed = GetPlayerPed(player)
         local playerId = GetPlayerServerId(player)
         if IsEntityPlayingAnim(playerPed, "missminuteman_1ig_2", "handsup_base", 3) or IsEntityPlayingAnim(playerPed, "mp_arresting", "idle", 3) or IsTargetDead(playerId) then
-            QBCore.Functions.Progressbar("robbing_player", "Robbing person..", math.random(5000, 7000), false, true, {
+            QBCore.Functions.Progressbar("robbing_player", "Robando a una persona..", math.random(5000, 7000), false, true, {
                 disableMovement = true,
                 disableCarMovement = true,
                 disableMouse = false,
@@ -149,15 +149,15 @@ AddEventHandler('police:client:RobPlayer', function()
                     TriggerServerEvent("inventory:server:OpenInventory", "otherplayer", playerId)
                     TriggerEvent("inventory:server:RobPlayer", playerId)
                 else
-                    QBCore.Functions.Notify("No one nearby!", "error")
+                    QBCore.Functions.Notify("Nadie cerca!", "error")
                 end
             end, function() -- Cancel
                 StopAnimTask(PlayerPedId(), "random@shop_robbery", "robbery_action_b", 1.0)
-                QBCore.Functions.Notify("Canceled..", "error")
+                QBCore.Functions.Notify("Cancelado..", "error")
             end)
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -184,10 +184,10 @@ AddEventHandler('police:client:JailPlayer', function()
         if tonumber(time) > 0 then
             TriggerServerEvent("police:server:JailPlayer", playerId, tonumber(time))
         else
-            QBCore.Functions.Notify("Time must be higher than 0..", "error")
+            QBCore.Functions.Notify("El tiempo debe ser mayor que 0..", "error")
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -204,10 +204,10 @@ AddEventHandler('police:client:BillPlayer', function()
         if tonumber(price) > 0 then
             TriggerServerEvent("police:server:BillPlayer", playerId, tonumber(price))
         else
-            QBCore.Functions.Notify("Time must be higher than 0..", "error")
+            QBCore.Functions.Notify("El tiempo debe ser mayor que 0..", "error")
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -220,7 +220,7 @@ AddEventHandler('police:client:PutPlayerInVehicle', function()
             TriggerServerEvent("police:server:PutPlayerInVehicle", playerId)
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -233,7 +233,7 @@ AddEventHandler('police:client:SetPlayerOutVehicle', function()
             TriggerServerEvent("police:server:SetPlayerOutVehicle", playerId)
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -246,7 +246,7 @@ AddEventHandler('police:client:EscortPlayer', function()
             TriggerServerEvent("police:server:EscortPlayer", playerId)
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -265,7 +265,7 @@ AddEventHandler('police:client:KidnapPlayer', function()
             end
         end
     else
-        QBCore.Functions.Notify("No one nearby!", "error")
+        QBCore.Functions.Notify("Nadie cerca!", "error")
     end
 end)
 
@@ -279,10 +279,10 @@ AddEventHandler('police:client:CuffPlayerSoft', function()
                 TriggerServerEvent("police:server:CuffPlayer", playerId, true)
                 HandCuffAnimation()
             else
-                QBCore.Functions.Notify("You cant cuff someone in a vehicle", "error")
+                QBCore.Functions.Notify("No puedes esposar a alguien en un vehículo", "error")
             end
         else
-            QBCore.Functions.Notify("No one nearby!", "error")
+            QBCore.Functions.Notify("Nadie cerca!", "error")
         end
     else
         Citizen.Wait(2000)
@@ -301,14 +301,14 @@ AddEventHandler('police:client:CuffPlayer', function()
                         TriggerServerEvent("police:server:CuffPlayer", playerId, false)
                         HandCuffAnimation()
                     else
-                        QBCore.Functions.Notify("You can\'t cuff someone in a vehicle", "error")
+                        QBCore.Functions.Notify("No puedes esposar a alguien en un vehículo.", "error")
                     end
                 else
-                    QBCore.Functions.Notify("You don\'t have handcuffs on you", "error")
+                    QBCore.Functions.Notify("No tienes esposas", "error")
                 end
             end, "handcuffs")
         else
-            QBCore.Functions.Notify("No one nearby!", "error")
+            QBCore.Functions.Notify("Nadie cerca!", "error")
         end
     else
         Citizen.Wait(2000)
@@ -404,11 +404,11 @@ AddEventHandler('police:client:GetCuffed', function(playerId, isSoftcuff)
         if not isSoftcuff then
             cuffType = 16
             GetCuffedAnimation(playerId)
-            QBCore.Functions.Notify("You are cuffed!")
+            QBCore.Functions.Notify("Estas esposado!")
         else
             cuffType = 49
             GetCuffedAnimation(playerId)
-            QBCore.Functions.Notify("You are cuffed, but you can walk")
+            QBCore.Functions.Notify("Estas esposado, pero puedes andar")
         end
     else
         isHandcuffed = false

@@ -1,17 +1,17 @@
 StatusList = {
-	["fight"] = "Red hands",
-	["widepupils"] = "Wide pupils",
-	["redeyes"] = "Red eyes",
-	["weedsmell"] = "Smells like weed",
-	["alcohol"] = "Breath smells like alcohol",
-	["gunpowder"] = "Gunpowder in clothing",
-	["chemicals"] = "smells chemical",
-	["heavybreath"] = "Breathes heavily",
-	["sweat"] = "Sweats a lot",
-    ["handbleed"] = "Blood on hands",
-	["confused"] = "Confused",
-	["alcohol"] = "Smells like alcohol",
-	["heavyalcohol"] = "Smells very much like alcohol",
+	["fight"] = "Manos Rojas",
+	["widepupils"] = "Pupilas Dilatadas",
+	["redeyes"] = "Ojos rojos",
+	["weedsmell"] = "Hueles a Hierba",
+	["alcohol"] = "El aliento te huele a alcohol",
+	["gunpowder"] = "Pólvora en la ropa",
+	["chemicals"] = "Huele a químico",
+	["heavybreath"] = "Respira con esfuerzo",
+	["sweat"] = "Suda mucho",
+    ["handbleed"] = "Sangre en las manos",
+	["confused"] = "Cunfuso",
+	["alcohol"] = "Huele a alcohol",
+	["heavyalcohol"] = "Huele mucho a alcohol",
 }
 
 CurrentStatusList = {}
@@ -81,7 +81,7 @@ RegisterNetEvent("evidence:client:ClearBlooddropsInArea")
 AddEventHandler("evidence:client:ClearBlooddropsInArea", function()
 	local pos = GetEntityCoords(PlayerPedId())
 	local blooddropList = {}
-	QBCore.Functions.Progressbar("clear_blooddrops", "Clearing blood..", 5000, false, true, {
+	QBCore.Functions.Progressbar("clear_blooddrops", "Limpiando sangre..", 5000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
@@ -94,10 +94,10 @@ AddEventHandler("evidence:client:ClearBlooddropsInArea", function()
 				end
 			end
 			TriggerServerEvent("evidence:server:ClearBlooddrops", blooddropList)
-			QBCore.Functions.Notify("Blood cleared :)")
+			QBCore.Functions.Notify("Sangre limpiada :)")
 		end
     end, function() -- Cancel
-        QBCore.Functions.Notify("Blood not cleared..", "error")
+        QBCore.Functions.Notify("Sangre no limpiada..", "error")
     end)
 end)
 
@@ -105,7 +105,7 @@ RegisterNetEvent('evidence:client:AddCasing')
 AddEventHandler('evidence:client:AddCasing', function(casingId, weapon, coords, serie)
     Casings[casingId] = {
 		type = weapon,
-		serie = serie ~= nil and serie or "Serial number not visible..",
+		serie = serie ~= nil and serie or "Número de serie no visible..",
 		coords = {
 			x = coords.x,
 			y = coords.y, 
@@ -125,7 +125,7 @@ RegisterNetEvent("evidence:client:ClearCasingsInArea")
 AddEventHandler("evidence:client:ClearCasingsInArea", function()
 	local pos = GetEntityCoords(PlayerPedId())
 	local casingList = {}
-	QBCore.Functions.Progressbar("clear_casings", "Removing bullet sleeves..", 5000, false, true, {
+	QBCore.Functions.Progressbar("clear_casings", "Quitando los casquillos de la bala..", 5000, false, true, {
         disableMovement = false,
         disableCarMovement = false,
 		disableMouse = false,
@@ -138,10 +138,10 @@ AddEventHandler("evidence:client:ClearCasingsInArea", function()
 				end
 			end
 			TriggerServerEvent("evidence:server:ClearCasings", casingList)
-			QBCore.Functions.Notify("Bullet sleeves removed :)")
+			QBCore.Functions.Notify("Casquillos de bala removidos :)")
 		end
     end, function() -- Cancel
-        QBCore.Functions.Notify("Bullet sleeves not removed", "error")
+        QBCore.Functions.Notify("Casquillos de bala no removidos", "error")
     end)
 end)
 
@@ -198,7 +198,7 @@ Citizen.CreateThread(function()
 		if CurrentCasing ~= nil and CurrentCasing ~= 0 then 
 			local pos = GetEntityCoords(PlayerPedId())
 			if #(pos - vector3(Casings[CurrentCasing].coords.x, Casings[CurrentCasing].coords.y, Casings[CurrentCasing].coords.z)) < 1.5 then
-				DrawText3D(Casings[CurrentCasing].coords.x, Casings[CurrentCasing].coords.y, Casings[CurrentCasing].coords.z, "~g~G~w~ - Bullet sleeve ~b~#"..Casings[CurrentCasing].type)
+				DrawText3D(Casings[CurrentCasing].coords.x, Casings[CurrentCasing].coords.y, Casings[CurrentCasing].coords.z, "~g~G~w~ - Casquillos de bala ~b~#"..Casings[CurrentCasing].type)
 				if IsControlJustReleased(0, 47) then
 					local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, Casings[CurrentCasing].coords.x, Casings[CurrentCasing].coords.y, Casings[CurrentCasing].coords.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
 					local street1 = GetStreetNameFromHashKey(s1)
@@ -208,7 +208,7 @@ Citizen.CreateThread(function()
 						streetLabel = streetLabel .. " | " .. street2
 					end
 					local info = {
-						label = "Bullet sleeve",
+						label = "Casquillo de Bala",
 						type = "casing",
 						street = streetLabel:gsub("%'", ""),
 						ammolabel = Config.AmmoLabels[QBCore.Shared.Weapons[Casings[CurrentCasing].type]["ammotype"]],
@@ -223,7 +223,7 @@ Citizen.CreateThread(function()
 		if CurrentBlooddrop ~= nil and CurrentBlooddrop ~= 0 then 
 			local pos = GetEntityCoords(PlayerPedId())
 			if #(pos - vector3(Blooddrops[CurrentBlooddrop].coords.x, Blooddrops[CurrentBlooddrop].coords.y, Blooddrops[CurrentBlooddrop].coords.z)) < 1.5 then
-				DrawText3D(Blooddrops[CurrentBlooddrop].coords.x, Blooddrops[CurrentBlooddrop].coords.y, Blooddrops[CurrentBlooddrop].coords.z, "~g~G~w~ - Blood ~b~#"..DnaHash(Blooddrops[CurrentBlooddrop].citizenid))
+				DrawText3D(Blooddrops[CurrentBlooddrop].coords.x, Blooddrops[CurrentBlooddrop].coords.y, Blooddrops[CurrentBlooddrop].coords.z, "~g~G~w~ - Sangre ~b~#"..DnaHash(Blooddrops[CurrentBlooddrop].citizenid))
 				if IsControlJustReleased(0, 47) then
 					local s1, s2 = Citizen.InvokeNative(0x2EB41072B4C1E4C0, Blooddrops[CurrentBlooddrop].coords.x, Blooddrops[CurrentBlooddrop].coords.y, Blooddrops[CurrentBlooddrop].coords.z, Citizen.PointerValueInt(), Citizen.PointerValueInt())
 					local street1 = GetStreetNameFromHashKey(s1)
@@ -233,7 +233,7 @@ Citizen.CreateThread(function()
 						streetLabel = streetLabel .. " | " .. street2
 					end
 					local info = {
-						label = "Blood sample",
+						label = "Muestra de sangre",
 						type = "blood",
 						street = streetLabel:gsub("%'", ""),
 						dnalabel = DnaHash(Blooddrops[CurrentBlooddrop].citizenid),
@@ -257,7 +257,7 @@ Citizen.CreateThread(function()
 						streetLabel = streetLabel .. " | " .. street2
 					end
 					local info = {
-						label = "Fingerprint",
+						label = "Huella dactilar",
 						type = "fingerprint",
 						street = streetLabel:gsub("%'", ""),
 						fingerprint = Fingerprints[CurrentFingerprint].fingerprint,

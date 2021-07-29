@@ -77,9 +77,9 @@ Config.Locations = {
        [2] = vector4(-439.43, 6009.45, 27.98, 134.5),
    },        
    ["stations"] = {
-       [1] = {label = "Police Station", coords = vector4(428.23, -984.28, 29.76, 3.5)},
-       [2] = {label = "Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249)},
-       [3] = {label = "Police Station Paleto", coords = vector4(-451.55, 6014.25, 31.716, 223.81)},
+       [1] = {label = "Comisaria de la Policia", coords = vector4(428.23, -984.28, 29.76, 3.5)},
+       [2] = {label = "Prision", coords = vector4(1845.903, 2585.873, 45.672, 272.249)},
+       [3] = {label = "Comisaria de Paleto", coords = vector4(-451.55, 6014.25, 31.716, 223.81)},
    },
 }
 
@@ -128,25 +128,25 @@ Config.SecurityCameras = {
 }
 
 Config.Vehicles = {
-    ["police"] = "Police Car 1",
-    ["police2"] = "Police Car 2",
-    ["police3"] = "Police Car 3",
-    ["police4"] = "Police Car 4",
-    ["policeb"] = "Police Car 5",
-    ["policet"] = "Police Car 6",
-    ["sheriff"] = "Sheriff Car 1",
-    ["sheriff2"] = "Sheriff Car 2",
+    ["police"] = "Vehiculo Policia 1",
+    ["police2"] = "Vehiculo Policia 2",
+    ["police3"] = "Vehiculo Policia 3",
+    ["police4"] = "Vehiculo Policia 4",
+    ["policeb"] = "Vehiculo Policia 5",
+    ["policet"] = "Vehiculo Policia 6",
+    ["sheriff"] = "Vehiculo Policia 1",
+    ["sheriff2"] = "Vehiculo Policia 2",
 }
 
 Config.WhitelistedVehicles = {}
 
 Config.AmmoLabels = {
-    ["AMMO_PISTOL"] = "9x19mm Parabellum kogel",
-    ["AMMO_SMG"] = "9x19mm Parabellum kogel",
-    ["AMMO_RIFLE"] = "7.62x39mm kogel",
-    ["AMMO_MG"] = "7.92x57mm Mauser kogel",
-    ["AMMO_SHOTGUN"] = "12-gauge kogel",
-    ["AMMO_SNIPER"] = "Groot caliber kogel",
+    ["AMMO_PISTOL"] = "9x19mm Parabellum Municion",
+    ["AMMO_SMG"] = "9x19mm Parabellum Municion",
+    ["AMMO_RIFLE"] = "7.62x39mm Municion",
+    ["AMMO_MG"] = "7.92x57mm Mauser Municion",
+    ["AMMO_SHOTGUN"] = "Cartucho de escopeta Municion",
+    ["AMMO_SNIPER"] = "Gran Calibre Municion",
 }
 
 Config.Radars = {
@@ -188,7 +188,7 @@ Config.CarItems = {
 }
 
 Config.Items = {
-    label = "Police Armory",
+    label = "Armario Policial",
     slots = 30,
     items = {
         [1] = {
@@ -198,7 +198,7 @@ Config.Items = {
             info = {
                 serie = "",                
                 attachments = {
-                    {component = "COMPONENT_AT_PI_FLSH", label = "Flashlight"},
+                    {component = "COMPONENT_AT_PI_FLSH", label = "Linterna"},
                 }
             },
             type = "weapon",
@@ -221,7 +221,7 @@ Config.Items = {
             info = {
                 serie = "",
                 attachments = {
-                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Linterna"},
                 }
             },
             type = "weapon",
@@ -235,7 +235,7 @@ Config.Items = {
                 serie = "",                
                 attachments = {
                     {component = "COMPONENT_AT_SCOPE_MACRO_02", label = "1x Scope"},
-                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Linterna"},
                 }
             },
             type = "weapon",
@@ -248,7 +248,7 @@ Config.Items = {
             info = {
                 serie = "",
                 attachments = {
-                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Linterna"},
                     {component = "COMPONENT_AT_SCOPE_MEDIUM", label = "3x Scope"},
                 }
             },
