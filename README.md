@@ -9,6 +9,10 @@ Discord 🤖 ( https://discord.gg/2cFWKz8GAA ) 🤖
 First you must download the base and install it (soon a tutorial to do so).
 To upload changes on translations or suggestions, it will be done through "pull request", I myself will approve the changes, reviewing them beforehand so as not to load the project.
 
+# TUTORIAL FOR INSTALLATION 🎥
+
+- https://youtu.be/HCBAadVR14M
+
 # PROCESS 🔋
 20%
 
