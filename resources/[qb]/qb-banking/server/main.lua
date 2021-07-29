@@ -301,9 +301,9 @@ AddEventHandler('qb-banking:createBankCard', function(pin)
     end
 
     TriggerClientEvent('qb-banking:openBankScreen', src)
-    TriggerClientEvent('QBCore:Notify', src, 'You have successfully ordered a Debit Card.', 'success')
+    TriggerClientEvent('QBCore:Notify', src, 'Ha solicitado con éxito una tarjeta de débito.', 'success')
     
-    TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', 'Successfully ordered a Debit Card', src)
+    TriggerEvent('qb-log:server:CreateLog', 'banking', 'Banking', 'Solicitó con éxito una tarjeta de débito', src)
 end)
 
 RegisterServerEvent('qb-banking:doQuickDeposit')
