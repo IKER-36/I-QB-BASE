@@ -109,67 +109,67 @@ Config.WeaponAttachments = {
     ["WEAPON_SNSPISTOL"] = {
         ["extendedclip"] = {
             component = "COMPONENT_SNSPISTOL_CLIP_02",
-            label = "Extended Clip",
+            label = "Cargador extendido",
             item = "pistol_extendedclip",
         },
     },
     ["WEAPON_VINTAGEPISTOL"] = {
         ["suppressor"] = {
             component = "COMPONENT_AT_PI_SUPP",
-            label = "Demper",
+            label = "Silenciador",
             item = "pistol_suppressor",
         },
         ["extendedclip"] = {
             component = "COMPONENT_VINTAGEPISTOL_CLIP_02",
-            label = "Extended Clip",
+            label = "Cargador extendido",
             item = "pistol_extendedclip",
         },
     },
     ["WEAPON_PISTOL"] = {
         ["suppressor"] = {
             component = "COMPONENT_AT_PI_SUPP_02",
-            label = "Demper",
+            label = "Silenciador",
             item = "pistol_suppressor",
         },                                                     
     },
     ["WEAPON_MICROSMG"] = {
         ["suppressor"] = {
             component = "COMPONENT_AT_AR_SUPP_02",
-            label = "Demper",
+            label = "Silenciador",
             item = "smg_suppressor",
         },
         ["extendedclip"] = {
             component = "COMPONENT_MICROSMG_CLIP_02",
-            label = "Extended Clip",
+            label = "Cargador extendido",
             item = "smg_extendedclip",
         },
         ["flashlight"] = {
             component = "COMPONENT_AT_PI_FLSH",
-            label = "Flashlight",
+            label = "Linterna",
             item = "smg_flashlight",
         },
         ["scope"] = {
             component = "COMPONENT_AT_SCOPE_MACRO",
-            label = "Scope",
+            label = "Mira",
             item = "smg_scope",
         },
     },
     ["WEAPON_MINISMG"] = {
         ["extendedclip"] = {
             component = "COMPONENT_MINISMG_CLIP_02",
-            label = "Extended Clip",
+            label = "Cargador extendido",
             item = "smg_extendedclip",
         },
     },
     ["WEAPON_COMPACTRIFLE"] = {
         ["extendedclip"] = {
             component = "COMPONENT_COMPACTRIFLE_CLIP_02",
-            label = "Extended Clip",
+            label = "Cargador extendido",
             item = "rifle_extendedclip",
         },
         ["drummag"] = {
             component = "COMPONENT_COMPACTRIFLE_CLIP_03",
-            label = "Drum Mag",
+            label = "Cargador de tambor",
             item = "rifle_drummag",
         },
     },
