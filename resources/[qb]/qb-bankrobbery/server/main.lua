@@ -372,7 +372,7 @@ QBCore.Functions.CreateUseableItem("thermite", function(source, item)
 	if Player.Functions.GetItemByName('lighter') ~= nil then
         TriggerClientEvent("thermite:UseThermite", source)
     else
-        TriggerClientEvent('QBCore:Notify', source, "You're missing ignition source ", "error")
+        TriggerClientEvent('QBCore:Notify', source, "No tienes con que prender la termita ", "error")
     end
 end)
 
