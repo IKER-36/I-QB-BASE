@@ -31,13 +31,13 @@ AddEventHandler('lockpicks:UseLockpick', function()
 							closestDoorKey, closestDoorValue = k, v
 							TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
 						else
-							QBCore.Functions.Notify("You Dont Have A Screwdriver Set", "error")
+							QBCore.Functions.Notify("No tienes un set de destornilladores cara pan", "error")
 						end
 					else
-						QBCore.Functions.Notify('The Door Is Not Locked', 'error', 2500)
+						QBCore.Functions.Notify('La puerta no está bloqueada.', 'error', 2500)
 					end
 				else
-					QBCore.Functions.Notify('This Door Can Not Be Lockpicked', 'error', 2500)
+					QBCore.Functions.Notify('Esta puerta no puede ser forzada.', 'error', 2500)
 				end
 			end
 		end
@@ -63,10 +63,10 @@ end
 
 function lockpickFinish(success)
     if success then
-		QBCore.Functions.Notify('Success!', 'success', 2500)
+		QBCore.Functions.Notify('Éxito!', 'success', 2500)
 		setDoorLocking(closestDoorValue, closestDoorKey)
     else
-        QBCore.Functions.Notify('Failed', 'error', 2500)
+        QBCore.Functions.Notify('Fallido', 'error', 2500)
     end
 end
 
@@ -185,23 +185,23 @@ Citizen.CreateThread(function()
 
 				if isAuthorized then
 					if current.locked then
-						displayText = "[~g~E~w~] - Locked"
+						displayText = "[~g~E~w~] - Bloqueado"
 					elseif not current.locked then
-						displayText = "[~g~E~w~] - Unlocked"
+						displayText = "[~g~E~w~] - Desbloqueado"
 					end
 				elseif not isAuthorized then
 					if current.locked then
-						displayText = "~r~Locked"
+						displayText = "~r~Bloqueado"
 					elseif not current.locked then
-						displayText = "~g~Unlocked"
+						displayText = "~g~Desbloqueado"
 					end
 				end
 
 				if current.locking then
 					if current.locked then
-						displayText = "~g~Unlocking.."
+						displayText = "~g~Desbloqueando.."
 					else
-						displayText = "~r~Locking.."
+						displayText = "~r~Bloqueando.."
 					end
 				end
 
@@ -215,7 +215,7 @@ Citizen.CreateThread(function()
 					if isAuthorized then
 						setDoorLocking(current, i)
 					else
-						QBCore.Functions.Notify('Not Authorized', 'error')
+						QBCore.Functions.Notify('No autorizado', 'error')
 					end
 				end
 			end
