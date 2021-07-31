@@ -1,4 +1,4 @@
-QBCore.Commands.Add("binds", "Open commandbinding menu", {}, false, function(source, args)
+QBCore.Commands.Add("binds", "Abrir menú de bindeo de comandos", {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
 	TriggerClientEvent("qb-commandbinding:client:openUI", source)
 end)
