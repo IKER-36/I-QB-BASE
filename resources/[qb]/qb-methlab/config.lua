@@ -59,9 +59,9 @@ Config.MethAmount = 1 -- How much Meth you get when RN Jesus gives you Meth. Def
 Config.BigRewarditemChance = 1 -- Percentage of getting rare item on Meth run. Multiplied by 100. 0.1% = 1, 1% = 10, 20% = 200, 50% = 500, etc. Default 0.1%.
 Config.BigRewarditem = "security_card_02" -- Put a rare item here which will have 0.1% chance of being given on the run.
 
-Config.MethCars = "CHECK THE CODE" -- Cars
+Config.MethCars = "CONSULTAR EL CÓDIGO" -- Cars
 
-Config.DropOffs = "CHECK THE CODE" -- Drop off spots
+Config.DropOffs = "CONSULTAR EL CÓDIGO" -- Drop off spots
 
 
 --Robbery

@@ -95,7 +95,7 @@ Citizen.CreateThread(function()
             if #(pos - vector3(Config.Locations["exit"].coords.x, Config.Locations["exit"].coords.y, Config.Locations["exit"].coords.z)) < 20 then
                 inRange = true
                 if #(pos - vector3(Config.Locations["exit"].coords.x, Config.Locations["exit"].coords.y, Config.Locations["exit"].coords.z)) < 1 then
-                    DrawText3Ds(Config.Locations["exit"].coords.x, Config.Locations["exit"].coords.y, Config.Locations["exit"].coords.z, '~g~E~w~ - Leave methlab')
+                    DrawText3Ds(Config.Locations["exit"].coords.x, Config.Locations["exit"].coords.y, Config.Locations["exit"].coords.z, '~g~E~w~ - Salir del Laboratorio de Meta')
                     if IsControlJustPressed(0, 38) then
                         ExitMethlab()
                     end
@@ -109,7 +109,7 @@ Citizen.CreateThread(function()
                 inRange = true
                 DrawMarker(2, Config.Locations["laptop"].coords.x, Config.Locations["laptop"].coords.y, Config.Locations["laptop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 222, 11, 11, 155, false, false, false, true, false, false, false)
                 if GetDistanceBetweenCoords(pos - vector3(Config.Locations["laptop"].coords.x, Config.Locations["laptop"].coords.y, Config.Locations["laptop"].coords.z)) < 1 then
-                    DrawText3Ds(Config.Locations["laptop"].coords.x - 0.04, Config.Locations["laptop"].coords.y + 0.45, Config.Locations["laptop"].coords.z, '~g~E~w~ - Use laptop')
+                    DrawText3Ds(Config.Locations["laptop"].coords.x - 0.04, Config.Locations["laptop"].coords.y + 0.45, Config.Locations["laptop"].coords.z, '~g~E~w~ - Usar Portatil')
                     if IsControlJustPressed(0, 38) then
                         OpenLaptop()
                     end
@@ -123,7 +123,7 @@ Citizen.CreateThread(function()
                 inRange = true
                 DrawMarker(2, Config.Locations["break"].coords.x, Config.Locations["break"].coords.y, Config.Locations["break"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.3, 0.1, 222, 11, 11, 155, false, false, false, true, false, false, false)
                 if #(pos - vector3(Config.Locations["break"].coords.x, Config.Locations["break"].coords.y, Config.Locations["break"].coords.z)) < 1 then
-                    DrawText3Ds(Config.Locations["break"].coords.x - 0.06, Config.Locations["break"].coords.y + 0.90, Config.Locations["break"].coords.z, '~g~G~w~ - Break Meth ')
+                    DrawText3Ds(Config.Locations["break"].coords.x - 0.06, Config.Locations["break"].coords.y + 0.90, Config.Locations["break"].coords.z, '~g~G~w~ - Romper la Meta ')
                     if IsControlJustPressed(0, 47) then
                         TriggerServerEvent("qb-methlab:server:breakMeth")
                     end
@@ -139,7 +139,7 @@ Citizen.CreateThread(function()
                 if  not machineStarted then
                     if not loadIngredients then
                         if #(pos - vector3(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y, Config.Tasks["Furnace"].coords.z)) < 1 then
-                            DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y,  Config.Tasks["Furnace"].coords.z + 0.2, '[G] Load Ingredients')
+                            DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y,  Config.Tasks["Furnace"].coords.z + 0.2, '[G] Cargar ingredientes')
                             if IsControlJustPressed(0, 47) then
                                 TriggerServerEvent("qb-methlab:server:loadIngredients")
                             end
@@ -147,14 +147,14 @@ Citizen.CreateThread(function()
                     else
                         if not finishedMachine then
                             if #(pos - vector3(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y, Config.Tasks["Furnace"].coords.z)) < 1 then
-                                DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y,  Config.Tasks["Furnace"].coords.z + 0.2, '[E] Start Machine')
+                                DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y,  Config.Tasks["Furnace"].coords.z + 0.2, '[E] Iniciar la máquina')
                                 if IsControlJustPressed(0, 38) then
                                     StartMachine()
                                 end
                             end
                         else
                             if #(pos - vector3(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y, Config.Tasks["Furnace"].coords.z)) < 1 then
-                                DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y,  Config.Tasks["Furnace"].coords.z + 0.2, '[E] Get Meth')
+                                DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y,  Config.Tasks["Furnace"].coords.z + 0.2, '[E] Obtener Meta')
                                 if IsControlJustPressed(0, 38) then
                                     TriggerServerEvent("qb-methlab:server:receivemethtray")
                                     finishedMachine = false
@@ -165,7 +165,7 @@ Citizen.CreateThread(function()
                         end
                     end
                 else
-                    DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y, Config.Tasks["Furnace"].coords.z - 0.4, 'Ready over '..machinetimer..'s')
+                    DrawText3Ds(Config.Tasks["Furnace"].coords.x, Config.Tasks["Furnace"].coords.y, Config.Tasks["Furnace"].coords.z - 0.4, 'Listo de nuevo '..machinetimer..'s')
                 end
             end
         end
@@ -235,7 +235,7 @@ function BreakMinigame()
 end
 
 function breakingMeth(amount)
-    QBCore.Functions.Progressbar("break_meth", "Breaking Meth ..", math.random(10000, 12000), false, true, {
+    QBCore.Functions.Progressbar("break_meth", "Rompiendo la Metanfetamina ..", math.random(10000, 12000), false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -280,7 +280,7 @@ function ProcessMinigame()
 
         if SucceededAttempts + 1 >= NeededAttempts then
 
-            QBCore.Functions.Notify("You loaded the ingredients!", "success")
+            QBCore.Functions.Notify("Cargaste los ingredientes!", "success")
             FailedAttemps = 0
             SucceededAttempts = 0
             NeededAttempts = 0
@@ -299,7 +299,7 @@ function ProcessMinigame()
         
 	end, function()
 
-            QBCore.Functions.Notify("You loaded the ingredients!", "success")
+            QBCore.Functions.Notify("Cargaste los ingredientes!", "success")
             machinetimer = 120
             loadIngredients = true
             FailedAttemps = 0
@@ -344,7 +344,7 @@ AddEventHandler('qb-methlab:client:UseLabKey', function(labkey)
             if labkey == ClosestMethlab then
                 EnterMethlab()
             else
-                QBCore.Functions.Notify('This is not the correct key..', 'error')
+                QBCore.Functions.Notify('Esta no es la clave correcta..', 'error')
             end
         end
     end
@@ -601,7 +601,7 @@ function CreateMethVehicle()
 
     while true do
     	Citizen.Wait(1)
-    	 DrawText3Ds(carspawns[spawnpoint]["x"], carspawns[spawnpoint]["y"], carspawns[spawnpoint]["z"], "Your Delivery Car (Stolen).")
+    	 DrawText3Ds(carspawns[spawnpoint]["x"], carspawns[spawnpoint]["y"], carspawns[spawnpoint]["z"], "Su coche de reparto (Robado).")
     	 if #(GetEntityCoords(PlayerPedId()) - vector3(carspawns[spawnpoint]["x"], carspawns[spawnpoint]["y"], carspawns[spawnpoint]["z"])) < 8.0 then
     	 	return
     	 end
@@ -631,7 +631,7 @@ function PoliceCall(vehicle)
     end
 
     local modelPlate = GetVehicleNumberPlateText(vehicle)
-    local msg = "10-31 | Vehicle Spotted Selling Drugs At " ..streetLabel.. ". Vehicle: " .. Name .. ", License Plate: " .. modelPlate
+    local msg = "10-31 | Vehículo detectado vendiendo drogas en " ..streetLabel.. ". Vehiculos: " .. Name .. ", Matricula: " .. modelPlate
     local alertTitle = " Drug Selling"
     TriggerServerEvent("police:server:VehicleCall", pos, msg, alertTitle, streetLabel, modelPlate, Name)
 end
@@ -703,8 +703,8 @@ function CreateBlip()
         SetTimeout(2000, function()
             TriggerServerEvent('qb-phone:server:sendNewMail', {
                 sender = "Johnny",
-                subject = "Delivery Location",
-                message = "Make sure you are on time!",
+                subject = "Lugar de entrega",
+                message = "Asegúrate de llegar a tiempo!",
                 button = {
                     enabled = true,
                     buttonEvent = "qb-methlab:client:setLocation",
@@ -804,9 +804,9 @@ function DoDropOff()
 
 			Citizen.Wait(2000)
 
-			QBCore.Functions.Notify('The delivery was on point, your pager will be updated with the next drop off', 'success', 2500)
+			QBCore.Functions.Notify('La entrega fue puntual, su localizador se actualizará con la próxima entrega', 'success', 2500)
 		else
-			QBCore.Functions.Notify('The drop off failed', 'error', 2500)
+			QBCore.Functions.Notify('La entrega falló', 'error', 2500)
 		end
 	
 		DeleteCreatedPed()
@@ -856,7 +856,7 @@ AddEventHandler("qb-methlab:client:client", function()
 			pedCreated = true
 			DeleteCreatedPed()
 			CreateMethPed()
-			QBCore.Functions.Notify("You are close to the drop off")
+			QBCore.Functions.Notify("Estás cerca de la entrega")
 		end
 		toolong = toolong - 1
 		if toolong <= 0 then
@@ -865,7 +865,7 @@ AddEventHandler("qb-methlab:client:client", function()
 			SetEntityAsNoLongerNeeded(methVehicle)
 			tasking = false
 			MethRun = false
-			QBCore.Functions.Notify('You are no longer selling meth due to taking too long to drop off', 'error', 2500)
+			QBCore.Functions.Notify('Ya no venderas mas metanfetamina debido a que tardas demasiado en entregarla', 'error', 2500)
 			DeleteBlip()
 		end
 		if dstcheck < 2.0 and pedCreated then
@@ -897,19 +897,19 @@ AddEventHandler('qb-drugs:client:sendDeliveryMail', function(type, deliveryData)
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = "Danny",
             subject = "Delivery",
-            message = "Thanks dog lets do some more buisness soon ;)<br><br> Danny"
+            message = "Gracias cerdo, hagamos más negocios pronto.;)<br><br> Danny"
         })
     elseif type == 'bad' then
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = Config.Dealers[deliveryData["dealer"]]["name"],
             subject = "Delivery",
-            message = "I got some complaints about your delivery, don't let this happen again..."
+            message = "Tengo algunas quejas sobre tu entrega, no dejes que esto vuelva a suceder...."
         })
     elseif type == 'late' then
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = Config.Dealers[deliveryData["dealer"]]["name"],
             subject = "Delivery",
-            message = "You were not on time.. Seems like you had something more important to do?"
+            message = "No llegaste a tiempo. Parece que tenías algo más importante que hacer?"
         })
     end
 end)
@@ -923,7 +923,7 @@ Citizen.CreateThread(function()
 
 		if dropOff6 < 1.6 and not MethRun then
 
-			DrawText3Ds(MethWorker["x"],MethWorker["y"],MethWorker["z"], "[E] Delivery Illegal Chemicals (Payment Cash)") 
+			DrawText3Ds(MethWorker["x"],MethWorker["y"],MethWorker["z"], "[E] Entrega de Químicos ilegales (Pago en efectivo)") 
 			if IsControlJustReleased(0,38) then
 				TriggerServerEvent("qb-methlab:server:server")
 				Citizen.Wait(1000)
@@ -964,7 +964,7 @@ Citizen.CreateThread(function()
 			if not DoesEntityExist(methVehicle) or GetVehicleEngineHealth(methVehicle) < 200.0 or GetVehicleBodyHealth(methVehicle) < 200.0 then
 				MethRun = false
 				tasking = false
-				QBCore.Functions.Notify('The dealer isnt giving you anymore locations due to the state of his car', 'error', 3500)
+				QBCore.Functions.Notify('El concesionario no le da más ubicaciones debido al estado de su automóvil', 'error', 3500)
 			else
 				if tasking then
 			        Citizen.Wait(30000)
@@ -972,7 +972,7 @@ Citizen.CreateThread(function()
 			        TriggerEvent("qb-methlab:client:client")  
 				    salecount = salecount + 1
 					if salecount == Config.RunAmount then
-						QBCore.Functions.Notify('You are on your last delivery!', 'error', 3500)
+						QBCore.Functions.Notify('Estás en tu última entrega!', 'error', 3500)
 				    	Citizen.Wait(420000)
 						MethRun = false
 				    end
@@ -1002,13 +1002,13 @@ AddEventHandler("qb-methlab:client:startDealing", function()
 	salecount = 0
 	MethRun = true
 	firstdeal = true
-	QBCore.Functions.Notify('A car has been left outside for you. Your pager will be updated with locations soon', 'success', 2500)
+	QBCore.Functions.Notify('Te han dejado un coche fuera. Su GPS se actualizará con ubicaciones pronto', 'success', 2500)
 	CreateMethVehicle()
 end)
 
 function setMapBlip(x, y)
     SetNewWaypoint(x, y)
-    QBCore.Functions.Notify('The delivery location is marked on your GPS.', 'success');
+    QBCore.Functions.Notify('La ubicación de entrega está marcada en su GPS.', 'success');
 end
 
 function deliveryTimer()
