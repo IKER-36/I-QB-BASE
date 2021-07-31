@@ -40,10 +40,10 @@ AddEventHandler('qb-occasions:server:ReturnVehicle', function(vehicleData)
                 TriggerClientEvent("qb-occasions:client:ReturnOwnedVehicle", src, result[1])
                 TriggerClientEvent('qb-occasion:client:refreshVehicles', -1)
             else
-                TriggerClientEvent('QBCore:Notify', src, 'This is not your vehicle', 'error', 3500)
+                TriggerClientEvent('QBCore:Notify', src, 'Este no es tu vehiculo', 'error', 3500)
             end
         else
-            TriggerClientEvent('QBCore:Notify', src, 'Vehicle does not exist', 'error', 3500)
+            TriggerClientEvent('QBCore:Notify', src, 'El vehículo no existe', 'error', 3500)
         end
     end)
 end)
@@ -56,7 +56,7 @@ AddEventHandler('qb-occasions:server:sellVehicle', function(vehiclePrice, vehicl
     QBCore.Functions.ExecuteSql(true, "INSERT INTO `occasion_vehicles` (`seller`, `price`, `description`, `plate`, `model`, `mods`, `occasionid`) VALUES ('"..Player.PlayerData.citizenid.."', '"..vehiclePrice.."', '"..escapeSqli(vehicleData.desc).."', '"..vehicleData.plate.."', '"..vehicleData.model.."', '"..json.encode(vehicleData.mods).."', '"..generateOID().."')")
     
     TriggerEvent("qb-log:server:sendLog", Player.PlayerData.citizenid, "vehiclesold", {model=vehicleData.model, vehiclePrice=vehiclePrice})
-    TriggerEvent("qb-log:server:CreateLog", "vehicleshop", "Vehicle for Sale", "red", "**"..GetPlayerName(src) .. "** has a " .. vehicleData.model .. " priced at "..vehiclePrice)
+    TriggerEvent("qb-log:server:CreateLog", "vehicleshop", "Vehículo en venta", "red", "**"..GetPlayerName(src) .. "** tiene un " .. vehicleData.model .. " a un precio de "..vehiclePrice)
 
     TriggerClientEvent('qb-occasion:client:refreshVehicles', -1)
 end)
@@ -114,7 +114,7 @@ AddEventHandler('qb-occasions:server:buyVehicle', function(vehicleData)
                 end
 
                 TriggerEvent("qb-log:server:sendLog", Player.PlayerData.citizenid, "vehiclebought", {model = result[1].model, from = SellerCitizenId, moneyType = "cash", vehiclePrice = result[1].price, plate = result[1].plate})
-                TriggerEvent("qb-log:server:CreateLog", "vehicleshop", "bought", "green", "**"..GetPlayerName(src) .. "** has bought for "..result[1].price .. " (" .. result[1].plate .. ") from **"..SellerCitizenId.."**")
+                TriggerEvent("qb-log:server:CreateLog", "vehicleshop", "bought", "green", "**"..GetPlayerName(src) .. "** ha comprado por "..result[1].price .. " (" .. result[1].plate .. ") de **"..SellerCitizenId.."**")
                 TriggerClientEvent("qb-occasions:client:BuyFinished", src, result[1])
                 TriggerClientEvent('qb-occasion:client:refreshVehicles', -1)
             
@@ -122,12 +122,12 @@ AddEventHandler('qb-occasions:server:buyVehicle', function(vehicleData)
                 exports.ghmattimysql:execute('DELETE FROM occasion_vehicles WHERE plate=@plate AND occasionid=@occasionid', {['@plate'] = result[1].plate, ['@occasionid'] = result[1].occasionid})
                 -- Send selling mail to seller
                 TriggerEvent('qb-phone:server:sendNewMailToOffline', SellerCitizenId, {
-                    sender = "Mosleys Occasions",
-                    subject = "You have sold a vehicle!",
-                    message = "The "..QBCore.Shared.Vehicles[result[1].model].name.." has sold for $"..result[1].price.."!"
+                    sender = "Ocasiones Mosleys",
+                    subject = "Has vendido un vehiculo!",
+                    message = "El "..QBCore.Shared.Vehicles[result[1].model].name.." se ha vendido por $"..result[1].price.."!"
                 })
             else
-                TriggerClientEvent('QBCore:Notify', src, 'You dont have enough money', 'error', 3500)
+                TriggerClientEvent('QBCore:Notify', src, 'No tienes suficiente dinero', 'error', 3500)
             end
         end
     end)

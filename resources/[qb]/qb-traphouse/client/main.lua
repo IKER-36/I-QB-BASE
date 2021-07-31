@@ -140,7 +140,7 @@ RegisterNUICallback('EnterPincode', function(d)
     if tonumber(d.pin) == data.pincode then
         EnterTraphouse(data)
     else
-        QBCore.Functions.Notify('This Code Is Incorrect', 'error')
+        QBCore.Functions.Notify('Este código es incorrecto', 'error')
     end
 end)
 
@@ -240,7 +240,7 @@ Citizen.CreateThread(function()
                 if ExitDistance < 20 then
                     inRange = true
                     if ExitDistance < 1 then
-                        DrawText3Ds(data.coords["enter"].x + POIOffsets.exit.x, data.coords["enter"].y + POIOffsets.exit.y, data.coords["enter"].z - Config.MinZOffset + POIOffsets.exit.z, '~b~E~w~ - Leave')
+                        DrawText3Ds(data.coords["enter"].x + POIOffsets.exit.x, data.coords["enter"].y + POIOffsets.exit.y, data.coords["enter"].z - Config.MinZOffset + POIOffsets.exit.z, '~b~E~w~ - Salir')
                         if IsControlJustPressed(0, 38) then
                             LeaveTraphouse(data)
                         end
@@ -252,8 +252,8 @@ Citizen.CreateThread(function()
                     inRange = true
                     if InteractDistance < 1 then
                         if not IsKeyHolder then
-                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z + 0.2, '~b~H~w~ - View Inventory')
-                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z, '~b~E~w~ - Take Over (~g~$5000~w~)')
+                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z + 0.2, '~b~H~w~ - Ver inventario')
+                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z, '~b~E~w~ - Tomar el control (~g~$5000~w~)')
                             if IsControlJustPressed(0, 38) then
                                 TriggerServerEvent('qb-traphouse:server:TakeoverHouse', CurrentTraphouse)
                             end
@@ -265,13 +265,13 @@ Citizen.CreateThread(function()
                                 TriggerServerEvent("inventory:server:OpenInventory", "traphouse", CurrentTraphouse, TraphouseInventory)
                             end
                         else
-                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z + 0.2, '~b~H~w~ - View Inventory')
-                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z, '~b~E~w~ - Take Cash (~g~$'..data.money..'~w~)')
+                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z + 0.2, '~b~H~w~ - Ver inventario')
+                            DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z, '~b~E~w~ - Tomar efectivo (~g~$'..data.money..'~w~)')
                             if IsHouseOwner then
-                                DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z - 0.2, '~b~/multikeys~w~ [id] - To Give Keys')
-                                DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z - 0.4, '~b~G~w~ - See Pin Code')
+                                DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z - 0.2, '~b~/multikeys~w~ [id] - Dar llaves')
+                                DrawText3Ds(data.coords["interaction"].x, data.coords["interaction"].y, data.coords["interaction"].z - 0.4, '~b~G~w~ - Ver código PIN')
                                 if IsControlJustPressed(0, 47) then
-                                    QBCore.Functions.Notify('Pincode: '..data.pincode)
+                                    QBCore.Functions.Notify('Codigo PIN: '..data.pincode)
                                 end
                             end
                             if IsControlJustPressed(0, 74) then
@@ -355,7 +355,7 @@ AddEventHandler('qb-traphouse:client:TakeoverHouse', function(TraphouseId)
     }, {}, {}, {}, function() -- Done
         TriggerServerEvent('qb-traphouse:server:AddHouseKeyHolder', PlayerData.citizenid, TraphouseId, true)
     end, function()
-        QBCore.Functions.Notify("Acquisitions Canceled", "error")
+        QBCore.Functions.Notify("Adquisiciones canceladas", "error")
     end)
 end)
 
@@ -384,12 +384,12 @@ function AddKeyHolder(CitizenId, Traphouse)
                     owner = false,
                 })
             end
-            QBCore.Functions.Notify(CitizenId..' Has Been Added To The Traphouse!')
+            QBCore.Functions.Notify(CitizenId..' Se ha añadido a la Traphouse!')
         else
-            QBCore.Functions.Notify(CitizenId..' This Person Already Has Keys')
+            QBCore.Functions.Notify(CitizenId..' Esta persona ya tiene llaves')
         end
     else
-        QBCore.Functions.Notify('You Can Give Up To 6 People Access To The Trap House!')
+        QBCore.Functions.Notify('Puede otorgar acceso a hasta 6 personas al Trap House!')
     end
     IsKeyHolder = HasKey(CitizenId)
     IsHouseOwner = IsOwner(CitizenId)
