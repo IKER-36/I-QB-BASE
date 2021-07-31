@@ -32,13 +32,13 @@ AddEventHandler("qb-bossmenu:server:withdrawMoney", function(amount)
         Accounts[job] = Accounts[job] - amount
         xPlayer.Functions.AddMoney("cash", amount)
     else
-        TriggerClientEvent('QBCore:Notify', src, "Invaild Amount :/", "error")
+        TriggerClientEvent('QBCore:Notify', src, "Monto invalido :/", "error")
         return
     end
 
     TriggerClientEvent('qb-bossmenu:client:refreshSociety', -1, job, Accounts[job])
     SaveResourceFile(GetCurrentResourceName(), "./database.json", json.encode(Accounts), -1)
-    TriggerEvent('qb-log:server:CreateLog', 'bossmenu', 'Withdraw Money', "Successfully withdrawn $" .. amount .. ' (' .. job .. ')', src)
+    TriggerEvent('qb-log:server:CreateLog', 'bossmenu', 'SACO DINERO', "Saco correctamente $" .. amount .. ' (' .. job .. ')', src)
 end)
 
 RegisterServerEvent("qb-bossmenu:server:depositMoney")
@@ -60,7 +60,7 @@ AddEventHandler("qb-bossmenu:server:depositMoney", function(amount)
 
     TriggerClientEvent('qb-bossmenu:client:refreshSociety', -1, job, Accounts[job])
     SaveResourceFile(GetCurrentResourceName(), "./database.json", json.encode(Accounts), -1)
-    TriggerEvent('qb-log:server:CreateLog', 'bossmenu', 'Deposit Money', "Successfully deposited $" .. amount .. ' (' .. job .. ')', src)
+    TriggerEvent('qb-log:server:CreateLog', 'bossmenu', 'Deposito Dinero', "Deposito correctamente $" .. amount .. ' (' .. job .. ')', src)
 end)
 
 RegisterServerEvent("qb-bossmenu:server:addAccountMoney")
@@ -126,7 +126,7 @@ AddEventHandler("qb-bossmenu:server:openMenu", function()
             TriggerClientEvent('qb-bossmenu:client:refreshSociety', -1, job.name, Accounts[job.name])
         end)
     else
-        TriggerClientEvent('QBCore:Notify', src, "You Don't Have Access", "error")
+        TriggerClientEvent('QBCore:Notify', src, "No tienes acceso", "error")
     end
 end)
 
@@ -141,8 +141,8 @@ AddEventHandler('qb-bossmenu:server:fireEmployee', function(data)
         if xEmployee.Functions.SetJob("unemployed", '0') then
             TriggerEvent('qb-log:server:CreateLog', 'bossmenu', 'Job Fire', "Successfully fired " .. GetPlayerName(xEmployee.PlayerData.source) .. ' (' .. xPlayer.PlayerData.job.name .. ')', src)
 
-            TriggerClientEvent('QBCore:Notify', src, "Fired successfully!", "success")
-            TriggerClientEvent('QBCore:Notify', xEmployee.PlayerData.source , "You got fired.", "success")
+            TriggerClientEvent('QBCore:Notify', src, "¡Disparado con éxito!", "success")
+            TriggerClientEvent('QBCore:Notify', xEmployee.PlayerData.source , "Te despidieron.", "success")
 
             Wait(500)
             local employees = {}
@@ -220,7 +220,7 @@ AddEventHandler('qb-bossmenu:server:fireEmployee', function(data)
                     end
                 end)
             else
-                TriggerClientEvent('QBCore:Notify', src, "Error. Could not find player.", "error")
+                TriggerClientEvent('QBCore:Notify', src, "Error. No pudimos encontrar al jugador.", "error")
             end
         end)
     end
@@ -234,12 +234,12 @@ AddEventHandler('qb-bossmenu:server:giveJob', function(data)
 
     if xPlayer.PlayerData.job.isboss == true then
         if xTarget and xTarget.Functions.SetJob(xPlayer.PlayerData.job.name, 0) then
-            TriggerClientEvent('QBCore:Notify', src, "You recruit " .. (xTarget.PlayerData.charinfo.firstname .. ' ' .. xTarget.PlayerData.charinfo.lastname) .. " to " .. xPlayer.PlayerData.job.label .. ".", "success")
-            TriggerClientEvent('QBCore:Notify', xTarget.PlayerData.source , "You've been recruited to " .. xPlayer.PlayerData.job.label .. ".", "success")
+            TriggerClientEvent('QBCore:Notify', src, "Tu reclutaste " .. (xTarget.PlayerData.charinfo.firstname .. ' ' .. xTarget.PlayerData.charinfo.lastname) .. " a " .. xPlayer.PlayerData.job.label .. ".", "success")
+            TriggerClientEvent('QBCore:Notify', xTarget.PlayerData.source , "Has sido reclutada para " .. xPlayer.PlayerData.job.label .. ".", "success")
             TriggerEvent('qb-log:server:CreateLog', 'bossmenu', 'Recruit', "Successfully recruited " .. (xTarget.PlayerData.charinfo.firstname .. ' ' .. xTarget.PlayerData.charinfo.lastname) .. ' (' .. xPlayer.PlayerData.job.name .. ')', src)
         end
     else
-        TriggerClientEvent('QBCore:Notify', src, "You are not the boss, how did you reach here bitch?!", "error")
+        TriggerClientEvent('QBCore:Notify', src, "Tu no eres el jefe, ¡¿Cómo llegaste aquí perra?!?!", "error")
     end
 end)
 
@@ -322,7 +322,7 @@ AddEventHandler('qb-bossmenu:server:updateGrade', function(data)
                     end
                 end)
             else
-                TriggerClientEvent('QBCore:Notify', src, "Error. Could not find player.", "error")
+                TriggerClientEvent('QBCore:Notify', src, "Error. No pudimos encontrar el jugador.", "error")
             end
         end)
     end
