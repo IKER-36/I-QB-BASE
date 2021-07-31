@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
 
             if dist <= 1 and Config.Registers[k].robbed then
                 inRange = true
-                DrawText3Ds(Config.Registers[k][1].xyz, 'The Cash Register Is Empty')
+                DrawText3Ds(Config.Registers[k][1].xyz, 'La caja registradora está vacía')
             end
         end
         if not inRange then 
@@ -58,7 +58,7 @@ Citizen.CreateThread(function()
                     inRange = true
                     if dist < 1.0 then
                         if not Config.Safes[safe].robbed then
-                            DrawText3Ds(Config.Safes[safe][1].xyz, '~g~E~w~ - Try Combination')
+                            DrawText3Ds(Config.Safes[safe][1].xyz, '~g~E~w~ - Prueba la combinación')
                             if IsControlJustPressed(0, 38) then
                                 if CurrentCops >= Config.MinimumStoreRobberyPolice then
                                     currentSafe = safe
@@ -92,11 +92,11 @@ Citizen.CreateThread(function()
                                         copsCalled = true
                                     end
                                 else
-                                    QBCore.Functions.Notify("Not Enough Police (2 Required)", "error")
+                                    QBCore.Functions.Notify("No hay suficiente policía (se requieren 2)", "error")
                                 end
                             end
                         else
-                            DrawText3Ds(Config.Safes[safe][1].xyz, 'Safe Opened')
+                            DrawText3Ds(Config.Safes[safe][1].xyz, 'Caja fuerte abierta')
                         end
                     end
                 end
@@ -189,7 +189,7 @@ AddEventHandler('lockpicks:UseLockpick', function(isAdvanced)
                 end
                 
             else
-                QBCore.Functions.Notify("Not Enough Police (2 Required)", "error")
+                QBCore.Functions.Notify("No hay suficiente policía (se requieren 2)", "error")
             end
         end
     end
@@ -278,7 +278,7 @@ RegisterNUICallback('success', function()
         TriggerServerEvent('qb-storerobbery:server:setRegisterStatus', currentRegister)
         local lockpickTime = 25000
         LockpickDoorAnim(lockpickTime)
-        QBCore.Functions.Progressbar("search_register", "Emptying The Register..", lockpickTime, false, true, {
+        QBCore.Functions.Progressbar("search_register", "Saqueando la caja registradora...", lockpickTime, false, true, {
             disableMovement = true,
             disableCarMovement = true,
             disableMouse = false,
@@ -295,7 +295,7 @@ RegisterNUICallback('success', function()
         end, function() -- Cancel
             openingDoor = false
             ClearPedTasks(PlayerPedId())
-            QBCore.Functions.Notify("Process canceled..", "error")
+            QBCore.Functions.Notify("Proceso cancelado....", "error")
             currentRegister = 0
         end)
         Citizen.CreateThread(function()
@@ -454,7 +454,7 @@ AddEventHandler('qb-storerobbery:client:robberyCall', function(type, key, street
         PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
         TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
             timeOut = 5000,
-            alertTitle = "10-31 | Shop Robbery",
+            alertTitle = "10-31 | Robo a tienda",
             coords = {
                 x = coords.x,
                 y = coords.y,
@@ -481,7 +481,7 @@ AddEventHandler('qb-storerobbery:client:robberyCall', function(type, key, street
         SetBlipAlpha(blip, transG)
         SetBlipScale(blip, 1.0)
         BeginTextCommandSetBlipName('STRING')
-        AddTextComponentString("10-31 | Shop Robbery")
+        AddTextComponentString("10-31 | Robo a tienda")
         EndTextCommandSetBlipName(blip)
         while transG ~= 0 do
             Wait(180 * 4)
