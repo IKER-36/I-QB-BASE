@@ -45,16 +45,16 @@ Citizen.CreateThread(function()
 			if #(pos - Config.MeltLocation) < 1.5 then
                 if not Config.IsMelting then
                     if Config.CanTake then
-                        DrawText3D(Config.MeltLocation.x, Config.MeltLocation.y, Config.MeltLocation.z, "~g~E~w~ - Grab gold bars")
+                        DrawText3D(Config.MeltLocation.x, Config.MeltLocation.y, Config.MeltLocation.z, "~g~E~w~ - Agarra lingotes de oro")
                         if IsControlJustReleased(0, 38) then
                             TriggerServerEvent("qb-pawnshop:server:getGoldBars")
                         end
                     else
-                        DrawText3D(Config.MeltLocation.x, Config.MeltLocation.y, Config.MeltLocation.z, "~g~E~w~ - Melt Gold Items")
+                        DrawText3D(Config.MeltLocation.x, Config.MeltLocation.y, Config.MeltLocation.z, "~g~E~w~ - Derretir artículos de oro")
                         if IsControlJustReleased(0, 38) then 
                             local waitTime = math.random(10000, 15000)
                             ScrapAnim(1000)
-                            QBCore.Functions.Progressbar("drop_golden_stuff", "Grab Items", 1000, false, true, {
+                            QBCore.Functions.Progressbar("drop_golden_stuff", "Agarrando artículos...", 1000, false, true, {
                                 disableMovement = true,
                                 disableCarMovement = true,
                                 disableMouse = false,
@@ -68,7 +68,7 @@ Citizen.CreateThread(function()
                         end
                     end
                 elseif Config.IsMelting and Config.MeltTime > 0 then
-                    DrawText3D(Config.MeltLocation.x, Config.MeltLocation.y, Config.MeltLocation.z, "Melting: " .. Config.MeltTime..'s')
+                    DrawText3D(Config.MeltLocation.x, Config.MeltLocation.y, Config.MeltLocation.z, "Derritiendo: " .. Config.MeltTime..'s')
                 end
 			end
 		end
@@ -92,11 +92,11 @@ Citizen.CreateThread(function()
 						hasGold = HasPlayerGold()
 						sellItemsSet = true
                     elseif sellItemsSet and hasGold then
-                        DrawText3D(Config.SellGold.x, Config.SellGold.y, Config.SellGold.z, "~g~E~w~ - Sell Gold Bars")
+                        DrawText3D(Config.SellGold.x, Config.SellGold.y, Config.SellGold.z, "~g~E~w~ - Vender lingotes de oro")
                         if IsControlJustReleased(0, 38) then
                             local lockpickTime = 20000
                             ScrapAnim(lockpickTime)
-                            QBCore.Functions.Progressbar("sell_gold", "Selling Gold", lockpickTime, false, true, {
+                            QBCore.Functions.Progressbar("sell_gold", "Vendiendo oro", lockpickTime, false, true, {
                                 disableMovement = true,
                                 disableCarMovement = true,
                                 disableMouse = false,
@@ -112,15 +112,15 @@ Citizen.CreateThread(function()
                             end, function() -- Cancel
                                 openingDoor = false
                                 ClearPedTasks(PlayerPedId())
-                                QBCore.Functions.Notify("Process Canceled", "error")
+                                QBCore.Functions.Notify("Proceso cancelado", "error")
                             end)
                         end
                     else
-                        DrawText3D(Config.SellGold.x, Config.SellGold.y, Config.SellGold.z, "You have no gold on you")
+                        DrawText3D(Config.SellGold.x, Config.SellGold.y, Config.SellGold.z, "No tienes oro en tu body xd")
                     end
                     
                 else
-                    DrawText3D(Config.SellGold.x, Config.SellGold.y, Config.SellGold.z, "Pawnshop Closed")
+                    DrawText3D(Config.SellGold.x, Config.SellGold.y, Config.SellGold.z, "Casa de empeño cerrada")
                 end
 			end
 		end
