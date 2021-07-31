@@ -113,10 +113,10 @@ AddEventHandler('thermite:UseThermite', function()
                     })
                     currentStation = closestStation
                 else
-                    QBCore.Functions.Notify("It seems that the fuses have blown.", "error")
+                    QBCore.Functions.Notify("Parece que los fusibles han explotado..", "error")
                 end
             else
-                QBCore.Functions.Notify('Minimum Of '..Config.MinimumThermitePolice..' Police Needed', "error")
+                QBCore.Functions.Notify('Se necesitan mínimo '..Config.MinimumThermitePolice..' pulisias', "error")
             end
         end
     elseif currentThermiteGate ~= 0 then
@@ -134,7 +134,7 @@ AddEventHandler('thermite:UseThermite', function()
                 amount = math.random(5, 10),
             })
         else
-            QBCore.Functions.Notify('Minimum Of '..Config.MinimumThermitePolice..' Police Needed', "error")
+            QBCore.Functions.Notify('Se necesitan mínimo '..Config.MinimumThermitePolice..' pulisias', "error")
         end
     end
 end)
@@ -163,17 +163,17 @@ RegisterNUICallback('thermitesuccess', function()
     local time = 3
     local coords = GetEntityCoords(PlayerPedId())
     while time > 0 do 
-        QBCore.Functions.Notify("Thermite is going off in " .. time .. "..")
+        QBCore.Functions.Notify("La termita se apaga en " .. time .. "..")
         Citizen.Wait(1000)
         time = time - 1
     end
     local randTime = math.random(10000, 15000)
     CreateFire(coords, randTime)
     if currentStation ~= 0 then
-        QBCore.Functions.Notify("The fuses are broken", "success")
+        QBCore.Functions.Notify("Los fusibles están rotos", "success")
         TriggerServerEvent("qb-bankrobbery:server:SetStationStatus", currentStation, true)
     elseif currentGate ~= 0 then
-        QBCore.Functions.Notify("The door is open", "success")
+        QBCore.Functions.Notify("La puerta está abierta", "success")
         TriggerServerEvent('qb-doorlock:server:updateState', currentGate, false)
         currentGate = 0
     end
