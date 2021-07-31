@@ -326,7 +326,7 @@ Citizen.CreateThread(function()
             SetBlipScale  (clothingShop, 0.7)
             SetBlipAsShortRange(clothingShop, true)
             BeginTextCommandSetBlipName("STRING")
-            AddTextComponentString("Clothing store")
+            AddTextComponentString("Tienda de ropa")
             EndTextCommandSetBlipName(clothingShop)
         end
         
