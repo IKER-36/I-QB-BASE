@@ -32,7 +32,7 @@ AddEventHandler("qb-bossmenu:server:withdrawMoney", function(amount)
         Accounts[job] = Accounts[job] - amount
         xPlayer.Functions.AddMoney("cash", amount)
     else
-        TriggerClientEvent('QBCore:Notify', src, "Monto invalido :/", "error")
+        TriggerClientEvent('QBCore:Notify', src, "Cantidad invalido Zoquete :/", "error")
         return
     end
 
