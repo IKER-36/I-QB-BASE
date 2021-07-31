@@ -176,7 +176,7 @@ $( function() {
                 var currentVal = $('#pinCode').val();
                 if (currentVal == clientPin) {
                     $('#errorMsg').addClass('alert-info').removeClass('alert-danger');
-                    $('#errorMsg').html('Please enter your debit card pin, to access the ATM.');
+                    $('#errorMsg').html('Ingrese el PIN de su tarjeta de débito para acceder al cajero automático.');
                     $('#pinCode').val('');
                     $.post("https://qb-atms/loadBankingAccount", JSON.stringify({
                         cid: clientCid,
@@ -185,10 +185,10 @@ $( function() {
                 } else {
                     $('#pinCode').val('');
                     $('#errorMsg').removeClass('alert-info').addClass('alert-danger');
-                    $('#errorMsg').html('You have entered an incorrect pin, please try again.')
+                    $('#errorMsg').html('Has introducido un PIN incorrecto, vuelve a intentarlo.')
                     setTimeout(function(){ 
                         $('#errorMsg').addClass('alert-info').removeClass('alert-danger');
-                        $('#errorMsg').html('Please enter your debit card pin, to access the ATM.');
+                        $('#errorMsg').html('Ingrese el PIN de su tarjeta de débito para acceder al cajero automático.');
                     }, 5000);
                 }
             } else if (number == "CLEAR") {

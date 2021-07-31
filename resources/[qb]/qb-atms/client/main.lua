@@ -113,7 +113,7 @@ AddEventHandler('qb-atms:client:loadATM', function(cards)
             if atm then 
                 local obj = GetClosestObjectOfType(playerCoords.x, playerCoords.y, playerCoords.z, 2.0, hash, false, false, false)
                 local atmCoords = GetEntityCoords(obj, false)
-                QBCore.Functions.Progressbar("accessing_atm", "Accessing ATM", 1500, false, true, {
+                QBCore.Functions.Progressbar("accessing_atm", "Accediendo al cajero", 1500, false, true, {
                     disableMovement = false,
                     disableCarMovement = false,
                     disableMouse = false,
@@ -125,12 +125,12 @@ AddEventHandler('qb-atms:client:loadATM', function(cards)
                         cards = cards,
                     })
                 end, function()
-                    QBCore.Functions.Notify("Failed!", "error")
+                    QBCore.Functions.Notify("Ha Fallado!", "error")
                 end)
             end
         end     
     else
-        QBCore.Functions.Notify("You do not have a debit card to pay with, please visit a branch to order a card. or ensure one is on your person.", "error")
+        QBCore.Functions.Notify("No tiene una tarjeta de débito para pagar, visite una sucursal para solicitar una tarjeta. o asegúrese de que haya uno en su persona.", "error")
     end
 end)
 
@@ -141,9 +141,9 @@ RegisterNUICallback("removeCard", function(data, cb)
             SendNUIMessage({
                 status = "closeATM"
             })
-            QBCore.Functions.Notify('Card has deleted.', 'success')
+            QBCore.Functions.Notify('La tarjeta se ha eliminado.', 'success')
         else
-            QBCore.Functions.Notify('Failed to delete card.', 'error')
+            QBCore.Functions.Notify('No se pudo borrar la tarjeta.', 'error')
         end
     end, data)
 end)
