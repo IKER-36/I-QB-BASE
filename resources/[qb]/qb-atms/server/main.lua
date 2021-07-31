@@ -104,7 +104,7 @@ Citizen.CreateThread(function()
     while true do
         Wait(3600000)
         dailyWithdraws = {}
-        TriggerClientEvent('QBCore:Notify', -1, "Daily Withdraw Limit Reset", "success")
+        TriggerClientEvent('QBCore:Notify', -1, "Restablecido el límite de retiro diario", "success")
     end
 end)
 
@@ -131,9 +131,9 @@ AddEventHandler('qb-atms:server:doAccountWithdraw', function(data)
                     xCH.Functions.RemoveMoney('bank', tonumber(data.amount))
                     xPlayer.Functions.AddMoney('cash', tonumber(data.amount))
                     dailyWithdraws[cardHolder] = dailyWithdraws[cardHolder] + tonumber(data.amount)
-                    TriggerClientEvent('QBCore:Notify', src, "Withdraw $" .. data.amount .. ' from credit card. Daily Withdraws: ' .. dailyWithdraws[cardHolder], "success")
+                    TriggerClientEvent('QBCore:Notify', src, "Has retirado $" .. data.amount .. ' de tu tarjeta de crédito. Retiros diarios: ' .. dailyWithdraws[cardHolder], "success")
                 else
-                    TriggerClientEvent('QBCore:Notify', src, "You cant go into minus in ATM.", "error")
+                    TriggerClientEvent('QBCore:Notify', src, "No puedes entrar en menos en un cajero automático.", "error")
                 end
 
                 banking['online'] = true
@@ -150,9 +150,9 @@ AddEventHandler('qb-atms:server:doAccountWithdraw', function(data)
                         xCH.money.bank = bankCount
                         exports.ghmattimysql:execute('UPDATE players SET money=@money WHERE citizenid=@citizenid', {['@money'] = xCH.money, ['@citizenid'] = cardHolder})
                         dailyWithdraws[cardHolder] = dailyWithdraws[cardHolder] + tonumber(data.amount)
-                        TriggerClientEvent('QBCore:Notify', src, "Withdraw $" .. data.amount .. ' from credit card. Daily Withdraws: ' .. dailyWithdraws[cardHolder], "success")
+                        TriggerClientEvent('QBCore:Notify', src, "Has retirado $" .. data.amount .. ' de tu tarjeta de crédito. Retiros diarios: ' .. dailyWithdraws[cardHolder], "success")
                     else
-                        TriggerClientEvent('QBCore:Notify', src, "You cant go into minus in ATM.", "error")
+                        TriggerClientEvent('QBCore:Notify', src, "No puedes entrar en menos en un cajero automático..", "error")
                     end
 
                     banking['online'] = false
@@ -164,7 +164,7 @@ AddEventHandler('qb-atms:server:doAccountWithdraw', function(data)
             end
             TriggerClientEvent('qb-atms:client:updateBankInformation', src, banking)
         else
-            TriggerClientEvent('QBCore:Notify', src, "You have reached the daily limit.", "error")
+            TriggerClientEvent('QBCore:Notify', src, "Has alcanzado el límite diario.", "error")
         end
     end
 end)
