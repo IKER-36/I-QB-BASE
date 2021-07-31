@@ -45,13 +45,13 @@ AddEventHandler('qb-methlab:server:loadIngredients', function()
                 TriggerClientEvent("qb-methlab:client:loadIngredients", source)
 
             else
-                TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+                TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
             end
         else
-            TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+            TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
         end
 	else
-		TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
+		TriggerClientEvent('QBCore:Notify', source, "No tienes nada...", "error")
 	end 
 	
 end) 
@@ -66,10 +66,10 @@ AddEventHandler('qb-methlab:server:breakMeth', function()
         if (meth ~= nil or puremethtray ~= nil) then 
                 TriggerClientEvent("qb-methlab:client:breakMeth", source)
         else
-            TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+            TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
         end
 	else
-		TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
+		TriggerClientEvent('QBCore:Notify', source, "No tienes nada...", "error")
 	end
 	
 end)
@@ -144,7 +144,7 @@ AddEventHandler('qb-methlab:server:getmethtray', function(amount)
             TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['methtray'], "remove")
         end
     else
-        TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+        TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
     end
 
 end)
@@ -179,7 +179,7 @@ AddEventHandler('qb-methlab:server:itemReward', function(spot)
     if Player.Functions.AddItem(item.name, item.amount) then
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.name], 'add')
     else
-        TriggerClientEvent('QBCore:Notify', src, 'You have to much in your pocket ..', 'error')
+        TriggerClientEvent('QBCore:Notify', src, 'Tienes mucho en tu bolsillo ..', 'error')
     end    
 end)
 
