@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
             inRange = true
 
             if distance < 2 then
-                DrawText3Ds(-331.77, -2444.70, 7.36, "[G] Process Coca Leaf")
+                DrawText3Ds(-331.77, -2444.70, 7.36, "[G] Procesar hoja de coca")
                 if IsControlJustPressed(0, 47) then
                     TriggerServerEvent("qb-coke:server:grindleaves")
 
@@ -64,7 +64,7 @@ Citizen.CreateThread(function()
             inRange = true
 
             if distance1 < 2 then
-                DrawText3Ds(509.89, 6478.76, 29.77, "[G] Start Picking")
+                DrawText3Ds(509.89, 6478.76, 29.77, "[G] Empiece a recoger")
                 if IsControlJustPressed(0, 47) then
                     PrepareAnim()
                     PickMinigame()
@@ -72,7 +72,7 @@ Citizen.CreateThread(function()
             end
 
             if distance2 < 2 then
-                DrawText3Ds(509.47, 6472.89, 29.77, "[G] Start Picking")
+                DrawText3Ds(509.47, 6472.89, 29.77, "[G] Empiece a recoger")
                 if IsControlJustPressed(0, 47) then
                     PrepareAnim()
                     PickMinigame()
@@ -80,7 +80,7 @@ Citizen.CreateThread(function()
             end
 
             if distance3 < 2 then
-                DrawText3Ds(509.47, 6467.10, 29.74, "[G] Start Picking")
+                DrawText3Ds(509.47, 6467.10, 29.74, "[G] Empiece a recoger")
                 if IsControlJustPressed(0, 47) then
                     PrepareAnim()
                     PickMinigame()
@@ -109,7 +109,7 @@ Citizen.CreateThread(function()
             inRange = true
 
             if distance < 2 then
-                DrawText3Ds(-1078.21, -1678.42, 4.57, "[G] Process Crack")
+                DrawText3Ds(-1078.21, -1678.42, 4.57, "[G] Procesar Crack")
                 if IsControlJustPressed(0, 47) then
                     TriggerServerEvent("qb-coke:server:processCrack")
                 end
@@ -140,7 +140,7 @@ Citizen.CreateThread(function()
             inRange = true
 
             if distance1 < 2 then
-                DrawText3Ds(509.89, 6478.76, 29.77, "[G] Start Picking")
+                DrawText3Ds(509.89, 6478.76, 29.77, "[G] Empiece a recoger")
                 if IsControlJustPressed(0, 47) then
                     PrepareAnim()
                     PickMinigame()
@@ -148,7 +148,7 @@ Citizen.CreateThread(function()
             end
 
             if distance2 < 2 then
-                DrawText3Ds(509.47, 6472.89, 29.77, "[G] Start Picking")
+                DrawText3Ds(509.47, 6472.89, 29.77, "[G] Empiece a recoger")
                 if IsControlJustPressed(0, 47) then
                     PrepareAnim()
                     PickMinigame()
@@ -156,7 +156,7 @@ Citizen.CreateThread(function()
             end
 
             if distance3 < 2 then
-                DrawText3Ds(509.47, 6467.10, 29.74, "[G] Start Picking")
+                DrawText3Ds(509.47, 6467.10, 29.74, "[G] Empiece a recoger")
                 if IsControlJustPressed(0, 47) then
                     PrepareAnim()
                     PickMinigame()
@@ -184,7 +184,7 @@ AddEventHandler('qb-coke:client:processCrack', function(source)
 end)
 
 function pickProcess()
-    QBCore.Functions.Progressbar("grind_coke", "Picking Coca Leaves ..", math.random(80000,120000), false, true, {
+    QBCore.Functions.Progressbar("grind_coke", "Recogiendo hojas de coca ..", math.random(80000,120000), false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -196,12 +196,12 @@ function pickProcess()
     end, function() -- Cancel
         openingDoor = false
         ClearPedTasks(PlayerPedId())
-        QBCore.Functions.Notify("Process Canceled", "error")
+        QBCore.Functions.Notify("Proceso Cancelado", "error")
     end)
 end
 
 function cokeProcess()
-    QBCore.Functions.Progressbar("grind_coke", "Process Coke Leaves ..", math.random(10000, 12000), false, true, {
+    QBCore.Functions.Progressbar("grind_coke", "Recogiendo hojas de coca ..", math.random(10000, 12000), false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -213,12 +213,12 @@ function cokeProcess()
     end, function() -- Cancel
         openingDoor = false
         ClearPedTasks(PlayerPedId())
-        QBCore.Functions.Notify("Process Canceled", "error")
+        QBCore.Functions.Notify("Proceso Cancelado", "error")
     end)
 end
 
 function crackProcess()
-    QBCore.Functions.Progressbar("grind_coke", "Process Crack ..", math.random(10000, 12000), false, true, {
+    QBCore.Functions.Progressbar("grind_coke", "Procesar Crack ..", math.random(10000, 12000), false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -230,7 +230,7 @@ function crackProcess()
     end, function() -- Cancel
         openingDoor = false
         ClearPedTasks(PlayerPedId())
-        QBCore.Functions.Notify("Process Canceled", "error")
+        QBCore.Functions.Notify("Proceso Cancelado", "error")
     end)
 end
 
@@ -252,7 +252,7 @@ function PickMinigame()
 
         if SucceededAttempts + 1 >= NeededAttempts then
             pickProcess()
-            QBCore.Functions.Notify("You picked a coca leaf", "success")
+            QBCore.Functions.Notify("Recogiste una hoja de coca", "success")
             FailedAttemps = 0
             SucceededAttempts = 0
             NeededAttempts = 0
@@ -268,7 +268,7 @@ function PickMinigame()
         
 	end, function()
 
-            QBCore.Functions.Notify("You messed up the coca leaf!", "error")
+            QBCore.Functions.Notify("Arruinaste la hoja de coca!", "error")
             FailedAttemps = 0
             SucceededAttempts = 0
             NeededAttempts = 0
@@ -295,7 +295,7 @@ function ProcessMinigame(source)
 
         if SucceededAttempts + 1 >= NeededAttempts then
             cokeProcess()
-            QBCore.Functions.Notify("You make some coke!", "success")
+            QBCore.Functions.Notify("Haz hecho algo de coca!", "success")
             FailedAttemps = 0
             SucceededAttempts = 0
             NeededAttempts = 0
@@ -311,7 +311,7 @@ function ProcessMinigame(source)
         
 	end, function()
 
-            QBCore.Functions.Notify("You messed up the process!", "error")
+            QBCore.Functions.Notify("Arruinaste el proceso!", "error")
             FailedAttemps = 0
             SucceededAttempts = 0
             NeededAttempts = 0
@@ -338,7 +338,7 @@ function ProcessCrackMinigame(source)
 
         if SucceededAttempts + 1 >= NeededAttempts then
             crackProcess()
-            QBCore.Functions.Notify("You make some crack!", "success")
+            QBCore.Functions.Notify("Haz hecho algo de crack!", "success")
             FailedAttemps = 0
             SucceededAttempts = 0
             NeededAttempts = 0
@@ -354,7 +354,7 @@ function ProcessCrackMinigame(source)
         
 	end, function()
 
-            QBCore.Functions.Notify("You messed up the process!", "error")
+            QBCore.Functions.Notify("Arruinaste el proceso!", "error")
             FailedAttemps = 0
             SucceededAttempts = 0
             NeededAttempts = 0
@@ -476,7 +476,7 @@ function knockDoorAnim(home)
         TaskPlayAnim(PlayerPed, knockAnimLib, "exit", 3.0, 3.0, -1, 1, 0, false, false, false)
         knockingDoor = false
         Citizen.Wait(1000)
-        QBCore.Functions.Notify('It seems that no one is home..', 'error', 3500)
+        QBCore.Functions.Notify('Parece que no hay nadie en casa..', 'error', 3500)
     end
 end
 

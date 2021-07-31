@@ -23,12 +23,12 @@ AddEventHandler('qb-coke:server:grindleaves', function()
 
                         TriggerClientEvent("qb-coke:client:grindleavesMinigame", src)
                     else
-                        TriggerClientEvent('QBCore:Notify', src, "You dont have enough coca leaves", 'error')
+                        TriggerClientEvent('QBCore:Notify', src, "No tienes suficientes hojas de coca", 'error')
                         break
                     end
                 end
             else
-                TriggerClientEvent('QBCore:Notify', src, "You do not have coca leaf", 'error')
+                TriggerClientEvent('QBCore:Notify', src, "No tienes hojas de coca", 'error')
                 break
             end
         end
@@ -51,16 +51,16 @@ AddEventHandler('qb-coke:server:processCrack', function()
 
                     TriggerClientEvent("qb-coke:client:processCrack", src)
                 else
-                    TriggerClientEvent('QBCore:Notify', src, "You do not have the correct items", 'error')   
+                    TriggerClientEvent('QBCore:Notify', src, "No tienes los objetos correctos", 'error')   
                 end
             else
-                TriggerClientEvent('QBCore:Notify', src, "You do not have the correct items", 'error')   
+                TriggerClientEvent('QBCore:Notify', src, "No tienes los objetos correctos", 'error')   
             end
         else
-            TriggerClientEvent('QBCore:Notify', src, "You Have Nothing...", "error")
+            TriggerClientEvent('QBCore:Notify', src, "No tienes nada...", "error")
         end
     else
-        TriggerClientEvent('QBCore:Notify', src, "You might need to talk to a gang member...", 'error')   
+        TriggerClientEvent('QBCore:Notify', src, "Es posible que deba hablar con un miembro de una pandilla...", 'error')   
         
     end
 end)
@@ -79,20 +79,20 @@ AddEventHandler('qb-coke:server:cokesell', function()
                         local random = math.random(50, 65)
                         local amount = Player.PlayerData.items[k].amount * random
 
-                        TriggerClientEvent('chatMessage', source, "Dealer Johnny", "normal", 'Yo '..Player.PlayerData.firstname..', damn you got '..Player.PlayerData.items[k].amount..'bags of coke')
-                        TriggerClientEvent('chatMessage', source, "Dealer Johnny", "normal", 'Ill buy all of it for $'..amount )
+                        TriggerClientEvent('chatMessage', source, "Camello Johnny", "normal", 'Tu '..Player.PlayerData.firstname..', maldita sea que tienes '..Player.PlayerData.items[k].amount..'bolsas de coca')
+                        TriggerClientEvent('chatMessage', source, "Camello Johnny", "normal", 'Lo compraré todo por $'..amount )
 
                         Player.Functions.RemoveItem("cokebaggy", Player.PlayerData.items[k].amount)
                         TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['cokebaggy'], "remove")
                         Player.Functions.AddMoney("cash", amount)
                         break
                     else
-                        TriggerClientEvent('QBCore:Notify', src, "You do not have coke", 'error')
+                        TriggerClientEvent('QBCore:Notify', src, "No tienes coca", 'error')
                         break
                     end
                 end
             else
-                TriggerClientEvent('QBCore:Notify', src, "You do not have coke", 'error')
+                TriggerClientEvent('QBCore:Notify', src, "No tienes coca", 'error')
                 break
             end
         end
