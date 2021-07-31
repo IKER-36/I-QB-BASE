@@ -14,6 +14,6 @@ Config.OxyAmount = 4 -- How much oxy you get when RN Jesus gives you oxy. Defaul
 Config.BigRewarditemChance = 500 -- Percentage of getting rare item on oxy run. Multiplied by 100. 0.1% = 1, 1% = 10, 20% = 200, 50% = 500, etc. Default 0.1%.
 Config.BigRewarditem = "lockpick" -- Put a rare item here which will have 0.1% chance of being given on the run.
 
-Config.OxyCars = "CHECK THE CODE" -- Cars
+Config.OxyCars = "CONSULTA EL CÓDIGO" -- Cars
 
-Config.DropOffs = "CHECK THE CODE" -- Drop off spots
+Config.DropOffs = "CONSULTA EL CÓDIGO" -- Drop off spots
