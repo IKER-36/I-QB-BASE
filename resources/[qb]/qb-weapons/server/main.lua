@@ -97,7 +97,7 @@ AddEventHandler('weapons:server:UpdateWeaponQuality', function(data, RepeatAmoun
                     else
                         WeaponSlot.info.quality = 0
                         TriggerClientEvent('inventory:client:UseWeapon', src, data)
-                        TriggerClientEvent('QBCore:Notify', src, "Your weapon is broken, you need to repair it before you can use it again.", "error")
+                        TriggerClientEvent('QBCore:Notify', src, "Tu arma está rota, debes repararla antes de poder usarla nuevamente.", "error")
                         break
                     end
                 end
@@ -109,7 +109,7 @@ AddEventHandler('weapons:server:UpdateWeaponQuality', function(data, RepeatAmoun
                     else
                         WeaponSlot.info.quality = 0
                         TriggerClientEvent('inventory:client:UseWeapon', src, data)
-                        TriggerClientEvent('QBCore:Notify', src, "Your weapon is broken, you need to repair it before you can use it again.", "error")
+                        TriggerClientEvent('QBCore:Notify', src, "Tu arma está rota, debes repararla antes de poder usarla nuevamente.", "error")
                         break
                     end
                 end
@@ -120,7 +120,7 @@ AddEventHandler('weapons:server:UpdateWeaponQuality', function(data, RepeatAmoun
     Player.Functions.SetInventory(Player.PlayerData.items, true)
 end)
 
-QBCore.Commands.Add("repairweapon", "Repair Weapon (God Only)", {{name="hp", help="HP of ur weapon"}}, true, function(source, args)
+QBCore.Commands.Add("repairweapon", "Reparar arma (God solo)", {{name="hp", help="HP of ur weapon"}}, true, function(source, args)
     TriggerClientEvent('weapons:client:SetWeaponQuality', source, tonumber(args[1]))
 end, "god")
 
@@ -163,9 +163,9 @@ QBCore.Functions.CreateCallback("weapons:server:RepairWeapon", function(source, 
                         Config.WeaponRepairPoints[RepairPoint].RepairingData.Ready = true
                         TriggerClientEvent('weapons:client:SyncRepairShops', -1, Config.WeaponRepairPoints[RepairPoint], RepairPoint)
                         TriggerEvent('qb-phone:server:sendNewMailToOffline', Player.PlayerData.citizenid, {
-                            sender = "Tyrone",
-                            subject = "Reperatie",
-                            message = "Your "..WeaponData.label.." is repaid u can pick it up at the location. <br><br> Peace out madafaka"
+                            sender = "Pepito",
+                            subject = "Reparacion",
+                            message = "Tu "..WeaponData.label.." se reembolsa u puede recogerlo en la ubicación. <br><br> Ven con paz cabroncete"
                         })
                         SetTimeout(7 * 60000, function()
                             if Config.WeaponRepairPoints[RepairPoint].RepairingData.Ready then
@@ -180,15 +180,15 @@ QBCore.Functions.CreateCallback("weapons:server:RepairWeapon", function(source, 
                     cb(false)
                 end
             else
-                TriggerClientEvent("QBCore:Notify", src, "This weapon is not dammaged..", "error")
+                TriggerClientEvent("QBCore:Notify", src, "Esta arma no está dañada.", "error")
                 cb(false)
             end
         else
-            TriggerClientEvent("QBCore:Notify", src, "This weapon is not dammaged..", "error")
+            TriggerClientEvent("QBCore:Notify", src, "Esta arma no está dañada.", "error")
             cb(false)
         end
     else
-        TriggerClientEvent('QBCore:Notify', src, "You diddent have a weapon in ur hands..", "error")
+        TriggerClientEvent('QBCore:Notify', src, "No tenías un arma en tus manos ...", "error")
         TriggerClientEvent('weapons:client:SetCurrentWeapon', src, {}, false)
         cb(false)
     end
@@ -316,7 +316,7 @@ AddEventHandler("weapons:server:EquipAttachment", function(ItemData, CurrentWeap
                     TriggerClientEvent('inventory:client:ItemBox', src, ItemData, "remove")
                 end)
             else
-                TriggerClientEvent("QBCore:Notify", src, "You already have "..AttachmentData.label:lower().." on your weapon.", "error", 3500)
+                TriggerClientEvent("QBCore:Notify", src, "Ya tienes "..AttachmentData.label:lower().." en tu arma.", "error", 3500)
             end
         else
             Inventory[CurrentWeaponData.slot].info.attachments = {}
@@ -353,7 +353,7 @@ QBCore.Functions.CreateCallback('weapons:server:RemoveAttachment', function(sour
                 Player.Functions.SetInventory(Player.PlayerData.items, true)
                 Player.Functions.AddItem(AttachmentComponent.item, 1)
                 TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[AttachmentComponent.item], "add")
-                TriggerClientEvent("QBCore:Notify", src, "You removed "..AttachmentComponent.label.." from your weapon!", "error")
+                TriggerClientEvent("QBCore:Notify", src, "Tu removiste "..AttachmentComponent.label.." de tu arma! :D", "error")
                 cb(Inventory[ItemData.slot].info.attachments)
             else
                 cb(false)
