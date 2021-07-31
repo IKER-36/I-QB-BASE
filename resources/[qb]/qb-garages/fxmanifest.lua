@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Garages'
+description 'QB-CORE GARAGES TRANSLATED BY CherryozZ#0420 COLABORATING IN I-QB PROJECT'
 version '1.0.0'
 
 shared_scripts { 
