@@ -2234,8 +2234,8 @@
         getOutputDestination(logLevel) { return 0 != (this.defaultConfig.logLevel & 1 << logLevel) ? OutputDestination.FileAndConsole : OutputDestination.File }
         error(msg, options = {}) { this.log(msg, { color: Color.Error, output: this.getOutputDestination(logger_logLevel.Error), level: "ERROR", ...options }) }
         info(msg, options = {}) { this.log(msg, { color: Color.Info, output: this.getOutputDestination(logger_logLevel.Info), level: "INFO", ...options }) }
-        success(msg, options = {}) { this.log(msg, { color: Color.Success, output: this.getOutputDestination(logger_logLevel.Success), level: "SUCCESS", ...options }) }
-        warning(msg, options = {}) { this.log(msg, { color: Color.Warning, output: this.getOutputDestination(logger_logLevel.Warning), level: "WARNING", ...options }) }
+        success(msg, options = {}) { this.log(msg, { color: Color.Success, output: this.getOutputDestination(logger_logLevel.Success), level: "EXITO", ...options }) }
+        warning(msg, options = {}) { this.log(msg, { color: Color.Warning, output: this.getOutputDestination(logger_logLevel.Warning), level: "AVISO", ...options }) }
     };
     const defaultProfilerConfig = { slowQueryWarningTime: 100, slowestQueries: 21, timeInterval: 3e5 };
 
@@ -2256,7 +2256,7 @@
                 this.profiles.slowQueries = this.profiles.slowQueries.filter(sq => sq.queryTime !== min), this.slowQueryLimit = this.getFastestSlowQuery
             }
         }
-        setVersion({ versionPrefix, version }) { version.startsWith("8.0.") && "MySQL" === versionPrefix && this.logger.warning("It is recommended to run MySQL 5 or MariaDB with mysql-async. You may experience performance issues under load by using MySQL 8."), this.version = `${versionPrefix}:${version}` }
+        setVersion({ versionPrefix, version }) { version.startsWith("8.0.") && "MySQL" === versionPrefix && this.logger.warning("Se recomienda usar MySQL 5 o MariaDB con mysql-async. Puede experimentar problemas de rendimiento bajo utilizando MySQL 8."), this.version = `${versionPrefix}:${version}` }
         fillExecutionTimes(interval) { for (let i = 0; i < interval; i += 1) this.profiles.executionTimes[i] || (this.profiles.executionTimes[i] = { totalExecutionTime: 0, queryCount: 0 }) }
         profile(time, sql, resource) {
             const interval = Math.floor((Date.now() - this.startTime) / this.config.timeInterval),
