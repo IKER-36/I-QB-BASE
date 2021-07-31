@@ -83,12 +83,12 @@ Citizen.CreateThread(function()
                                 inRange = true
                                 DrawMarker(2, Config.BigBanks["pacific"]["lockers"][k].x, Config.BigBanks["pacific"]["lockers"][k].y, Config.BigBanks["pacific"]["lockers"][k].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.05, 255, 255, 255, 255, false, false, false, 1, false, false, false)
                                 if lockerDist < 0.5 then
-                                    DrawText3Ds(Config.BigBanks["pacific"]["lockers"][k].x, Config.BigBanks["pacific"]["lockers"][k].y, Config.BigBanks["pacific"]["lockers"][k].z + 0.3, '[E] Break open the safe')
+                                    DrawText3Ds(Config.BigBanks["pacific"]["lockers"][k].x, Config.BigBanks["pacific"]["lockers"][k].y, Config.BigBanks["pacific"]["lockers"][k].z + 0.3, '[E] Revienta la cafa fuerte')
                                     if IsControlJustPressed(0, 38) then
                                         if CurrentCops >= Config.MinimumPacificPolice then
                                             openLocker("pacific", k)
                                         else
-                                            QBCore.Functions.Notify('Minimum Of '..Config.MinimumPacificPolice..' Police Needed', "error")
+                                            QBCore.Functions.Notify('Se necesitan mínimo '..Config.MinimumPacificPolice..' pulisias', "error")
                                         end
                                     end
                                 end
@@ -155,7 +155,7 @@ AddEventHandler('electronickit:UseElectronickit', function()
                             QBCore.Functions.TriggerCallback('QBCore:HasItem', function(result)
                                 if result then 
                                     TriggerEvent('inventory:client:requiredItems', requiredItems, false)
-                                    QBCore.Functions.Progressbar("hack_gate", "Connecting the hacking device ..", math.random(5000, 10000), false, true, {
+                                    QBCore.Functions.Progressbar("hack_gate", "Conectando el dispositivo de piratería. ..", math.random(5000, 10000), false, true, {
                                         disableMovement = true,
                                         disableCarMovement = true,
                                         disableMouse = false,
@@ -188,21 +188,21 @@ AddEventHandler('electronickit:UseElectronickit', function()
                                         end
                                     end, function() -- Cancel
                                         StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
-                                        QBCore.Functions.Notify("Canceled", "error")
+                                        QBCore.Functions.Notify("Cancelado", "error")
                                     end)
                                 else
-                                    QBCore.Functions.Notify("You're missing an item ..", "error")
+                                    QBCore.Functions.Notify("Te falta algún objeto ..", "error")
                                 end
                             end, "trojan_usb")
                         else
-                            QBCore.Functions.Notify("Looks like the bank is already open", "error")
+                            QBCore.Functions.Notify("Parece que el banco ya está abierto", "error")
                         end
                     else
-                        QBCore.Functions.Notify('Minimum Of '..Config.MinimumPacificPolice..' Police Needed', "error")
+                        QBCore.Functions.Notify('Se necesitan mínimo '..Config.MinimumPacificPolice..' pulisias', "error")
                     end
                 end
             else
-                QBCore.Functions.Notify("The security lock is active, opening the door is currently not possible.", "error", 5500)
+                QBCore.Functions.Notify("El bloqueo de seguridad está activo, la apertura de la puerta no es actualmente posible.", "error", 5500)
             end
         end)
     end
@@ -222,7 +222,7 @@ AddEventHandler('qb-bankrobbery:UseBankcardB', function()
                 if CurrentCops >= Config.MinimumPacificPolice then
                     if not Config.BigBanks["pacific"]["isOpened"] then 
                         TriggerEvent('inventory:client:requiredItems', requiredItems2, false)
-                        QBCore.Functions.Progressbar("security_pass", "Please validate ..", math.random(5000, 10000), false, true, {
+                        QBCore.Functions.Progressbar("security_pass", "Por favor valide ..", math.random(5000, 10000), false, true, {
                             disableMovement = true,
                             disableCarMovement = true,
                             disableMouse = false,
@@ -250,16 +250,16 @@ AddEventHandler('qb-bankrobbery:UseBankcardB', function()
                             end
                         end, function() -- Cancel
                             StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
-                            QBCore.Functions.Notify("Canceled..", "error")
+                            QBCore.Functions.Notify("Cancelado..", "error")
                         end)
                     else
-                        QBCore.Functions.Notify("Looks like the bank is already open ..", "error")
+                        QBCore.Functions.Notify("Parece que el banco ya está abierto ..", "error")
                     end
                 else
-                    QBCore.Functions.Notify('Minimum Of '..Config.MinimumPacificPolice..' Police Needed', "error")
+                    QBCore.Functions.Notify('Se necesitan mínimo '..Config.MinimumPacificPolice..' pulisias', "error")
                 end
             else
-                QBCore.Functions.Notify("The security lock is active, opening the door is currently not possible.", "error", 5500)
+                QBCore.Functions.Notify("El bloqueo de seguridad está activo, la apertura de la puerta no es actualmente posible.", "error", 5500)
             end
         end)
     end 
