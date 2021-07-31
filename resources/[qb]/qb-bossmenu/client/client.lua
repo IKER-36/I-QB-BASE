@@ -43,7 +43,7 @@ CreateThread(function()
                 if v ~= nil then
                     if #(pos - v) < 2 then
                         if #(pos - v) < 1.0 then
-                            DrawText3D(v, "~g~E~w~ - Boss Menu")
+                            DrawText3D(v, "~g~E~w~ - Menu de Jefe")
                             if IsControlJustReleased(0, 38) then
                                 TriggerServerEvent("qb-bossmenu:server:openMenu")
                             end
