@@ -38,7 +38,7 @@ RegisterNUICallback('setFoodWarning', function(data)
 
     TriggerServerEvent('qb-fitbit:server:setValue', 'food', foodValue)
 
-    QBCore.Functions.Notify('Fitbit: Hunger warning set to '..foodValue..'%')
+    QBCore.Functions.Notify('EWatch: Advertencia de hambre establecida en '..foodValue..'%')
 end)
 
 RegisterNUICallback('setThirstWarning', function(data)
@@ -46,7 +46,7 @@ RegisterNUICallback('setThirstWarning', function(data)
 
     TriggerServerEvent('qb-fitbit:server:setValue', 'thirst', thirstValue)
 
-    QBCore.Functions.Notify('Fitbit: Thirst warning set to '..thirstValue..'%')
+    QBCore.Functions.Notify('EWatch: Advertencia de sed establecida en '..thirstValue..'%')
 end)
 
 Citizen.CreateThread(function()
