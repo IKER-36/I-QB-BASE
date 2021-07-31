@@ -54,7 +54,7 @@ jQuery.fn.rotate = function(degrees) {
     return $(this);
 };
 
-// Get the abosolute position of a node
+// Obtenga la posición absoluta de un nodo
 function getPosition(node) {
     var rects = node.getClientRects()[0];
     return { 'x': rects.x + (rects.width/2),'y': rects.y + (rects.height/2) };
@@ -69,15 +69,15 @@ function getDistance(nodeA,nodeB) {
     return Math.sqrt(distanceSq);
 }
 
-// Initialize random points on the circle, update # of digits
+// Inicializa los puntos aleatorios en el círculo, actualizar # de dígitos
 function init($param) {
     var angle = Math.floor((Math.random() * 720) - 360);
     $("#circle2").rotate(angle);
-    $("#container > p").html("KLIK");
+    $("#container > p").html("Click");
     if($param!=1)
-        $("#container > p").append("<br><h4>at the right time</h4>");
+        $("#container > p").append("<br><h4>en el momento adecuado</h4>");
     else
-        $("#container > p").append("<br><h4>at the right time</h4>");
+        $("#container > p").append("<br><h4>en el momento adecuado</h4>");
     $('.time').addClass('done');
 }
 
