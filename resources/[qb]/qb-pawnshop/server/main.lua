@@ -34,8 +34,8 @@ AddEventHandler("qb-pawnshop:server:sellPawnItems", function()
                 end
             end
         end
-        Player.Functions.AddMoney("cash", price, "sold pawnable items")
-        TriggerClientEvent('QBCore:Notify', src, "You have sold your items")
+        Player.Functions.AddMoney("cash", price, "Vendido artículos empeñables")
+        TriggerClientEvent('QBCore:Notify', src, "Has vendido tus items")
     end
 end)
 
@@ -54,8 +54,8 @@ AddEventHandler("qb-pawnshop:server:sellHardwarePawnItems", function()
                 end
             end
         end
-        Player.Functions.AddMoney("cash", price, "sold pawnable items")
-        TriggerClientEvent('QBCore:Notify', src, "You have sold your items")
+        Player.Functions.AddMoney("cash", price, "Vendido artículos empeñables")
+        TriggerClientEvent('QBCore:Notify', src, "Has vendido tus items")
     end
 
 end)
@@ -73,7 +73,7 @@ AddEventHandler("qb-pawnshop:server:getGoldBars", function()
             Config.MeltTime = 300
             TriggerClientEvent("qb-pawnshop:client:SetTakeState", -1, false)
         else
-            TriggerClientEvent('QBCore:Notify', src, "You have no space in your inventory", "error")
+            TriggerClientEvent('QBCore:Notify', src, "No tienes espacio en tu inventario", "error")
         end
     end
 end)
@@ -94,7 +94,7 @@ AddEventHandler("qb-pawnshop:server:sellGold", function()
             end
         end
         Player.Functions.AddMoney("cash", price, "sold-gold")
-        TriggerClientEvent('QBCore:Notify', src, "You have sold your items")
+        TriggerClientEvent('QBCore:Notify', src, "Has vendido tus items")
     end
 end)
 
@@ -109,7 +109,7 @@ AddEventHandler("qb-pawnshop:server:meltItems", function()
                 if MeltItems[Player.PlayerData.items[k].name] ~= nil then 
                     local amount = (Player.PlayerData.items[k].amount / MeltItems[Player.PlayerData.items[k].name])
                     if amount < 1 then
-                        TriggerClientEvent('QBCore:Notify', src, "You do not have enough " .. Player.PlayerData.items[k].label, "error")
+                        TriggerClientEvent('QBCore:Notify', src, "No tienes suficiente " .. Player.PlayerData.items[k].label, "error")
                     else
                         amount = math.ceil(Player.PlayerData.items[k].amount / MeltItems[Player.PlayerData.items[k].name])
                         if amount > 0 then

@@ -12,7 +12,7 @@ Citizen.CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 5)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("F.T. Pawn")
+	AddTextComponentSubstringPlayerName("F.T. Empeñar")
 	EndTextCommandSetBlipName(blip)
 	while true do 
 		Citizen.Wait(1)
@@ -26,10 +26,10 @@ Citizen.CreateThread(function()
 						sellPrice = GetSellingPrice()
 						sellItemsSet = true
 					elseif sellItemsSet and sellPrice ~= 0 then
-						DrawText3D(Config.PawnLocation.x, Config.PawnLocation.y, Config.PawnLocation.z, "~g~E~w~ - Sell Watches/ Necklaces / Rings ($"..sellPrice..")")
+						DrawText3D(Config.PawnLocation.x, Config.PawnLocation.y, Config.PawnLocation.z, "~g~E~w~ - Vender Relojes / Collares / Anillos ($"..sellPrice..")")
 						if IsControlJustReleased(0, 38) then
 							TaskStartScenarioInPlace(PlayerPedId(), "WORLD_HUMAN_STAND_IMPATIENT", 0, true)
-                            QBCore.Functions.Progressbar("sell_pawn_items", "Selling Items", math.random(15000, 25000), false, true, {}, {}, {}, {}, function() -- Done
+                            QBCore.Functions.Progressbar("sell_pawn_items", "Vendiendo Items", math.random(15000, 25000), false, true, {}, {}, {}, {}, function() -- Done
                                 ClearPedTasks(PlayerPedId())
 								TriggerServerEvent("qb-pawnshop:server:sellPawnItems")
 								sellItemsSet = false
@@ -40,10 +40,10 @@ Citizen.CreateThread(function()
 							end)
 						end
 					else
-						DrawText3D(Config.PawnLocation.x, Config.PawnLocation.y, Config.PawnLocation.z, "Pawnshop: You have nothing to sell")
+						DrawText3D(Config.PawnLocation.x, Config.PawnLocation.y, Config.PawnLocation.z, "Casa de empeño: no tienes nada que vender")
 					end
 				else
-					DrawText3D(Config.PawnLocation.x, Config.PawnLocation.y, Config.PawnLocation.z, "Pawnshop is closed, opens from ~r~7:00")
+					DrawText3D(Config.PawnLocation.x, Config.PawnLocation.y, Config.PawnLocation.z, "La casa de empeño está cerrada, abre a las ~r~7: 00")
 				end
 			end
 		end
@@ -68,24 +68,24 @@ Citizen.CreateThread(function()
 						sellHardwarePrice = GetSellingHardwarePrice()
 						sellHardwareItemsSet = true
 					elseif sellHardwareItemsSet and sellHardwarePrice ~= 0 then
-						DrawText3D(Config.PawnHardwareLocation.x, Config.PawnHardwareLocation.y, Config.PawnHardwareLocation.z, "~g~E~w~ - Sale iPhones/Samsung S10s/Tablets/Laptops ($"..sellHardwarePrice..")")
+						DrawText3D(Config.PawnHardwareLocation.x, Config.PawnHardwareLocation.y, Config.PawnHardwareLocation.z, "~g~E~w~ - Vendemos iPhones / Samsung S10s / Tablets / Laptops ($"..sellHardwarePrice..")")
 						if IsControlJustReleased(0, 38) then
 							TaskStartScenarioInPlace(PlayerPedId(), "WORLD_HUMAN_STAND_IMPATIENT", 0, true)
-                            QBCore.Functions.Progressbar("sell_pawn_items", "Sell things", math.random(15000, 25000), false, true, {}, {}, {}, {}, function() -- Done
+                            QBCore.Functions.Progressbar("sell_pawn_items", "Vendiendo cosas..", math.random(15000, 25000), false, true, {}, {}, {}, {}, function() -- Done
                                 ClearPedTasks(PlayerPedId())
 								TriggerServerEvent("qb-pawnshop:server:sellHardwarePawnItems")
 								sellHardwareItemsSet = false
 								sellHardwarePrice = 0
                             end, function() -- Cancel
 								ClearPedTasks(PlayerPedId())
-								QBCore.Functions.Notify("Canceled", "error")
+								QBCore.Functions.Notify("Cancelado", "error")
 							end)
 						end
 					else
-						DrawText3D(Config.PawnHardwareLocation.x, Config.PawnHardwareLocation.y, Config.PawnHardwareLocation.z, "Pawnshop: You have nothing to sell")
+						DrawText3D(Config.PawnHardwareLocation.x, Config.PawnHardwareLocation.y, Config.PawnHardwareLocation.z, "Casa de empeño: no tienes nada que vender")
 					end
 				else
-					DrawText3D(Config.PawnHardwareLocation.x, Config.PawnHardwareLocation.y, Config.PawnHardwareLocation.z, "Pawnshop closed, open from ~r~9:00")
+					DrawText3D(Config.PawnHardwareLocation.x, Config.PawnHardwareLocation.y, Config.PawnHardwareLocation.z, "La casa de empeño está cerrada, abre a las ~r~9: 00")
 				end
 			end
 		end
