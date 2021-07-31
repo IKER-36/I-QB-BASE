@@ -235,7 +235,7 @@ Config.SmallBanks = {
         }
     },
     [3] = {
-        ["label"] = "Hawick Ave",
+        ["label"] = "Avenida Hawick",
         ["coords"] = vector3(-353.82, -55.37, 49.03),
         ["alarm"] = true,
         ["object"] = GetHashKey("v_ilev_gb_vauldr"),
@@ -305,7 +305,7 @@ Config.SmallBanks = {
         }
     },
     [4] = {
-        ["label"] = "Del Perro Blvd",
+        ["label"] = "Blvd Del Perro",
         ["coords"] = vector3(-1210.77, -336.57, 37.78),
         ["alarm"] = true,
         ["object"] = GetHashKey("v_ilev_gb_vauldr"),
@@ -375,7 +375,7 @@ Config.SmallBanks = {
         }
     },
     [5] = {
-        ["label"] = "Great Ocean Hwy",
+        ["label"] = "Autopista Great Ocean",
         ["coords"] = vector3(-2956.55, 481.74, 15.69),
         ["alarm"] = true,
         ["object"] = GetHashKey("hei_prop_heist_sec_door"),
