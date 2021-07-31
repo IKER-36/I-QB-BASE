@@ -52,13 +52,13 @@ AddEventHandler('qb-cityhall:server:sendDriverTest', function()
             local mailData = {
                 sender = "Township",
                 subject = "Driving lessons request",
-                message = "Hello,<br /><br />We have just received a message that someone wants to take driving lessons.<br />If you are willing to teach, please contact us:<br />Naam: <strong>".. Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. "<br />Telephone number: <strong>"..Player.PlayerData.charinfo.phone.."</strong><br/><br/>Kind regards,<br />City of Los Santos",
+                message = "Hola,<br /><br />Acabamos de recibir un mensaje de que alguien quiere tomar lecciones de manejo.<br />Si estás dispuesto a dar clases, contáctanos:<br />Nombre: <strong>".. Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname .. "<br />Numero: <strong>"..Player.PlayerData.charinfo.phone.."</strong><br/><br/>Kind regards,<br />Ciudad de Los Santos",
                 button = {}
             }
             TriggerEvent("qb-phone:server:sendNewEventMail", v, mailData)
         end
     end
-    TriggerClientEvent('QBCore:Notify', src, 'An email has been sent to driving schools, and you will be contacted automatically', "success", 5000)
+    TriggerClientEvent('QBCore:Notify', src, 'Se ha enviado un correo electrónico a las escuelas de manejo y será contactado automáticamente.', "success", 5000)
 end)
 
 RegisterServerEvent('qb-cityhall:server:ApplyJob')
@@ -69,7 +69,7 @@ AddEventHandler('qb-cityhall:server:ApplyJob', function(job)
 
     Player.Functions.SetJob(job, 0)
 
-    TriggerClientEvent('QBCore:Notify', src, 'Congratulations with your new job! ('..JobInfo.label..')')
+    TriggerClientEvent('QBCore:Notify', src, 'Felicitaciones por tu nuevo trabajo.! ('..JobInfo.label..')')
 end)
 
 
