@@ -43,7 +43,7 @@ Skillbar.Start = function(data, success, fail)
         })
         TriggerEvent('progressbar:client:ToggleBusyness', true)
     else
-        QBCore.Functions.Notify('Your already doing something..', 'error')
+        QBCore.Functions.Notify('Ya estás haciendo algo ...', 'error')
     end
 end
 
