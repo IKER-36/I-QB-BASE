@@ -72,10 +72,10 @@ hoverDescription = function(type) {
     if (!mouseOver) {
         if (type == "id_card") {
             $(".hover-description").fadeIn(10);
-            $(".hover-description").html('<p>You are required to carry an ID card on you while driving.</p>');
+            $(".hover-description").html('<p>Debe llevar consigo una tarjeta de identificación mientras conduce.</p>');
         } else if (type == "driver_license") {
             $(".hover-description").fadeIn(10);
-            $(".hover-description").html('<p>If you are driving a vehicle, you are required to present a driving license <br> at the time it is requested</p>');
+            $(".hover-description").html('<p>Si está conduciendo un vehículo, debe presentar un permiso de conducir <br> en el momento en que se solicita</p>');
         }
     } else {
         if(selectedIdentity == null) {
@@ -101,10 +101,10 @@ $(document).on("click", ".identity-page-block", function(e){
         selectedIdentity = this;
         if (idType == "id_card") {
             $(".request-identity-button").fadeIn(100);
-            $(".request-identity-button").html("<p>Click Here to Buy a Birth Certificate for $50</p>")
+            $(".request-identity-button").html("<p>Haga clic aquí para comprar un certificado de nacimiento por $50</p>")
         } else {
             $(".request-identity-button").fadeIn(100);
-            $(".request-identity-button").html("<p>Click Here to Buy a Driver License for $50</p>")
+            $(".request-identity-button").html("<p>Haga clic aquí para comprar una licencia de conducir por $50</p>")
         }
     } else if (selectedIdentity == this) {
         $(this).removeClass("identity-selected");
@@ -115,9 +115,9 @@ $(document).on("click", ".identity-page-block", function(e){
         $(this).addClass("identity-selected");
         selectedIdentity = this;
         if($(this).data('type') == "id_card") {
-            $(".request-identity-button").html("<p>You paid $50 for a Birth Certificate</p>")
+            $(".request-identity-button").html("<p>Has pagado $50 para un certificado de nacimiento</p>")
         } else {
-            $(".request-identity-button").html("<p>You paid $50 for a Driver License</p>")
+            $(".request-identity-button").html("<p>Has pagado $50 para una licencia de conducir</p>")
         }
     }
 });

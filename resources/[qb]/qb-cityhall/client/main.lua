@@ -69,7 +69,7 @@ Citizen.CreateThread(function()
             inRange = true
             DrawMarker(2, Config.Cityhall.coords.x, Config.Cityhall.coords.y, Config.Cityhall.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.2, 155, 152, 234, 155, false, false, false, true, false, false, false)
             if #(pos - vector3(Config.Cityhall.coords.x, Config.Cityhall.coords.y, Config.Cityhall.coords.z)) < 1.5 then
-                qbCityhall.DrawText3Ds(Config.Cityhall.coords, '~g~E~w~ - City Services Menu')
+                qbCityhall.DrawText3Ds(Config.Cityhall.coords, '~g~E~w~ - Menú de la ciudad')
                 if IsControlJustPressed(0, 38) then
                     qbCityhall.Open()
                 end
@@ -92,15 +92,15 @@ end)
 RegisterNetEvent('qb-cityhall:client:sendDriverEmail')
 AddEventHandler('qb-cityhall:client:sendDriverEmail', function(charinfo)
     SetTimeout(math.random(2500, 4000), function()
-        local gender = "Mr"
+        local gender = "Sr"
         if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then
-            gender = "Mrs"
+            gender = "Sra"
         end
         local charinfo = QBCore.Functions.GetPlayerData().charinfo
         TriggerServerEvent('qb-phone:server:sendNewMail', {
-            sender = "Township",
-            subject = "Driving lessons request",
-            message = "Hello " .. gender .. " " .. charinfo.lastname .. ",<br /><br />We have just received a message that someone wants to take driving lessons<br />If you are willing to teach, please contact us:<br />Naam: <strong>".. charinfo.firstname .. " " .. charinfo.lastname .. "</strong><br />Phone Number: <strong>"..charinfo.phone.."</strong><br/><br/>Kind regards,<br />Township Los Santos",
+            sender = "Municipio",
+            subject = "Solicitud de lecciones de conducir",
+            message = "Hola " .. gender .. " " .. charinfo.lastname .. ",<br /><br />Acabamos de recibir un mensaje de que alguien quiere tomar lecciones de manejo.<br />Si estás dispuesto a dar clases, contáctanos:<br />Nombre: <strong>".. charinfo.firstname .. " " .. charinfo.lastname .. "</strong><br />Numero: <strong>"..charinfo.phone.."</strong><br/><br/>Saludos cordiales,<br />Municipio de los Los Santos",
             button = {}
         })
     end)
@@ -108,11 +108,11 @@ end)
 
 local idTypes = {
     ["id_card"] = {
-        label = "Birth Certificate",
+        label = "Certificado de nacimiento",
         item = "id_card"
     },
     ["driver_license"] = {
-        label = "Drivers License",
+        label = "Licencia de conducir",
         item = "driver_license"
     }
 }
@@ -122,9 +122,9 @@ RegisterNUICallback('requestId', function(data)
         local idType = data.idType
 
         TriggerServerEvent('qb-cityhall:server:requestId', idTypes[idType])
-        QBCore.Functions.Notify('You have recived your '..idTypes[idType].label..' for $50', 'success', 3500)
+        QBCore.Functions.Notify('Has recibido tu '..idTypes[idType].label..' por $50', 'success', 3500)
     else
-        QBCore.Functions.Notify('This will not work', 'error')
+        QBCore.Functions.Notify('Esto no funcionará', 'error')
     end
 end)
 
@@ -138,7 +138,7 @@ RegisterNUICallback('requestLicenses', function(data, cb)
             local licenseType = nil
             local label = nil
 
-            if type == "driver" then licenseType = "driver_license" label = "Drivers Licences" end
+            if type == "driver" then licenseType = "driver_license" label = "Licencias de conducir" end
 
             table.insert(availableLicenses, {
                 idType = licenseType,
@@ -176,6 +176,6 @@ RegisterNUICallback('applyJob', function(data)
             TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "POST Request (Abuse)", "red", "** @everyone " ..GetPlayerName(player).. "** has been banned for abusing localhost:13172, sending POST request\'s")         
         end
     else
-        QBCore.Functions.Notify('Unfortunately will not work ...', 'error')
+        QBCore.Functions.Notify('Lamentablemente no funcionará...', 'error')
     end
 end)
