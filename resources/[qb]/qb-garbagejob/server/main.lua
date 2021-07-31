@@ -66,8 +66,8 @@ AddEventHandler('qb-garbagejob:server:PayShit', function(amount, location)
             end
         end
 
-        TriggerClientEvent('QBCore:Notify', src, "You have $"..amount..",- got paid to your bank account!", "success")
+        TriggerClientEvent('QBCore:Notify', src, "Tú tienes $"..amount..",- se le pagó a su cuenta bancaria!", "success")
     else
-        TriggerClientEvent('QBCore:Notify', src, "You have earned nothing..", "error")
+        TriggerClientEvent('QBCore:Notify', src, "No has ganado nada..", "error")
     end
 end)

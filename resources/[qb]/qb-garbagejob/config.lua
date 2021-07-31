@@ -4,15 +4,15 @@ Config.BailPrice = 250
 
 Config.Locations = {
     ["main"] = {
-        label = "Garbage Depot",
+        label = "Deposito de Basura",
         coords = vector4(-350.08, -1569.95, 25.22, 292.42),
     },
     ["vehicle"] = {
-        label = "Garbage Truck Storage",
+        label = "Garaje de Camiones de Basura",
         coords = vector4(-340.74, -1561.82, 25.23, 58.0),
     },
     ["paycheck"] = {
-        label = "Paycheck",
+        label = "Nómina",
         coords = vector4(-346.68, -1572.39, 25.22, 163.5), 
     },
     ["trashcan"] ={
@@ -104,5 +104,5 @@ Config.Locations = {
 }
 
 Config.Vehicles = {
-    ["trash2"] = "Garbage Truck",
+    ["trash2"] = "Camion de Basura",
 }
