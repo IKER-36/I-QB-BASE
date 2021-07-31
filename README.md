@@ -14,7 +14,7 @@ To upload changes on translations or suggestions, it will be done through "pull 
 - https://youtu.be/HCBAadVR14M
 
 # PROCESS 🔋
-20%
+40%
 
 # LINKS
 
