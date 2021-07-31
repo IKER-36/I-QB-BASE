@@ -34,7 +34,7 @@ Citizen.CreateThread(function()
 					
 					if dist < 1.5 then
 						if not Crypto.Exchange.RebootInfo.state then
-							DrawText3Ds(Crypto.Exchange.coords, '~g~E~w~ - USB enter')
+							DrawText3Ds(Crypto.Exchange.coords, '~g~E~w~ - Meter USB')
 							if not requiredItemsShowed then
 								requiredItemsShowed = true
 								TriggerEvent('inventory:client:requiredItems', requiredItems, true)
@@ -46,12 +46,12 @@ Citizen.CreateThread(function()
 										TriggerEvent("mhacking:show")
 										TriggerEvent("mhacking:start", math.random(4, 6), 45, HackingSuccess)
 									else
-										QBCore.Functions.Notify('You have no Cryptostick ..', 'error')
+										QBCore.Functions.Notify('No tienes Cryptostick ..', 'error')
 									end
 								end)
 							end
 						else
-							DrawText3Ds(Crypto.Exchange.coords, 'Systeem is rebooting - '..Crypto.Exchange.RebootInfo.percentage..'%')
+							DrawText3Ds(Crypto.Exchange.coords, 'El sistema se está reiniciando - '..Crypto.Exchange.RebootInfo.percentage..'%')
 						end
 					else
 						if requiredItemsShowed then
