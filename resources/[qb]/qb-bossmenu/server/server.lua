@@ -54,7 +54,7 @@ AddEventHandler("qb-bossmenu:server:depositMoney", function(amount)
     if xPlayer.Functions.RemoveMoney("cash", amount) then
         Accounts[job] = Accounts[job] + amount
     else
-        TriggerClientEvent('QBCore:Notify', src, "Invaild Amount :/", "error")
+        TriggerClientEvent('QBCore:Notify', src, "Monto Invalido :/", "error")
         return
     end
 
