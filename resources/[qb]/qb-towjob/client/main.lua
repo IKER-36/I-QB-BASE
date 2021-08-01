@@ -95,7 +95,7 @@ AddEventHandler('qb-tow:client:TowVehicle', function()
 
             if NpcOn and CurrentLocation ~= nil then
                 if GetEntityModel(targetVehicle) ~= GetHashKey(CurrentLocation.model) then
-                    QBCore.Functions.Notify("This Is Not The Right Vehicle", "error")
+                    QBCore.Functions.Notify("Este no es el vehiculo Completado", "Error")
                     return
                 end
             end
@@ -120,7 +120,7 @@ AddEventHandler('qb-tow:client:TowVehicle', function()
                             CurrentTow = targetVehicle
                             if NpcOn then
                                 RemoveBlip(CurrentBlip)
-                                QBCore.Functions.Notify("Take The Vehicle To Hayes Depot", "success", 5000)
+                                QBCore.Functions.Notify("Tome el vehículo en Hayes Depot", "Completado", 5000)
                                 CurrentBlip2 = AddBlipForCoord(491.00, -1314.69, 29.25)
                                 SetBlipColour(CurrentBlip2, 3)
                                 SetBlipRoute(CurrentBlip2, true)
@@ -130,10 +130,10 @@ AddEventHandler('qb-tow:client:TowVehicle', function()
                                     TriggerServerEvent('qb-tow:server:nano')
                                 end
                             end
-                            QBCore.Functions.Notify("Vehicle Towed")
+                            QBCore.Functions.Notify("Vehículo remolcado")
                         end, function() -- Cancel
                             StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
-                            QBCore.Functions.Notify("Failed", "error")
+                            QBCore.Functions.Notify("Fallo", "Error")
                         end)
                     end
                 end
@@ -161,14 +161,14 @@ AddEventHandler('qb-tow:client:TowVehicle', function()
                     end
                 end
                 CurrentTow = nil
-                QBCore.Functions.Notify("Vehicle Taken Off")
+                QBCore.Functions.Notify("Vehículo despegado")
             end, function() -- Cancel
                 StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_ped", 1.0)
-                QBCore.Functions.Notify("Failed", "error")
+                QBCore.Functions.Notify("Fallado", "Error")
             end)
         end
     else
-        QBCore.Functions.Notify("You Must Have Been In A Towing Vehicle First", "error")
+        QBCore.Functions.Notify("Debe haber estado en un vehículo de remolque primero", "Error")
     end
 end)
 
@@ -218,7 +218,7 @@ Citizen.CreateThread(function()
                                 JobsDone = 0
                                 NpcOn = false
                             else
-                                QBCore.Functions.Notify("You Havent Done Any Work Yet", "error")
+                                QBCore.Functions.Notify("No has hecho cualquier trabajo todavía", "Error")
                             end
                         end
                     elseif #(pos - vector3(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z)) < 2.5 then
@@ -251,8 +251,8 @@ function deliverVehicle(vehicle)
     RemoveBlip(CurrentBlip2)
     JobsDone = JobsDone + 1
     VehicleSpawned = false
-    QBCore.Functions.Notify("You Have Delivered A Vehicle", "success")
-    QBCore.Functions.Notify("A New Vehicle Can Be Picked Up")
+    QBCore.Functions.Notify("Has entregado un vehículo", "Completado")
+    QBCore.Functions.Notify("Se puede recoger un nuevo vehículo.")
 
     local randomLocation = getRandomVehicleLocation()
     CurrentLocation.x = Config.Locations["towspots"][randomLocation].coords.x
