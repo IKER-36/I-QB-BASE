@@ -110,10 +110,10 @@ function Process(action, start, tick, finish)
                 end
             end)
         else
-            QBCore.Functions.Notify("You are already doing something!", "error")
+            QBCore.Functions.Notify("Ya estas haciendo algo!", "error")
         end
     else
-        QBCore.Functions.Notify("Cant do that action!", "error")
+        QBCore.Functions.Notify("No puedo hacer esa acción!", "error")
     end
 end
 
