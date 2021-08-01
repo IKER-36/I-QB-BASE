@@ -18,7 +18,7 @@ AddEventHandler('AttackTransport:akceptujto', function()
 	accountMoney = xPlayer.PlayerData.money["bank"]
 if ActiveMission == 0 then
 	if accountMoney < ActivationCost then
-	TriggerClientEvent('QBCore:Notify', _source, "You need $"..ActivationCost.." in the bank to accept the mission")
+	TriggerClientEvent('QBCore:Notify', _source, "Necesitas $"..ActivationCost.." en el banco para aceptar la misión")
 	else
 		for k, v in pairs(QBCore.Functions.GetPlayers()) do
 			local Player = QBCore.Functions.GetPlayer(v)
@@ -34,18 +34,18 @@ if ActiveMission == 0 then
 		
 		OdpalTimer()
     else
-		TriggerClientEvent('QBCore:Notify', _source, 'Need at least '..ActivePolice.. ' SASP to activate the mission.')
+		TriggerClientEvent('QBCore:Notify', _source, 'Necesito al menos '..ActivePolice.. ' SASP para activar la misión.')
     end
 	end
 else
-TriggerClientEvent('QBCore:Notify', _source, 'Someone is already carrying out this mission')
+TriggerClientEvent('QBCore:Notify', _source, 'Alguien ya está llevando a cabo esta misión.')
 end
 end)
 
 RegisterServerEvent('qb-armoredtruckheist:server:callCops')
 AddEventHandler('qb-armoredtruckheist:server:callCops', function(streetLabel, coords)
     local place = "Armored Truck"
-    local msg = "The Alram has been activated from a "..place.. " at " ..streetLabel
+    local msg = "El Alarma se ha activado desde un "..place.. " en " ..streetLabel
 
     TriggerClientEvent("qb-armoredtruckheist:client:robberyCall", -1, streetLabel, coords)
 
@@ -75,7 +75,7 @@ AddEventHandler('AttackTransport:graczZrobilnapad', function(moneyCalc)
 	TriggerClientEvent('inventory:client:ItemBox', _source, QBCore.Shared.Items['markedbills'], "add")
 
 	local chance = math.random(1, 100)
-	TriggerClientEvent('QBCore:Notify', _source, 'You took '..bags..' bags of cash from the van')
+	TriggerClientEvent('QBCore:Notify', _source, 'Tomaste '..bags..' bolsas de dinero en efectivo de la camioneta')
 
 	if chance >= 95 then
 	xPlayer.Functions.AddItem('security_card_01', 1)
