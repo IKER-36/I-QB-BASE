@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-VehicleFailure TRANSLATED BY Raz#5398 FOR THE QB-BASE PROYECT'
+description 'QB-VehicleFailure TRANSLATED BY (Raz#5398) COLABORATING IN I-QB PROJECT'
 version '1.0.0'
 
 shared_scripts { 
