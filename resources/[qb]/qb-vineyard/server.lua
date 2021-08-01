@@ -21,13 +21,13 @@ AddEventHandler('qb-vineyard:server:loadIngredients', function()
                 TriggerClientEvent("qb-vineyard:client:loadIngredients", source)
 
             else
-                TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+                TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
             end
         else
-            TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+            TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
         end
 	else
-		TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
+		TriggerClientEvent('QBCore:Notify', source, "No tienes nada...", "error")
 	end 
 	
 end) 
@@ -47,13 +47,13 @@ AddEventHandler('qb-vineyard:server:grapeJuice', function()
                 TriggerClientEvent("qb-vineyard:client:grapeJuice", source)
 
             else
-                TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+                TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
             end
         else
-            TriggerClientEvent('QBCore:Notify', source, "You do not have the correct items", 'error')   
+            TriggerClientEvent('QBCore:Notify', source, "No tienes los elementos correctos", 'error')   
         end
 	else
-		TriggerClientEvent('QBCore:Notify', source, "You Have Nothing...", "error")
+		TriggerClientEvent('QBCore:Notify', source, "No tienes nada...", "error")
 	end 
 	
 end) 
