@@ -22,20 +22,20 @@ Config.CostMultiplier = 1.0
 
 -- Configure the strings as you wish here.
 Config.Strings = {
-	ExitVehicle = "Exit the vehicle to refuel",
-	EToRefuel = "Press ~g~E ~w~to refuel vehicle",
-	JerryCanEmpty = "Jerry can is empty",
-	FullTank = "Tank is full",
-	PurchaseJerryCan = "Press ~g~E ~w~to purchase a jerry can for ~g~$" .. Config.JerryCanCost,
-	CancelFuelingPump = "Press ~g~E ~w~to cancel the fueling",
-	CancelFuelingJerryCan = "Press ~g~E ~w~to cancel the fueling",
-	NotEnoughCash = "Not enough cash",
-	RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can for ",
-	NotEnoughCashJerryCan = "Not enough cash to refill jerry can",
-	JerryCanFull = "Jerry can is full",
-	TotalCost = "Cost",
-	PurchaseJerryCan = "Press ~g~E ~w~to grab a jerry can",
-	RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can",
+	ExitVehicle = "Sal del vehículo para repostar",
+	EToRefuel = "Pulsa ~g~E ~w~to refuel vehicle",
+	JerryCanEmpty = "El Bidon de Gasolina está vacío",
+	FullTank = "El tanque esta lleno",
+	PurchaseJerryCan = "Pulsa ~g~E ~w~comprar un bidón por ~g~$" .. Config.JerryCanCost,
+	CancelFuelingPump = "Pulsa ~g~E ~w~cancelar el repostaje",
+	CancelFuelingJerryCan = "Pulsa ~g~E ~w~cancelar el repostaje",
+	NotEnoughCash = "No hay suficiente efectivo",
+	RefillJerryCan = "Pulsa ~g~E ~w~ para rellenar el bidón para ",
+	NotEnoughCashJerryCan = "No hay suficiente dinero en efectivo para recargar los bidones",
+	JerryCanFull = "Los bidones están llenos",
+	TotalCost = "Precio",
+	PurchaseJerryCan = "Pulsa ~g~E ~w~coger un bidón",
+	RefillJerryCan = "Pulsa ~g~E ~w~ para rellenar el bidón",
 }
 
 Config.PumpModels = {

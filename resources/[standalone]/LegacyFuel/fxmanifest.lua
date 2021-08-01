@@ -2,7 +2,7 @@ fx_version 'bodacious'
 game 'gta5'
 
 author 'InZidiuZ'
-description 'Legacy Fuel'
+description 'Legacy Fuel TRANSLATED BY (Broncas#3949) COLABORATING IN I-QB PROJECT'
 version '1.3'
 
 -- What to run
