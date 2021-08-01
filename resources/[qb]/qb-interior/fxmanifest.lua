@@ -1,6 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
+------ No hay que traducir nada aqui solo son mapeados ------ Broncas
+
 description 'QB-Interior'
 version '1.0.0'
 
