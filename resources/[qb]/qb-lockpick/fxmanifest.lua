@@ -1,6 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
+--Aqui no hay nada que traducir-- Broncas
+
 description 'QB-Lockpick'
 version '1.0.0'
 
