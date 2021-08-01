@@ -48,7 +48,7 @@ Citizen.CreateThread(function()
 				jailTime = jailTime - 1
 				if jailTime <= 0 then
 					jailTime = 0
-					QBCore.Functions.Notify("Your time is up! Check yourself out at the visitors center", "success", 10000)
+					QBCore.Functions.Notify("¡Tu tiempo se ha acabado! Echa un vistazo en el centro de visitantes", "success", 10000)
 				end
 				TriggerServerEvent("prison:server:SetJailStatus", jailTime)
 			end
@@ -65,26 +65,26 @@ Citizen.CreateThread(function()
 			if inJail then
 				local pos = GetEntityCoords(PlayerPedId())
 				if #(pos - vector3(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z)) < 1.5 then
-					DrawText3D(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z, "~g~E~w~ - Check time")
+					DrawText3D(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z, "~g~E~w~ - Hora de revision")
 					if IsControlJustReleased(0, 38) then
 						TriggerEvent("prison:client:Leave")
 					end
 				elseif #(pos - vector3(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z)) < 2.5 then
-					DrawText3D(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z, "Check time")
+					DrawText3D(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z, "Hora de revision")
 				end  
 
 				if #(pos - vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z)) < 1.5 then
-					DrawText3D(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, "~g~E~w~ - Canteen")
+					DrawText3D(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, "~g~E~w~ - Cantina")
 					if IsControlJustReleased(0, 38) then
                         local ShopItems = {}
-                        ShopItems.label = "Prison Canteen"
+                        ShopItems.label = "Cantina de Prision"
                         ShopItems.items = Config.CanteenItems
                         ShopItems.slots = #Config.CanteenItems
                         TriggerServerEvent("inventory:server:OpenInventory", "shop", "Kantineshop_"..math.random(1, 99), ShopItems)
 					end
 					DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22, 222, false, false, false, 1, false, false, false)
 				elseif #(pos - vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z)) < 2.5 then
-					DrawText3D(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, "Kantine")
+					DrawText3D(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, "Cantina")
 					DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22, 222, false, false, false, 1, false, false, false)
 				elseif #(pos - vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z)) < 10 then
 					DrawMarker(2, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 255, 55, 22, 222, false, false, false, 1, false, false, false)
@@ -98,8 +98,8 @@ end)
 
 RegisterNetEvent('prison:client:Enter')
 AddEventHandler('prison:client:Enter', function(time)
-	QBCore.Functions.Notify("You're in jail for "..time.." months..", "error")
-	TriggerEvent("chatMessage", "SYSTEM", "warning", "Your property has been seized, you'll get everything back when your time is up..")
+	QBCore.Functions.Notify("Estás en la cárcel por"..time.." meses..", "error")
+	TriggerEvent("chatMessage", "SYSTEM", "warning", "Su propiedad ha sido incautada, recuperará todo cuando se acabe su tiempo..")
 	DoScreenFadeOut(500)
 	while not IsScreenFadedOut() do
 		Citizen.Wait(10)
@@ -123,18 +123,18 @@ AddEventHandler('prison:client:Enter', function(time)
 	Citizen.Wait(2000)
 
 	DoScreenFadeIn(1000)
-	QBCore.Functions.Notify("Do some work for sentence reduction, instant job: "..Config.Jobs[currentJob])
+	QBCore.Functions.Notify("Trabaja un poco para la reducción de sentencias, trabajo instantáneos: "..Config.Jobs[currentJob])
 end)
 
 RegisterNetEvent('prison:client:Leave')
 AddEventHandler('prison:client:Leave', function()
 	if jailTime > 0 then 
-		QBCore.Functions.Notify("You still have to... "..jailTime.." months..")
+		QBCore.Functions.Notify("Todavía tienes que... "..jailTime.." meses..")
 	else
 		jailTime = 0
 		TriggerServerEvent("prison:server:SetJailStatus", 0)
 		TriggerServerEvent("prison:server:GiveJailItems")
-		TriggerEvent("chatMessage", "SYSTEM", "warning", "you've received your property back..")
+		TriggerEvent("chatMessage", "SYSTEM", "warning", "ha recibido su propiedad de vuelta..")
 		inJail = false
 		RemoveBlip(currentBlip)
 		RemoveBlip(CellsBlip)
@@ -143,7 +143,7 @@ AddEventHandler('prison:client:Leave', function()
 		TimeBlip = nil
 		RemoveBlip(ShopBlip)
 		ShopBlip = nil
-		QBCore.Functions.Notify("You're free! Enjoy it! :)")
+		QBCore.Functions.Notify("¡Eres libre! Disfrútala! :)")
 		DoScreenFadeOut(500)
 		while not IsScreenFadedOut() do
 			Citizen.Wait(10)
@@ -162,7 +162,7 @@ AddEventHandler('prison:client:UnjailPerson', function()
 	if jailTime > 0 then
 		TriggerServerEvent("prison:server:SetJailStatus", 0)
 		TriggerServerEvent("prison:server:GiveJailItems")
-		TriggerEvent("chatMessage", "SYSTEM", "warning", "You got your property back..")
+		TriggerEvent("chatMessage", "SYSTEM", "warning", "Recuperaste tu propiedad..")
 		inJail = false
 		RemoveBlip(currentBlip)
 		RemoveBlip(CellsBlip)
@@ -171,7 +171,7 @@ AddEventHandler('prison:client:UnjailPerson', function()
 		TimeBlip = nil
 		RemoveBlip(ShopBlip)
 		ShopBlip = nil
-		QBCore.Functions.Notify("You're free! Enjoy it! :)")
+		QBCore.Functions.Notify("¡Eres libre! ¡Disfrútala! :)")
 		DoScreenFadeOut(500)
 		while not IsScreenFadedOut() do
 			Citizen.Wait(10)
@@ -198,7 +198,7 @@ function CreateCellsBlip()
 	SetBlipColour(CellsBlip, 4)
 
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Cellen")
+	AddTextComponentSubstringPlayerName("Celdas")
 	EndTextCommandSetBlipName(CellsBlip)
 
 	if TimeBlip ~= nil then
@@ -213,7 +213,7 @@ function CreateCellsBlip()
 	SetBlipColour(TimeBlip, 4)
 
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Time check")
+	AddTextComponentSubstringPlayerName("Verificar Tiempo")
 	EndTextCommandSetBlipName(TimeBlip)
 
 	if ShopBlip ~= nil then
@@ -228,7 +228,7 @@ function CreateCellsBlip()
 	SetBlipColour(ShopBlip, 0)
 
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Canteen")
+	AddTextComponentSubstringPlayerName("Cantina")
 	EndTextCommandSetBlipName(ShopBlip)
 end
 
