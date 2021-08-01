@@ -296,7 +296,7 @@ $(document).ready(function(){
 QBClothing.ReloadOutfits = function(outfits) {
     $(".clothing-menu-myOutfits-container").html("");
     $.each(outfits, function(index, outfit){
-        var elem = '<div class="clothing-menu-option" data-myOutfit="'+(index + 1)+'"> <div class="clothing-menu-option-header"><p>'+outfit.outfitname+'</p></div><div class="clothing-menu-myOutfit-option-button"><p>Select</p></div><div class="clothing-menu-myOutfit-option-button-remove"><p>Delete</p></div></div>'
+        var elem = '<div class="clothing-menu-option" data-myOutfit="'+(index + 1)+'"> <div class="clothing-menu-option-header"><p>'+outfit.outfitname+'</p></div><div class="clothing-menu-myOutfit-option-button"><p>Seleccionar</p></div><div class="clothing-menu-myOutfit-option-button-remove"><p>Borrar</p></div></div>'
         $(".clothing-menu-myOutfits-container").append(elem)
         
         $("[data-myOutfit='"+(index + 1)+"']").data('myOutfitData', outfit)
@@ -361,7 +361,7 @@ QBClothing.Open = function(data) {
 
         if (menu.menu == "roomOutfits") {
             $.each(menu.outfits, function(index, outfit){
-                var elem = '<div class="clothing-menu-option" data-outfit="'+(index + 1)+'"> <div class="clothing-menu-option-header"><p>'+outfit.outfitLabel+'</p></div> <div class="clothing-menu-outfit-option-button"><p>Select Outfit</p></div> </div>'
+                var elem = '<div class="clothing-menu-option" data-outfit="'+(index + 1)+'"> <div class="clothing-menu-option-header"><p>'+outfit.outfitLabel+'</p></div> <div class="clothing-menu-outfit-option-button"><p>Seleccionar Outfit</p></div> </div>'
                 $(".clothing-menu-roomOutfits-container").append(elem)
                 
                 $("[data-outfit='"+(index + 1)+"']").data('outfitData', outfit)
@@ -370,7 +370,7 @@ QBClothing.Open = function(data) {
 
         if (menu.menu == "myOutfits") {
             $.each(menu.outfits, function(index, outfit){
-                var elem = '<div class="clothing-menu-option" data-myOutfit="'+(index + 1)+'"> <div class="clothing-menu-option-header"><p>'+outfit.outfitname+'</p></div><div class="clothing-menu-myOutfit-option-button"><p>Select</p></div><div class="clothing-menu-myOutfit-option-button-remove"><p>Delete</p></div></div>'
+                var elem = '<div class="clothing-menu-option" data-myOutfit="'+(index + 1)+'"> <div class="clothing-menu-option-header"><p>'+outfit.outfitname+'</p></div><div class="clothing-menu-myOutfit-option-button"><p>Seleccionar</p></div><div class="clothing-menu-myOutfit-option-button-remove"><p>Borrar</p></div></div>'
                 $(".clothing-menu-myOutfits-container").append(elem)
                 
                 $("[data-myOutfit='"+(index + 1)+"']").data('myOutfitData', outfit)
@@ -448,8 +448,8 @@ QBClothing.SetMaxValues = function(maxValues) {
             $(itemMax).data('maxItem', maxValues[containers.data('type')].item)
             $(headerMax).data('maxTexture', maxValues[containers.data('type')].texture)
     
-            $(itemMax).html("<p>Item: " + maxValues[containers.data('type')].item + "</p>")
-            $(headerMax).html("<p>Texture: " + maxValues[containers.data('type')].texture + "</p>")
+            $(itemMax).html("<p>Objeto: " + maxValues[containers.data('type')].item + "</p>")
+            $(headerMax).html("<p>Textura: " + maxValues[containers.data('type')].texture + "</p>")
         } else if (cat.type == "hair") {
             var containers = $(".clothing-menu-clothing-container").find('[data-type="'+i+'"]');
             var itemMax = $(containers).find('[data-headertype="item-header"]');
@@ -458,8 +458,8 @@ QBClothing.SetMaxValues = function(maxValues) {
             $(itemMax).data('maxItem', maxValues[containers.data('type')].item)
             $(headerMax).data('maxTexture', maxValues[containers.data('type')].texture)
     
-            $(itemMax).html("<p>Item: " + maxValues[containers.data('type')].item + "</p>")
-            $(headerMax).html("<p>Texture: " + maxValues[containers.data('type')].texture + "</p>")
+            $(itemMax).html("<p>Objeto: " + maxValues[containers.data('type')].item + "</p>")
+            $(headerMax).html("<p>Textura: " + maxValues[containers.data('type')].texture + "</p>")
         } else if (cat.type == "accessoires") {
             var containers = $(".clothing-menu-accessoires-container").find('[data-type="'+i+'"]');
             var itemMax = $(containers).find('[data-headertype="item-header"]');
@@ -468,8 +468,8 @@ QBClothing.SetMaxValues = function(maxValues) {
             $(itemMax).data('maxItem', maxValues[containers.data('type')].item)
             $(headerMax).data('maxTexture', maxValues[containers.data('type')].texture)
     
-            $(itemMax).html("<p>Item: " + maxValues[containers.data('type')].item + "</p>")
-            $(headerMax).html("<p>Texture: " + maxValues[containers.data('type')].texture + "</p>")
+            $(itemMax).html("<p>Objeto: " + maxValues[containers.data('type')].item + "</p>")
+            $(headerMax).html("<p>Textura: " + maxValues[containers.data('type')].texture + "</p>")
         }
     })
 }
