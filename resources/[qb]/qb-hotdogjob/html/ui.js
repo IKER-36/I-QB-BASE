@@ -20,9 +20,9 @@ function UpdateUI(data) {
                 $(Span).html(stock.Current + " / " + stock.Max[data.Level.lvl - 1]);
             });
             if (data.Level.rep !== undefined) {
-                $("#my-level").html('LEVEL '+data.Level.lvl+' : '+data.Level.rep+'xp');
+                $("#my-level").html('Nivel '+data.Level.lvl+' : '+data.Level.rep+'xp');
             } else {
-                $("#my-level").html('LEVEL '+data.Level.lvl+' : 0xp');
+                $("#my-level").html('Nivel '+data.Level.lvl+' : 0xp');
             }
             UIVisible = true;
         } else {
@@ -32,9 +32,9 @@ function UpdateUI(data) {
                 $(Span).html(stock.Current + " / " + stock.Max[data.Level.lvl - 1]);
             });
             if (data.Level.rep !== undefined) {
-                $("#my-level").html('LEVEL '+data.Level.lvl+' : '+data.Level.rep+'xp');
+                $("#my-level").html('Nivel '+data.Level.lvl+' : '+data.Level.rep+'xp');
             } else {
-                $("#my-level").html('LEVEL '+data.Level.lvl+' : 0xp');
+                $("#my-level").html('Nivel '+data.Level.lvl+' : 0xp');
             }
         }
     } else {

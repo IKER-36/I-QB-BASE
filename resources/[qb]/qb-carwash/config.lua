@@ -14,7 +14,7 @@ Config = {}
 
 Config.Locations = {
     [1] = {
-        ["label"] = "Hands Free Carwash",
+        ["label"] = "Lavado de vehiculos",
         ["coords"] = {
             ["x"] = 26.5906,
             ["y"] = -1392.0261,
@@ -22,7 +22,7 @@ Config.Locations = {
         }
     },
     [2] = {
-        ["label"] = "Hands Free Carwash",
+        ["label"] = "Lavado de vehiculos",
         ["coords"] = {
             ["x"] = 167.1034,
             ["y"] = -1719.4704,
@@ -30,7 +30,7 @@ Config.Locations = {
         }
     },
     [3] = {
-        ["label"] = "Hands Free Carwash",
+        ["label"] = "Lavado de vehiculos",
         ["coords"] = {
             ["x"] = -74.5693,
             ["y"] = 6427.8715,
@@ -38,7 +38,7 @@ Config.Locations = {
         }
     },
     [4] = {
-        ["label"] = "Hands Free Carwash",
+        ["label"] = "Lavado de vehiculos",
         ["coords"] = {
             ["x"] = -1200.4,
             ["y"] = -1720.46,
@@ -46,7 +46,7 @@ Config.Locations = {
         }
     },
     [5] = {
-        ["label"] = "Hands Free Carwash",
+        ["label"] = "Lavado de vehiculos",
         ["coords"] = {
             ["x"] = 1363.22,
             ["y"] = 3592.7,
@@ -54,7 +54,7 @@ Config.Locations = {
         }
     },
     [6] = {
-        ["label"] = "Hands Free Carwash",
+        ["label"] = "Lavado de vehiculos",
         ["coords"] = {
             ["x"] = -699.6325,
             ["y"] = -932.7043,

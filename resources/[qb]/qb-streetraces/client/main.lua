@@ -29,7 +29,7 @@ Citizen.CreateThread(function()
                 for k, race in pairs(Races) do
                     if Races[k] ~= nil then
                         if #(pos - vector3(Races[k].startx, Races[k].starty, Races[k].startz)) < 15.0 and not Races[k].started then
-                            DrawText3Ds(Races[k].startx, Races[k].starty, Races[k].startz, "[~g~H~w~] To Join The Race (~g~$"..Races[k].amount..",-~w~)")
+                            DrawText3Ds(Races[k].startx, Races[k].starty, Races[k].startz, "[~g~H~w~] Para unirte a la carrera  (~g~$"..Races[k].amount..",-~w~)")
                             if IsControlJustReleased(0, 74) then
                                 TriggerServerEvent("qb-streetraces:JoinRace", k)
                             end
@@ -41,13 +41,13 @@ Citizen.CreateThread(function()
             -- In race nog niet gestart
             if RaceId ~= 0 and not InRace then
                 if #(pos - vector3(Races[RaceId].startx, Races[RaceId].starty, Races[RaceId].startz)) < 15.0 and not Races[RaceId].started then
-                    DrawText3Ds(Races[RaceId].startx, Races[RaceId].starty, Races[RaceId].startz, "Race Will Start Soon")
+                    DrawText3Ds(Races[RaceId].startx, Races[RaceId].starty, Races[RaceId].startz, "La carrera empezara pronto")
                 end
             end
             -- In race en gestart
             if RaceId ~= 0 and InRace then
                 if #(pos - vector3(Races[RaceId].endx, Races[RaceId].endy, pos.z)) < 250.0 and Races[RaceId].started then
-                    DrawText3Ds(Races[RaceId].endx, Races[RaceId].endy, pos.z + 0.98, "FINISH")
+                    DrawText3Ds(Races[RaceId].endx, Races[RaceId].endy, pos.z + 0.98, "Terminar")
                     if #(pos - vector3(Races[RaceId].endx, Races[RaceId].endy, pos.z)) < 15.0 then
                         TriggerServerEvent("qb-streetraces:RaceWon", RaceId)
                         InRace = false
@@ -57,7 +57,7 @@ Citizen.CreateThread(function()
             
             if ShowCountDown then
                 if #(pos - vector3(Races[RaceId].startx, Races[RaceId].starty, Races[RaceId].startz)) < 15.0 and Races[RaceId].started then
-                    DrawText3Ds(Races[RaceId].startx, Races[RaceId].starty, Races[RaceId].startz, "Race start in ~g~"..RaceCount)
+                    DrawText3Ds(Races[RaceId].startx, Races[RaceId].starty, Races[RaceId].startz, "La carrera empezara en ~g~"..RaceCount)
                 end
             end
         end
@@ -78,7 +78,7 @@ AddEventHandler('qb-streetraces:RaceDone', function(race, winner)
     if RaceId ~= 0 and RaceId == race then
         RaceId = 0
         InRace = false
-        QBCore.Functions.Notify("Race Is Over! The Winner Is "..winner.. "!")
+        QBCore.Functions.Notify("¡La carrera ha terminado! El ganador es "..winner.. "!")
     end
 end)
 
@@ -110,12 +110,12 @@ AddEventHandler('qb-streetraces:CreateRace', function(amount)
                 joined = {}
             }
             TriggerServerEvent("qb-streetraces:NewRace", race)
-            QBCore.Functions.Notify("Race Made For $"..amount.."", "success")
+            QBCore.Functions.Notify("Carrera hecha por $"..amount.."", "success")
         else
-            QBCore.Functions.Notify("End Position Is Too Close", "error")
+            QBCore.Functions.Notify("La posición final está demasiado cerca", "error")
         end
     else
-        QBCore.Functions.Notify("You Need To Drop A Marker", "error")
+        QBCore.Functions.Notify("Necesitas poner el marcador", "error")
     end
 end)
 
@@ -143,6 +143,6 @@ function RaceCountDown()
     ShowCountDown = false
     RaceCount = 5
     FreezeEntityPosition(GetVehiclePedIsIn(PlayerPedId(), true), false)
-    QBCore.Functions.Notify("GOOOOOOOOO!!!")
+    QBCore.Functions.Notify("A topeeeeeeee!!!")
 end
 
