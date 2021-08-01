@@ -19,6 +19,6 @@ AddEventHandler('qb-log:server:CreateLog', function(name, title, color, message,
     end
 end)
 
-QBCore.Commands.Add("testwebhook", "Test Your Discord Webhook For Logs (God Only)", {}, false, function(source, args)
+QBCore.Commands.Add("testwebhook", "Pruebe su Discord Webhook para los Logs (Solo God)", {}, false, function(source, args)
     TriggerEvent("qb-log:server:CreateLog", "default", "TestWebhook", "default", "Triggered **a** test webhook :)")
 end, "god")
