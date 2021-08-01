@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Scoreboard'
+description 'QB-CORE Scoreboard TRANSLATED BY (Broncas#3949) COLABORATING IN I-QB PROJECT'
 version '1.0.0'
 
 ui_page 'html/ui.html'
