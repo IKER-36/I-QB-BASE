@@ -1,7 +1,7 @@
 fx_version 'bodacious'
 game 'gta5'
 
-description 'vSyncRevamped'
+description 'QB-CORE vSyncRevamped TRANSLATED BY (Broncas#3949) COLABORATING IN I-QB PROJECT'
 version '1.0.2'
 
 shared_scripts { 

@@ -46,8 +46,8 @@ Locales['en'] = {
     ['help_nooncommand'] = 'Establecer el tiempo para 12:00',
     ['help_eveningcommand'] = 'Establecer el tiempo para 18:00',
     ['help_nightcommand'] = 'Establecer el tiempo para 23:00',
-    ['help_blackoutcommand'] = 'Toggle blackout mode.',
+    ['help_blackoutcommand'] = 'Alternar el modo de apagón.',
 
-    ['not_access'] = '^8Error: ^1You do not have access to that command.',
-    ['not_allowed'] = '^8Error: ^1You are not allowed to use this command.',
+    ['not_access'] = '^8Error: ^1No tienes acceso a ese comando.',
+    ['not_allowed'] = '^8Error: ^1No se le permite usar este comando.',
 }
