@@ -61,7 +61,7 @@ AddEventHandler('qb-ifruitstore:server:itemReward', function(spot)
     if Player.Functions.AddItem(item.name, item.amount) then
         TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[item.name], 'add')
     else
-        TriggerClientEvent('QBCore:Notify', src, 'You have to much in your pocket ..', 'error')
+        TriggerClientEvent('QBCore:Notify', src, 'Tienes muchas cosas en tu bolsillo ..', 'error')
     end    
 end)
 
@@ -81,7 +81,7 @@ end)
 RegisterServerEvent('qb-ifruitstore:server:callCops')
 AddEventHandler('qb-ifruitstore:server:callCops', function(streetLabel, coords)
     local place = "iFruitStore"
-    local msg = "The Alram has been activated at the "..place.. " at " ..streetLabel
+    local msg = "La alarma se ha activado en el "..place.. " en " ..streetLabel
 
     TriggerClientEvent("qb-ifruitstore:client:robberyCall", -1, streetLabel, coords)
 

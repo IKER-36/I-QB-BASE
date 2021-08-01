@@ -69,7 +69,7 @@ Citizen.CreateThread(function()
                             TriggerEvent('inventory:client:requiredItems', requiredItems, true)
                         end
                         if not Config.Locations["takeables"][spot].isBusy and not Config.Locations["takeables"][spot].isDone then
-                            DrawText3Ds(Config.Locations["takeables"][spot].x, Config.Locations["takeables"][spot].y,Config.Locations["takeables"][spot].z, '~g~E~w~ To grab item')
+                            DrawText3Ds(Config.Locations["takeables"][spot].x, Config.Locations["takeables"][spot].y,Config.Locations["takeables"][spot].z, '~g~E~w~ Para agarrar el artículo')
                             if IsControlJustPressed(0, 38) then
                                 if CurrentCops >= 0 then
                                     if Config.Locations["thermite"].isDone then 
@@ -78,14 +78,14 @@ Citizen.CreateThread(function()
                                                 currentSpot = spot
                                                 GrabItem(currentSpot)
                                             else
-                                                QBCore.Functions.Notify("You are missing an advanced lockpick", "error")
+                                                QBCore.Functions.Notify("Te falta una ganzúa avanzada", "error")
                                             end
                                         end, "advancedlockpick")
                                     else
-                                        QBCore.Functions.Notify("Security is still active..", "error")
+                                        QBCore.Functions.Notify("La seguridad sigue activa..", "error")
                                     end
                                 else
-                                    QBCore.Functions.Notify("Not enough Police", "error")
+                                    QBCore.Functions.Notify("No hay suficiente policia :(", "error")
                                 end
                             end
                         end
@@ -125,7 +125,7 @@ function lockpickDone(success)
     else
         if math.random(1, 100) <= 40 and IsWearingHandshoes() then
             TriggerServerEvent("evidence:server:CreateFingerDrop", pos)
-            QBCore.Functions.Notify("You ripped your glove..")
+            QBCore.Functions.Notify("Te rasgaste el guante ...")
         end
         if math.random(1, 100) <= 10 then
             TriggerServerEvent("QBCore:Server:RemoveItem", "advancedlockpick", 1)
@@ -140,7 +140,7 @@ function GrabItem(spot)
         requiredItemsShowed2 = false
         TriggerEvent('inventory:client:requiredItems', requiredItems, false)
     end
-    QBCore.Functions.Progressbar("grab_ifruititem", "Disconnect Item", 10000, false, true, {
+    QBCore.Functions.Progressbar("grab_ifruititem", "Desconectando el artículo", 10000, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -169,11 +169,11 @@ function GrabItem(spot)
         TriggerServerEvent('qb-ifruitstore:server:setSpotState', "isDone", true, spot)
         TriggerServerEvent('qb-ifruitstore:server:setSpotState', "isBusy", false, spot)
         TriggerServerEvent('qb-ifruitstore:server:itemReward', spot)
-        TriggerServerEvent('qb-ifruitstore:server:PoliceAlertMessage', 'People try to steal items at the iFruit Store', pos, true)
+        TriggerServerEvent('qb-ifruitstore:server:PoliceAlertMessage', 'Un@s chaval@s estan intentando robar artículos en la tienda iFruit.', pos, true)
     end, function() -- Cancel
         StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
         TriggerServerEvent('qb-ifruitstore:server:setSpotState', "isBusy", false, spot)
-        QBCore.Functions.Notify("Canceled..", "error")
+        QBCore.Functions.Notify("Cancelado..", "error")
     end)
 end
 
@@ -236,7 +236,7 @@ AddEventHandler('thermite:UseThermite', function()
                 })
             end
         else
-            QBCore.Functions.Notify("Not enough police", "error")
+            QBCore.Functions.Notify("No hay suficiente policia", "error")
         end
     end
 end)
@@ -280,7 +280,7 @@ AddEventHandler('qb-ifruitstore:client:PoliceAlertMessage', function(msg, coords
         SetBlipAlpha(blip, transG)
         SetBlipAsShortRange(blip, false)
         BeginTextCommandSetBlipName('STRING')
-        AddTextComponentString("911 - Suspicious situation in the iFruit Store")
+        AddTextComponentString("911 - Situación sospechosa en la iFruit Store")
         EndTextCommandSetBlipName(blip)
         while transG ~= 0 do
             Wait(180 * 4)
@@ -314,11 +314,11 @@ RegisterNUICallback('thermitefailed', function()
     local randTime = math.random(10000, 15000)
     CreateFire(coords, randTime)
 
-    TriggerServerEvent('qb-ifruitstore:server:PoliceAlertMessage', 'People try to steal items at the iFruit Store', coords, true)
+    TriggerServerEvent('qb-ifruitstore:server:PoliceAlertMessage', 'Un@s chaval@s estan intentando robar artículos en la tienda iFruit.', coords, true)
 end)
 
 RegisterNUICallback('thermitesuccess', function()
-    QBCore.Functions.Notify("The fuses are broken", "success")
+    QBCore.Functions.Notify("Los fusibles están rotos", "success")
     TriggerServerEvent("QBCore:Server:RemoveItem", "thermite", 1)
     local pos = GetEntityCoords(PlayerPedId())
     if #(pos - vector3(Config.Locations["thermite"].x, Config.Locations["thermite"].y,Config.Locations["thermite"].z)) < 1.0 then
@@ -389,7 +389,7 @@ AddEventHandler('qb-ifruitstore:client:robberyCall', function(streetLabel, coord
             PlaySound(-1, "Lose_1st", "GTAO_FM_Events_Soundset", 0, 0, 1)
             TriggerEvent('qb-policealerts:client:AddPoliceAlert', {
                 timeOut = 10000,
-                alertTitle = "iFruitStore robbery attempt",
+                alertTitle = "Intento de robo de iFruitStore",
                 coords = {
                     x = coords.x,
                     y = coords.y,
@@ -421,7 +421,7 @@ AddEventHandler('qb-ifruitstore:client:robberyCall', function(streetLabel, coord
         SetBlipScale(blip, 1.2)
         SetBlipFlashes(blip, true)
         BeginTextCommandSetBlipName('STRING')
-        AddTextComponentString("10-90: iFruitStore Robbery")
+        AddTextComponentString("10-90: Robo en la iFruitStore")
         EndTextCommandSetBlipName(blip)
         while transG ~= 0 do
             Wait(180 * 4)
