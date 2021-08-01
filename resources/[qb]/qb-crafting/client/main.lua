@@ -26,7 +26,7 @@ Citizen.CreateThread(function()
 			local objectPos = GetEntityCoords(craftObject)
 			if #(pos - objectPos) < 1.5 then
 				awayFromObject = false
-				DrawText3D(objectPos.x, objectPos.y, objectPos.z + 1.0, "~g~E~w~ - Craft")
+				DrawText3D(objectPos.x, objectPos.y, objectPos.z + 1.0, "~g~E~w~ - Craftear")
 				if IsControlJustReleased(0, 38) then
 					local crafting = {}
 					crafting.label = "Crafting"
@@ -51,7 +51,7 @@ Citizen.CreateThread(function()
 		if distance < 10 then
 			inRange = true
 			if distance < 1.5 then
-				DrawText3D(Config.AttachmentCrafting["location"].x, Config.AttachmentCrafting["location"].y, Config.AttachmentCrafting["location"].z, "~g~E~w~ - Craft")
+				DrawText3D(Config.AttachmentCrafting["location"].x, Config.AttachmentCrafting["location"].y, Config.AttachmentCrafting["location"].z, "~g~E~w~ - Craftear")
 				if IsControlJustPressed(0, 38) then
 					local crafting = {}
 					crafting.label = "Attachment Crafting"
