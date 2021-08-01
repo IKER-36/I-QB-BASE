@@ -162,17 +162,17 @@ AddEventHandler('qb-weed:server:harvestPlant', function(house, amount, plantName
                         TriggerClientEvent('QBCore:Notify', src, 'The plant has been harvested', 'success', 3500)
                         TriggerClientEvent('qb-weed:client:refreshHousePlants', -1, house)
                     else
-                        TriggerClientEvent('QBCore:Notify', src, 'This plant no longer exists?', 'error', 3500)
+                        TriggerClientEvent('QBCore:Notify', src, '¿Esta planta ya no existe?', 'error', 3500)
                     end
                 end)
             else
-                TriggerClientEvent('QBCore:Notify', src, 'House Not Found', 'error', 3500)
+                TriggerClientEvent('QBCore:Notify', src, 'Casa no encontrada', 'error', 3500)
             end
         else
-            TriggerClientEvent('QBCore:Notify', src, "You Don't Have Enough Resealable Bags", 'error', 3500)
+            TriggerClientEvent('QBCore:Notify', src, "No tiene suficientes bolsas resellables", 'error', 3500)
         end
     else
-        TriggerClientEvent('QBCore:Notify', src, "You Don't Have Enough Resealable Bags", 'error', 3500)
+        TriggerClientEvent('QBCore:Notify', src, "No tiene suficientes bolsas resellables", 'error', 3500)
     end
 end)
 
