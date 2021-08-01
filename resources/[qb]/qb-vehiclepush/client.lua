@@ -43,7 +43,7 @@ Citizen.CreateThread(function()
         if Vehicle.Vehicle ~= nil then
  
                 if IsVehicleSeatFree(Vehicle.Vehicle, -1) and GetVehicleEngineHealth(Vehicle.Vehicle) <= Config.DamageNeeded then
-                    QBCore.Functions.DrawText3D(Vehicle.Coords.x, Vehicle.Coords.y, Vehicle.Coords.z, 'Press [~g~SHIFT~w~] and [~g~E~w~] to push the vehicle')
+                    QBCore.Functions.DrawText3D(Vehicle.Coords.x, Vehicle.Coords.y, Vehicle.Coords.z, 'Presiona [~g~SHIFT~w~] y [~g~E~w~] para empujar el vehiculo')
                 end
      
 
