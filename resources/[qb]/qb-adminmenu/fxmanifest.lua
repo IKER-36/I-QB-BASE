@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-AdminMenu'
+description 'QB-AdminMenu mainly translated by CherryozZ#0420 with SQL optimizations'
 version '1.0.0'
 
 client_scripts {

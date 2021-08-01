@@ -82,7 +82,7 @@ local menu_button11 = menu5:AddButton({
     icon = '😃',
     label = 'Gestionar concesionarios',
     value = menu7,
-    description = 'Create/Delete Dealers'
+    description = 'Crear/Borrar Encargados'
 }) ]]
 local menu_button13 = menu5:AddSlider({
     icon = '⏲️',
@@ -191,94 +191,94 @@ menu_button11:On("select",function()
     local elements = {
         [1] = {
             icon = '☀️',
-            label = 'Extra Sunny',
+            label = 'Extra Soleado',
             value = "EXTRASUNNY",
-            description = 'I\'m Melting!'
+            description = 'Me estoy derritiendo!'
         },
         [2] = {
             icon = '☀️',
-            label = 'Clear',
+            label = 'Soleado',
             value = "CLEAR",
-            description = 'The Perfect Day!'
+            description = 'El día perfecto!'
         },
         [3] = {
             icon = '☀️',
             label = 'Neutral',
             value = "NEUTRAL",
-            description = 'Just A Regular Day!'
+            description = '¡Solo un día regular!'
         },
         [4] = {
             icon = '🌁',
-            label = 'Smog',
+            label = 'Niebla tóxica',
             value = "SMOG",
-            description = 'Smoke Machine!'
+            description = 'Maquina de humo!'
         },
         [5] = {
             icon = '🌫️',
-            label = 'Foggy',
+            label = 'Neblinoso',
             value = "FOGGY",
-            description = 'Smoke Machine x2!'
+            description = 'Maquina de humo x2!'
         },
         [6] = {
             icon = '⛅',
-            label = 'Overcast',
+            label = 'Nublado',
             value = "OVERCAST",
-            description = 'Not Too Sunny!'
+            description = 'No demasiado soleado!'
         },
         [7] = {
             icon = '☁️',
-            label = 'Clouds',
+            label = 'Nubes',
             value = "CLOUDS",
-            description = 'Where\'s The Sun?'
+            description = 'Dónde está el sol?'
         },
         [8] = {
             icon = '🌤️',
-            label = 'Clearing',
+            label = 'Despejandose',
             value = "CLEARING",
-            description = 'Clouds Start To Clear!'
+            description = 'Las nubes comienzan a despejar!'
         },
         [9] = {
             icon = '☂️',
-            label = 'Rain',
+            label = 'Lluvia',
             value = "RAIN",
-            description = 'Make It Rain!'
+            description = 'Haz que llueva!'
         },
        
         [10] = {
             icon = '⛈️',
-            label = 'Thunder',
+            label = 'Tormenta',
             value = "THUNDER",
-            description = 'Run and Hide!'
+            description = '¡Correr y esconderse!'
         },
         [11] = {
             icon = '❄️',
-            label = 'Snow',
+            label = 'Nieve',
             value = "SNOW",
-            description = 'Is It Cold Out Here?'
+            description = 'Hace frío aquí?'
         },
         [12] = {
             icon = '🌨️',
-            label = 'Blizzard',
+            label = 'Tormenta de nieve',
             value = "BLIZZARD",
-            description = 'Snow Machine?'
+            description = 'Maquina de nieve?'
         },
         [13] = {
             icon = '❄️',
-            label = 'Light Snow',
+            label = 'Nevada ligera',
             value = "SNOWLIGHT",
-            description = 'Starting To Feel Like Christmas!'
+            description = 'Empezando a sentirse como la navidad!'
         },
         [14] = {
             icon = '🌨️',
-            label = 'Heavy Snow (XMAS)',
+            label = 'Fuertes nevadas (NAVIDAD)',
             value = "XMAS",
-            description = 'Snowball Fight!'
+            description = 'Guerra de nieve!'
         },
         [15] = {
             icon = '🎃',
             label = 'Halloween',
             value = "HALLOWEEN",
-            description = 'What Was That Noise?!'
+            description = 'Que fue ese ruido?!'
         }
     }
     MenuV:OpenMenu(menu6)
@@ -287,22 +287,22 @@ menu_button11:On("select",function()
         local selection = btn.Value
         print(selection.value)
         TriggerServerEvent('qb-weathersync:server:setWeather', selection.value)
-            QBCore.Functions.Notify('Weather Changed To: '..selection.label)
+            QBCore.Functions.Notify('El clima fue cambiado a: '..selection.label)
         end})
     end
 end)
 
 local menu_button29 = menu7:AddButton({
     icon = '🔌',
-    label = 'Existing Dealers',
+    label = 'Distribuidores existentes',
     value = menu7,
-    description = 'Created Dealers'
+    description = 'Distribuidores creados'
 })
 local menu_button30 = menu7:AddButton({
     icon = '➕',
-    label = 'Create Dealer',
+    label = 'Crear distribuidor',
     value = menu7,
-    description = 'Make A New Dealer'
+    description = 'Hacer un nuevo distribuidor'
 })
 
 -- Player List
@@ -313,11 +313,11 @@ menu_button2:On('select', function(item)
             local menu_button10 = menu4:AddButton({
                 label = 'ID:' .. v["id"] .. ' | ' .. v["name"],
                 value = v,
-                description = 'Player Name',
+                description = 'Nombre del jugador',
                 select = function(btn)
-                    local select = btn.Value -- get all the values from v!
+                    local select = btn.Value -- ¡Consigue todos los valores de V!
                     
-                    OpenPlayerMenus(select) -- only pass what i select nothing else
+                    OpenPlayerMenus(select) -- Solo pasa lo que no seleccionó nada más.
 
                 end
             }) -- WORKS
@@ -326,82 +326,82 @@ menu_button2:On('select', function(item)
 end)
 
 menu_button13:On("select", function(item, value)
-    TriggerServerEvent("qb-weathersync:server:setHora", value, value)
-    QBCore.Functions.Notify("Hora changed to " .. value .. " hs 00 min")
+    TriggerServerEvent("qb-weathersync:server:sethour", value, value)
+    QBCore.Functions.Notify("Hora cambiada a " .. value .. " hs 00 min")
 
 end)
 
 function OpenPlayerMenus(player)
 
-    local Players = MenuV:CreateMenu(false, player.cid .. ' Options', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv') -- Players Sub Menu
+    local Players = MenuV:CreateMenu(false, player.cid .. ' Opciones', 'topright', 155, 0, 0, 'size-125', 'none', 'menuv') -- Players Sub Menu
     Players:ClearItems()
     MenuV:OpenMenu(Players)
     elements = {
         [1] = {
             icon = '💀',
-            label = "Kill",
+            label = "Matar",
             value = "kill",
-            description = "Kill " .. player.cid
+            description = "Matar a " .. player.cid
         },
         [2] = {
             icon = '🏥',
-            label = "Revive",
+            label = "Reanimar",
             value = "revive",
-            description = "Revive " .. player.cid
+            description = "Reanimar a " .. player.cid
         },
         [3] = {
             icon = '🥶',
-            label = "Freeze",
+            label = "Freezear",
             value = "freeze",
-            description = "Freeze " .. player.cid
+            description = "Freezea a " .. player.cid
         },
         [4] = {
             icon = '👀',
-            label = "Spectate",
+            label = "Espectar",
             value = "spectate",
-            description = "Spectate " .. player.cid
+            description = "Espectar a " .. player.cid
         },
         [5] = {
             icon = '➡️',
-            label = "Go To",
+            label = "Ir a",
             value = "goto",
-            description = "Go to " .. player.cid .. " Position"
+            description = "Ir a la posición de " .. player.cid 
         },
         [6] = {
             icon = '⬅️',
-            label = "Bring",
+            label = "Traer",
             value = "bring",
-            description = "Bring " .. player.cid .. " to your position"
+            description = "Trae a " .. player.cid .. " a tu posición"
         },
         [7] = {
             icon = '🎒',
-            label = "Open Inventory",
+            label = "Abrir el inventario",
             value = "inventory",
-            description = "Open " .. player.cid .. " inventorys"
+            description = "Abrir el inventario a " .. player.cid
         },
         [8] = {
             icon = '👕',
-            label = "Give Clothing Menu",
+            label = "Dar menú de ropa",
             value = "cloth",
-            description = "Give the Cloth menu to " .. player.cid
+            description = "Dar el menú de ropa a " .. player.cid
         },
         [9] = {
             icon = '🥾',
-            label = "Kick",
+            label = "Kickear",
             value = "kick",
-            description = "Kick " .. player.cid .. " you need to give a reason"
+            description = "Kickear a " .. player.cid .. " necesitas dar una razón"
         },
         [10] = {
             icon = '🚫',
-            label = "Ban",
+            label = "Banear",
             value = "ban",
-            description = "Ban " .. player.cid .. " you need to give a reason"
+            description = "Banear a " .. player.cid .. " necesitas dar una razón"
         },
         [11] = {
             icon = '🎟️',
-            label = "Permissions",
+            label = "Permisos",
             value = "perms",
-            description = "Give " .. player.cid .. " Permissions"
+            description = "Dar a " .. player.cid .. " permisos"
         }
     }
     for k, v in ipairs(elements) do
@@ -431,9 +431,9 @@ function OpenBanMenu(banspeler)
     menu8:ClearItems()
     local menu_button15 = menu8:AddButton({
         icon = '',
-        label = 'Reason',
+        label = 'Razón',
         value = "reason",
-        description = 'Ban reason',
+        description = 'Razón del baneo',
         select = function(btn)
             banreason = LocalInput('Ban Reason', 255, 'Reason')
         end
@@ -441,60 +441,60 @@ function OpenBanMenu(banspeler)
 
     local menu_button16 = menu8:AddSlider({
         icon = '⏲️',
-        label = 'Length',
+        label = 'Longitud',
         value = '3600',
         values = {{
-            label = '1 hour',
+            label = '1 hora',
             value = '3600',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '6 hours',
+            label = '6 horas',
             value ='21600',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '12 hours',
+            label = '12 horas',
             value = '43200',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '1 day',
+            label = '1 dia',
             value = '86400',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '3 days',
+            label = '3 dias',
             value = '259200',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '1 week',
+            label = '1 semana',
             value = '604800',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '1 month',
+            label = '1 mes',
             value = '2678400',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '3 months',
+            label = '3 meses',
             value = '8035200',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '6 months',
+            label = '6 meses',
             value = '16070400',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = '1 year',
+            label = '1 año',
             value = '32140800',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = 'Permanent',
+            label = 'Permanente',
             value = '99999999999',
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }, {
-            label = 'Self',
+            label = 'Modificado',
             value = "self",
-            description = 'Ban Length'
+            description = 'Longitud del ban'
         }},
         select = function(btn, newValue, oldValue)
             if newValue == "self" then
-                banlength = LocalInputInt('Ban Length', 11, 'Seconds')
+                banlength = LocalInputInt('Longitud del ban', 11, 'Segundos')
             else
                 banlength = newValue
             end
@@ -503,16 +503,16 @@ function OpenBanMenu(banspeler)
 
     local menu_button17 = menu8:AddButton({
         icon = '',
-        label = 'Confirm',
+        label = 'Confirmar',
         value = "ban",
-        description = 'Confirm the ban',
+        description = 'Confirmar el baneo',
         select = function(btn)
             if banreason ~= 'Unknown' and banlength ~= nil then
                 TriggerServerEvent('qb-admin:server:ban', banspeler, banlength, banreason)
                 banreason = 'Unknown'
                 banlength = nil
             else
-                QBCore.Functions.Notify('You must give a Reason and set a Length for the ban!', 'error')
+                QBCore.Functions.Notify('Debe dar una razón y establecer una longitud para el baneo.!', 'error')
             end
         end
     })
@@ -523,25 +523,25 @@ function OpenKickMenu(kickplayer)
     menu9:ClearItems()
     local menu_button19 = menu9:AddButton({
         icon = '',
-        label = 'Reason',
+        label = 'Razón',
         value = "reason",
-        description = 'Kick reason',
+        description = 'Razón del kickeo',
         select = function(btn)
-            kickreason = LocalInput('Kick Reason', 255, 'Reason')
+            kickreason = LocalInput('Razón del kickeo', 255, 'Razón')
         end
     })
 
     local menu_button18 = menu9:AddButton({
         icon = '',
-        label = 'Confirm',
+        label = 'Confirmar',
         value = "kick",
-        description = 'Confirm the kick',
+        description = 'Confirmar el kickeo',
         select = function(btn)
             if kickreason ~= 'Unknown' then
                 TriggerServerEvent('qb-admin:server:kick', kickplayer, kickreason)
                 kickreason = 'Unknown'
             else
-                QBCore.Functions.Notify('You must give a reason!', 'error')
+                QBCore.Functions.Notify('Debes dar una razón!', 'error')
             end
         end
     })
@@ -555,47 +555,47 @@ function OpenPermsMenu(permsply)
             menu10:ClearItems()
             local menu_button20 = menu10:AddSlider({
                 icon = '',
-                label = 'Group',
+                label = 'Grupo',
                 value = 'user',
                 values = {{
-                    label = 'User',
+                    label = 'Usuario',
                     value = 'user',
-                    description = 'Group'
+                    description = 'Grupo'
                 }, {
                     label = 'Admin',
                     value = 'admin',
-                    description = 'Group'
+                    description = 'Grupo'
                 }, {
-                    label = 'God',
+                    label = 'Dios',
                     value = 'god',
-                    description = 'Group'
+                    description = 'Grupo'
                 }},
                 select = function(btn)
                     local vcal = btn.Value
                     if vcal == 1 then
                         selectedgroup = {}
-                        table.insert(selectedgroup, {rank = "user", label = "User"})
+                        table.insert(selectedgroup, {rank = "user", label = "Usuario"})
                     elseif vcal == 2 then
                         selectedgroup = {}
                         table.insert(selectedgroup, {rank = "admin", label = "Admin"})
                     elseif vcal == 3 then
                         selectedgroup = {}
-                        table.insert(selectedgroup, {rank = "god", label = "God"})
+                        table.insert(selectedgroup, {rank = "god", label = "Dios"})
                     end
                 end
             })
 
             local menu_button21 = menu10:AddButton({
                 icon = '',
-                label = 'Confirm',
+                label = 'Confirmar',
                 value = "giveperms",
-                description = 'Give the permission group',
+                description = 'Dar el grupo de permisos',
                 select = function(btn)
                     if selectedgroup ~= 'Unknown' then
                         TriggerServerEvent('qb-admin:server:setPermissions', permsply.id, selectedgroup)
                         selectedgroup = 'Unknown'
                     else
-                        QBCore.Functions.Notify('Choose a group!', 'error')
+                        QBCore.Functions.Notify('Elige un grupo!', 'error')
                     end
                 end
             })
@@ -790,7 +790,7 @@ Citizen.CreateThread(function()
                 local minimum, maximum = GetModelDimensions(GetEntityModel(entity))
                 DrawEntityBoundingBox(entity, color)
                 DrawLine(position.x, position.y, position.z, coords.x, coords.y, coords.z, color.r, color.g, color.b, color.a)
-                QBCore.Functions.DrawText3D(entityCoord.x, entityCoord.y, entityCoord.z, "Obj: " .. entity .. " Model: " .. GetEntityModel(entity).. " \nPress [~g~E~s~] to delete the object!", 2)
+                QBCore.Functions.DrawText3D(entityCoord.x, entityCoord.y, entityCoord.z, "Obj: " .. entity .. " Model: " .. GetEntityModel(entity).. " \nPresiona [~g~E~s~] para borrar el objeto!", 2)
                 -- When E pressed then remove targeted entity
                 if IsControlJustReleased(0, 38) then
                     -- Set as missionEntity so the object can be remove (Even map objects)
