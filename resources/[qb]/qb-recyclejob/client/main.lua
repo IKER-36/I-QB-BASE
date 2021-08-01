@@ -91,7 +91,7 @@ Citizen.CreateThread(function ()
                             end)
                         end
                     else
-                        DrawText3D(packagePos.x, packagePos.y, packagePos.z + 1, "Package")
+                        DrawText3D(packagePos.x, packagePos.y, packagePos.z + 1, "Empaquetar Aqui")
                     end
                 else
                     if #(pos - vector3(Config['delivery'].dropLocation.x, Config['delivery'].dropLocation.y, Config['delivery'].dropLocation.z)) < 2.0 then
