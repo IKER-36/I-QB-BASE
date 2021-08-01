@@ -4,11 +4,11 @@ Config.BailPrice = 250
 
 Config.Locations = {
     ["main"] = {
-        label = "Truck Shed",
+        label = "Sede de Camioneros",
         coords = vector4(153.68, -3211.88, 5.91, 274.5),
     },
     ["vehicle"] = {
-        label = "Truck Storage",
+        label = "Almacenamiento de Camiones",
         coords = vector4(141.12, -3204.31, 5.85, 267.5),
     },
     ["stores"] ={
@@ -100,5 +100,5 @@ Config.Locations = {
 }
 
 Config.Vehicles = {
-    ["rumpo"] = "Dumbo Delivery",
+    ["rumpo"] = "Furgoneta de reparto",
 }
