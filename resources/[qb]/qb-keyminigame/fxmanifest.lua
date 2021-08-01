@@ -1,6 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
+------No hay nada que traducir aqui solo es un minijuego------ Broncas
+
 description 'QB-KeyMiniGame'
 version '1.0.0'
 
