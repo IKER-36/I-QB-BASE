@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-RecycleJob'
+description 'QB-RecycleJob TRANSLATED BY Raz#5398 COLABORATING IN I-QB PROJECT'
 version '1.0.0'
 
 shared_scripts { 
