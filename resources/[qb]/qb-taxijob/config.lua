@@ -1,7 +1,7 @@
 Config = Config or {}
 
 Config.AllowedVehicles = {
-   [1] = {model = "taxi", label = "Standard Cab"},
+   [1] = {model = "taxi", label = "Taxi"},
 }
 
 Config.Meter = {
