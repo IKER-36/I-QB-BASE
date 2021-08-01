@@ -54,7 +54,7 @@ RegisterNetEvent('jobs:client:ToggleNpc')
 AddEventHandler('jobs:client:ToggleNpc', function()
     if QBCore.Functions.GetPlayerData().job.name == "tow" then
         if CurrentTow ~= nil then 
-            QBCore.Functions.Notify("First Finish Your Work", "error")
+            QBCore.Functions.Notify("Primero termine su trabajo", "error")
             return
         end
         NpcOn = not NpcOn
@@ -104,7 +104,7 @@ AddEventHandler('qb-tow:client:TowVehicle', function()
                     local towPos = GetEntityCoords(vehicle)
                     local targetPos = GetEntityCoords(targetVehicle)
                     if #(towPos - targetPos) < 11.0 then
-                        QBCore.Functions.Progressbar("towing_vehicle", "Hoisting the Vehicle...", 5000, false, true, {
+                        QBCore.Functions.Progressbar("towing_vehicle", "Elevando el vehículo...", 5000, false, true, {
                             disableMovement = true,
                             disableCarMovement = true,
                             disableMouse = false,
@@ -139,7 +139,7 @@ AddEventHandler('qb-tow:client:TowVehicle', function()
                 end
             end
         else
-            QBCore.Functions.Progressbar("untowing_vehicle", "Remove The Vehicle", 5000, false, true, {
+            QBCore.Functions.Progressbar("untowing_vehicle", "Retire el vehículo", 5000, false, true, {
                 disableMovement = true,
                 disableCarMovement = true,
                 disableMouse = false,
@@ -191,9 +191,9 @@ Citizen.CreateThread(function()
                     DrawMarker(2, Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 200, 200, 200, 222, false, false, false, true, false, false, false)
                     if #(pos - vector3(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z)) < 1.5 then
                         if IsPedInAnyVehicle(PlayerPedId(), false) then
-                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Store The Vehicle")
+                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Almacenar el vehículo")
                         else
-                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Vehicles")
+                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Vehiculos")
                         end
                         if IsControlJustReleased(0, 38) then
                             if IsPedInAnyVehicle(PlayerPedId(), false) then
@@ -210,7 +210,7 @@ Citizen.CreateThread(function()
     
                 if #(pos - vector3(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z)) < 4.5 then
                     if #(pos - vector3(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z)) < 1.5 then
-                        DrawText3D(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z, "~g~E~w~ - Payslip")
+                        DrawText3D(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z, "~g~E~w~ - Nómina")
                         if IsControlJustReleased(0, 38) then
                             if JobsDone > 0 then
                                 RemoveBlip(CurrentBlip)
@@ -222,7 +222,7 @@ Citizen.CreateThread(function()
                             end
                         end
                     elseif #(pos - vector3(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z)) < 2.5 then
-                        DrawText3D(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z, "Payslip")
+                        DrawText3D(Config.Locations["main"].coords.x, Config.Locations["main"].coords.y, Config.Locations["main"].coords.z, "Nómina")
                     end  
                 end
 
@@ -294,10 +294,10 @@ end
 
 function MenuGarage()
     ped = PlayerPedId();
-    MenuTitle = "Garage"
+    MenuTitle = "Garaje"
     ClearMenu()
-    Menu.addButton("Vehicles", "VehicleList", nil)
-    Menu.addButton("Close Menu", "closeMenuFull", nil) 
+    Menu.addButton("Vehiculos", "VehicleList", nil)
+    Menu.addButton("Cerrar Menu", "closeMenuFull", nil) 
 end
 
 function VehicleList(isDown)
@@ -305,10 +305,10 @@ function VehicleList(isDown)
     MenuTitle = "Vehicles:"
     ClearMenu()
     for k, v in pairs(Config.Vehicles) do
-        Menu.addButton(Config.Vehicles[k], "TakeOutVehicle", k, "Garage", " Motor: 100%", " Body: 100%", " Fuel: 100%")
+        Menu.addButton(Config.Vehicles[k], "TakeOutVehicle", k, "Garage", " Motor: 100%", " Carroceria: 100%", " Gasolina: 100%")
     end
         
-    Menu.addButton("Back", "MenuGarage",nil)
+    Menu.addButton("Volver", "MenuGarage",nil)
 end
 
 function TakeOutVehicle(vehicleInfo)
