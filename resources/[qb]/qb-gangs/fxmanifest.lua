@@ -3,7 +3,8 @@ game 'gta5'
 
 version '2.4'
 
-author 'Mojito-Fivem'
+author 'QB-CORE GANGS TRANSLATED BY (Broncas#3949) COLABORATING IN I-QB PROJECT'
+
 
 client_scripts {
 	'client/main.lua',
