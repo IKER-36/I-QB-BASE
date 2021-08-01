@@ -19,7 +19,7 @@ AddEventHandler('smallresource:client:LoadNitrous', function()
 
     if not NitrousActivated then
         if IsInVehicle and not IsThisModelABike(GetEntityModel(GetVehiclePedIsIn(ped))) then
-            QBCore.Functions.Progressbar("use_nos", "NOS Is Connected", 1000, false, true, {
+            QBCore.Functions.Progressbar("use_nos", "Estamos poniendo el nitro....", 1000, false, true, {
                 disableMovement = false,
                 disableCarMovement = false,
                 disableMouse = false,
@@ -32,10 +32,10 @@ AddEventHandler('smallresource:client:LoadNitrous', function()
                 TriggerServerEvent('nitrous:server:LoadNitrous', Plate)
             end)
         else
-            QBCore.Functions.Notify('You\'re Not In A Car', 'error')
+            QBCore.Functions.Notify('No estas en un vehiulo', 'error')
         end
     else
-        QBCore.Functions.Notify('You Already Have NOS Active', 'error')
+        QBCore.Functions.Notify('Ya tienes el nitro activo', 'error')
     end
 end)
 

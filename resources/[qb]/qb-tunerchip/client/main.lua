@@ -30,7 +30,7 @@ RegisterNUICallback('save', function(data)
             local ped = PlayerPedId()
             local veh = GetVehiclePedIsUsing(ped)
             setVehData(veh, data)
-            QBCore.Functions.Notify('TunerChip v1.05: Vehicle Tuned!', 'error')
+            QBCore.Functions.Notify('Tuneador: Vehiculo Tuneado!', 'error')
 
             TriggerServerEvent('qb-tunerchip:server:TuneStatus', GetVehicleNumberPlateText(veh), true)
         end
@@ -69,7 +69,7 @@ RegisterNUICallback('reset', function(data)
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsUsing(ped)
     resetVeh(veh)
-    QBCore.Functions.Notify('TunerChip v1.05: Vehicle has been reset!', 'error')
+    QBCore.Functions.Notify('Tuneador: ¡El vehículo ha sido reiniciado!', 'error')
 end)
 
 RegisterNetEvent('qb-tunerchip:client:openChip')
@@ -78,7 +78,7 @@ AddEventHandler('qb-tunerchip:client:openChip', function()
     local inVehicle = IsPedInAnyVehicle(ped)
 
     if inVehicle then
-        QBCore.Functions.Progressbar("connect_laptop", "Tunerchip v1.05: Vehicle Has Been Reset!", 2000, false, true, {
+        QBCore.Functions.Progressbar("connect_laptop", "Tuneador: ¡El vehículo se esta reiniciando!", 2000, false, true, {
             disableMovement = true,
             disableCarMovement = true,
             disableMouse = false,
@@ -95,7 +95,7 @@ AddEventHandler('qb-tunerchip:client:openChip', function()
             QBCore.Functions.Notify("Canceled", "error")
         end)
     else
-        QBCore.Functions.Notify("You Are Not In A Vehicle", "error")
+        QBCore.Functions.Notify("No estas en ningun vehiculo", "error")
     end
 end)
 
