@@ -10,7 +10,7 @@ end)
 RegisterServerEvent('qb-anticheat:server:banPlayer')
 AddEventHandler('qb-anticheat:server:banPlayer', function(reason)
     local src = source
-    TriggerEvent("qb-log:server:CreateLog", "anticheat", "Anti-Cheat", "white", GetPlayerName(src).." Has Been Banned For "..reason, false)
+    TriggerEvent("qb-log:server:CreateLog", "anticheat", "Anti-Cheat", "white", GetPlayerName(src).." Fue banneado por "..reason, false)
     exports.ghmattimysql:execute('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (@name, @license, @discord, @ip, @reason, @expire, @bannedby)', {
         ['@name'] = GetPlayerName(src),
         ['@license'] = QBCore.Functions.GetIdentifier(src, 'license'),
@@ -20,7 +20,7 @@ AddEventHandler('qb-anticheat:server:banPlayer', function(reason)
         ['@expire'] = 2145913200,
         ['@banneby'] = 'Anti-Cheat'
     })
-    DropPlayer(src, "You Have Been Banned For Cheating. Contact Staff (or dont): https://discord.gg/")
+    DropPlayer(src, "Fuiste banneado por el anticheat. Contacta al Staff: https://discord.gg/")
 end)
 
 -- Fake events --

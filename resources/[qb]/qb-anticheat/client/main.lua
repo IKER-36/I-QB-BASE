@@ -47,7 +47,7 @@ Citizen.CreateThread(function()
 
                 if (lengthBetweenCoords > Config.SuperJumpLength) then
                     flags = flags + 1      
-                    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheat detected!", "orange", "** @everyone " ..GetPlayerName(player).. "** is flagged for anticheat **(Flag "..flags.." /"..Config.FlagsForBan.." | Superjump)**")         
+                    TriggerServerEvent("qb-log:server:CreateLog", "Anticheat", "Hacker detectado!", "orange", "** @everyone " ..GetPlayerName(player).. "** a sido detectado por el anticheat **(Flag "..flags.." /"..Config.FlagsForBan.." | Superjump)**")         
                 end
             end
         end
@@ -74,7 +74,7 @@ Citizen.CreateThread(function()
                         if not jumping then 
                             if speed > Config.MaxSpeed then 
                                 flags = flags + 1 
-                                TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheat detected!", "orange", "** @everyone " ..GetPlayerName(player).. "** is flagged from anticheat! **(Flag "..flags.." /"..Config.FlagsForBan.." | Speedhack)**")   
+                                TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheater detectado!", "orange", "** @everyone " ..GetPlayerName(player).. "** a sido detectado por el anticheat! **(Flag "..flags.." /"..Config.FlagsForBan.." | Speedhack)**")   
                             end
                         end
                     end
@@ -96,8 +96,8 @@ Citizen.CreateThread(function()
             if not IsDecorating then 
                 if not IsEntityVisible(ped) then
                     SetEntityVisible(ped, 1, 0)
-                    TriggerEvent('QBCore:Notify', "QB-ANTICHEAT: You were invisible and have been made visible again!")
-                    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Made player visible", "green", "** @everyone " ..GetPlayerName(player).. "** was invisible and has been made visible again by QB-Anticheat")            
+                    TriggerEvent('QBCore:Notify', "QB-ANTICHEAT: ¡Eras invisible y has vuelto a ser visible!")
+                    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Jugador visible", "green", "** @everyone " ..GetPlayerName(player).. "** era invisible y ha sido pillado nuevamente por QB-Anticheat")            
                 end 
             end
         end
@@ -116,7 +116,7 @@ Citizen.CreateThread(function()
             if GetUsingnightvision(true) then 
                 if not IsPedInAnyHeli(ped) then
                     flags = flags + 1 
-                    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheat detected!", "orange", "** @everyone " ..GetPlayerName(player).. "** is flagged from anticheat **(Flag "..flags.." /"..Config.FlagsForBan.." | Nightvision)**")
+                    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheater detectado!", "orange", "** @everyone " ..GetPlayerName(player).. "** a sido pillado por el anticheat **(Flag "..flags.." /"..Config.FlagsForBan.." | Ponerse vision de noche)**")
                 end
             end
         end
@@ -135,7 +135,7 @@ Citizen.CreateThread(function()
             if GetUsingseethrough(true) then 
                 if not IsPedInAnyHeli(ped) then
                     flags = flags + 1
-                    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheat detected!", "orange", "** @everyone " ..GetPlayerName(player).. "** is flagged from antichest **(Flag "..flags.." /"..Config.FlagsForBan.." | Thermalvision)**") 
+                    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheater detectado!", "orange", "** @everyone " ..GetPlayerName(player).. "** a sido pillado por el anticheat **(Flag "..flags.." /"..Config.FlagsForBan.." | Thermalvision)**") 
                 end
             end
         end
@@ -160,8 +160,8 @@ Citizen.CreateThread(function()
                         if plate == BlockedPlate then
                             if DriverSeat == ped then 
                                 DeleteVehicle(veh)               
-                                TriggerServerEvent("qb-anticheat:server:banPlayer", "Cheating")
-                                TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheat detected!", "red", "** @everyone " ..GetPlayerName(player).. "** has been banned for cheating (Sat as driver in spawned vehicle with license plate **"..BlockedPlate.."**")         
+                                TriggerServerEvent("qb-anticheat:server:banPlayer", "Deja los cheats anda")
+                                TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Cheater detectado!", "red", "** @everyone " ..GetPlayerName(player).. "** ha sido banneado por hacer trampa (se spawneo un vehiculo spawneado con matrícula **"..BlockedPlate.."**")         
                             end   
                         end
                     end
@@ -187,7 +187,7 @@ Citizen.CreateThread(function()
                 QBCore.Functions.TriggerCallback('qb-anticheat:server:HasWeaponInInventory', function(HasWeapon)
                     if not HasWeapon then
                         RemoveAllPedWeapons(PlayerPed, false)
-                        TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Weapon removed!", "orange", "** @everyone " ..GetPlayerName(player).. "**had a weapon on them that they did not have in his inventory. QB Anticheat has removed the weapon.")  
+                        TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Armas quitadas", "orange", "** @everyone " ..GetPlayerName(player).. "**tenía un arma sobre ellos que no tenían en su inventario. QB Anticheat ha eliminado el arma.")  
                     end
                 end, WeaponInformation)
             end
@@ -207,7 +207,7 @@ Citizen.CreateThread(function()
         if flags >= Config.FlagsForBan then
             -- TriggerServerEvent("qb-anticheat:server:banPlayer", "Cheating")
             -- AddExplosion(coords, EXPLOSION_GRENADE, 1000.0, true, false, false, true)
-            TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Player banned! (Not really of course, this is a test duuuhhhh)", "red", "** @everyone " ..GetPlayerName(player).. "** Too often has been flagged by the anti-cheat and preemptively banned from the server")  
+            TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Jugador banneado! (En realidad no, por supuesto, esta es una prueba duuuhhhh)", "red", "** @everyone " ..GetPlayerName(player).. "**  a sido detectado por el anti-cheats y prohibido preventivamente del servidor")  
             flags = 0 
         end
     end
@@ -219,5 +219,5 @@ AddEventHandler('qb-anticheat:client:NonRegisteredEventCalled', function(reason,
     local ped = PlayerPedId()
 
     TriggerServerEvent('qb-anticheat:server:banPlayer', reason)
-    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Player banned! (Not really of course, this is a test duuuhhhh)", "red", "** @everyone " ..GetPlayerName(player).. "** has event **"..CalledEvent.."tried to trigger (LUA injector!)")  
+    TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Jugador banneado! (En realidad no, por supuesto, esta es una prueba duuuhhhh)", "red", "** @everyone " ..GetPlayerName(player).. "** hizo el evento **"..CalledEvent.."intento triggear con un lua injector vaya noob xD")  
 end)
