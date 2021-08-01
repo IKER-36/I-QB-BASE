@@ -221,13 +221,13 @@ function HotdogLoop()
                                 end
                             end
                         else
-                            DrawText3Ds(ObjectOffset.x, ObjectOffset.y, ObjectOffset.z, '[G] Release Stall')
+                            DrawText3Ds(ObjectOffset.x, ObjectOffset.y, ObjectOffset.z, '[G] Liberar Puesto')
                             if IsControlJustPressed(0, 47) then
                                 LetKraamLose()
                             end
                         end
                     elseif ObjectDistance < 3.0 then
-                        DrawText3Ds(ObjectOffset.x, ObjectOffset.y, ObjectOffset.z, 'Grab Stall')
+                        DrawText3Ds(ObjectOffset.x, ObjectOffset.y, ObjectOffset.z, 'Agarrar puesto')
                     end
                 end
             else
