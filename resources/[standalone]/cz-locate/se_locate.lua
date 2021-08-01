@@ -15,7 +15,7 @@ RegisterCommand("track", function(source)
     else
         TriggerClientEvent('chat:addMessage', src , {
             template = '<div class="chat-message server"><b>{0}</b></div>',
-            args = { "You are not authorized to use this command"}
+            args = { "No tienes permisos para utilizar este comando."}
         })
     end
 end)
