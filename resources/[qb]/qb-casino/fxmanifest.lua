@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Casino'
+description 'QB-CORE Casino TRANSLATED BY (Broncas#3949) COLABORATING IN I-QB PROJECT'
 version '1.0.0'
 
 shared_script '@qb-core/import.lua'

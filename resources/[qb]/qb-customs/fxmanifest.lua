@@ -1,6 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
+author 'QB-CORE CUSTOMS TRANSLATED BY (Broncas#3949) COLABORATING IN I-QB PROJECT'
+
 ui_page 'html/index.html'
 
 files {

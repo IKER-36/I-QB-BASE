@@ -32,117 +32,117 @@ vehicleCustomisationPrices = {
 -- RESPRAY CATEGORIES
 
 vehicleResprayCategories = {
-    {category = "Primary Colour", id = 0},
-    {category = "Secondary Colour", id = 1},
-    {category = "Pearlescent Colour", id = 2},
-    {category = "Wheel Colour", id = 3},
-    {category = "Dashboard Colour", id = 4},
-    {category = "Interior Colour", id = 5}
+    {category = "Color principal", id = 0},
+    {category = "Color secundario", id = 1},
+    {category = "Color nacarado", id = 2},
+    {category = "Color de ruedas", id = 3},
+    {category = "Color del panel", id = 4},
+    {category = "Color interior", id = 5}
 }
 
 -- WINDOW TINTS
 
 vehicleWindowTintOptions = {
-    {name = "None", id = 0},
-    {name = "Pure Black", id = 1},
-    {name = "Darksmoke", id = 2},
-    {name = "Lightsmoke", id = 3}
+    {name = "Ninguno", id = 0},
+    {name = "Negro puro", id = 1},
+    {name = "Humo oscuro", id = 2},
+    {name = "Humo de luz", id = 3}
 }
 
 -- HEADLIGHTS
 
 vehicleXenonOptions = {
     xenonColours = {
-        {name = "Stock", id = 255},
-        {name = "White",id = 0}, {name = "Blue",id = 1},
-        {name = "Electric Blue",id = 2},
-        {name = "Mint Green",id = 3},
-        {name = "Lime Green",id = 4},
-        {name = "Yellow",id = 5},
-        {name = "Golden Shower",id = 6},
-        {name = "Orange",id = 7},
-        {name = "Red",id = 8},
-        {name = "Pony Pink",id = 9},
-        {name = "Hot Pink",id = 10},
-        {name = "Purple",id = 11},
-        {name = "Blacklight",id = 12}
+        {name = "Default", id = 255},
+        {name = "Blanco",id = 0}, {name = "Blue",id = 1},
+        {name = "Azul Electrico",id = 2},
+        {name = "Verde Menta",id = 3},
+        {name = "Verde Lima",id = 4},
+        {name = "Amarillo",id = 5},
+        {name = "Oro",id = 6},
+        {name = "Naranja",id = 7},
+        {name = "Rojo",id = 8},
+        {name = "Rosa Pony",id = 9},
+        {name = "Rosa Hot",id = 10},
+        {name = "Morado",id = 11},
+        {name = "Luz negra",id = 12}
     }
 }
 
 -- WHEELS
 
 vehicleWheelOptions = {
-    {category = "Custom Tyres", id = -1, wheelID = 23},
-    {category = "Tyre Smoke", id = 20, wheelID = 23},
-    {category = "Sport", id = 0, wheelID = 23},
+    {category = "Neumáticos personalizados", id = -1, wheelID = 23},
+    {category = "Humo de llantas", id = 20, wheelID = 23},
+    {category = "Deportivos", id = 0, wheelID = 23},
     {category = "Muscle", id = 1, wheelID = 23},
     {category = "Lowrider", id = 2, wheelID = 23},
     {category = "SUV", id = 3, wheelID = 23},
-    {category = "Offroad", id = 4, wheelID = 23},
+    {category = "Todoterrenos", id = 4, wheelID = 23},
     {category = "Tuner", id = 5, wheelID = 23},
-    {category = "Motorcycle", id = 6, wheelID = 23},
-    {category = "Highend", id = 7, wheelID = 23}
+    {category = "Motos", id = 6, wheelID = 23},
+    {category = "Gama alta", id = 7, wheelID = 23}
 }
 
 -- TIRE SMOKE
 
 vehicleTyreSmokeOptions = {
     {
-        name = "White Smoke",
+        name = "Humo Blanco",
         r = 254,
         g = 254,
         b = 254
     }, 
     {
-        name = "Black Smoke",
+        name = "Humo Negro",
         r = 1,
         g = 1,
         b = 1
     },
     {
-        name = "Blue Smoke",
+        name = "Humo Azul",
         r = 0,
         g = 150,
         b = 255
     },
     {
-        name = "Yellow Smoke",
+        name = "Humo Blanco",
         r = 255,
         g = 255,
         b = 50
     },
     {
-        name = "Orange Smoke",
+        name = "Humo Naranja",
         r = 255,
         g = 153,
         b = 51
     },
     {
-        name = "Red Smoke",
+        name = "Humo Rojo",
         r = 255,
         g = 10,
         b = 10
     },
     {
-        name = "Green Smoke",
+        name = "Humo Verde",
         r = 10,
         g = 255,
         b = 10
     },
     {
-        name = "Purple Smoke",
+        name = "Humo Morado",
         r = 153,
         g = 10,
         b = 153
     },
     {
-        name = "Pink Smoke",
+        name = "Humo Rosa",
         r = 255,
         g = 102,
         b = 178
     },
     {
-        name = "Gray Smoke",
+        name = "Humo Gris",
         r = 128,
         g = 128,
         b = 128
@@ -154,74 +154,74 @@ vehicleTyreSmokeOptions = {
 vehicleNeonOptions = {
     category = "Neons",
         neonTypes = {
-            {name = "Front Neon", id = 2},
-            {name = "Rear Neon", id = 3},
-            {name = "Left Neon", id = 0},
-            {name = "Right Neon", id = 1}
+            {name = "Neón delantero", id = 2},
+            {name = "Neón trasero", id = 3},
+            {name = "Neón izquierdo", id = 0},
+            {name = "Neón derecho", id = 1}
         },
     neonColours = {
         {
-            name = "White",
+            name = "Blanco",
             r = 222,
             g = 222,
             b = 255
         }, {
-            name = "Blue",
+            name = "Azul",
             r = 2,
             g = 21,
             b = 255
         }, {
-            name = "Electric Blue",
+            name = "Azul Electrico",
             r = 3,
             g = 83,
             b = 255
         }, {
-            name = "Mint Green",
+            name = "Verde Menta",
             r = 0,
             g = 255,
             b = 140
         }, {
-            name = "Lime Green",
+            name = "Verde Lima",
             r = 94,
             g = 255,
             b = 1
         }, {
-            name = "Yellow",
+            name = "Azul",
             r = 255,
             g = 255,
             b = 0
         }, {
-            name = "Golden Shower",
+            name = "Oro",
             r = 255,
             g = 150,
             b = 0
         }, {
-            name = "Orange",
+            name = "Naranja",
             r = 255,
             g = 62,
             b = 0
         }, {
-            name = "Red",
+            name = "Rojo",
             r = 255,
             g = 1,
             b = 1
         }, {
-            name = "Pony Pink",
+            name = "Rosa Pony",
             r = 255,
             g = 50,
             b = 100
         }, {
-            name = "Hot Pink",
+            name = "Rosa Hot",
             r = 255,
             g = 5,
             b = 190
         }, {
-            name = "Purple",
+            name = "Morado",
             r = 35,
             g = 1,
             b = 255
         }, {
-            name = "Blacklight",
+            name = "Luz Negra",
             r = 15,
             g = 3,
             b = 255
@@ -232,46 +232,46 @@ vehicleNeonOptions = {
 -- MAIN COMPONENTS
 
 vehicleCustomisation = {
-    {category = "Spoiler", id = 0}, 
-    {category = "Front Bumper", id = 1},
-    {category = "Rear Bumper", id = 2},
-    {category = "Side Skirt", id = 3},
-    {category = "Exhaust", id = 4},
-    {category = "Roll Cage", id = 5},
-    {category = "Grille", id = 6},
-    {category = "Hood", id = 7},
-    {category = "Left Fender", id = 8},
-    {category = "Right Fender", id = 9},
-    {category = "Roof",id = 10},
-    {category = "Engine Upgrade", id = 11},
-    {category = "Brake Upgrade", id = 12},
-    {category = "Transmission Upgrade", id = 13},
-    {category = "Suspension Upgrade", id = 15},
-    {category = "Armour Upgrade", id = 16},
-    {category = "Turbo Upgrade", id = 18},
-    {category = "Vanity Plates",id = 25},
+    {category = "Aleron", id = 0}, 
+    {category = "Parachoques delantero", id = 1},
+    {category = "Parachoques trasero", id = 2},
+    {category = "Falda lateral", id = 3},
+    {category = "Escape", id = 4},
+    {category = "Jaula antivuelco", id = 5},
+    {category = "Reja", id = 6},
+    {category = "Capó", id = 7},
+    {category = "Guardabarros izquierdo", id = 8},
+    {category = "Guardabarros derecho", id = 9},
+    {category = "Techo",id = 10},
+    {category = "Mejoras del motor", id = 11},
+    {category = "Mejoras de frenos", id = 12},
+    {category = "Mejoras de transmision", id = 13},
+    {category = "Mejoras de suspension", id = 15},
+    {category = "Mejoras de armadura", id = 16},
+    {category = "Mejoras de turbo", id = 18},
+    {category = "Matriculas personalizadas",id = 25},
     {category = "Trim A", id = 27},
-    {category = "Ornaments", id = 28},
-    {category = "Dashboard", id = 29},
-    {category = "Dial", id = 30},
-    {category = "Door Speaker", id = 31},
-    {category = "Seats", id = 32},
-    {category = "Steering Wheel", id = 33},
-    {category = "Shifter Leaver", id = 34},
-    {category = "Plaque", id = 35},
-    {category = "Speaker", id = 36},
-    {category = "Trunk", id = 37},
-    {category = "Hydraulic", id = 38},
-    {category = "Engine Block", id = 39},
-    {category = "Air Filter", id = 40},
-    {category = "Strut", id = 41},
-    {category = "Arch Cover", id = 42},
-    {category = "Aerial", id = 43},
+    {category = "Ornamentas", id = 28},
+    {category = "Panel", id = 29},
+    {category = "Marcador", id = 30},
+    {category = "Altavoz de puerta", id = 31},
+    {category = "Asientos", id = 32},
+    {category = "Volante", id = 33},
+    {category = "Palanca de cambios", id = 34},
+    {category = "Placa", id = 35},
+    {category = "Altavoz", id = 36},
+    {category = "Maletero", id = 37},
+    {category = "Hydraulica", id = 38},
+    {category = "Bloque de motor", id = 39},
+    {category = "Filtro de aire", id = 40},
+    {category = "Puntal", id = 41},
+    {category = "Cubierta de arco", id = 42},
+    {category = "Antena", id = 43},
     {category = "Trim B", id = 44},
-    {category = "Fuel Tank", id = 45},
-    {category = "Window", id = 46},
+    {category = "Depósito de combustible", id = 45},
+    {category = "Ventanas", id = 46},
     {category = "Livery", id = 48},
-    {category = "Horns", id = 14, 
+    {category = "Claxon", id = 14, 
         
         hornNames = {
             {name = "Truck Horn", id = 0},

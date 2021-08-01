@@ -835,7 +835,7 @@ Citizen.CreateThread(function()
 
                 if nearDefault then
                     if not isPlyInBennys then
-                        Draw3DText(bennyLocation.x, bennyLocation.y, bennyLocation.z + 0.5, "[Press ~p~E~w~ - Enter Benny's Motorworks]", 255, 255, 255, 255, 4, 0.45, true, true, true, true, 0, 0, 0, 0, 55)
+                        Draw3DText(bennyLocation.x, bennyLocation.y, bennyLocation.z + 0.5, "[Pulsa ~p~E~w~ - para entrar Benny's Motorworks]", 255, 255, 255, 255, 4, 0.45, true, true, true, true, 0, 0, 0, 0, 55)
                         if IsControlJustReleased(1, 38) then
                             TriggerEvent('event:control:bennys', 1)
                         end
@@ -875,7 +875,7 @@ Citizen.CreateThread(function()
 
                 if nearDefault then
                     if not isPlyInBennys then
-                        Draw3DText(bennyPaletoLocation.x, bennyPaletoLocation.y, bennyPaletoLocation.z + 0.5, "[Press ~p~E~w~ - Enter Billy's Motorworks]", 255, 255, 255, 255, 4, 0.45, true, true, true, true, 0, 0, 0, 0, 55)
+                        Draw3DText(bennyPaletoLocation.x, bennyPaletoLocation.y, bennyPaletoLocation.z + 0.5, "[Pulsa ~p~E~w~ - para entrar Billy's Motorworks]", 255, 255, 255, 255, 4, 0.45, true, true, true, true, 0, 0, 0, 0, 55)
                         if IsControlJustReleased(1, 38) then
                             TriggerEvent('event:control:bennyss', 1)
                         end
@@ -900,12 +900,12 @@ RegisterNetEvent("qb-customs:purchaseSuccessful")
 AddEventHandler("qb-customs:purchaseSuccessful", function()
     isPurchaseSuccessful = true
     attemptingPurchase = false
-    QBCore.Functions.Notify("Purchase Successful")
+    QBCore.Functions.Notify("Compra exitosa")
 end)
 
 RegisterNetEvent("qb-customs:purchaseFailed")
 AddEventHandler("qb-customs:purchaseFailed", function()
     isPurchaseSuccessful = false
     attemptingPurchase = false
-    QBCore.Functions.Notify("Not enough money", "error")
+    QBCore.Functions.Notify("Dinero insuficiente", "error")
 end)
