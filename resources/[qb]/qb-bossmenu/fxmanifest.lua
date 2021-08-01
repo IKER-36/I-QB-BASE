@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-BossMenu'
+description 'QB-BossMenu' TRANSLATED BY Raz#5398 FOR THE QB-BASE PROYECT
 version '1.0.0'
 
 shared_script '@qb-core/import.lua'
