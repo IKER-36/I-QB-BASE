@@ -12,21 +12,21 @@ QBBoatshop.PoliceBoatSpawn2 = vector4(-293.10, 6642.69, 0.15, 65.5)
 
 QBBoatshop.Docks = {
     ["lsymc"] = {
-        label = "LSYMC Boathouse",
+        label = "Cobertizo LSYMC ",
         coords = {
             take = vector3(-794.66, -1510.83, 1.59),
             put = vector4(-793.58, -1501.4, 0.12, 111.5)
         }
     },
     ["paletto"] = {
-        label = "Paleto Boathouse",
+        label = "Cobertizo Paleto ",
         coords = {
             take = vector3(-277.46, 6637.2, 7.48),
             put = vector4(-289.2, 6637.96, 1.01, 45.5)
         }
     },
     ["millars"] = {
-        label = "Millars Boathouse",
+        label = "Cobertizo Millars ",
         coords = {
             take = vector3(1299.24, 4216.69, 33.9),
             put = vector4(1297.82, 4209.61, 30.12, 253.5),
@@ -36,7 +36,7 @@ QBBoatshop.Docks = {
 
 QBBoatshop.Depots = {
     [1] = {
-        label = "LSYMC Depot",
+        label = "Deposito LSYMC ",
         coords = {
             take = vector3(-772.98, -1430.76, 1.59),
             put = vector4(-729.77, -1355.49, 1.19, 142.5)
@@ -108,7 +108,7 @@ QBBoatshop.SpawnVehicle = vector4(-729.77, -1355.49, 1.19, 142.5)
 
 QBDiving.Locations = {
     [1] = {
-        label = "This is Location 1",
+        label = "Esta es la ubicación 1",
         coords = {
             Area = vector3(-2838.8, -376.1, 3.55),
             Coral = {
@@ -134,7 +134,7 @@ QBDiving.Locations = {
         TotalCoral = 4,
     },
     [2] = {
-        label = "Location 2",
+        label = "Esta es la ubicación 2",
         coords = {
             Area = vector3(-3288.2, -67.58, 2.79),
             Coral = {
@@ -156,7 +156,7 @@ QBDiving.Locations = {
         TotalCoral = 3,
     },
     [3] = {
-        label = "Location 3",
+        label = "Esta es la ubicación 3",
         coords = {
             Area = vector3(-3367.24, 1617.89, 1.39),
             Coral = {
@@ -178,7 +178,7 @@ QBDiving.Locations = {
         TotalCoral = 3,
     },
     [4] = {
-        label = "Location 4",
+        label = "Esta es la ubicación 4",
         coords = {
             Area = vector3(3002.5, -1538.28, -27.36),
             Coral = {
@@ -200,7 +200,7 @@ QBDiving.Locations = {
         TotalCoral = 3,
     },
     [5] = {
-        label = "Location 5",
+        label = "Esta es la ubicación 5",
         coords = {
             Area = vector3(3421.58, 1975.68, 0.86),
             Coral = {
@@ -226,7 +226,7 @@ QBDiving.Locations = {
         TotalCoral = 4,
     },
     [6] = {
-        label = "Location 6",
+        label = "Esta es la ubicación 6",
         coords = {
             Area = vector3(2720.14, -2136.28, 0.74),
             Coral = {
@@ -252,7 +252,7 @@ QBDiving.Locations = {
         TotalCoral = 4,
     },
     [7] = {
-        label = "Location 7",
+        label = "Esta es la ubicación 7",
         coords = {
             Area = vector3(536.69, 7253.75, 1.69),
             Coral = {

@@ -58,7 +58,7 @@ Citizen.CreateThread(function()
                     InRange = true
                     DrawMarker(2, loc["x"], loc["y"], loc["z"], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
                     if dist < 1 then
-                        DrawText3Ds(loc["x"], loc["y"], loc["z"] + 0.15, '~g~E~w~ - Shop')
+                        DrawText3Ds(loc["x"], loc["y"], loc["z"] + 0.15, '~g~E~w~ - Tienda')
                         if IsControlJustPressed(0, 38) then -- E
 			                SetWeaponSeries()
                             local ShopItems = {}

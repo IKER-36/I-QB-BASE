@@ -7,7 +7,7 @@ QBCore.Functions.StartPayCheck = function()
 
             if Player.PlayerData.job ~= nil and Player.PlayerData.job.payment > 0 then
                 Player.Functions.AddMoney('bank', Player.PlayerData.job.payment)
-                TriggerClientEvent('QBCore:Notify', Players[i], "You received your paycheck of $"..Player.PlayerData.job.payment)
+                TriggerClientEvent('QBCore:Notify', Players[i], "Has recibido tu salario de $"..Player.PlayerData.job.payment)
             end
         end
         SetTimeout(QBCore.Config.Money.PayCheckTimeOut * (60 * 1000), GivePayCheck)

@@ -102,7 +102,7 @@ Citizen.CreateThread(function()
                         Buying = true
                     end
                 else
-                    DrawText3D(BuyLocation.x, BuyLocation.y, BuyLocation.z + 0.3, 'Are you sure ~g~7~w~ Yes / ~r~8~w~ No ~b~($'..QBBoatshop.ShopBoats[currentBoat]["price"]..',-)')
+                    DrawText3D(BuyLocation.x, BuyLocation.y, BuyLocation.z + 0.3, 'Está seguro ~g~7~w~ Si / ~r~8~w~ No ~b~($'..QBBoatshop.ShopBoats[currentBoat]["price"]..',-)')
                     if IsControlJustPressed(0, 161) or IsDisabledControlJustReleased(0, 161) then
                         TriggerServerEvent('qb-diving:server:BuyBoat', QBBoatshop.Locations["berths"][ClosestBerth]["boatModel"], ClosestBerth)
                         Buying = false

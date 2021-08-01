@@ -107,12 +107,12 @@ Citizen.CreateThread(function()
                         ClosestTarget = k
                         if plantData["plantStats"]["health"] > 0 then
                             if plantData["plantStage"] ~= plantData["plantStats"]["highestStage"] then
-                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Sort: '..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Nutrition: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Health: ~b~'..plantData["plantStats"]["health"]..'%')
+                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Especie: '..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Hambre: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Salud: ~b~'..plantData["plantStats"]["health"]..'%')
                             else
-                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"] + 0.2, "Press ~g~ E ~w~ to harvest plant.")
-                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Sort: ~g~'..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Nutrition: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Health: ~b~'..plantData["plantStats"]["health"]..'%')
+                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"] + 0.2, "Pulsa ~g~ E ~w~ cosechar la planta.")
+                                QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'Especie: ~g~'..plantData["plantSort"]["label"]..'~w~ ['..plantData["plantStats"]["gender"]..'] | Hambre: ~b~'..plantData["plantStats"]["food"]..'% ~w~ | Salud: ~b~'..plantData["plantStats"]["health"]..'%')
                                 if IsControlJustPressed(0, 38) then
-                                    QBCore.Functions.Progressbar("remove_weed_plant", "Harvesting Plant", 8000, false, true, {
+                                    QBCore.Functions.Progressbar("remove_weed_plant", "Planta de cosecha", 8000, false, true, {
                                         disableMovement = true,
                                         disableCarMovement = true,
                                         disableMouse = false,
@@ -131,14 +131,14 @@ Citizen.CreateThread(function()
                                         TriggerServerEvent('qb-weed:server:harvestPlant', currentHouse, amount, plantData["plantSort"]["name"], plantData["plantStats"]["plantId"])
                                     end, function() -- Cancel
                                         ClearPedTasks(ped)
-                                        QBCore.Functions.Notify("Process Canceled", "error")
+                                        QBCore.Functions.Notify("Proceso Cancelado", "error")
                                     end)
                                 end
                             end
                         elseif plantData["plantStats"]["health"] == 0 then
-                            QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'The plant has died. Press ~r~ E ~w~ to remove plant.')
+                            QBWeed.DrawText3Ds(plantData["plantCoords"]["x"], plantData["plantCoords"]["y"], plantData["plantCoords"]["z"], 'La planta ha muerto. Pulsa ~r~ E ~w~ para quitar la planta.')
                             if IsControlJustPressed(0, 38) then
-                                QBCore.Functions.Progressbar("remove_weed_plant", "Removing The Plant", 8000, false, true, {
+                                QBCore.Functions.Progressbar("remove_weed_plant", "Recoger la planta", 8000, false, true, {
                                     disableMovement = true,
                                     disableCarMovement = true,
                                     disableMouse = false,
@@ -152,7 +152,7 @@ Citizen.CreateThread(function()
                                     TriggerServerEvent('qb-weed:server:removeDeathPlant', currentHouse, plantData["plantStats"]["plantId"])
                                 end, function() -- Cancel
                                     ClearPedTasks(ped)
-                                    QBCore.Functions.Notify("Process Canceled", "error")
+                                    QBCore.Functions.Notify("Proceso cancelado", "error")
                                 end)
                             end
                         end
@@ -231,7 +231,7 @@ AddEventHandler('qb-weed:client:placePlant', function(type, item)
 
     if currentHouse ~= nil then
         if ClosestPlant == 0 then
-            QBCore.Functions.Progressbar("plant_weed_plant", "Planting", 8000, false, true, {
+            QBCore.Functions.Progressbar("plant_weed_plant", "Plantando", 8000, false, true, {
                 disableMovement = true,
                 disableCarMovement = true,
                 disableMouse = false,
@@ -251,13 +251,13 @@ AddEventHandler('qb-weed:client:placePlant', function(type, item)
                 TriggerServerEvent('qb-weed:server:removeSeed', item.slot, type)
             end, function() -- Cancel
                 ClearPedTasks(ped)
-                QBCore.Functions.Notify("Process Canceled", "error")
+                QBCore.Functions.Notify("Proceso Cancelado", "error")
             end)
         else
-            QBCore.Functions.Notify("Can't Place Here", 'error', 3500)
+            QBCore.Functions.Notify("No se puede colocar aquí", 'error', 3500)
         end
     else
-        QBCore.Functions.Notify("It's Not Safe Here, try your house", 'error', 3500)
+        QBCore.Functions.Notify("No es seguro aquí, prueba tu casa", 'error', 3500)
     end
 end)
 
@@ -294,7 +294,7 @@ AddEventHandler('qb-weed:client:foodPlant', function(item)
 
             if plyDistance < 1.0 then
                 if plantData["plantStats"]["food"] == 100 then
-                    QBCore.Functions.Notify('The Plant Does Not Need Nutrition', 'error', 3500)
+                    QBCore.Functions.Notify('La planta no necesita nutrición', 'error', 3500)
                 else
                     QBCore.Functions.Progressbar("plant_weed_plant", "Feeding Plant", math.random(4000, 8000), false, true, {
                         disableMovement = true,
@@ -311,14 +311,14 @@ AddEventHandler('qb-weed:client:foodPlant', function(item)
                         TriggerServerEvent('qb-weed:server:foodPlant', currentHouse, newFood, plantData["plantSort"]["name"], plantData["plantStats"]["plantId"])
                     end, function() -- Cancel
                         ClearPedTasks(ped)
-                        QBCore.Functions.Notify("Process Canceled", "error")
+                        QBCore.Functions.Notify("Proceso Cancelado", "error")
                     end)
                 end
             else
-                QBCore.Functions.Notify("Can't Place Here", "error")
+                QBCore.Functions.Notify("No se puede colocar aquí", "error")
             end
         else
-            QBCore.Functions.Notify("Can't Place Here", "error")
+            QBCore.Functions.Notify("No se puede colocar aquí", "error")
         end
     end
 end)

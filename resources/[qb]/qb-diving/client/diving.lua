@@ -41,7 +41,7 @@ AddEventHandler('qb-diving:client:SetDivingLocation', function(DivingLocation)
         SetBlipAsShortRange(LabelBlip, true)
 
         BeginTextCommandSetBlipName('STRING')
-        AddTextComponentSubstringPlayerName('Diving Area')
+        AddTextComponentSubstringPlayerName('Zona de Buceo')
         EndTextCommandSetBlipName(LabelBlip)
 
         CurrentDivingLocation.Blip.Label = LabelBlip
@@ -78,7 +78,7 @@ Citizen.CreateThread(function()
                             if not CoralLocation.PickedUp then
                                 DrawMarker(32, CoralLocation.coords.x, CoralLocation.coords.y, CoralLocation.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 1.0, 0.4, 255, 223, 0, 255, true, false, false, false, false, false, false)
                                 if CoralDistance <= 1.5 then
-                                    DrawText3D(CoralLocation.coords.x, CoralLocation.coords.y, CoralLocation.coords.z, '[E] Collecting coral')
+                                    DrawText3D(CoralLocation.coords.x, CoralLocation.coords.y, CoralLocation.coords.z, '[E] Recolectando coral')
                                     if IsControlJustPressed(0, 38) then
                                         -- loadAnimDict("pickup_object")
                                         local times = math.random(2, 5)
@@ -150,7 +150,7 @@ AddEventHandler('qb-diving:server:CallCops', function(Coords, msg)
     SetBlipAlpha(blip, transG)
     SetBlipAsShortRange(blip, false)
     BeginTextCommandSetBlipName('STRING')
-    AddTextComponentString("911 - Dive site")
+    AddTextComponentString("911 - Sitio de buceo")
     EndTextCommandSetBlipName(blip)
     while transG ~= 0 do
         Wait(180 * 4)
@@ -188,7 +188,7 @@ RegisterNetEvent('qb-diving:client:UseGear')
 AddEventHandler('qb-diving:client:UseGear', function(bool)
     if bool then
         GearAnim()
-        QBCore.Functions.Progressbar("equip_gear", "Put on a diving suit", 5000, false, true, {}, {}, {}, {}, function() -- Done
+        QBCore.Functions.Progressbar("equip_gear", "Ponte un traje de buceo", 5000, false, true, {}, {}, {}, {}, function() -- Done
             DeleteGear()
             local maskModel = GetHashKey("p_d_scuba_mask_s")
             local tankModel = GetHashKey("p_s_scuba_tank_s")
@@ -217,12 +217,12 @@ AddEventHandler('qb-diving:client:UseGear', function(bool)
             currentGear.enabled = true
             TriggerServerEvent('qb-diving:server:RemoveGear')
             ClearPedTasks(PlayerPedId())
-            TriggerEvent('chatMessage', "SYSTEM", "error", "/divingsuit to take off your diving suit")
+            TriggerEvent('chatMessage', "SYSTEM", "error", "/divingsuit para quitarse el traje de buceo")
         end)
     else
         if currentGear.enabled then
             GearAnim()
-            QBCore.Functions.Progressbar("remove_gear", "Pull out a diving suit ..", 5000, false, true, {}, {}, {}, {}, function() -- Done
+            QBCore.Functions.Progressbar("remove_gear", "Saca un traje de buceo ..", 5000, false, true, {}, {}, {}, {}, function() -- Done
                 DeleteGear()
 
                 SetEnableScuba(PlayerPedId(), false)
@@ -233,7 +233,7 @@ AddEventHandler('qb-diving:client:UseGear', function(bool)
                 QBCore.Functions.Notify('You took your wetsuit off')
             end)
         else
-            QBCore.Functions.Notify('You are not wearing a diving gear ..', 'error')
+            QBCore.Functions.Notify('No llevas equipo de buceo ..', 'error')
         end
     end
 end)

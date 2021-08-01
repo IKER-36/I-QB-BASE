@@ -31,7 +31,7 @@ Citizen.CreateThread(function()
                         end, function() -- Cancel
                             isWorking = false
                             StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
-                            QBCore.Functions.Notify("Cancelled..", "error")
+                            QBCore.Functions.Notify("Cancelado..", "error")
                         end)
                     end
                 end
@@ -47,7 +47,7 @@ end)
 
 function JobDone()
     if math.random(1, 100) <= 50 then
-        QBCore.Functions.Notify("You've worked some time off your sentence")
+        QBCore.Functions.Notify("Has trabajado un tiempo fuera de tu sentencia")
         jailTime = jailTime - math.random(1, 2)
     end
     local newLocation = math.random(1, #Config.Locations.jobs[currentJob])
@@ -81,7 +81,7 @@ function CreateJobBlip()
         if Chance == Odd then
             TriggerServerEvent('QBCore:Server:AddItem', 'phone', 1)
             TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["phone"], "add")
-            QBCore.Functions.Notify("You found a phone..", "success")
+            QBCore.Functions.Notify("Encontraste un telefono..", "success")
         end
     end
 end

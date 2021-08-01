@@ -28,7 +28,7 @@ AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
         SetBlipColour(PoliceBlip, 29)
 
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentSubstringPlayerName("Police boat")
+        AddTextComponentSubstringPlayerName("Barcos de la policía")
         EndTextCommandSetBlipName(PoliceBlip)
         PoliceBlip = AddBlipForCoord(QBBoatshop.PoliceBoat2.x, QBBoatshop.PoliceBoat2.y, QBBoatshop.PoliceBoat2.z)
         SetBlipSprite(PoliceBlip, 410)
@@ -38,7 +38,7 @@ AddEventHandler("QBCore:Client:OnPlayerLoaded", function()
         SetBlipColour(PoliceBlip, 29)
     
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentSubstringPlayerName("Police boat")
+        AddTextComponentSubstringPlayerName("Barcos de la policía")
         EndTextCommandSetBlipName(PoliceBlip)
     end
 end)
@@ -66,20 +66,20 @@ AddEventHandler('qb-diving:client:UseJerrycan', function()
     local boat = IsPedInAnyBoat(ped)
     if boat then
         local curVeh = GetVehiclePedIsIn(ped, false)
-        QBCore.Functions.Progressbar("reful_boat", "Refueling boat ..", 20000, false, true, {
+        QBCore.Functions.Progressbar("reful_boat", "Repostando barcos ..", 20000, false, true, {
             disableMovement = true,
             disableCarMovement = true,
             disableMouse = false,
             disableCombat = true,
         }, {}, {}, {}, function() -- Done
             exports['LegacyFuel']:SetFuel(curVeh, 100)
-            QBCore.Functions.Notify('The boat has been refueled', 'success')
+            QBCore.Functions.Notify('El barco ha sido repostado', 'success')
             TriggerServerEvent('qb-diving:server:RemoveItem', 'jerry_can', 1)
             TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['jerry_can'], "remove")
         end, function() -- Cancel
-            QBCore.Functions.Notify('Refueling has been canceled!', 'error')
+            QBCore.Functions.Notify('Se canceló el repostaje!', 'error')
         end)
     else
-        QBCore.Functions.Notify('You are not in a boat', 'error')
+        QBCore.Functions.Notify('No estas en un barco', 'error')
     end
 end)
