@@ -18,12 +18,12 @@ Config.MaxStatusValues = {
 
 Config.ValuesLabels = {
     ["engine"] = "Motor",
-    ["body"] = "Body",
-    ["radiator"] = "Radiator",
-    ["axle"] = "Drive Shaft",
-    ["brakes"] = "Brakes",
-    ["clutch"] = "Clutch",
-    ["fuel"] = "Fuel Ttank",
+    ["body"] = "Carroceria",
+    ["radiator"] = "Radiador",
+    ["axle"] = "Eje de accionamiento",
+    ["brakes"] = "Frenos",
+    ["clutch"] = "Embrague",
+    ["fuel"] = "Depósito de combustible",
 }
 
 Config.RepairCost = {
@@ -131,9 +131,9 @@ Config.MinimalMetersForDamage = {
 }
 
 Config.Damages = {
-    ["radiator"] = "Radiator",
-    ["axle"] = "Drive Shaft",
-    ["brakes"] = "Brakes",
-    ["clutch"] = "Clutch",
-    ["fuel"] = "Fuel Tank",
+    ["radiator"] = "Radiador",
+    ["axle"] = "Eje de accionamientos",
+    ["brakes"] = "Frenos",
+    ["clutch"] = "Embrague",
+    ["fuel"] = "Depósito de combustible",
 }

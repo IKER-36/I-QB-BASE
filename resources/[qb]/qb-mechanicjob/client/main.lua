@@ -93,7 +93,7 @@ Citizen.CreateThread(function()
     SetBlipAlpha(Blip, 0.7)
 
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentSubstringPlayerName("Autocare Mechanic")
+    AddTextComponentSubstringPlayerName("Mecanico")
     EndTextCommandSetBlipName(Blip)
 end)
 
@@ -114,7 +114,7 @@ Citizen.CreateThread(function()
                         DrawMarker(2, Config.Locations["stash"].x, Config.Locations["stash"].y, Config.Locations["stash"].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.2, 210, 50, 9, 255, false, false, false, true, false, false, false)
 
                         if StashDistance < 1 then
-                            DrawText3Ds(Config.Locations["stash"].x, Config.Locations["stash"].y, Config.Locations["stash"].z, "[E] Open Stash")
+                            DrawText3Ds(Config.Locations["stash"].x, Config.Locations["stash"].y, Config.Locations["stash"].z, "[E] Abrir alijo")
                             if IsControlJustReleased(0, 38) then
                                 TriggerEvent("inventory:client:SetCurrentStash", "mechanicstash")
                                 TriggerServerEvent("inventory:server:OpenInventory", "stash", "mechanicstash", {
@@ -134,12 +134,12 @@ Citizen.CreateThread(function()
                             local InVehicle = IsPedInAnyVehicle(PlayerPedId())
 
                             if InVehicle then
-                                DrawText3Ds(Config.Locations["vehicle"].x, Config.Locations["vehicle"].y, Config.Locations["vehicle"].z, '[E] Hide Vehicle')
+                                DrawText3Ds(Config.Locations["vehicle"].x, Config.Locations["vehicle"].y, Config.Locations["vehicle"].z, '[E] Ocultar vehículo')
                                 if IsControlJustPressed(0, 38) then
                                     DeleteVehicle(GetVehiclePedIsIn(PlayerPedId()))
                                 end
                             else
-                                DrawText3Ds(Config.Locations["vehicle"].x, Config.Locations["vehicle"].y, Config.Locations["vehicle"].z, '[E] Get Vehicle')
+                                DrawText3Ds(Config.Locations["vehicle"].x, Config.Locations["vehicle"].y, Config.Locations["vehicle"].z, '[E] Obtener vehículo')
                                 if IsControlJustPressed(0, 38) then
                                     if IsControlJustPressed(0, 38) then
                                         VehicleList()
@@ -158,9 +158,9 @@ Citizen.CreateThread(function()
 
                     if OnDutyDistance < 1 then
                         if onDuty then
-                            DrawText3Ds(Config.Locations["duty"].x, Config.Locations["duty"].y, Config.Locations["duty"].z, "[E] Off Duty")
+                            DrawText3Ds(Config.Locations["duty"].x, Config.Locations["duty"].y, Config.Locations["duty"].z, "[E] Fuera de Servico")
                         else
-                            DrawText3Ds(Config.Locations["duty"].x, Config.Locations["duty"].y, Config.Locations["duty"].z, "[E] On Duty")
+                            DrawText3Ds(Config.Locations["duty"].x, Config.Locations["duty"].y, Config.Locations["duty"].z, "[E] En Servico")
                         end
                         if IsControlJustReleased(0, 38) then
                             TriggerServerEvent("QBCore:ToggleDuty")
@@ -179,7 +179,7 @@ Citizen.CreateThread(function()
                                     local veh = GetVehiclePedIsIn(PlayerPedId())
                                     if IsPedInAnyVehicle(PlayerPedId()) then
                                         if not IsThisModelABicycle(GetEntityModel(veh)) then
-                                            DrawText3Ds(v.coords.x, v.coords.y, v.coords.z + 0.3, "[E] Place The Vehicle On The Platform")
+                                            DrawText3Ds(v.coords.x, v.coords.y, v.coords.z + 0.3, "[E] Coloque el vehículo en la plataforma")
                                             if IsControlJustPressed(0, 38) then
                                                 DoScreenFadeOut(150)
                                                 Wait(150)
@@ -192,7 +192,7 @@ Citizen.CreateThread(function()
                                                 TriggerServerEvent('qb-vehicletuning:server:SetAttachedVehicle', veh, k)
                                             end
                                         else
-                                            QBCore.Functions.Notify("You Cannot Put Bicycles On The Platform!", "error")
+                                            QBCore.Functions.Notify("No se pueden poner bicicletas en la plataforma!", "error")
                                         end
                                     end
                                 end
@@ -201,7 +201,7 @@ Citizen.CreateThread(function()
                             local PlateDistance = #(pos - vector3(v.coords.x, v.coords.y, v.coords.z))
                             if PlateDistance < 3 then
                                 inRange = true
-                                DrawText3Ds(v.coords.x, v.coords.y, v.coords.z, "[E] Open Menu")
+                                DrawText3Ds(v.coords.x, v.coords.y, v.coords.z, "[E] Abrir Menu")
                                 if IsControlJustPressed(0, 38) then
                                     OpenMenu()
                                     Menu.hidden = not Menu.hidden
@@ -228,8 +228,8 @@ end)
 
 function OpenMenu()
     ClearMenu()
-    Menu.addButton("Options", "VehicleOptions", nil)
-    Menu.addButton("Close Menu", "CloseMenu", nil) 
+    Menu.addButton("Opciones", "VehicleOptions", nil)
+    Menu.addButton("Cerrar Menu", "CloseMenu", nil) 
 end
 
 function VehicleList()
@@ -237,7 +237,7 @@ function VehicleList()
     for k, v in pairs(Config.Vehicles) do
         Menu.addButton(v, "SpawnListVehicle", k) 
     end
-    Menu.addButton("Close Menu", "CloseMenu", nil) 
+    Menu.addButton("Cerrar Menu", "CloseMenu", nil) 
 end
 
 function SpawnListVehicle(model)
@@ -261,10 +261,10 @@ end
 
 function VehicleOptions()
     ClearMenu()
-    Menu.addButton("Disconnect Vehicle", "UnattachVehicle", nil)
+    Menu.addButton("Desenganchar vehículo", "UnattachVehicle", nil)
     -- Menu.addButton("Check Status", "CheckStatus", nil)
-    Menu.addButton("Vehicle Parts", "PartsMenu", nil)
-    Menu.addButton("Close Menu", "CloseMenu", nil)
+    Menu.addButton("Partes de vehículo", "PartsMenu", nil)
+    Menu.addButton("Cerrar Menu", "CloseMenu", nil)
 end
 
 function PartsMenu()
@@ -295,8 +295,8 @@ function PartsMenu()
             Menu.addButton(v..": "..percentage.."%", "NoDamage", nil) 
         end
     end
-    Menu.addButton("Back", "VehicleOptions", nil) 
-    Menu.addButton("Close Menu", "CloseMenu", nil) 
+    Menu.addButton("Volver", "VehicleOptions", nil) 
+    Menu.addButton("Cerrar Menu", "CloseMenu", nil) 
 end
 
 function CheckStatus()
@@ -306,16 +306,16 @@ end
 
 function PartMenu(part)
     ClearMenu()
-    Menu.addButton("Repair ("..QBCore.Shared.Items[Config.RepairCostAmount[part].item]["label"].." "..Config.RepairCostAmount[part].costs.."x)", "RepairPart", part)
-    Menu.addButton("Back", "VehicleOptions", nil)
-    Menu.addButton("Close Menu", "CloseMenu", nil) 
+    Menu.addButton("Reparar ("..QBCore.Shared.Items[Config.RepairCostAmount[part].item]["label"].." "..Config.RepairCostAmount[part].costs.."x)", "RepairPart", part)
+    Menu.addButton("Volver", "VehicleOptions", nil)
+    Menu.addButton("Cerrar Menu", "CloseMenu", nil) 
 end
 
 function NoDamage(part)
     ClearMenu()
-    Menu.addButton("There Is No Damage To This Part!", "PartsMenu", part)
-    Menu.addButton("Back", "VehicleOptions", nil)
-    Menu.addButton("Close Menu", "CloseMenu", nil) 
+    Menu.addButton("No hay daños en esta pieza!", "PartsMenu", part)
+    Menu.addButton("Volver", "VehicleOptions", nil)
+    Menu.addButton("Cerrar Menu", "CloseMenu", nil) 
 end
 
 function RepairPart(part)
@@ -353,10 +353,10 @@ function RepairPart(part)
                     PartsMenu()
                 end)
             end, function()
-                QBCore.Functions.Notify("Repair Cancelled", "error")
+                QBCore.Functions.Notify("Reparacion cancelada", "error")
             end)
         else
-            QBCore.Functions.Notify('There Are Not Enough Materials In The Safe', 'error')
+            QBCore.Functions.Notify('No hay suficientes materiales en la caja fuerte', 'error')
         end
     end, "mechanicstash")
 end
@@ -377,7 +377,7 @@ AddEventHandler('qb-vehicletuning:client:RepaireeePart', function(part)
     else
         TriggerServerEvent("vehiclemod:server:updatePart", plate, part, Config.MaxStatusValues[part])
     end
-    QBCore.Functions.Notify("The "..Config.ValuesLabels[part].." Is Repaired!")
+    QBCore.Functions.Notify("El "..Config.ValuesLabels[part].." está reparado!")
 end)
 
 function UnattachVehicle()
@@ -536,19 +536,19 @@ AddEventHandler('vehiclemod:client:getVehicleStatus', function(plate, status)
                     if VehicleStatus[plate] ~= nil then 
                         SendStatusMessage(VehicleStatus[plate])
                     else
-                        QBCore.Functions.Notify("Status Unknown", "error")
+                        QBCore.Functions.Notify("Estado desconocido", "error")
                     end
                 else
-                    QBCore.Functions.Notify("Not A Valid Vehicle", "error")
+                    QBCore.Functions.Notify("No es un vehículo válido", "error")
                 end
             else
-                QBCore.Functions.Notify("You Are Not Close Enough To The Vehicle", "error")
+                QBCore.Functions.Notify("No está lo suficientemente cerca del vehículo", "error")
             end
         else
-            QBCore.Functions.Notify("You Must Be In The Vehicle First", "error")
+            QBCore.Functions.Notify("Primero debe estar en el vehículo", "error")
         end
     else
-        QBCore.Functions.Notify("You Must Be Outside The Vehicle", "error")
+        QBCore.Functions.Notify("Debe estar fuera del vehículo", "error")
     end
 end)
 
@@ -560,10 +560,10 @@ AddEventHandler('vehiclemod:client:fixEverything', function()
             local plate = GetVehicleNumberPlateText(veh)
             TriggerServerEvent("vehiclemod:server:fixEverything", plate)
         else
-            QBCore.Functions.Notify("You Are Not The Driver Or On A Bicycle", "error")
+            QBCore.Functions.Notify("No eres el conductor ni estás en una bicicleta", "error")
         end
     else
-        QBCore.Functions.Notify("You Are Not In A Vehicle", "error")
+        QBCore.Functions.Notify("No estás en un vehículo", "error")
     end
 end)
 
@@ -583,10 +583,10 @@ AddEventHandler('vehiclemod:client:setPartLevel', function(part, level)
                 TriggerServerEvent("vehiclemod:server:updatePart", plate, part, level)
             end
         else
-            QBCore.Functions.Notify("You Are Not The Driver Or On A Bicycle", "error")
+            QBCore.Functions.Notify("No eres el conductor ni estás en una bicicleta", "error")
         end
     else
-        QBCore.Functions.Notify("You Are Not The Driver Or On A Bicycle", "error")
+        QBCore.Functions.Notify("No eres el conductor ni estás en una bicicleta", "error")
     end
 end)
 local openingDoor = false
@@ -608,7 +608,7 @@ AddEventHandler('vehiclemod:client:repairPart', function(part, level, needAmount
                                 lockpickTime = lockpickTime / 10
                             end
                             ScrapAnim(lockpickTime)
-                            QBCore.Functions.Progressbar("repair_advanced", "Repair Vehicle", lockpickTime, false, true, {
+                            QBCore.Functions.Progressbar("repair_advanced", "Vehículo de reparación", lockpickTime, false, true, {
                                 disableMovement = true,
                                 disableCarMovement = true,
                                 disableMouse = false,
@@ -634,22 +634,22 @@ AddEventHandler('vehiclemod:client:repairPart', function(part, level, needAmount
                             end, function() -- Cancel
                                 openingDoor = false
                                 ClearPedTasks(PlayerPedId())
-                                QBCore.Functions.Notify("Process Canceled", "error")
+                                QBCore.Functions.Notify("Proceso Cancelado", "error")
                             end)
                         else
-                            QBCore.Functions.Notify("Not A Valid Part", "error")
+                            QBCore.Functions.Notify("No es una pieza válida", "error")
                         end
                     else
-                        QBCore.Functions.Notify("Not A Valid Vehicle", "error")
+                        QBCore.Functions.Notify("No es un vehículo válido", "error")
                     end
                 else
-                    QBCore.Functions.Notify("You Are Not Close Enough To The Vehicle", "error")
+                    QBCore.Functions.Notify("No está lo suficientemente cerca del vehículo", "error")
                 end
             else
-                QBCore.Functions.Notify("You Must Be In The Vehicle First", "error")
+                QBCore.Functions.Notify("Primero debe estar en el vehículo", "error")
             end
         else
-            QBCore.Functions.Notify("Youre Not In a Vehicle", "error")
+            QBCore.Functions.Notify("No estás en un vehículo", "error")
         end
     -- end
 end)
