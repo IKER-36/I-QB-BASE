@@ -5,6 +5,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
+--Carga los mapeados del gta de actualizaciones para que no haya bugs de caidas al infierno o bugs al entrar en casas-- Broncas
+
 author 'Bob_74'
 description 'Load and customize your map'
 version '2.0.10'

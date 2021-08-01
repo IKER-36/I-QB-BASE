@@ -8,9 +8,9 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 		if showHelp then
 			if helpTimer > GetGameTimer() then
-				showHelpText("Navigate with ~y~W,A,S,D~s~ and confirm with ~y~SPACE~s~ for the left code block.")
+				showHelpText("Navegar con ~y~W,A,S,D~s~ y confirmar con ~y~SPACE~s~ para el bloque de código izquierdo.")
 			elseif helpTimer > GetGameTimer()-helpCycle then
-				showHelpText("Use the ~y~Arrow Keys~s~ and ~y~ENTER~s~ for the right code block")
+				showHelpText("Utilizar el ~y~Arrow Keys~s~ y ~y~ENTER~s~ para el bloque de código derecho")
 			else
 				helpTimer = GetGameTimer()+helpCycle
 			end
