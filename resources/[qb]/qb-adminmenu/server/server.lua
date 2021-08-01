@@ -63,7 +63,7 @@ RegisterNetEvent("qb-admin:server:kick")
 AddEventHandler("qb-admin:server:kick", function(player, reason)
     local src = source
     if QBCore.Functions.HasPermission(src, permissions["kick"]) then
-        DropPlayer(player.id, "You have been kicked from the server:\n" .. reason .. "\n\n🔸 Join the discord server for more information: https://discord.gg/example")
+        DropPlayer(player.id, "Has sido kickeado del servidor.:\n" .. reason .. "\n\n🔸 Únete al servidor de discord para más información.: https://discord.gg/cambiarserverluaadminmenulinea66")
     end
 end)
 
@@ -87,13 +87,13 @@ AddEventHandler("qb-admin:server:ban", function(player, time, reason)
             ['@bannedby'] = GetPlayerName(src)
         })
         TriggerClientEvent('chat:addMessage', -1, {
-            template = '<div class="chat-message server"><strong>ANNOUNCEMENT | {0} has been banned:</strong> {1}</div>',
+            template = '<div class="chat-message server"><strong>ANUNCIO | {0} ha sido baneado:</strong> {1}</div>',
             args = {GetPlayerName(player.id), reason}
         })
         if banTime >= 2147483647 then
-            DropPlayer(player.id, "You have been banned:\n" .. reason .. "\n\nYour ban is permanent.\n🔸 Join the discord for more information: https://discord.gg/example")
+            DropPlayer(player.id, "Has sido baneado:\n" .. reason .. "\n\nYour ban is permanent.\n🔸 Únete al servidor de discord para más información.: https://discord.gg/cambiarserverluaadminmenulinea94")
         else
-            DropPlayer(player.id, "You have been banned:\n" .. reason .. "\n\nBan expires: " .. timeTable["day"] .. "/" .. timeTable["month"] .. "/" .. timeTable["year"] .. " " .. timeTable["hour"] .. ":" .. timeTable["min"] .. "\n🔸 Join the discord for more information: https://discord.gg/example")
+            DropPlayer(player.id, "Has sido baneado:\n" .. reason .. "\n\nCaduca: " .. timeTable["day"] .. "/" .. timeTable["month"] .. "/" .. timeTable["year"] .. " " .. timeTable["hour"] .. ":" .. timeTable["min"] .. "\n🔸 Únete al servidor de discord para más información.: https://discord.gg/cambiarserverluaadminmenulinea96")
         end
     end
 end)
@@ -149,7 +149,7 @@ end)
 RegisterServerEvent('qb-admin:server:setPermissions')
 AddEventHandler('qb-admin:server:setPermissions', function(targetId, group)
     QBCore.Functions.AddPermission(targetId, group[1].rank)
-    TriggerClientEvent('QBCore:Notify', targetId, 'Your Permission Level Is Now '..group[1].label)
+    TriggerClientEvent('QBCore:Notify', targetId, 'Su nivel de permiso es ahora '..group[1].label)
 end)
 
 RegisterServerEvent('qb-admin:server:SendReport')
@@ -159,7 +159,7 @@ AddEventHandler('qb-admin:server:SendReport', function(name, targetSrc, msg)
 
     if QBCore.Functions.HasPermission(src, "admin") then
         if QBCore.Functions.IsOptin(src) then
-            TriggerClientEvent('chatMessage', src, "REPORT - "..name.." ("..targetSrc..")", "report", msg)
+            TriggerClientEvent('chatMessage', src, "REPORTE - "..name.." ("..targetSrc..")", "report", msg)
         end
     end
 end)
@@ -171,7 +171,7 @@ AddEventHandler('qb-admin:server:StaffChatMessage', function(name, msg)
 
     if QBCore.Functions.HasPermission(src, "admin") then
         if QBCore.Functions.IsOptin(src) then
-            TriggerClientEvent('chatMessage', src, "STAFFCHAT - "..name, "error", msg)
+            TriggerClientEvent('chatMessage', src, "CHAT STAFF - "..name, "error", msg)
         end
     end
 end)
@@ -180,63 +180,62 @@ RegisterServerEvent('qb-admin:server:SaveCar')
 AddEventHandler('qb-admin:server:SaveCar', function(mods, vehicle, hash, plate)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    exports.ghmattimysql:execute('SELECT plate FROM player_vehicles WHERE plate=@plate', {['@plate'] = plate}, function(result)
-        if result[1] == nil then
-            exports.ghmattimysql:execute('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
-                ['@license'] = Player.PlayerData.license,
-                ['@citizenid'] = Player.PlayerData.citizenid,
-                ['@vehicle'] = vehicle.model,
-                ['@hash'] = vehicle.hash,
-                ['@mods'] = json.encode(mods),
-                ['@plate'] = plate,
-                ['@state'] = 0
-            })
-            TriggerClientEvent('QBCore:Notify', src, 'The vehicle is now yours!', 'success', 5000)
-        else
-            TriggerClientEvent('QBCore:Notify', src, 'This vehicle is already yours..', 'error', 3000)
-        end
-    end)
+    local result = exports.ghmattimysql:executeSync('SELECT plate FROM player_vehicles WHERE plate=@plate', {['@plate'] = plate})
+    if result[1] == nil then
+        exports.ghmattimysql:execute('INSERT INTO player_vehicles (license, citizenid, vehicle, hash, mods, plate, state) VALUES (@license, @citizenid, @vehicle, @hash, @mods, @plate, @state)', {
+            ['@license'] = Player.PlayerData.license,
+            ['@citizenid'] = Player.PlayerData.citizenid,
+            ['@vehicle'] = vehicle.model,
+            ['@hash'] = vehicle.hash,
+            ['@mods'] = json.encode(mods),
+            ['@plate'] = plate,
+            ['@state'] = 0
+        })
+        TriggerClientEvent('QBCore:Notify', src, 'Este vehículo es ahora tuyo.!', 'success', 5000)
+    else
+        TriggerClientEvent('QBCore:Notify', src, 'Este vehículo ya era tuyo...', 'error', 3000)
+    end
 end)
 
 -- Commands
 
-QBCore.Commands.Add("admincar", "Save Vehicle To Your Garage (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("apropiarsedecoche", "Guarda este vehículo a tu garaje (Solo Admin)", {}, false, function(source, args)
     local ply = QBCore.Functions.GetPlayer(source)
     TriggerClientEvent('qb-admin:client:SaveCar', source)
 end, "admin")
 
-QBCore.Commands.Add("announce", "Make An Announcement (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("anuncio", "Hacer un anuncio (Solo Admin)", {}, false, function(source, args)
     local msg = table.concat(args, " ")
     for i = 1, 3, 1 do
-        TriggerClientEvent('chatMessage', -1, "SYSTEM", "error", msg)
+        TriggerClientEvent('chatMessage', -1, "SISTEMA", "error", msg)
     end
 end, "admin")
 
-QBCore.Commands.Add("admin", "Open Admin Menu (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("admin", "Abrir menú de administrador (Solo Admin)", {}, false, function(source, args)
     TriggerClientEvent('qb-admin:client:openMenu', source)
 end, "admin")
 
-QBCore.Commands.Add("report", "Admin Report", {{name="message", help="Message"}}, true, function(source, args)
+QBCore.Commands.Add("report", "Reportar (Llega a administración)", {{name="mensaje", help="Mensaje"}}, true, function(source, args)
     local msg = table.concat(args, " ")
     local Player = QBCore.Functions.GetPlayer(source)
     TriggerClientEvent('qb-admin:client:SendReport', -1, GetPlayerName(source), source, msg)
-    TriggerClientEvent('chatMessage', source, "REPORT Send", "normal", msg)
-    TriggerEvent("qb-log:server:CreateLog", "report", "Report", "green", "**"..GetPlayerName(source).."** (CitizenID: "..Player.PlayerData.citizenid.." | ID: "..source..") **Report:** " ..msg, false)
+    TriggerClientEvent('chatMessage', source, "REPORTE ENVIADO:", "normal", msg)
+    TriggerEvent("qb-log:server:CreateLog", "report", "Reporte", "green", "**"..GetPlayerName(source).."** (CitizenID: "..Player.PlayerData.citizenid.." | ID: "..source..") **Reporte:** " ..msg, false)
 end)
 
-QBCore.Commands.Add("staffchat", "Send A Message To All Staff (Admin Only)", {{name="message", help="Message"}}, true, function(source, args)
+QBCore.Commands.Add("chatstaff", "Enviar mensaje al chat de staff (Solo Admin)", {{name="mensaje", help="Mensaje"}}, true, function(source, args)
     local msg = table.concat(args, " ")
     TriggerClientEvent('qb-admin:client:SendStaffChat', -1, GetPlayerName(source), msg)
 end, "admin")
 
-QBCore.Commands.Add("givenuifocus", "Give A Player NUI Focus (Admin Only)", {{name="id", help="Player id"}, {name="focus", help="Set focus on/off"}, {name="mouse", help="Set mouse on/off"}}, true, function(source, args)
+QBCore.Commands.Add("darfocusnui", "Dar a un jugador enfoque de nui (Solo Admin)", {{name="id", help="ID Del Jugador"}, {name="focus", help="Enfocar on/off"}, {name="raton", help="Poner el raton on/off"}}, true, function(source, args)
     local playerid = tonumber(args[1])
     local focus = args[2]
     local mouse = args[3]
     TriggerClientEvent('qb-admin:client:GiveNuiFocus', playerid, focus, mouse)
 end, "admin")
 
-QBCore.Commands.Add("warn", "Warn A Player (Admin Only)", {{name="ID", help="Player"}, {name="Reason", help="Mention a reason"}}, true, function(source, args)
+QBCore.Commands.Add("warn", "Warnea a un jugador (Solo Admin)", {{name="ID", help="Jugador"}, {name="Razón", help="Menciona una razón"}}, true, function(source, args)
     local targetPlayer = QBCore.Functions.GetPlayer(tonumber(args[1]))
     local senderPlayer = QBCore.Functions.GetPlayer(source)
     table.remove(args, 1)
@@ -244,8 +243,8 @@ QBCore.Commands.Add("warn", "Warn A Player (Admin Only)", {{name="ID", help="Pla
     local myName = senderPlayer.PlayerData.name
     local warnId = "WARN-"..math.random(1111, 9999)
     if targetPlayer ~= nil then
-        TriggerClientEvent('chatMessage', targetPlayer.PlayerData.source, "SYSTEM", "error", "You have been warned by: "..GetPlayerName(source)..", Reason: "..msg)
-        TriggerClientEvent('chatMessage', source, "SYSTEM", "error", "You have warned "..GetPlayerName(targetPlayer.PlayerData.source).." for: "..msg)
+        TriggerClientEvent('chatMessage', targetPlayer.PlayerData.source, "SISTEMA", "error", "Has sido warneado por: "..GetPlayerName(source)..", Razón: "..msg)
+        TriggerClientEvent('chatMessage', source, "SISTEMA", "error", "Has warneado a "..GetPlayerName(targetPlayer.PlayerData.source).." por: "..msg)
         exports.ghmattimysql:execute('INSERT INTO player_warns (senderIdentifier, targetIdentifier, reason, warnId) VALUES (@senderIdentifier, @targetIdentifier, @reason, @warnId)', {
             ['@senderIdentifier'] = senderPlayer.PlayerData.license,
             ['@targetIdentifier'] = targetPlayer.PlayerData.license,
@@ -253,44 +252,37 @@ QBCore.Commands.Add("warn", "Warn A Player (Admin Only)", {{name="ID", help="Pla
             ['@warnId'] = warnId
         })
     else
-        TriggerClientEvent('QBCore:Notify', source, 'This player is not online', 'error')
+        TriggerClientEvent('QBCore:Notify', source, 'Este jugador no esta en línea', 'error')
     end 
 end, "admin")
 
-QBCore.Commands.Add("checkwarns", "Check Player Warnings (Admin Only)", {{name="ID", help="Player"}, {name="Warning", help="Number of warning, (1, 2 or 3 etc..)"}}, false, function(source, args)
+QBCore.Commands.Add("checkwarns", "Revise los warnings de un jugador (Solo Admin)", {{name="ID", help="Jugador"}, {name="Warnings", help="Numero de warnings, (1, 2, 3 etc..)"}}, false, function(source, args)
     if args[2] == nil then
         local targetPlayer = QBCore.Functions.GetPlayer(tonumber(args[1]))
-        exports.ghmattimysql:execute('SELECT * FROM player_warns WHERE targetIdentifier=@targetIdentifier', {['@targetIdentifier'] = targetPlayer.PlayerData.license}, function(result)
-            TriggerClientEvent('chatMessage', source, "SYSTEM", "warning", targetPlayer.PlayerData.name.." has "..tablelength(result).." warnings!")
-        end)
+        local result = exports.ghmattimysql:executeSync('SELECT * FROM player_warns WHERE targetIdentifier=@targetIdentifier', {['@targetIdentifier'] = targetPlayer.PlayerData.license})
+            TriggerClientEvent('chatMessage', source, "SISTEMA", "warning", targetPlayer.PlayerData.name.." tiene "..tablelength(result).." warnings!")
     else
         local targetPlayer = QBCore.Functions.GetPlayer(tonumber(args[1]))
-        exports.ghmattimysql:execute('SELECT * FROM player_warns WHERE targetIdentifier=@targetIdentifier', {['@targetIdentifier'] = targetPlayer.PlayerData.license}, function(warnings)
-            local selectedWarning = tonumber(args[2])
-
-            if warnings[selectedWarning] ~= nil then
-                local sender = QBCore.Functions.GetPlayer(warnings[selectedWarning].senderIdentifier)
-
-                TriggerClientEvent('chatMessage', source, "SYSTEM", "warning", targetPlayer.PlayerData.name.." has been warned by "..sender.PlayerData.name..", Reason: "..warnings[selectedWarning].reason)
-            end
-        end)
-    end
-end, "admin")
-
-QBCore.Commands.Add("delwarn", "Delete Players Warnings (Admin Only)", {{name="ID", help="Player"}, {name="Warning", help="Number of warning, (1, 2 or 3 etc..)"}}, true, function(source, args)
-    local targetPlayer = QBCore.Functions.GetPlayer(tonumber(args[1]))
-    exports.ghmattimysql:execute('SELECT * FROM player_warns WHERE targetIdentifier=@targetIdentifier', {['@targetIdentifier'] = targetPlayer.PlayerData.license}, function(warnings)
+        local warnings = exports.ghmattimysql:executeSync('SELECT * FROM player_warns WHERE targetIdentifier=@targetIdentifier', {['@targetIdentifier'] = targetPlayer.PlayerData.license})
         local selectedWarning = tonumber(args[2])
         if warnings[selectedWarning] ~= nil then
             local sender = QBCore.Functions.GetPlayer(warnings[selectedWarning].senderIdentifier)
-
-            TriggerClientEvent('chatMessage', source, "SYSTEM", "warning", "You have deleted warning ("..selectedWarning..") , Reason: "..warnings[selectedWarning].reason)
-            exports.ghmattimysql:execute('DELETE FROM player_warns WHERE warnId=@warnId', {['@warnId'] = warnings[selectedWarning].warnId})
+            TriggerClientEvent('chatMessage', source, "SISTEMA", "warning", targetPlayer.PlayerData.name.." ha sido warneado por "..sender.PlayerData.name..", Razón: "..warnings[selectedWarning].reason)
         end
-    end)
+    end
 end, "admin")
 
-QBCore.Commands.Add("reportr", "Reply To A Report (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("borrarwarn", "Borrar warning a jugador (Solo Admin)", {{name="ID", help="ID Del Jugador"}, {name="Warning", help="Número de warnings, (1, 2, 3 etc..)"}}, true, function(source, args)
+    local targetPlayer = QBCore.Functions.GetPlayer(tonumber(args[1]))
+    local warnings = exports.ghmattimysql:executeSync('SELECT * FROM player_warns WHERE targetIdentifier=@targetIdentifier', {['@targetIdentifier'] = targetPlayer.PlayerData.license})
+    local selectedWarning = tonumber(args[2])
+    if warnings[selectedWarning] ~= nil then
+        local sender = QBCore.Functions.GetPlayer(warnings[selectedWarning].senderIdentifier)
+        TriggerClientEvent('chatMessage', source, "SISTEMA", "warning", "Has borrado el warning ("..selectedWarning..") , Razón: "..warnings[selectedWarning].reason)
+        exports.ghmattimysql:execute('DELETE FROM player_warns WHERE warnId=@warnId', {['@warnId'] = warnings[selectedWarning].warnId})
+    end
+end, "admin")
+QBCore.Commands.Add("reportr", "Responde a un reporte (Solo Admin)", {}, false, function(source, args)
     local playerId = tonumber(args[1])
     table.remove(args, 1)
     local msg = table.concat(args, " ")
@@ -298,21 +290,21 @@ QBCore.Commands.Add("reportr", "Reply To A Report (Admin Only)", {}, false, func
     local Player = QBCore.Functions.GetPlayer(source)
     if OtherPlayer ~= nil then
         TriggerClientEvent('chatMessage', playerId, "ADMIN - "..GetPlayerName(source), "warning", msg)
-        TriggerClientEvent('QBCore:Notify', source, "Sent reply")
+        TriggerClientEvent('QBCore:Notify', source, "Respuesta enviada")
         for k, v in pairs(QBCore.Functions.GetPlayers()) do
             if QBCore.Functions.HasPermission(v, "admin") then
                 if QBCore.Functions.IsOptin(v) then
-                    TriggerClientEvent('chatMessage', v, "ReportReply("..source..") - "..GetPlayerName(source), "warning", msg)
-                    TriggerEvent("qb-log:server:CreateLog", "report", "Report Reply", "red", "**"..GetPlayerName(source).."** replied on: **"..OtherPlayer.PlayerData.name.. " **(ID: "..OtherPlayer.PlayerData.source..") **Message:** " ..msg, false)
+                    TriggerClientEvent('chatMessage', v, "Respuesta Reporte("..source..") - "..GetPlayerName(source), "warning", msg)
+                    TriggerEvent("qb-log:server:CreateLog", "report", "Respuesta a reporte", "red", "**"..GetPlayerName(source).."** respondió a: **"..OtherPlayer.PlayerData.name.. " **(ID: "..OtherPlayer.PlayerData.source..") **Mensaje:** " ..msg, false)
                 end
             end
         end
     else
-        TriggerClientEvent('QBCore:Notify', source, "Player is not online", "error")
+        TriggerClientEvent('QBCore:Notify', source, "El jugador no esta en línea", "error")
     end
 end, "admin")
 
-QBCore.Commands.Add("setmodel", "Change Ped Model (Admin Only)", {{name="model", help="Name of the model"}, {name="id", help="Id of the Player (empty for yourself)"}}, false, function(source, args)
+QBCore.Commands.Add("setmodelo", "CAMBIAR MODELO PED (Solo Admin)", {{name="modelo", help="Nombre del modelo"}, {name="id", help="ID del jugador (vacío si es para ti mismo)"}}, false, function(source, args)
     local model = args[1]
     local target = tonumber(args[2])
     if model ~= nil or model ~= "" then
@@ -323,33 +315,33 @@ QBCore.Commands.Add("setmodel", "Change Ped Model (Admin Only)", {{name="model",
             if Trgt ~= nil then
                 TriggerClientEvent('qb-admin:client:SetModel', target, tostring(model))
             else
-                TriggerClientEvent('QBCore:Notify', source, "This person is not online..", "error")
+                TriggerClientEvent('QBCore:Notify', source, "Esta persona no esta en línea..", "error")
             end
         end
     else
-        TriggerClientEvent('QBCore:Notify', source, "You did not set a model..", "error")
+        TriggerClientEvent('QBCore:Notify', source, "No estableciste un modelo..", "error")
     end
 end, "admin")
 
-QBCore.Commands.Add("setspeed", "Set Player Foot Speed (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("setvelocidad", "Establecer la velocidad de tu personaje (Solo Admin)", {}, false, function(source, args)
     local speed = args[1]
     if speed ~= nil then
         TriggerClientEvent('qb-admin:client:SetSpeed', source, tostring(speed))
     else
-        TriggerClientEvent('QBCore:Notify', source, "You did not set a speed.. (`fast` for super-run, `normal` for normal)", "error")
+        TriggerClientEvent('QBCore:Notify', source, "No estableciste una velocidad.. (`fast` para super-run, `normal` para normal)", "error")
     end
 end, "admin")
 
-QBCore.Commands.Add("reporttoggle", "Toggle Incoming Reports (Admin Only)", {}, false, function(source, args)
+QBCore.Commands.Add("activarreportes", "Alternar que te entren reportes (Solo Admin)", {}, false, function(source, args)
     QBCore.Functions.ToggleOptin(source)
     if QBCore.Functions.IsOptin(source) then
-        TriggerClientEvent('QBCore:Notify', source, "You are receiving reports", "success")
+        TriggerClientEvent('QBCore:Notify', source, "Estas recibiendo reportes", "success")
     else
-        TriggerClientEvent('QBCore:Notify', source, "You are not receiving reports", "error")
+        TriggerClientEvent('QBCore:Notify', source, "Usted ya no está recibiendo reportes", "error")
     end
 end, "admin")
 
-RegisterCommand("kickall", function(source, args, rawCommand)
+RegisterCommand("kickeartodos", function(source, args, rawCommand)
     local src = source
     if src > 0 then
         local reason = table.concat(args, ' ')
@@ -364,22 +356,22 @@ RegisterCommand("kickall", function(source, args, rawCommand)
                     end
                 end
             else
-                TriggerClientEvent('chatMessage', src, 'SYSTEM', 'error', 'Mention a reason..')
+                TriggerClientEvent('chatMessage', src, 'SISTEMA', 'error', 'Menciona una razón..')
             end
         else
-            TriggerClientEvent('chatMessage', src, 'SYSTEM', 'error', 'You can\'t do this..')
+            TriggerClientEvent('chatMessage', src, 'SISTEMA', 'error', 'No puedes hacer esto..')
         end
     else
         for k, v in pairs(QBCore.Functions.GetPlayers()) do
             local Player = QBCore.Functions.GetPlayer(v)
             if Player ~= nil then 
-                DropPlayer(Player.PlayerData.source, "Server restart, check our Discord for more information! (discord.gg/ChangeInqb-adminMainLua)")
+                DropPlayer(Player.PlayerData.source, "Reinicio del servidor, comprueba nuestro discord¡ para más información.! (discord.gg/cambiarenqb-adminmenu;server;linea375)")
             end
         end
     end
 end, false)
 
-QBCore.Commands.Add("setammo", "Set Your Ammo Amount (Admin Only)", {{name="amount", help="Amount of bullets, for example: 20"}, {name="weapon", help="Name of the weapen, for example: WEAPON_VINTAGEPISTOL"}}, false, function(source, args)
+QBCore.Commands.Add("setmunicion", "Setea tu cantidad de munición (Solo Admin)", {{name="cantidad", help="Cantidad de balas, por ejemplo: 20"}, {name="arma", help="Nombre del arma, por ejemplo: WEAPON_VINTAGEPISTOL"}}, false, function(source, args)
     local src = source
     local weapon = args[2]
     local amount = tonumber(args[1])
