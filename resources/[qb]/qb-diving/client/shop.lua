@@ -18,19 +18,19 @@ Citizen.CreateThread(function()
 
                     if dist < 1 then
                         
-                        DrawText3D(v["coords"]["x"], v["coords"]["y"], v["coords"]["z"] - 0.1, '~g~G~w~ - Selling Coral')
+                        DrawText3D(v["coords"]["x"], v["coords"]["y"], v["coords"]["z"] - 0.1, '~g~G~w~ - Vendiendo Coral')
                         
                             if IsControlJustPressed(0, 47) then
                     
                                     TaskStartScenarioInPlace(PlayerPedId(), "WORLD_HUMAN_STAND_IMPATIENT", 0, true)
-                                    QBCore.Functions.Progressbar("sell_coral_items", "Check Pockets To Sell Coral", math.random(2000, 4000), false, true, {}, {}, {}, {}, function() -- Done
+                                    QBCore.Functions.Progressbar("sell_coral_items", "Revise los bolsillos para vender coral", math.random(2000, 4000), false, true, {}, {}, {}, {}, function() -- Done
                                         ClearPedTasks(PlayerPedId())
                                         TriggerServerEvent('qb-diving:server:SellCoral')
                                         notInteressted = true
                                         SetTimeout(0, ClearTimeOut)
                                     end, function() -- Cancel
                                         ClearPedTasks(PlayerPedId())
-                                        QBCore.Functions.Notify("Canceled..", "error")
+                                        QBCore.Functions.Notify("Cancelado..", "error")
                                     end)
                                
                                 
