@@ -16,13 +16,13 @@ AddEventHandler("qb-casino:sharlock:sell", function()
                     Player.Functions.RemoveItem(Player.PlayerData.items[k].name, Player.PlayerData.items[k].amount, k)
                         
         Player.Functions.AddMoney("cash", price, "sold-casino-chips")
-            TriggerClientEvent('QBCore:Notify', src, "You sold your chips for $"..price)
-            TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "blue", "**"..GetPlayerName(src) .. "** got $"..price.." for selling the Chips")
+            TriggerClientEvent('QBCore:Notify', src, "Vendiste tus fichas por $"..price)
+            TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "blue", "**"..GetPlayerName(src) .. "** Obtuvo $"..price.." por vender las fichas")
                 end
             end
         end
     else
-        TriggerClientEvent('QBCore:Notify', src, "You have no chips..")
+        TriggerClientEvent('QBCore:Notify', src, "No tienes fichas..")
     end
 end)
 
@@ -35,7 +35,7 @@ exports["qb-blackjack"]:SetGetChipsCallback(function(source)
         Chips = Chips
     end
 
-    return TriggerClientEvent('QBCore:Notify', src, "You have no chips..")
+    return TriggerClientEvent('QBCore:Notify', src, "No tienes fichass..")
 end)
 
     exports["qb-blackjack"]:SetTakeChipsCallback(function(source, amount)
@@ -44,7 +44,7 @@ end)
         if Player ~= nil then
             Player.Functions.RemoveItem("casinochips", amount)
             TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "remove")
-            TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "yellow", "**"..GetPlayerName(source) .. "** put $"..amount.." in table")
+            TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "yellow", "**"..GetPlayerName(source) .. "** poner $"..amount.." en la mesa")
         end
     end)
 
@@ -54,7 +54,7 @@ end)
         if Player ~= nil then
             Player.Functions.AddItem("casinochips", amount)
             TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "add")
-            TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "red", "**"..GetPlayerName(source) .. "** got $"..amount.." from table table and he won the double")
+            TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "red", "**"..GetPlayerName(source) .. "** Obtuvo $"..amount.." de la mesa y ganó el doble")
         end
     end)
 end

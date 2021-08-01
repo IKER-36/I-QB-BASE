@@ -23,7 +23,7 @@ AddEventHandler('apartments:server:UpdateApartment', function(type)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     exports.ghmattimysql:execute('UPDATE apartments SET type=@type WHERE citizenid=@citizenid', {['@type'] = type, ['@citizenid'] = Player.PlayerData.citizenid})
-    TriggerClientEvent('QBCore:Notify', src, "You have changed apartments")
+    TriggerClientEvent('QBCore:Notify', src, "Has cambiado de apartamentos")
     TriggerClientEvent("apartments:client:SetHomeBlip", src, type)
 end)
 

@@ -337,7 +337,7 @@ Citizen.CreateThread(function()
             SetBlipScale  (barberShop, 0.7)
             SetBlipAsShortRange(barberShop, true)
             BeginTextCommandSetBlipName("STRING")
-            AddTextComponentString("Barber")
+            AddTextComponentString("Peluquería")
             EndTextCommandSetBlipName(barberShop)
         end
 
@@ -348,7 +348,7 @@ Citizen.CreateThread(function()
             SetBlipScale  (surgeonShop, 0.7)
             SetBlipAsShortRange(surgeonShop, true)
             BeginTextCommandSetBlipName("STRING")
-            AddTextComponentString("Surgeon")
+            AddTextComponentString("Cirugía")
             EndTextCommandSetBlipName(surgeonShop)
         end
     end
@@ -372,28 +372,28 @@ Citizen.CreateThread(function()
                         DrawMarker(2, Config.Stores[k].coords.x,Config.Stores[k].coords.y,Config.Stores[k].coords.z + 0.98, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.2, 255, 255, 255, 255, 0, 0, 0, 1, 0, 0, 0)
                         if dist < 5 then
                             if Config.Stores[k].shopType == "clothing" then
-                                 DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - To Shop For Clothes')
+                                 DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - Comprar ropa')
                             elseif Config.Stores[k].shopType == "barber" then
-                                DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - To Get A Haircut')
+                                DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - Peluquería')
                             elseif Config.Stores[k].shopType == "surgeon" then
-                                DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - To Get Plastic Surgery')
+                                DrawText3Ds(Config.Stores[k].coords.x, Config.Stores[k].coords.y, Config.Stores[k].coords.z + 1.25, '~g~E~w~ - Cirugía plástica')
                             end
                             if IsControlJustPressed(0, 38) then -- E
                                 if Config.Stores[k].shopType == "clothing" then
                                     customCamLocation = nil
                                     openMenu({
-                                        {menu = "character", label = "Clothing", selected = true},
-                                        {menu = "accessoires", label = "Accessories", selected = false}
+                                        {menu = "character", label = "Ropa", selected = true},
+                                        {menu = "accessoires", label = "Accesorios", selected = false}
                                     })
                                 elseif Config.Stores[k].shopType == "barber" then
                                     customCamLocation = nil
                                     openMenu({
-                                        {menu = "clothing", label = "Hair", selected = true},
+                                        {menu = "clothing", label = "Pelo", selected = true},
                                     })
                                 elseif Config.Stores[k].shopType == "surgeon" then
                                     customCamLocation = nil
                                     openMenu({
-                                        {menu = "clothing", label = "Features", selected = true},
+                                        {menu = "clothing", label = "Características", selected = true},
                                     })
                                 end
                             end
@@ -431,17 +431,17 @@ Citizen.CreateThread(function()
                         DrawMarker(2, Config.ClothingRooms[k].coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.2, 255, 255, 255, 255, 0, 0, 0, 1, 0, 0, 0)
                         if dist < 2 then
                             if PlayerData.job.name == Config.ClothingRooms[k].requiredJob then
-                                DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - View Clothing')
+                                DrawText3Ds(Config.ClothingRooms[k].coords.x, Config.ClothingRooms[k].coords.y, Config.ClothingRooms[k].coords.z + 0.3, '~g~E~w~ - Ver ropa')
                                 if IsControlJustPressed(0, 38) then -- E
                                     customCamLocation = Config.ClothingRooms[k].cameraLocation
                                     gender = "male"
                                     if QBCore.Functions.GetPlayerData().charinfo.gender == 1 then gender = "female" end
                                     QBCore.Functions.TriggerCallback('qb-clothing:server:getOutfits', function(result)
                                         openMenu({
-                                            {menu = "roomOutfits", label = "Presets", selected = true, outfits = Config.Outfits[PlayerData.job.name][gender]},
-                                            {menu = "myOutfits", label = "My Outfits", selected = false, outfits = result},
-                                            {menu = "character", label = "Clothing", selected = false},
-                                            {menu = "accessoires", label = "Accessories", selected = false}
+                                            {menu = "roomOutfits", label = "Preajustes", selected = true, outfits = Config.Outfits[PlayerData.job.name][gender]},
+                                            {menu = "myOutfits", label = "Mis Outfits", selected = false, outfits = result},
+                                            {menu = "character", label = "Ropa", selected = false},
+                                            {menu = "accessoires", label = "Accesorios", selected = false}
                                         })
                                         
                                     end)
@@ -467,7 +467,7 @@ RegisterNetEvent('qb-clothing:client:openOutfitMenu')
 AddEventHandler('qb-clothing:client:openOutfitMenu', function()
     QBCore.Functions.TriggerCallback('qb-clothing:server:getOutfits', function(result)
         openMenu({
-            {menu = "myOutfits", label = "My Outfits", selected = true, outfits = result},
+            {menu = "myOutfits", label = "Mis Outfits", selected = true, outfits = result},
         })
     end)
 end)
@@ -545,9 +545,9 @@ RegisterNetEvent('qb-clothing:client:openMenu')
 AddEventHandler('qb-clothing:client:openMenu', function()
     customCamLocation = nil
     openMenu({
-        {menu = "character", label = "Character", selected = true},
-        {menu = "clothing", label = "Features", selected = false},
-        {menu = "accessoires", label = "Accessories", selected = false}
+        {menu = "character", label = "Personaje", selected = true},
+        {menu = "clothing", label = "Características", selected = false},
+        {menu = "accessoires", label = "Accesorios", selected = false}
     })
 end)
 
@@ -693,7 +693,7 @@ function openMenu(allowedMenus)
 end
 
 RegisterNUICallback('TrackerError', function()
-    QBCore.Functions.Notify("You can't remove your ankle bracelet ..", "error")
+    QBCore.Functions.Notify("No puedes quitar tu pulsera de tobillo ..", "error")
 end)
 
 RegisterNUICallback('saveOutfit', function(data, cb)
@@ -941,7 +941,7 @@ end)
 
 RegisterNUICallback('removeOutfit', function(data, cb)
     TriggerServerEvent('qb-clothing:server:removeOutfit', data.outfitName, data.outfitId)
-    QBCore.Functions.Notify("You have deleted your"..data.outfitName.." outfit!")
+    QBCore.Functions.Notify("Has borrado tu outfit llamado "..data.outfitName.." !")
 end)
 
 function ChangeVariation(data)
@@ -1582,9 +1582,9 @@ AddEventHandler('qb-clothes:client:CreateFirstCharacter', function()
     QBCore.Functions.GetPlayerData(function(PlayerData)
         local skin = "mp_m_freemode_01"
         openMenu({
-            {menu = "character", label = "Character", selected = true},
-            {menu = "clothing", label = "Features", selected = false},
-            {menu = "accessoires", label = "Accessories", selected = false}
+            {menu = "character", label = "Personaje", selected = true},
+            {menu = "clothing", label = "Características", selected = false},
+            {menu = "accessoires", label = "Accesorios", selected = false}
         })
 
         if PlayerData.charinfo.gender == 1 then 
@@ -1888,7 +1888,7 @@ AddEventHandler('qb-clothing:client:loadOutfit', function(oData)
     end
 
     if oData.outfitName ~= nil then
-        QBCore.Functions.Notify("You have chosen "..oData.outfitName.."! Press Confirm to confirm outfit.")
+        QBCore.Functions.Notify("Elegiste tu outfit llamado "..oData.outfitName.."! Presiona Confirmar para ponertelo.")
     end
 end)
 

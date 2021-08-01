@@ -17,7 +17,7 @@ Citizen.CreateThread(function()
                 DrawMarker(2, -1876.14, 2060.96, 145.57, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 0, 0, 155, 0, 0, 0, 1, 0, 0, 0)
                 if dist < 1 then
                    
-                    DrawText3Ds(-1876.14, 2060.96, 145.57, '~g~E~w~ - Sell chips')
+                    DrawText3Ds(-1876.14, 2060.96, 145.57, '~g~E~w~ - Vender fichas')
                     if IsControlJustPressed(0, 38) then
                         TriggerServerEvent('qb-casino:sharlock:sell')
                     end
