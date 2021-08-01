@@ -25,7 +25,7 @@ Config.Stock = {
             [3] = 45,
             [4] = 60,
         },
-        Label = "Perfect (A)",
+        Label = "Perfecto (A)",
         Price = {
             [1] = {
                 min = 8,
@@ -53,7 +53,7 @@ Config.Stock = {
             [3] = 45,
             [4] = 60,
         },
-        Label = "Rare (B)",
+        Label = "Raro (B)",
         Price = {
             [1] = {
                 min = 6,
@@ -81,7 +81,7 @@ Config.Stock = {
             [3] = 45,
             [4] = 60,
         },
-        Label = "Common (C)",
+        Label = "Comun (C)",
         Price = {
             [1] = {
                 min = 4,
