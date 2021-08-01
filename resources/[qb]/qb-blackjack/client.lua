@@ -831,7 +831,7 @@ AddEventHandler("BLACKJACK:RequestBets", function(index, _timeLeft)
 					end
 					return
 				else
-					QBCore.Functions.Notify("You don't have enough Chips for the bet.", "error")
+					QBCore.Functions.Notify("No tienes suficientes fichas para la apuesta.", "error")
 				end
 			end
 		end
@@ -1002,7 +1002,7 @@ AddEventHandler("BLACKJACK:RequestMove", function(_timeLeft)
 
 					return
 				else
-					QBCore.Functions.Notify("You don't have enough money to double down.", "error")
+					QBCore.Functions.Notify("No tienes suficiente dinero para duplicar.", "error")
 				end
 			end
 			if IsControlJustPressed(1, 209) and CanSplitHand(hand) == true then
@@ -1061,7 +1061,7 @@ AddEventHandler("BLACKJACK:RequestMove", function(_timeLeft)
 
 					return
 				else
-					QBCore.Functions.Notify("You don't have enough money to split.", "error")
+					QBCore.Functions.Notify("No tienes suficiente dinero para dividir.", "error")
 					
 				end
 			end
@@ -1073,16 +1073,16 @@ RegisterNetEvent("BLACKJACK:GameEndReaction")
 AddEventHandler("BLACKJACK:GameEndReaction", function(result)
 	Citizen.CreateThread(function()
 		if #hand == 2 and handValue(hand) == 21 and result == "good" then
-			TriggerEvent('3dme:triggerDisplay', "You have Blackjack!")
+			TriggerEvent('3dme:triggerDisplay', "Tienes un blackjack!")
 		elseif handValue(hand) > 21 and result ~= "good" then
 			local coordsMe = GetEntityCoords(GetPlayerPed(mePlayer), false)
             local coords = GetEntityCoords(PlayerPedId(), false)
             local dist = Vdist2(coordsMe, coords)
             if dist < 50 then
-				TriggerEvent('3dme:triggerDisplay', "You went bust")
+				TriggerEvent('3dme:triggerDisplay', "Te Fuiste a la quiebra")
             end
 		else
-			TriggerEvent('3dme:triggerDisplay', "You "..resultNames[result].." with "..handValue(hand)..".")
+			TriggerEvent('3dme:triggerDisplay', "Tú "..resultNames[result].." con "..handValue(hand)..".")
 		end
 		
 		hand = {}
@@ -1251,7 +1251,7 @@ Citizen.CreateThread(function()
 		if dist < 10 then
 			DrawMarker(2, tploc_enter.x, tploc_enter.y, tploc_enter.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
 			if dist < 1 then
-				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Use the elevator')
+				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Usar el ascensor')
 				if IsControlJustPressed(1, 51) then
 					SetEntityCoords(ped, tploc_exit.x, tploc_exit.y, tploc_exit.z - 0.8)
 					SetEntityHeading(ped, tploc_exit.a)
@@ -1265,7 +1265,7 @@ Citizen.CreateThread(function()
 		if dist < 10 then
 			DrawMarker(2, tploc_enter.x, tploc_enter.y, tploc_enter.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
 			if dist < 1 then
-				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Use the elevator')
+				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Usar el ascensor')
 				if IsControlJustPressed(1, 51) then
 					SetEntityCoords(ped, tploc_exit.x, tploc_exit.y, tploc_exit.z - 0.8)
 					SetEntityHeading(ped, tploc_exit.a)
@@ -1329,9 +1329,9 @@ function ProcessTables()
 
 						if #(pCoords - coords) < 1.5 and not IsSeatOccupied(coords, 0.5) and canSit then
 							if highStakes then
-								DisplayHelpText("Press ~INPUT_CONTEXT~ to play High-Limit Blackjack.")
+								DisplayHelpText("Pulsa ~INPUT_CONTEXT~ para jugar Blackjack de límite alto.")
 							else
-								DisplayHelpText("Press ~INPUT_CONTEXT~ to play Blackjack.")
+								DisplayHelpText("Pulsa ~INPUT_CONTEXT~ para jugar Blackjack.")
 							end
 							
 							if _DEBUG == true then
@@ -1499,7 +1499,7 @@ Citizen.CreateThread(function()
 		Citizen.CreateThread(CreatePeds)
 	else
 		ThefeedSetAnimpostfxColor(255, 0, 0, 255)
-		Notification("This server is missing objects required for qb-blackjack!", nil, true)
+		Notification("A este servidor le faltan los objetos necesarios para qb-blackjack!", nil, true)
 	end
 end)
 

@@ -3,8 +3,8 @@ game "gta5"
 
 name 'qb-blackjack'
 description 'Playable Blackjack at the casino, similar to GTAOnline.'
-author 'Xinerki - https://github.com/Xinerki/'
-url 'https://github.com/Xinerki/ACG-blackjack'
+author 'Xinerki - https://github.com/Xinerki/ and QB-CORE Blackjack  TRANSLATED BY (Broncas#3949) COLABORATING IN I-QB PROJECT'
+
 
 shared_scripts {
 	'coords.lua',
