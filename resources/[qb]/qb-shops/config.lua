@@ -677,7 +677,7 @@ Config.Locations = {
         ["showblip"] = true,
     },   
     ["coffeeshop"] = {
-        ["label"] = "Superfly",
+        ["label"] = "SuperFly",
         ["type"] = "hardware",
         ["coords"] = {
             [1] = vector3(-1172.43, -1572.24, 4.66)
