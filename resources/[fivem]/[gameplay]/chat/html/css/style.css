@@ -1,0 +1,308 @@
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+.color-0{color: #ffffff;}
+.color-1{color: #ff4444;}
+.color-2{color: #99cc00;}
+.color-3{color: #ffbb33;}
+.color-4{color: #0099cc;}
+.color-5{color: #33b5e5;}
+.color-6{color: #aa66cc;}
+.color-8{color: #cc0000;}
+.color-9{color: #cc0068;}
+    src: url("../BarlowCondensed.ttf");
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.no-grow {
+  flex-grow: 0;
+}
+
+em {
+  font-style: normal;
+}
+
+#app {
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: transparent;
+}
+
+.chat-window {
+  position: absolute;
+  left: 1vw;
+  width: 32vw;
+  height: 25vh;
+  background-color: rgba(255, 255, 255, 0);
+  top: 5vh;
+  -webkit-animation-duration: 2s;
+}
+
+.chat-messages {
+  max-height: 100%;
+  font-size: 0.7vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex-flow: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chat-input {
+  font-size: 0.9rem;
+  position: absolute;
+  top: 27vh;
+  left: 1vw;
+  width: 28vw;
+  box-sizing: border-box;
+}
+
+textarea {
+  font-family: sans-serif!important;
+  font-size: 1.4vh;
+  display: block;
+  box-sizing: border-box;
+  padding: 0.3vw;
+  text-indent: .5vh;
+  color: #ffffff;
+  background-color: #00000080;
+  width: 80%;
+  min-height: 3vh;
+  max-height: 3vh;
+  border: 1px solid #21262b;
+  border-radius: .1vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  resize: none;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.msg {
+  margin-bottom: 0.5vw;
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 5px;
+  padding-left: 27px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: #00000080;
+  border: 1px solid #21262b;
+  width: 80%;
+}
+
+.help {
+  margin-top: -10px;
+  color: #ffffffe7;
+}
+
+.disabled {
+  margin-top: -10px;
+  color: #ffffff93;
+}
+
+.suggestion {
+  margin-bottom: 5px;
+  color: #ffffffec;
+}
+
+.chat-message {
+  display: inline-block !important;
+  padding: 0.25vw  0.65vw;
+  border-radius: 0 .3vh .3vh 0;
+  background-color: rgba(47, 114, 181, 0.9);
+  width: fit-content;
+  overflow: hidden;
+  margin-right: 0.5vw;
+  word-break: break-word;
+}
+
+.chat-message-body {
+  height: 100%;
+  line-height: 1;
+  padding: 0.1vw;
+}
+
+.chat-message.advert {
+  background-color: rgba(115, 47, 106, 0.8);
+}
+
+.warning {
+  background-color: rgba(255, 136, 0, 0.8);
+}
+
+.normal {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prv {
+  background-color: rgba(37, 21, 39, 0.7);
+}
+
+
+.me {
+  background-color: rgba(27, 68, 109, 0.7);
+}
+
+.dados {
+  background-color: rgba(27, 68, 109, 0.7);
+}
+
+.do {
+  background-color: rgba(131, 28, 28, 0.7);
+}
+
+.error {
+  background-color: rgba(191, 36, 36, 0.7);
+}
+
+.chat-message.system {
+  background-color: rgb(67, 57, 111, 0.7);
+}
+
+.chat-message.emergency {
+  background-color: rgba(224, 50, 50, 0.7);
+}
+
+.chat-message.nonemergency {
+  background-color: rgba(112, 25, 25, 0.7);
+}
+
+.chat-message.report {
+  background-color: rgba(86, 173, 10, 0.7);
+}
+
+.chat-message.ayuda {
+  background-color: rgba(159, 187, 81, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.msg-wrap {
+  display: flex;
+}
+
+.prefix {
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex !important;
+  padding: 0.25vw  0.65vw;
+  border-radius: .3vh 0 0 .3vh;
+  width: fit-content;
+  word-break: break-word;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+.prefix p {
+  white-space: nowrap;
+}
+
+.prefix.me {
+  background-color: rgba(47, 114, 181, 0.8);
+}
+
+.prefix.dados {
+  background-color: rgba(47, 114, 181, 0.8);
+}
+
+.prefix.do {
+  background-color: rgba(148, 35, 35, 0.9);
+}
+
+.prefix.normal {
+  background-color: rgba(94, 94, 94, 0.8);
+}
+
+.prefix.ooc {
+  background-color: rgba(94, 94, 94, 0.8);
+}
+
+.prefix.error {
+  background-color:  rgba(191, 36, 36, 0.8);
+}
+
+.prefix.warning {
+  background-color: rgba(255, 136, 0, 0.8);
+}
+
+.prefix.news {
+  background-color: rgba(221, 195, 48, 0.8);
+}
+
+.prefix.report {
+  background-color: rgba(86, 173, 10, 0.8);
+}
+
+.prefix.ayuda {
+  background-color: rgba(159, 187, 81, 0.8);
+}
+
+.prefix.prv {
+  background-color: rgba(37, 21, 39, 0.7);
+}
+
+/* fbi */
+
+.license {
+  font-family: 'Ariel Script';
+  font-size: 14px;
+  background-image: url("nui://chat/html/idcard.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: top-left;
+  width: 27vh;
+  height: 15vh;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  /* transform: scale(0.325); */
+  transform-origin: top left;
+  /* margin-bottom: -37.5%; */
+  margin-top: 3%;
+  margin-right: .8vh;
+}
+
+.license__photo {
+  width: 6vh;
+  height: 8vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1vh;
+  right: 2vh;
+}
+
+.license__photo--M {
+  background-image: url("nui://chat/html/image/M.png");
+}
+
+.license__photo--F {
+  background-image: url("nui://chat/html/image/F.png");
+}
+
+
+.license__signature {
+  font-family: 'Ariel Script';
+  font-size: 1.4vh;
+  font-weight: 600;
+  text-decoration: solid;
+  position: absolute;
+  color: #000000;
+  top: 11vh;
+  left: 16vh;
+  transform: translateX(-50%) rotateZ(-1deg);
+}
