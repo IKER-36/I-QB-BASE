@@ -67,7 +67,7 @@ AddEventHandler('qb-houses:server:addNewHouse', function(street, coords, price, 
 		decorations = {},
 	}
 	TriggerClientEvent("qb-houses:client:setHouseConfig", -1, Config.Houses)
-	TriggerClientEvent('QBCore:Notify', src, "You have added a house: "..label)
+	TriggerClientEvent('QBCore:Notify', src, "Has añadido una casa: "..label)
 end)
 
 RegisterServerEvent('qb-houses:server:addGarage')
@@ -79,7 +79,7 @@ AddEventHandler('qb-houses:server:addGarage', function(house, coords)
 		takeVehicle = coords,
 	}
 	TriggerClientEvent("qb-garages:client:addHouseGarage", -1, house, garageInfo)
-	TriggerClientEvent('QBCore:Notify', src, "You have added a garage: "..garageInfo.label)
+	TriggerClientEvent('QBCore:Notify', src, "Has añadido un garaje: "..garageInfo.label)
 end)
 
 RegisterServerEvent('qb-houses:server:viewHouse')
@@ -117,7 +117,7 @@ AddEventHandler('qb-houses:server:buyHouse', function(house)
 		TriggerClientEvent('qb-houses:client:SetClosestHouse', src)
 		pData.Functions.RemoveMoney('bank', HousePrice, "bought-house") -- 21% Extra house costs
 	else
-		TriggerClientEvent('QBCore:Notify', source, "You dont have enough money..", "error")
+		TriggerClientEvent('QBCore:Notify', source, "No tienes suficiente dinero..", "error")
 	end
 end)
 
@@ -267,7 +267,7 @@ AddEventHandler('qb-houses:server:removeHouseKey', function(house, citizenData)
 		end
 	end
 	housekeyholders[house] = newHolders
-	TriggerClientEvent('QBCore:Notify', src, 'Keys Have Been Removed From ' ..citizenData.firstname..' '..citizenData.lastname, 'error')
+	TriggerClientEvent('QBCore:Notify', src, 'Se le han quitado las llaves a ' ..citizenData.firstname..' '..citizenData.lastname, 'error')
 	exports.ghmattimysql:execute('UPDATE player_houses SET keyholders=@keyholders WHERE house=@house', {['@keyholders'] = json.encode(housekeyholders[house]), ['@house'] = house})
 end)
 
@@ -422,7 +422,7 @@ QBCore.Functions.CreateCallback('qb-houses:server:getSavedOutfits', function(sou
 	end
 end)
 
-QBCore.Commands.Add("decorate", "Decorate Interior", {}, false, function(source, args)
+QBCore.Commands.Add("decorar", "Decorar interior de la casa", {}, false, function(source, args)
 	TriggerClientEvent("qb-houses:client:decorate", source)
 end)
 
@@ -458,14 +458,14 @@ AddEventHandler('qb-houses:server:giveHouseKey', function(target, house)
 		if housekeyholders[house] ~= nil then
 			for _, cid in pairs(housekeyholders[house]) do
 				if cid == tPlayer.PlayerData.citizenid then
-					TriggerClientEvent('QBCore:Notify', src, 'This person already has the keys of the house!', 'error', 3500)
+					TriggerClientEvent('QBCore:Notify', src, 'Esta persona ya tiene las llaves de la casa.!', 'error', 3500)
 					return
 				end
 			end		
 			table.insert(housekeyholders[house], tPlayer.PlayerData.citizenid)
 			exports.ghmattimysql:execute('UPDATE player_houses SET keyholders=@keyholders WHERE house=@house', {['@keyholders'] = json.encode(housekeyholders[house]), ['@house'] = house})
 			TriggerClientEvent('qb-houses:client:refreshHouse', tPlayer.PlayerData.source)
-			TriggerClientEvent('QBCore:Notify', tPlayer.PlayerData.source, 'You have the keys of '..Config.Houses[house].adress..' recieved!', 'success', 2500)
+			TriggerClientEvent('QBCore:Notify', tPlayer.PlayerData.source, 'Tienes las llaves de '..Config.Houses[house].adress..' recibidas!', 'success', 2500)
 		else
 			local sourceTarget = QBCore.Functions.GetPlayer(src)
 			housekeyholders[house] = {
@@ -474,10 +474,10 @@ AddEventHandler('qb-houses:server:giveHouseKey', function(target, house)
 			table.insert(housekeyholders[house], tPlayer.PlayerData.citizenid)
 			exports.ghmattimysql:execute('UPDATE player_houses SET keyholders=@keyholders WHERE house=@house', {['@keyholders'] = json.encode(housekeyholders[house]), ['@house'] = house})
 			TriggerClientEvent('qb-houses:client:refreshHouse', tPlayer.PlayerData.source)
-			TriggerClientEvent('QBCore:Notify', tPlayer.PlayerData.source, 'You have the keys of '..Config.Houses[house].adress..' recieved!', 'success', 2500)
+			TriggerClientEvent('QBCore:Notify', tPlayer.PlayerData.source, 'Tienes las llaves de '..Config.Houses[house].adress..' recibidas!', 'success', 2500)
 		end
 	else
-		TriggerClientEvent('QBCore:Notify', src, 'Something went wrond try again!', 'error', 2500)
+		TriggerClientEvent('QBCore:Notify', src, 'Algo salió mal, intenta de nuevo!', 'error', 2500)
 	end
 end)
 
@@ -497,7 +497,7 @@ AddEventHandler('qb-houses:server:setLocation', function(coords, house, type)
 	TriggerClientEvent('qb-houses:client:refreshLocations', -1, house, json.encode(coords), type)
 end)
 
-QBCore.Commands.Add("createhouse", "Create House (Real Estate Only)", {{name="price", help="Price of the house"},{name="tier", help="Name of the item(no label)"}}, true, function(source, args)
+QBCore.Commands.Add("crearprop", "Crear propiedad (Solo inmobiliarios)", {{name="precio", help="Precio de la propiedad"},{name="tipo", help="Tipo de propiedad (1-7)"}}, true, function(source, args)
 	local Player = QBCore.Functions.GetPlayer(source)
 	local price = tonumber(args[1])
 	local tier = tonumber(args[2])
@@ -506,7 +506,7 @@ QBCore.Commands.Add("createhouse", "Create House (Real Estate Only)", {{name="pr
 	end
 end)
 
-QBCore.Commands.Add("addgarage", "Add House Garage (Real Estate Only)", {}, false, function(source, args)
+QBCore.Commands.Add("añadirgaraje", "Añadir garaje a una propiedad (Solo inmobiliarios)", {}, false, function(source, args)
 	local Player = QBCore.Functions.GetPlayer(source)
 	if Player.PlayerData.job.name == "realestate" then
 		TriggerClientEvent("qb-houses:client:addGarage", source)
@@ -683,7 +683,7 @@ QBCore.Functions.CreateUseableItem("police_stormram", function(source, item)
 	if (Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty) then
 		TriggerClientEvent("qb-houses:client:HomeInvasion", source)
 	else
-		TriggerClientEvent('QBCore:Notify', source, "This is only possible for emergency services!", "error")
+		TriggerClientEvent('QBCore:Notify', source, "Esto solo es posible para los servicios de emergencia.!", "error")
 	end
 end)
 
@@ -693,14 +693,14 @@ AddEventHandler('qb-houses:server:SetHouseRammed', function(bool, house)
 	TriggerClientEvent('qb-houses:client:SetHouseRammed', -1, bool, house)
 end)
 
-QBCore.Commands.Add("enter", "Enter House", {}, false, function(source, args)
+QBCore.Commands.Add("entrarprop", "Entrar en casa", {}, false, function(source, args)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
  
     TriggerClientEvent('qb-houses:client:EnterHouse', src)
 end)
 
-QBCore.Commands.Add("ring", "Ring The Doorbell", {}, false, function(source, args)
+QBCore.Commands.Add("timbre", "Toca el timbre", {}, false, function(source, args)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
  

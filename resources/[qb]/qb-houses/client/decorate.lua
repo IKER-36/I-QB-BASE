@@ -105,7 +105,7 @@ Citizen.CreateThread(function()
 			if dist > 50.0 then
 				DisableEditMode()
 				closeDecorateUI()
-				QBCore.Functions.Notify("You have gone out of range!")
+				QBCore.Functions.Notify("Has salido de rango!")
 			end
 		end
 	end
@@ -122,10 +122,10 @@ AddEventHandler("qb-houses:client:decorate", function()
 				openDecorateUI()
 			end
 		else
-			QBCore.Functions.Notify("You must have the keys to the house!", "error")
+			QBCore.Functions.Notify("Debes tener las llaves de la casa.!", "error")
 		end
 	else
-		QBCore.Functions.Notify("You are not in a house!", "error")
+		QBCore.Functions.Notify("No estas en una casa!", "error")
 	end
 end)
 
@@ -511,7 +511,7 @@ function CheckMovementInput()
 		if curSpeed > getTableLength(speeds) then
 			curSpeed = 1
 		end
-		QBCore.Functions.Notify("Speed is ".. tostring(speeds[curSpeed]))
+		QBCore.Functions.Notify("La velocidad es ".. tostring(speeds[curSpeed]))
 	end
 
 	local xVect = speeds[curSpeed] * math.sin( degToRad( rotation.z ) ) * -1.0

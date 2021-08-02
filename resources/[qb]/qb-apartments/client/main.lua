@@ -57,7 +57,7 @@ Citizen.CreateThread(function()
                     QBCore.Functions.DrawText3D(Apartments.Locations[ClosestHouse].coords.enter.x - POIOffsets.stash.x, Apartments.Locations[ClosestHouse].coords.enter.y - POIOffsets.stash.y, Apartments.Locations[ClosestHouse].coords.enter.z - CurrentOffset + POIOffsets.stash.z, '~g~E~w~ - Armario')
                     if IsControlJustPressed(0, 38) then -- E
                         if CurrentApartment ~= nil then
-                            TriggerServerEvent("inventory:server:OpenInventory", "Armario", CurrentApartment)
+                            TriggerServerEvent("inventory:server:OpenInventory", "stash", CurrentApartment)
                             TriggerEvent("inventory:client:SetCurrentStash", CurrentApartment)
                         end
                     end
