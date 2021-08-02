@@ -11,7 +11,7 @@ Citizen.CreateThread(function()
     SetBlipAsShortRange(Dealer, true)
     SetBlipColour(Dealer, 3)
     BeginTextCommandSetBlipName('STRING')
-    AddTextComponentSubstringPlayerName('Luxury Cars')
+    AddTextComponentSubstringPlayerName('Concesionario de Coches Lujosos')
     EndTextCommandSetBlipName(Dealer)
 end)
 

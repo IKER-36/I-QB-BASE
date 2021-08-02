@@ -277,6 +277,6 @@ Citizen.CreateThread(function()
     SetBlipColour(Dealer, 3)
 
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentSubstringPlayerName("Joyas Vangelico")
+    AddTextComponentSubstringPlayerName("Joyeria - Vangelico")
     EndTextCommandSetBlipName(Dealer)
 end)

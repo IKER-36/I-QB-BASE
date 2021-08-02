@@ -160,7 +160,7 @@ Citizen.CreateThread(function()
     SetBlipScale(blip, 0.8)
     SetBlipColour(blip, 25)
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString("Doctor's Post Paleto")
+    AddTextComponentString("Puesto de Medico - Paleto")
     EndTextCommandSetBlipName(blip)
 
     local blip = AddBlipForCoord(304.27, -600.33, 43.28)
