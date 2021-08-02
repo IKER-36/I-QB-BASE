@@ -54,7 +54,7 @@ end
 
 function Queue:DebugPrint(msg)
     if Queue.Debug then
-        msg = "^3QUEUE: ^0" .. tostring(msg) .. "^7"
+        msg = "^3COLA: ^0" .. tostring(msg) .. "^7"
         print(msg)
     end
 end
