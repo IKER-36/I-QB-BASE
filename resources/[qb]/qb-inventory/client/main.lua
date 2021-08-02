@@ -140,7 +140,7 @@ RegisterCommand('inventory', function()
                                 curVeh = vehicle
                                 CurrentGlovebox = nil
                             else
-                                QBCore.Functions.Notify("Vehicle is locked..", "error")
+                                QBCore.Functions.Notify("El vehículo está bloqueado..", "error")
                                 return
                             end
                         else
@@ -372,7 +372,7 @@ AddEventHandler("inventory:client:CraftItems", function(itemName, itemCosts, amo
         action = "close",
     })
     isCrafting = true
-    QBCore.Functions.Progressbar("repair_vehicle", "Crafting..", (math.random(2000, 5000) * amount), false, true, {
+    QBCore.Functions.Progressbar("repair_vehicle", "Crafteando..", (math.random(2000, 5000) * amount), false, true, {
 		disableMovement = true,
 		disableCarMovement = true,
 		disableMouse = false,
@@ -388,7 +388,7 @@ AddEventHandler("inventory:client:CraftItems", function(itemName, itemCosts, amo
         isCrafting = false
 	end, function() -- Cancel
 		StopAnimTask(ped, "mini@repair", "fixing_a_player", 1.0)
-        QBCore.Functions.Notify("Failed!", "error")
+        QBCore.Functions.Notify("Fallido!", "error")
         isCrafting = false
 	end)
 end)
@@ -400,7 +400,7 @@ AddEventHandler('inventory:client:CraftAttachment', function(itemName, itemCosts
         action = "close",
     })
     isCrafting = true
-    QBCore.Functions.Progressbar("repair_vehicle", "Crafting..", (math.random(2000, 5000) * amount), false, true, {
+    QBCore.Functions.Progressbar("repair_vehicle", "Crafteando..", (math.random(2000, 5000) * amount), false, true, {
 		disableMovement = true,
 		disableCarMovement = true,
 		disableMouse = false,
@@ -416,7 +416,7 @@ AddEventHandler('inventory:client:CraftAttachment', function(itemName, itemCosts
         isCrafting = false
 	end, function() -- Cancel
 		StopAnimTask(ped, "mini@repair", "fixing_a_player", 1.0)
-        QBCore.Functions.Notify("Failed!", "error")
+        QBCore.Functions.Notify("Fallido!", "error")
         isCrafting = false
 	end)
 end)
@@ -426,7 +426,7 @@ AddEventHandler("inventory:client:PickupSnowballs", function()
     local ped = PlayerPedId()
     LoadAnimDict('anim@mp_snowball')
     TaskPlayAnim(ped, 'anim@mp_snowball', 'pickup_snowball', 3.0, 3.0, -1, 0, 1, 0, 0, 0)
-    QBCore.Functions.Progressbar("pickupsnowball", "Sneeuwballen oprapen..", 1500, false, true, {
+    QBCore.Functions.Progressbar("pickupsnowball", "Recogiendo bolas de nieve..", 1500, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -437,7 +437,7 @@ AddEventHandler("inventory:client:PickupSnowballs", function()
         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["snowball"], "add")
     end, function() -- Cancel
         ClearPedTasks(ped)
-        QBCore.Functions.Notify("Canceled..", "error")
+        QBCore.Functions.Notify("Cancelado..", "error")
     end)
 end)
 
@@ -729,7 +729,7 @@ RegisterNUICallback('combineWithAnim', function(data)
         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items[combineData.reward], 'add')
     end, function() -- Cancel
         StopAnimTask(ped, aDict, aLib, 1.0)
-        QBCore.Functions.Notify("Mislukt!", "error")
+        QBCore.Functions.Notify("Fallido!", "error")
     end)
 end)
 
