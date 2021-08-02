@@ -4,7 +4,7 @@ QBHud.MinimumStress = 50
 QBHud.MinimumSpeed = 100
 
 QBHud.Money = {}
-QBHud.Money.ShowConstant = true -- Show money constantly
+QBHud.Money.ShowConstant = false -- Show money constantly
 
 QBHud.Radar = {}
 QBHud.Radar.NoRadarVehicles = {
