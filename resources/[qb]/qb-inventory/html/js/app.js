@@ -137,7 +137,7 @@ $(document).on("click", ".item-slot", function(e){
             if ((ItemData.name).split("_")[0] == "weapon") {
                 if (!$("#weapon-attachments").length) {
                     // if (ItemData.info.attachments !== null && ItemData.info.attachments !== undefined && ItemData.info.attachments.length > 0) {
-                    $(".inv-options-list").append('<div class="inv-option-item" id="weapon-attachments"><p>ATTACHMENTS</p></div>');
+                    $(".inv-options-list").append('<div class="inv-option-item" id="weapon-attachments"><p>ACCESORIOS</p></div>');
                     $("#weapon-attachments").hide().fadeIn(250);
                     ClickedItemData = ItemData;
                     // }
@@ -207,7 +207,7 @@ function FormatAttachmentInfo(data) {
 
         $(".weapon-attachments-container-title").html(data.WeaponData.label + " | " + AmmoLabel);
         $(".weapon-attachments-container-description").html(data.WeaponData.description);
-        $(".weapon-attachments-container-details").html('<span style="font-weight: bold; letter-spacing: .1vh;">Serial Number</span><br> ' + ClickedItemData.info.serie + '<br><br><span style="font-weight: bold; letter-spacing: .1vh;">Durability - ' + Durability.toFixed() + '% </span> <div class="weapon-attachments-container-detail-durability"><div class="weapon-attachments-container-detail-durability-total"></div></div>')
+        $(".weapon-attachments-container-details").html('<span style="font-weight: bold; letter-spacing: .1vh;">Número de serie</span><br> ' + ClickedItemData.info.serie + '<br><br><span style="font-weight: bold; letter-spacing: .1vh;">Durabilidad - ' + Durability.toFixed() + '% </span> <div class="weapon-attachments-container-detail-durability"><div class="weapon-attachments-container-detail-durability-total"></div></div>')
         $(".weapon-attachments-container-detail-durability-total").css({
             width: Durability + "%"
         });
@@ -224,10 +224,10 @@ function FormatAttachmentInfo(data) {
                     $("#weapon-attachment-"+i).data('AttachmentData', attachment)
                 });
             } else {
-                $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">This gun doesn\'t contain attachments</span>');
+                $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">Este arma no tiene accesorios carapan</span>');
             }
         } else {
-            $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">This gun doesn\'t contain attachments</span>');
+            $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">Este arma no tiene accesorios carapan</span>');
         }
 
         handleAttachmentDrag()
@@ -272,7 +272,7 @@ function handleAttachmentDrag() {
                             AttachmentDraggingData = null;
                             $(".weapon-attachments").html("");
                         });
-                        $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">This gun doesn\'t contain attachments</span>');
+                        $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">Este arma no tiene accesorios carapan</span>');
                     }
                 } else {
                     $("#weapon-attachment-" + AttachmentDraggingData.id).fadeOut(150, function(){
@@ -280,7 +280,7 @@ function handleAttachmentDrag() {
                         AttachmentDraggingData = null;
                         $(".weapon-attachments").html("");
                     });
-                    $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">This gun doesn\'t contain attachments</span>');
+                    $(".weapon-attachments-title").html('<span style="font-weight: bold; letter-spacing: .1vh;">Este arma no tiene accesorios carapan</span>');
                 }
             });
         },
@@ -303,7 +303,7 @@ $(document).on('click', '#weapon-attachments', function(e){
         FormatAttachmentInfo(ClickedItemData);    
     } else {
         $.post('https://qb-inventory/Notify', JSON.stringify({
-            message: "Attachments are unavailable for this gun.",
+            message: "Los accesorios no están disponibles para este arma..",
             type: "error"
         }))
     }
@@ -317,13 +317,13 @@ function FormatItemInfo(itemData) {
                 gender = "Woman";
             }
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
-            $(".item-info-description").html('<p><strong>CSN: </strong><span>' + itemData.info.citizenid + '</span></p><p><strong>First Name: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Last Name: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>Birth Date: </strong><span>' + itemData.info.birthdate + '</span></p><p><strong>Gender: </strong><span>' + gender + '</span></p><p><strong>Nationality: </strong><span>' + itemData.info.nationality + '</span></p>');
+            $(".item-info-description").html('<p><strong>CSN: </strong><span>' + itemData.info.citizenid + '</span></p><p><strong>Primer Nombre: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Apellido: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>Fecha de nacimiento: </strong><span>' + itemData.info.birthdate + '</span></p><p><strong>Género: </strong><span>' + gender + '</span></p><p><strong>Nacionalidad: </strong><span>' + itemData.info.nationality + '</span></p>');
         } else if (itemData.name == "driver_license") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
-            $(".item-info-description").html('<p><strong>First Name: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Last Name: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>Birth Date: </strong><span>' + itemData.info.birthdate + '</span></p><p><strong>Licenses: </strong><span>' + itemData.info.type + '</span></p>');
+            $(".item-info-description").html('<p><strong>Primer Nombre: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Apellido: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>Fecha de nacimiento: </strong><span>' + itemData.info.birthdate + '</span></p><p><strong>Licencias: </strong><span>' + itemData.info.type + '</span></p>');
         } else if (itemData.name == "lawyerpass") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
-            $(".item-info-description").html('<p><strong>Pass-ID: </strong><span>' + itemData.info.id + '</span></p><p><strong>First Name: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Last Name: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>CSN: </strong><span>' + itemData.info.citizenid + '</span></p>');
+            $(".item-info-description").html('<p><strong>ID: </strong><span>' + itemData.info.id + '</span></p><p><strong>Primer Nombre: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Apellido: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>CSN: </strong><span>' + itemData.info.citizenid + '</span></p>');
         } else if (itemData.name == "harness") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
             $(".item-info-description").html('<p>'+itemData.info.uses+' uses left.</p>');
@@ -343,20 +343,20 @@ function FormatItemInfo(itemData) {
                         attachmentString += attachment.label + ", "
                     }
                 });
-                $(".item-info-description").html('<p><strong>Serial Number: </strong><span>' + itemData.info.serie + '</span></p><p><strong>Munition: </strong><span>' + itemData.info.ammo + '</span></p><p><strong>Attachments: </strong><span>' + attachmentString + '</span></p>');
+                $(".item-info-description").html('<p><strong>Numero de Serie: </strong><span>' + itemData.info.serie + '</span></p><p><strong>Munición: </strong><span>' + itemData.info.ammo + '</span></p><p><strong>Accesorios: </strong><span>' + attachmentString + '</span></p>');
             } else{
-                $(".item-info-description").html('<p><strong>Serial Number: </strong><span>' + itemData.info.serie + '</span></p><p><strong>Munition: </strong><span>' + itemData.info.ammo + '</span></p><p>' + itemData.description + '</p>');
+                $(".item-info-description").html('<p><strong>Numero de Serie: </strong><span>' + itemData.info.serie + '</span></p><p><strong>Munición: </strong><span>' + itemData.info.ammo + '</span></p><p>' + itemData.description + '</p>');
             }
         } else if (itemData.name == "filled_evidence_bag") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
             if (itemData.info.type == "casing") {
-                $(".item-info-description").html('<p><strong>Evidence material: </strong><span>' + itemData.info.label + '</span></p><p><strong>Type number: </strong><span>' + itemData.info.ammotype + '</span></p><p><strong>Caliber: </strong><span>' + itemData.info.ammolabel + '</span></p><p><strong>Serial Number: </strong><span>' + itemData.info.serie + '</span></p><p><strong>Crime scene: </strong><span>' + itemData.info.street + '</span></p><br /><p>' + itemData.description + '</p>');
+                $(".item-info-description").html('<p><strong>Material de evidencia: </strong><span>' + itemData.info.label + '</span></p><p><strong>Tipo de número: </strong><span>' + itemData.info.ammotype + '</span></p><p><strong>Calibre: </strong><span>' + itemData.info.ammolabel + '</span></p><p><strong>Numero de Serie: </strong><span>' + itemData.info.serie + '</span></p><p><strong>Crime scene: </strong><span>' + itemData.info.street + '</span></p><br /><p>' + itemData.description + '</p>');
             }else if (itemData.info.type == "blood") {
-                $(".item-info-description").html('<p><strong>Evidence material: </strong><span>' + itemData.info.label + '</span></p><p><strong>Blood type: </strong><span>' + itemData.info.bloodtype + '</span></p><p><strong>DNA Code: </strong><span>' + itemData.info.dnalabel + '</span></p><p><strong>Crime scene: </strong><span>' + itemData.info.street + '</span></p><br /><p>' + itemData.description + '</p>');
+                $(".item-info-description").html('<p><strong>Material de evidencia: </strong><span>' + itemData.info.label + '</span></p><p><strong>Tipo de sangre: </strong><span>' + itemData.info.bloodtype + '</span></p><p><strong>Código de ADN: </strong><span>' + itemData.info.dnalabel + '</span></p><p><strong>Escena del crimen: </strong><span>' + itemData.info.street + '</span></p><br /><p>' + itemData.description + '</p>');
             }else if (itemData.info.type == "fingerprint") {
-                $(".item-info-description").html('<p><strong>Evidence material: </strong><span>' + itemData.info.label + '</span></p><p><strong>Vingerpatroon: </strong><span>' + itemData.info.fingerprint + '</span></p><p><strong>Plaats delict: </strong><span>' + itemData.info.street + '</span></p><br /><p>' + itemData.description + '</p>');
+                $(".item-info-description").html('<p><strong>Material de evidencia: </strong><span>' + itemData.info.label + '</span></p><p><strong>Huella dactilar: </strong><span>' + itemData.info.fingerprint + '</span></p><p><strong>Escena del crimen: </strong><span>' + itemData.info.street + '</span></p><br /><p>' + itemData.description + '</p>');
             }else if (itemData.info.type == "dna") {
-                $(".item-info-description").html('<p><strong>Evidence material: </strong><span>' + itemData.info.label + '</span></p><p><strong>DNA Code: </strong><span>' + itemData.info.dnalabel + '</span></p><br /><p>' + itemData.description + '</p>');
+                $(".item-info-description").html('<p><strong>Material de evidencia: </strong><span>' + itemData.info.label + '</span></p><p><strong>Código de ADN: </strong><span>' + itemData.info.dnalabel + '</span></p><br /><p>' + itemData.description + '</p>');
             }
         } else if (itemData.info.costs != undefined && itemData.info.costs != null) {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
@@ -366,13 +366,13 @@ function FormatItemInfo(itemData) {
             $(".item-info-description").html('<p>'+ itemData.info.label + '</p>');
         } else if (itemData.name == "moneybag") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
-            $(".item-info-description").html('<p><strong>Amount of cash: </strong><span>$' + itemData.info.cash + '</span></p>');
+            $(".item-info-description").html('<p><strong>Cantidad de efectivo: </strong><span>$' + itemData.info.cash + '</span></p>');
         } else if (itemData.name == "markedbills") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
-            $(".item-info-description").html('<p><strong>Worth: </strong><span>$' + itemData.info.worth + '</span></p>');
+            $(".item-info-description").html('<p><strong>Valor: </strong><span>$' + itemData.info.worth + '</span></p>');
         } else if (itemData.name == "labkey") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
-            $(".item-info-description").html('<p>Lab: ' + itemData.info.lab + '</p>');
+            $(".item-info-description").html('<p>Laboratorio: ' + itemData.info.lab + '</p>');
         } else {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
             $(".item-info-description").html('<p>' + itemData.description + '</p>')
@@ -616,10 +616,10 @@ function updateweights($fromSlot, $toSlot, $fromInv, $toInv, $toAmount) {
         return false;
     }
 
-    $("#player-inv-weight").html("Weight: " + (parseInt(totalWeight) / 1000).toFixed(2) + " / " + (playerMaxWeight / 1000).toFixed(2));
+    $("#player-inv-weight").html("Peso: " + (parseInt(totalWeight) / 1000).toFixed(2) + " / " + (playerMaxWeight / 1000).toFixed(2));
     if ($fromInv.attr("data-inventory").split("-")[0] != "itemshop" && $toInv.attr("data-inventory").split("-")[0] != "itemshop" && $fromInv.attr("data-inventory") != "crafting" && $toInv.attr("data-inventory") != "crafting") {
         $("#other-inv-label").html(otherLabel)
-        $("#other-inv-weight").html("Weight: " + (parseInt(totalWeightOther) / 1000).toFixed(2) + " / " + (otherMaxWeight / 1000).toFixed(2))
+        $("#other-inv-weight").html("Peso: " + (parseInt(totalWeightOther) / 1000).toFixed(2) + " / " + (otherMaxWeight / 1000).toFixed(2))
     }
 
     return true;
@@ -1216,7 +1216,7 @@ var requiredItemOpen = false;
     Inventory.slots = 40;
 
     Inventory.dropslots = 30;
-    Inventory.droplabel = "Drop";
+    Inventory.droplabel = "Suelo";
     Inventory.dropmaxweight = 100000
 
     Inventory.Error = function() {
@@ -1400,7 +1400,7 @@ var requiredItemOpen = false;
             });
         }
 
-        $("#player-inv-weight").html("Weight: " + (totalWeight / 1000).toFixed(2) + " / " + (data.maxweight / 1000).toFixed(2));
+        $("#player-inv-weight").html("Peso: " + (totalWeight / 1000).toFixed(2) + " / " + (data.maxweight / 1000).toFixed(2));
         playerMaxWeight = data.maxweight;
         if (data.other != null) 
         {
@@ -1409,13 +1409,13 @@ var requiredItemOpen = false;
                 $("#other-inv-label").html(data.other.label);
             } else {
                 $("#other-inv-label").html(data.other.label)
-                $("#other-inv-weight").html("Weight: " + (totalWeightOther / 1000).toFixed(2) + " / " + (data.other.maxweight / 1000).toFixed(2))
+                $("#other-inv-weight").html("Peso: " + (totalWeightOther / 1000).toFixed(2) + " / " + (data.other.maxweight / 1000).toFixed(2))
             }
             otherMaxWeight = data.other.maxweight;
             otherLabel = data.other.label;
         } else {
             $("#other-inv-label").html(Inventory.droplabel)
-            $("#other-inv-weight").html("Weight: " + (totalWeightOther / 1000).toFixed(2) + " / " + (Inventory.dropmaxweight / 1000).toFixed(2))
+            $("#other-inv-weight").html("Peso: " + (totalWeightOther / 1000).toFixed(2) + " / " + (Inventory.dropmaxweight / 1000).toFixed(2))
             otherMaxWeight = Inventory.dropmaxweight;
             otherLabel = Inventory.droplabel;
         }
@@ -1502,7 +1502,7 @@ var requiredItemOpen = false;
             }
         });
 
-        $("#player-inv-weight").html("Weight: " + (totalWeight / 1000).toFixed(2) + " / " + (data.maxweight / 1000).toFixed(2));
+        $("#player-inv-weight").html("Peso: " + (totalWeight / 1000).toFixed(2) + " / " + (data.maxweight / 1000).toFixed(2));
 
         handleDragDrop();
     };

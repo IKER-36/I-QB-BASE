@@ -164,7 +164,7 @@ AddEventHandler('qb-houses:client:addGarage', function()
         }
         TriggerServerEvent('qb-houses:server:addGarage', closesthouse, coords)
     else
-        QBCore.Functions.Notify("No house around..", "error")
+        QBCore.Functions.Notify("No hay casa alrededor..", "error")
     end
 end)
 
@@ -176,16 +176,16 @@ AddEventHandler('qb-houses:client:toggleDoorlock', function()
         if hasKey then
             if Config.Houses[closesthouse].locked then
                 TriggerServerEvent('qb-houses:server:lockHouse', false, closesthouse)
-                QBCore.Functions.Notify("House is unlocked!", "success", 2500)
+                QBCore.Functions.Notify("La casa está desbloqueada!", "success", 2500)
             else
                 TriggerServerEvent('qb-houses:server:lockHouse', true, closesthouse)
-                QBCore.Functions.Notify("House is locked!", "error", 2500)
+                QBCore.Functions.Notify("La casa esta bloqueada!", "error", 2500)
             end
         else
-            QBCore.Functions.Notify("You dont have the keys of the house...", "error", 3500)
+            QBCore.Functions.Notify("No tienes las llaves de la casa...", "error", 3500)
         end
     else
-        QBCore.Functions.Notify("There is no door to see??", "error", 3500)
+        QBCore.Functions.Notify("No hay puerta para ver??", "error", 3500)
     end
 end)
 
@@ -219,14 +219,14 @@ Citizen.CreateThread(function()
                     if not inside then
                         if closesthouse ~= nil then
                             if #(pos - dist2) < 1.5 then
-                                DrawText3Ds(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z, '~b~/enter~w~ - Enter')
+                                DrawText3Ds(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z, '~b~/entrarprop~w~ - Entrar')
                             end
                         end
                     end
 
                     if CurrentDoorBell ~= 0 then
                         if #(pos - vector3(Config.Houses[closesthouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[closesthouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[closesthouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                            DrawText3Ds(Config.Houses[closesthouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[closesthouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[closesthouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z + 0.35, '~g~G~w~ - Invite In')
+                            DrawText3Ds(Config.Houses[closesthouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[closesthouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[closesthouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z + 0.35, '~g~G~w~ - Invitar a entrar')
                             if IsControlJustPressed(0, 47) then -- G
                                 TriggerServerEvent("qb-houses:server:OpenDoor", CurrentDoorBell, closesthouse)
                                 CurrentDoorBell = 0
@@ -239,8 +239,8 @@ Citizen.CreateThread(function()
                             if POIOffsets ~= nil then
                                 if POIOffsets.exit ~= nil then
                                     if #(pos - vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Leave')
-                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z - 0.1, '~g~H~w~ - Camera')
+                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Abandonar')
+                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z - 0.1, '~g~H~w~ - Cámara')
                                         if IsControlJustPressed(0, 38) then -- E
                                             leaveOwnedHouse(CurrentHouse)
                                         end
@@ -257,7 +257,7 @@ Citizen.CreateThread(function()
                         if closesthouse ~= nil then
                             if #(pos - vector3(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z)) < 1.5 then
                                 if not viewCam and Config.Houses[closesthouse].locked then
-                                    DrawText3Ds(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z, '~g~E~w~ - View House')
+                                    DrawText3Ds(Config.Houses[closesthouse].coords.enter.x, Config.Houses[closesthouse].coords.enter.y, Config.Houses[closesthouse].coords.enter.z, '~g~E~w~ - Ver casa')
                                     if IsControlJustPressed(0, 38) then -- E
                                         TriggerServerEvent('qb-houses:server:viewHouse', closesthouse)
                                     end
@@ -272,7 +272,7 @@ Citizen.CreateThread(function()
                                 if POIOffsets ~= nil then
                                     if POIOffsets.exit ~= nil then
                                         if #(pos - vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                                            DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Leave')
+                                            DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Salir')
                                             if IsControlJustPressed(0, 38) then -- E
                                                 leaveNonOwnedHouse(CurrentHouse)
                                             end
@@ -287,7 +287,7 @@ Citizen.CreateThread(function()
                             if POIOffsets ~= nil then
                                 if POIOffsets.exit ~= nil then
                                     if #(pos - vector3(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z)) < 1.5 then
-                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Leave')
+                                        DrawText3Ds(Config.Houses[CurrentHouse].coords.enter.x + POIOffsets.exit.x, Config.Houses[CurrentHouse].coords.enter.y + POIOffsets.exit.y, Config.Houses[CurrentHouse].coords.enter.z - Config.MinZOffset + POIOffsets.exit.z, '~g~E~w~ - Salir')
                                         if IsControlJustPressed(0, 38) then -- E
                                             leaveNonOwnedHouse(CurrentHouse)
                                         end
@@ -304,13 +304,13 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if stashLocation ~= nil then
                             if #(pos - vector3(stashLocation.x, stashLocation.y, stashLocation.z)) < 1.5 then
-                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, '~g~E~w~ - Stash')
+                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, '~g~E~w~ - Armario')
                                 if IsControlJustPressed(0, 38) then -- E
                                     TriggerServerEvent("inventory:server:OpenInventory", "stash", CurrentHouse)
                                     TriggerEvent("inventory:client:SetCurrentStash", CurrentHouse)
                                 end
                             elseif #(pos - vector3(stashLocation.x, stashLocation.y, stashLocation.z)) < 3 then
-                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, 'Stash')
+                                DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, 'Armario')
                             end
                         end
                     end
@@ -335,7 +335,7 @@ Citizen.CreateThread(function()
                     if CurrentHouse ~= nil then
                         if logoutLocation ~= nil then
                             if #(pos - vector3(logoutLocation.x, logoutLocation.y, logoutLocation.z)) < 1.5 then
-                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, '~g~E~w~ - Change Characters')
+                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, '~g~E~w~ - Dormirse (Salir del servidor)')
                                 if IsControlJustPressed(0, 38) then -- E
                                     DoScreenFadeOut(250)
                                     while not IsScreenFadedOut() do
@@ -351,7 +351,7 @@ Citizen.CreateThread(function()
                                     end)
                                 end
                             elseif #(pos - vector3(logoutLocation.x, logoutLocation.y, logoutLocation.z)) < 3 then
-                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, 'Change Characters')
+                                DrawText3Ds(logoutLocation.x, logoutLocation.y, logoutLocation.z, 'Dormir')
                             end
                         end
                     end
@@ -387,7 +387,7 @@ AddEventHandler('qb-houses:client:RingDoor', function(player, house)
     if closesthouse == house and inside then
         CurrentDoorBell = player
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "doorbell", 0.1)
-        QBCore.Functions.Notify("Some one is ringing the door!")
+        QBCore.Functions.Notify("Alguien está timbrando la puerta!")
     end
 end)
 
@@ -423,12 +423,12 @@ AddEventHandler('qb-houses:client:giveHouseKey', function(data)
         if housedist < 10 then
             TriggerServerEvent('qb-houses:server:giveHouseKey', playerId, closesthouse)
         else
-            QBCore.Functions.Notify("You'r not close enough to the door..", "error")
+            QBCore.Functions.Notify("No estás lo suficientemente cerca de la puerta...", "error")
         end
     elseif closesthouse == nil then
-        QBCore.Functions.Notify("There is no house near you", "error")
+        QBCore.Functions.Notify("No hay casa cerca de ti", "error")
     else
-        QBCore.Functions.Notify("No one around!", "error")
+        QBCore.Functions.Notify("Nadie alrededor!", "error")
     end
 end)
 
@@ -444,14 +444,14 @@ AddEventHandler('qb-houses:client:removeHouseKey', function(data)
                     HouseKeysMenu()
                     Menu.hidden = not Menu.hidden
                 else
-                    QBCore.Functions.Notify("You're not a house owner..", "error")
+                    QBCore.Functions.Notify("No eres propietario de una casa..", "error")
                 end
             end, closesthouse)
         else
-            QBCore.Functions.Notify("You'r not close enough to the door..", "error")
+            QBCore.Functions.Notify("No estás lo suficientemente cerca de la puerta...", "error")
         end
     else
-        QBCore.Functions.Notify("You'r not close enough to the door..", "error")
+        QBCore.Functions.Notify("No estás lo suficientemente cerca de la puerta...", "error")
     end
 end)
 
@@ -490,7 +490,7 @@ function HouseKeysMenu()
         MenuTitle = "Sleutelhouders:"
         ClearMenu()
         if holders == nil or next(holders) == nil then
-            QBCore.Functions.Notify("No key holders found..", "error", 3500)
+            QBCore.Functions.Notify("No se encontraron titulares de llaves..", "error", 3500)
             closeMenuFull()
         else
             for k, v in pairs(holders) do
@@ -524,7 +524,7 @@ end
 
 function removeOutfit(oData)
     TriggerServerEvent('clothes:removeOutfit', oData.outfitname)
-    QBCore.Functions.Notify(oData.outfitname.." Is removed", "success", 2500)
+    QBCore.Functions.Notify(oData.outfitname.." eliminado", "success", 2500)
     closeMenuFull()
 end
 
@@ -963,10 +963,10 @@ AddEventHandler('qb-houses:client:setLocation', function(data)
                 TriggerServerEvent('qb-houses:server:setLocation', coords, closesthouse, 3)
             end
         else
-            QBCore.Functions.Notify('You Do Not Own This House', 'error')
+            QBCore.Functions.Notify('No posees esta casa', 'error')
         end
     else    
-        QBCore.Functions.Notify('You Are Not In A House', 'error')
+        QBCore.Functions.Notify('No estas en una casa', 'error')
     end
 end)
 
@@ -1035,7 +1035,7 @@ AddEventHandler('qb-houses:client:HomeInvasion', function()
                             }, function()
                                 if RamsDone + 1 >= Config.RamsNeeded then
                                     TriggerServerEvent('qb-houses:server:lockHouse', false, closesthouse)
-                                    QBCore.Functions.Notify('It worked the door is now out.', 'success')
+                                    QBCore.Functions.Notify('Funcionó, la puerta ya está fuera.', 'success')
                                     TriggerServerEvent('qb-houses:server:SetHouseRammed', true, closesthouse)
                                     DoRamAnimation(false)
                                 else
@@ -1050,25 +1050,25 @@ AddEventHandler('qb-houses:client:HomeInvasion', function()
                             end, function()
                                 RamsDone = 0
                                 TriggerServerEvent('qb-houses:server:SetRamState', false, closesthouse)
-                                QBCore.Functions.Notify('It faild try again.', 'error')
+                                QBCore.Functions.Notify('Falló, intentarlo de nuevo inutiles.', 'error')
                                 DoRamAnimation(false)
                             end)
                             TriggerServerEvent('qb-houses:server:SetRamState', true, closesthouse)
                         else
-                            QBCore.Functions.Notify('Er is al iemand bezig met de deur..', 'error')
+                            QBCore.Functions.Notify('Alguien ya está trabajando en la puerta...', 'error')
                         end
                     else
-                        QBCore.Functions.Notify('19/5000 This house is already open..', 'error')
+                        QBCore.Functions.Notify('19/5000 Esta casa ya está abierta..', 'error')
                     end
                 else
-                    QBCore.Functions.Notify('You\'re not near a house..', 'error')
+                    QBCore.Functions.Notify('No estás cerca de una casa..', 'error')
                 end
             else
-                QBCore.Functions.Notify('There is no police force present..', 'error')
+                QBCore.Functions.Notify('No hay fuerza policial presente...', 'error')
             end
         end)
     else
-        QBCore.Functions.Notify('You\'re not near a house..', 'error')
+        QBCore.Functions.Notify('No estás cerca de una casa..', 'error')
     end
 end)
 
@@ -1098,9 +1098,9 @@ AddEventHandler('qb-houses:client:ResetHouse', function()
             TriggerServerEvent('qb-houses:server:SetRamState', false, closesthouse)
             TriggerServerEvent('qb-houses:server:lockHouse', true, closesthouse)
             RamsDone = 0
-            QBCore.Functions.Notify('You locked the house again..', 'success')
+            QBCore.Functions.Notify('Has vuelto a encerrar la casa..', 'success')
         else
-            QBCore.Functions.Notify('This door is not broken open  ..', 'error')
+            QBCore.Functions.Notify('Esta puerta no está abierta.  ..', 'error')
         end
     end
 end)
