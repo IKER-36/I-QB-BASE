@@ -48,9 +48,9 @@ AddEventHandler('qb-tunerchip:server:TuneStatus', function()
 
     QBCore.Functions.TriggerCallback('qb-tunerchip:server:GetStatus', function(status)
         if status then
-            TriggerEvent("chatMessage", "Vehicle Status", "warning", displayName..": Chiptuned: Yes")
+            TriggerEvent("chatMessage", "Estado Vehiculo", "Aviso", displayName..": Repro: Si")
         else
-            TriggerEvent("chatMessage", "Vehicle Status", "warning", displayName..": Chiptuned: No")
+            TriggerEvent("chatMessage", "Estado Vehiculo", "Aviso", displayName..": Repro: No")
         end
     end, plate)
 end)
