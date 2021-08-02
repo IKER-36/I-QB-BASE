@@ -1511,8 +1511,8 @@ QBCore.Functions.CreateUseableItem("driver_license", function(source, item)
 		local dist = #(GetEntityCoords(PlayerPed) - GetEntityCoords(TargetPed))
 		if dist < 3.0 then
 			TriggerClientEvent('chat:addMessage', v,  {
-				template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>First Name:</strong> {1} <br><strong>Last Name:</strong> {2} <br><strong>Birth Date:</strong> {3} <br><strong>Licenses:</strong> {4}</div></div>',
-				args = {'Drivers License', character.PlayerData.charinfo.firstname, character.PlayerData.charinfo.lastname, character.PlayerData.charinfo.birthdate, item.info.type}
+				template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>Primer Nombre:</strong> {1} <br><strong>Apellido:</strong> {2} <br><strong>Fecha de nacimiento:</strong> {3} <br><strong>Licencias:</strong> {4}</div></div>',
+				args = {'Licencia de conducir', character.PlayerData.charinfo.firstname, character.PlayerData.charinfo.lastname, character.PlayerData.charinfo.birthdate, item.info.type}
 			})
 		end
 	end
@@ -1530,8 +1530,8 @@ QBCore.Functions.CreateUseableItem("id_card", function(source, item)
 				gender = "Woman"
 			end
 			TriggerClientEvent('chat:addMessage', v,  {
-				template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>Civ ID:</strong> {1} <br><strong>First Name:</strong> {2} <br><strong>Last Name:</strong> {3} <br><strong>Birthdate:</strong> {4} <br><strong>Gender:</strong> {5} <br><strong>Nationality:</strong> {6}</div></div>',
-				args = {'ID Card', character.PlayerData.citizenid, character.PlayerData.charinfo.firstname, character.PlayerData.charinfo.lastname, character.PlayerData.charinfo.birthdate, gender, character.PlayerData.charinfo.nationality}
+				template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>ID Civ:</strong> {1} <br><strong>Primer Nombre:</strong> {2} <br><strong>Apellido:</strong> {3} <br><strong>Fecha de nacimiento:</strong> {4} <br><strong>Género:</strong> {5} <br><strong>Nacionalidad:</strong> {6}</div></div>',
+				args = {'ID', character.PlayerData.citizenid, character.PlayerData.charinfo.firstname, character.PlayerData.charinfo.lastname, character.PlayerData.charinfo.birthdate, gender, character.PlayerData.charinfo.nationality}
 			})
 		end
 	end

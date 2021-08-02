@@ -1543,7 +1543,7 @@ var requiredItemOpen = false;
     Inventory.UseItem = function(data) {
         $(".itembox-container").hide();
         $(".itembox-container").fadeIn(250);
-        $("#itembox-action").html("<p>Used</p>");
+        $("#itembox-action").html("<p>Usado</p>");
         $("#itembox-label").html("<p>"+data.item.label+"</p>");
         $("#itembox-image").html('<div class="item-slot-img"><img src="images/' + data.item.image + '" alt="' + data.item.name + '" /></div>')
         setTimeout(function(){
@@ -1558,11 +1558,11 @@ var requiredItemOpen = false;
         if (itemBoxtimer !== null) {
             clearTimeout(itemBoxtimer)
         }
-        var type = "Used"
+        var type = "Usado"
         if (data.type == "add") {
-            type = "Received";
+            type = "Recibido";
         } else if (data.type == "remove") { 
-            type = "Deleted";
+            type = "Eliminado";
         }
 
         var $itembox = $(".itembox-container.template").clone();
@@ -1585,7 +1585,7 @@ var requiredItemOpen = false;
             if (!requiredItemOpen) {
                 $(".requiredItem-container").html("");
                 $.each(data.items, function(index, item){
-                    var element = '<div class="requiredItem-box"><div id="requiredItem-action">Required</div><div id="requiredItem-label"><p>'+item.label+'</p></div><div id="requiredItem-image"><div class="item-slot-img"><img src="images/' + item.image + '" alt="' + item.name + '" /></div></div></div>'
+                    var element = '<div class="requiredItem-box"><div id="requiredItem-action">Requerido</div><div id="requiredItem-label"><p>'+item.label+'</p></div><div id="requiredItem-image"><div class="item-slot-img"><img src="images/' + item.image + '" alt="' + item.name + '" /></div></div></div>'
                     $(".requiredItem-container").hide();
                     $(".requiredItem-container").append(element);
                     $(".requiredItem-container").fadeIn(100);
