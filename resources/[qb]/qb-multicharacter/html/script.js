@@ -92,8 +92,8 @@ function setupCharInfo(cData) {
     if (cData == 'empty') {
         $('.character-info-valid').html('<span id="no-char">El espacio de caracteres seleccionada aún no está en uso.<br><br>Este personaje aún no tiene información.</span>');
     } else {
-        var gender = "Man"
-        if (cData.charinfo.gender == 1) { gender = "Woman" }
+        var gender = "Hombre"
+        if (cData.charinfo.gender == 1) { gender = "Mujer" }
         $('.character-info-valid').html(
             '<div class="character-info-box"><span id="info-label">Nombre: </span><span class="char-info-js">' + cData.charinfo.firstname + ' ' + cData.charinfo.lastname + '</span></div>' +
             '<div class="character-info-box"><span id="info-label">Fecha nacimiento: </span><span class="char-info-js">' + cData.charinfo.birthdate + '</span></div>' +
