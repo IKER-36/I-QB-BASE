@@ -1,6 +1,6 @@
 Garages = {
     ["motelgarage"] = {
-        label = "Estacionamiento en motel",
+        label = "Parking del motel",
         takeVehicle = vector3(273.43, -343.99, 44.91),
         spawnPoint = vector4(270.94, -342.96, 43.97, 161.5),
         putVehicle = vector3(276.69, -339.85, 44.91),
@@ -121,7 +121,7 @@ GangGarages = {
 
 Depots = {
     ["hayesdepot"] = {
-        label = "Deposito de Hayes",
+        label = "Deposito Hayes",
         takeVehicle = vector4(491.0, -1314.69, 29.25, 304.5)
     }
 }

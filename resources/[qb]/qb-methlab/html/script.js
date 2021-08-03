@@ -27,7 +27,7 @@ Laptop.Open = function(data) {
         if (task.completed) {
             Completed = '<i class="fas fa-check">';
         }
-        var elem = '<div class="methlab-task" data-task="' + (i + 1) + '"> <div class="methlab-task-label">Stap ' + (i + 1) + ': ' + task.label + '</div> <div class="methlab-task-completed">Voltooid: ' + Completed + '</i></div> </div>';
+        var elem = '<div class="methlab-task" data-task="' + (i + 1) + '"> <div class="methlab-task-label">Paso ' + (i + 1) + ': ' + task.label + '</div> <div class="methlab-task-completed">Terminado: ' + Completed + '</i></div> </div>';
         $(".methlab-tasks").append(elem);
     });
     $(".container").fadeIn(150);

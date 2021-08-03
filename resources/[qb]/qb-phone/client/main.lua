@@ -4,7 +4,7 @@ RegisterCommand('phone', function()
         if not IsHandcuffed then
             OpenPhone()
         else
-            QBCore.Functions.Notify("No disponible ahora mismo..", "Error")
+            QBCore.Functions.Notify("Action not available at the moment..", "error")
         end
     end
 end)
@@ -350,7 +350,7 @@ function OpenPhone()
                 PhoneData.GarageVehicles = vehicles
             end)
         else
-            QBCore.Functions.Notify("No tienes el telefono encima, que cabeza...", "Error")
+            QBCore.Functions.Notify("You don't have a phone", "error")
         end
     end)
 end
@@ -713,7 +713,7 @@ AddEventHandler('qb-phone:client:UpdateMessages', function(ChatMessages, SenderN
                     action = "PhoneNotification",
                     PhoneNotify = {
                         title = "Whatsapp",
-                        text = "Nuevo mensaje de "..IsNumberInContacts(SenderNumber).."!",
+                        text = "New message from "..IsNumberInContacts(SenderNumber).."!",
                         icon = "fab fa-whatsapp",
                         color = "#25D366",
                         timeout = 1500,
@@ -724,7 +724,7 @@ AddEventHandler('qb-phone:client:UpdateMessages', function(ChatMessages, SenderN
                     action = "PhoneNotification",
                     PhoneNotify = {
                         title = "Whatsapp",
-                        text = "¿Por qué te envías mensajes a ti mismo, necesitas un psicologo?",
+                        text = "Why are you sending messages to yourself you sadfuck?",
                         icon = "fab fa-whatsapp",
                         color = "#25D366",
                         timeout = 4000,
@@ -759,7 +759,7 @@ AddEventHandler('qb-phone:client:UpdateMessages', function(ChatMessages, SenderN
                 action = "PhoneNotification",
                 PhoneNotify = {
                     title = "Whatsapp",
-                    text = "Nuevo mensaje de "..IsNumberInContacts(SenderNumber).."!",
+                    text = "New message from "..IsNumberInContacts(SenderNumber).."!",
                     icon = "fab fa-whatsapp",
                     color = "#25D366",
                     timeout = 3500,
@@ -806,7 +806,7 @@ AddEventHandler('qb-phone:client:NewMailNotify', function(MailData)
             action = "PhoneNotification",
             PhoneNotify = {
                 title = "Mail",
-                text = "Recibiste un nuevo correo de "..MailData.sender,
+                text = "You received a new mail from "..MailData.sender,
                 icon = "fas fa-envelope",
                 color = "#ff002f",
                 timeout = 1500,
@@ -841,7 +841,7 @@ AddEventHandler('qb-phone:client:UpdateAdverts', function(Adverts, LastAd)
             action = "PhoneNotification",
             PhoneNotify = {
                 title = "Advertisement",
-                text = "Un nuevo anuncio ha sido publicado por "..LastAd,
+                text = "A new ad has been posted by "..LastAd,
                 icon = "fas fa-ad",
                 color = "#ff8f1a",
                 timeout = 2500,
@@ -924,13 +924,13 @@ AddEventHandler('qb-phone:client:BillingEmail', function(data, paid, name)
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = 'Billing Department',
             subject = 'Invoice Paid',
-            message = 'La factura ha sido pagada de '..name..' En la cantidad de $'..data.amount,
+            message = 'Invoice Has Been Paid From '..name..' In The Amount Of $'..data.amount,
         })
     else
         TriggerServerEvent('qb-phone:server:sendNewMail', {
             sender = 'Billing Department',
             subject = 'Invoice Declined',
-            message = 'La factura ha sido rechazada de '..name..' En la cantidad de $'..data.amount,
+            message = 'Invoice Has Been Declined From '..name..' In The Amount Of $'..data.amount,
         })
     end
 end)
@@ -1064,7 +1064,7 @@ RegisterNetEvent('qb-phone:client:TransferMoney')
 AddEventHandler('qb-phone:client:TransferMoney', function(amount, newmoney)
     PhoneData.PlayerData.money.bank = newmoney
     --if PhoneData.isOpen then
-        SendNUIMessage({ action = "PhoneNotification", PhoneNotify = { title = "QBank", text = "&#36;"..amount.." se han sido añadido a tu cuenta!", icon = "fas fa-university", color = "#8c7ae6", }, })
+        SendNUIMessage({ action = "PhoneNotification", PhoneNotify = { title = "QBank", text = "&#36;"..amount.." has been added to your account!", icon = "fas fa-university", color = "#8c7ae6", }, })
         SendNUIMessage({ action = "UpdateBank", NewBalance = PhoneData.PlayerData.money.bank })
     --[[else
         SendNUIMessage({ action = "Notification", NotifyData = { title = "QBank", content = "&#36;"..amount.." has been added to your account!", icon = "fas fa-university", timeout = 2500, color = nil, }, })
@@ -1093,7 +1093,7 @@ AddEventHandler('qb-phone:client:UpdateTweets', function(src, Tweets, NewTweetDa
             SendNUIMessage({
                 action = "PhoneNotification",
                 PhoneNotify = {
-                    title = "Nuevo tweet (@"..NewTweetData.firstName.." "..NewTweetData.lastName..")", 
+                    title = "New Tweet (@"..NewTweetData.firstName.." "..NewTweetData.lastName..")", 
                     text = NewTweetData.message, 
                     icon = "fab fa-twitter",
                     color = "#1DA1F2",
@@ -1105,7 +1105,7 @@ AddEventHandler('qb-phone:client:UpdateTweets', function(src, Tweets, NewTweetDa
             action = "PhoneNotification",
             PhoneNotify = {
                 title = "Twitter", 
-                text = "El Tweet ha sido publicado.!", 
+                text = "The Tweet has been posted!", 
                 icon = "fab fa-twitter",
                 color = "#1DA1F2",
                 timeout = 1000,
@@ -1132,7 +1132,7 @@ AddEventHandler('qb-phone:client:GetMentioned', function(TweetMessage, AppAlerts
     --[[if not PhoneData.isOpen then
         SendNUIMessage({ action = "Notification", NotifyData = { title = "You have been mentioned in a Tweet!", content = TweetMessage.message, icon = "fab fa-twitter", timeout = 3500, color = nil, }, })
     else]]
-        SendNUIMessage({ action = "PhoneNotification", PhoneNotify = { title = "¡Te han mencionado en un tweet!", text = TweetMessage.message, icon = "fab fa-twitter", color = "#1DA1F2", }, })
+        SendNUIMessage({ action = "PhoneNotification", PhoneNotify = { title = "You have been mentioned in a Tweet!", text = TweetMessage.message, icon = "fab fa-twitter", color = "#1DA1F2", }, })
     --end
     local TweetMessage = {firstName = TweetMessage.firstName, lastName = TweetMessage.lastName, message = escape_str(TweetMessage.message), time = TweetMessage.time, picture = TweetMessage.picture}
     table.insert(PhoneData.MentionedTweets, TweetMessage)
@@ -1306,7 +1306,7 @@ CancelCall = function()
             action = "PhoneNotification", 
             PhoneNotify = { 
                 title = "Phone", 
-                text = "La llamada ha sido terminada", 
+                text = "The call has been ended", 
                 icon = "fas fa-phone", 
                 color = "#e84118", 
             }, 
@@ -1316,7 +1316,7 @@ CancelCall = function()
             action = "PhoneNotification", 
             PhoneNotify = { 
                 title = "Phone", 
-                text = "La llamada ha sido terminada", 
+                text = "The call has been ended", 
                 icon = "fas fa-phone", 
                 color = "#e84118", 
             }, 
@@ -1373,7 +1373,7 @@ AddEventHandler('qb-phone:client:CancelCall', function()
             action = "PhoneNotification", 
             NotifyData = { 
                 title = "Phone",
-                content = "La llamada ha sido terminada", 
+                content = "The call has been ended", 
                 icon = "fas fa-phone", 
                 timeout = 3500, 
                 color = "#e84118",
@@ -1384,7 +1384,7 @@ AddEventHandler('qb-phone:client:CancelCall', function()
             action = "PhoneNotification", 
             PhoneNotify = { 
                 title = "Phone", 
-                text = "La llamada ha sido terminada", 
+                text = "The call has been ended", 
                 icon = "fas fa-phone", 
                 color = "#e84118", 
             }, 
@@ -1535,7 +1535,7 @@ function AnswerCall()
             action = "PhoneNotification", 
             PhoneNotify = { 
                 title = "Phone", 
-                text = "No tienes ninguna llamada entrante...", 
+                text = "You don't have a incoming call...", 
                 icon = "fas fa-phone", 
                 color = "#e84118", 
             }, 
@@ -1587,7 +1587,7 @@ AddEventHandler('qb-phone:client:AnswerCall', function()
             action = "PhoneNotification", 
             PhoneNotify = { 
                 title = "Phone", 
-                text = "No tienes ninguna llamada entrante...", 
+                text = "You don't have a incoming call...", 
                 icon = "fas fa-phone", 
                 color = "#e84118", 
             }, 
@@ -1712,7 +1712,7 @@ RegisterNUICallback('DeleteContact', function(data, cb)
                     action = "PhoneNotification",
                     PhoneNotify = {
                         title = "Phone",
-                        text = "Usted eliminó el contacto!", 
+                        text = "You deleted contact!", 
                         icon = "fa fa-phone-alt",
                         color = "#04b543",
                         timeout = 1500,
