@@ -2,7 +2,7 @@ Config = {
 -- Change the language of the menu here!.
 -- Note fr and de are google translated, if you would like to help out with translation / just fix it for your server check below and change translations yourself
 -- try en, fr, de or sv.
-	MenuLanguage = 'en',	
+	MenuLanguage = 'es',	
 -- Set this to true to enable some extra prints
 	DebugDisplay = false,
 -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
@@ -12,28 +12,28 @@ Config = {
 -- Set this if you really wanna disable emotes in cars, as of 1.7.2 they only play the upper body part if in vehicle
     AllowedInCars = true,
 -- You can disable the (F3) menu here / change the keybind.
-	MenuKeybindEnabled = false,
+	MenuKeybindEnabled = true,
 	MenuKeybind = 170, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Favorite emote keybinding here.
-	FavKeybindEnabled = false,
+	FavKeybindEnabled = true,
 	FavKeybind = 171, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can change the header image for the f3 menu here
 -- Use a 512 x 128 image!
 -- NOte this might cause an issue of the image getting stuck on peoples screens
 	CustomMenuEnabled = false,
-	MenuImage = "https://i.imgur.com/kgzvDwQ.png",
+	MenuImage = "",
 -- You can change the menu position here
 	MenuPosition = "right", -- (left, right)
 -- You can disable the Ragdoll keybinding here.
 	RagdollEnabled = true,
-	RagdollKeybind = 303, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	RagdollKeybind = 244, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Facial Expressions menu here.
 	ExpressionsEnabled = true,
 -- You can disable the Walking Styles menu here.
 	WalkingStylesEnabled = true,	
 -- You can disable the Shared Emotes here.
     SharedEmotesEnabled = true,
-    CheckForUpdates = true,
+    CheckForUpdates = false,
 -- If you have the SQL imported enable this to turn on keybinding.
     SqlKeybinding = false,
 }
@@ -256,8 +256,8 @@ Config.Languages = {
         ['infoupdate'] = "Informacion",
         ['infoupdateav'] = "Informacion (Actualizacion disponible)",
         ['infoupdateavtext'] = "Una actualizacion esta disponible, para conseguir la ultima version ingresa a ~y~https://github.com/andristum/dpemotes~w~",
-        ['suggestions'] = "Sugerencias?",
-        ['suggestionsinfo'] = "dullpear_dev' en el foro de FiveM para cualquier sugerencia! ✉️",
+        ['suggestions'] = "QB-BASE-PROJECT",
+        ['suggestionsinfo'] = "DPEMOTES",
         ['notvaliddance'] = "no es un baile valido.",
         ['notvalidemote'] = "no es una animacion valida.",
         ['nocancel'] = "No hay animacion para cancelar.",
@@ -269,7 +269,7 @@ Config.Languages = {
         ['notvalidsharedemote'] = "no es una animacion compartida valida.",
         ['sentrequestto'] = "Solicitud enviada ~y~",
         ['nobodyclose'] = "Nadie ~r~cerca~w~.",
-        ['doyouwanna'] = "~y~Y~w~ para aceptar, ~r~L~w~ para rechazar (~g~",
+        ['doyouwanna'] = "~y~G~w~ para aceptar, ~r~H~w~ para rechazar (~g~",
         ['refuseemote'] = "Animacion rechazada.",
         ['makenearby'] = "hacer que el jugador cercano juegue",
         ['camera'] = "Presione ~y~G~w~ para usar el flash de la camara.",

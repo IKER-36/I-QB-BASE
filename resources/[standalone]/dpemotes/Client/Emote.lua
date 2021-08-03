@@ -47,88 +47,34 @@ end)
 -----------------------------------------------------------------------------------------------------
 
 Citizen.CreateThread(function()
-    TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
-    TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
-    TriggerEvent('chat:addSuggestion', '/emote', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
+    TriggerEvent('chat:addSuggestion', '/e', 'Haz una animacion', {{ name="emotename", help="dance, camera, sit o cualquier otro emote valido."}})
+    TriggerEvent('chat:addSuggestion', '/e', 'Haz una animacion', {{ name="emotename", help="dance, camera, sit o cualquier otro emote valido."}})
+    TriggerEvent('chat:addSuggestion', '/animacion', 'Haz una animacion', {{ name="emotename", help="dance, camera, sit o cualquier otro emote valido."}})
     if Config.SqlKeybinding then
-      TriggerEvent('chat:addSuggestion', '/emotebind', 'Bind an emote', {{ name="key", help="num4, num5, num6, num7. num8, num9. Numpad 4-9!"}, { name="emotename", help="dance, camera, sit or any valid emote."}})
-      TriggerEvent('chat:addSuggestion', '/emotebinds', 'Check your currently bound emotes.')
+      TriggerEvent('chat:addSuggestion', '/animacionbind', 'Bindea una animacion', {{ name="key", help="num4, num5, num6, num7. num8, num9. Numpad 4-9!"}, { name="emotename", help="dance, camera, sit o cualquier otro emote valido."}})
+      TriggerEvent('chat:addSuggestion', '/animacionbinds', 'Mira los bindeos que tienes de las animaciones.')
     end
-    TriggerEvent('chat:addSuggestion', '/emotemenu', 'Open dpemotes menu (F3) by default.')
-    TriggerEvent('chat:addSuggestion', '/emotes', 'List available emotes.')
-    TriggerEvent('chat:addSuggestion', '/walk', 'Set your walkingstyle.', {{ name="style", help="/walks for a list of valid styles"}})
-    TriggerEvent('chat:addSuggestion', '/walks', 'List available walking styles.')
+    TriggerEvent('chat:addSuggestion', '/menuanimaciones', 'Abre el menu de animaciones F3 por defecto.')
+    TriggerEvent('chat:addSuggestion', '/animaciones', 'Lista de animaciones.')
+    TriggerEvent('chat:addSuggestion', '/formadeandar', 'Selecciona tu forma de andar.', {{ name="style", help="/formasdeandar para una lista de animaciones validas"}})
+    TriggerEvent('chat:addSuggestion', '/formasdeandar', 'Lista de formas de andar.')
 end)
 
 RegisterCommand('e', function(source, args, raw) EmoteCommandStart(source, args, raw) end)
-RegisterCommand('emote', function(source, args, raw) EmoteCommandStart(source, args, raw) end)
+RegisterCommand('animacion', function(source, args, raw) EmoteCommandStart(source, args, raw) end)
 if Config.SqlKeybinding then
-  RegisterCommand('emotebind', function(source, args, raw) EmoteBindStart(source, args, raw) end)
-  RegisterCommand('emotebinds', function(source, args, raw) EmoteBindsStart(source, args, raw) end)
+  RegisterCommand('animacionbind', function(source, args, raw) EmoteBindStart(source, args, raw) end)
+  RegisterCommand('animacionbinds', function(source, args, raw) EmoteBindsStart(source, args, raw) end)
 end
-RegisterCommand('emotemenu', function(source, args, raw) OpenEmoteMenu() end)
-RegisterCommand('emotes', function(source, args, raw) EmotesOnCommand() end)
-RegisterCommand('walk', function(source, args, raw) WalkCommandStart(source, args, raw) end)
-RegisterCommand('walks', function(source, args, raw) WalksOnCommand() end)
-
--- Added 
-
-CanDoEmote = true
-SmokingWeed = false
-RelieveCount = 0
-
-RegisterNetEvent('animations:ToggleCanDoAnims')
-AddEventHandler('animations:ToggleCanDoAnims', function(bool)
-  CanDoEmote = bool
-end)
-
-RegisterNetEvent('animations:client:SmokeWeed')
-AddEventHandler('animations:client:SmokeWeed', function()
-  SmokingWeed = true
-  Citizen.CreateThread(function()
-    while SmokingWeed do
-      Citizen.Wait(10000)
-      TriggerServerEvent('qb-hud:Server:RelieveStress', math.random(15, 18))
-      RelieveCount = RelieveCount + 1
-      if RelieveCount == 6 then
-        if ChosenDict == "MaleScenario" and IsInAnimation then
-          ClearPedTasksImmediately(PlayerPedId())
-          IsInAnimation = false
-          DebugPrint("Forced scenario exit")
-        elseif ChosenDict == "Scenario" and IsInAnimation then
-          ClearPedTasksImmediately(PlayerPedId())
-          IsInAnimation = false
-          DebugPrint("Forced scenario exit")
-        end
-      
-        if IsInAnimation then
-          ClearPedTasks(PlayerPedId())
-          DestroyAllProps()
-          IsInAnimation = false
-        end
-      
-        if SmokingWeed then
-          SmokingWeed = false
-          RelieveCount = 0
-        end
-      end
-    end
-  end)
-end)
-
-RegisterNetEvent('animations:client:EmoteCommandStart')
-AddEventHandler('animations:client:EmoteCommandStart', function(args)
-  if CanDoEmote then
-    EmoteCommandStart(source, args)
-  else
-    QBCore.Functions.Notify("Cannot Be Done Right Now", "error")
-  end
-end)
+RegisterCommand('menuanimaciones', function(source, args, raw) OpenEmoteMenu() end)
+RegisterCommand('animaciones', function(source, args, raw) EmotesOnCommand() end)
+RegisterCommand('formadeandar', function(source, args, raw) WalkCommandStart(source, args, raw) end)
+RegisterCommand('formasdeandar', function(source, args, raw) WalksOnCommand() end)
 
 AddEventHandler('onResourceStop', function(resource)
   if resource == GetCurrentResourceName() then
     DestroyAllProps()
-    ClearPedTasksImmediately(PlayerPedId())
+    ClearPedTasksImmediately(GetPlayerPed(-1))
     ResetPedMovementClipset(PlayerPedId())
   end
 end)
@@ -154,16 +100,9 @@ function EmoteCancel()
 
   if IsInAnimation then
     PtfxStop()
-    ClearPedTasks(PlayerPedId())
+    ClearPedTasks(GetPlayerPed(-1))
     DestroyAllProps()
     IsInAnimation = false
-  end
-
-  -- Added
-
-  if SmokingWeed then
-    SmokingWeed = false
-    RelieveCount = 0
   end
 end
 
@@ -260,7 +199,7 @@ function EmoteCommandStart(source, args, raw)
         if IsInAnimation then
             EmoteCancel()
         else
-          QBCore.Functions.Notify('No Emote To Cancel', 'error')
+            EmoteChatMessage(Config.Languages[lang]['nocancel'])
         end
       return
     elseif name == "help" then
@@ -274,7 +213,7 @@ function EmoteCommandStart(source, args, raw)
     elseif DP.PropEmotes[name] ~= nil then
       if OnEmotePlay(DP.PropEmotes[name]) then end return
     else
-      QBCore.Functions.Notify('That Is Not A Valid Command', 'error')
+      EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvalidemote'].."")
     end
   end
 end
@@ -354,13 +293,13 @@ function OnEmotePlay(EmoteName)
     return
   end
 
-  if not DoesEntityExist(PlayerPedId()) then
+  if not DoesEntityExist(GetPlayerPed(-1)) then
     return false
   end
 
   if Config.DisarmPlayer then
-    if IsPedArmed(PlayerPedId(), 7) then
-      SetCurrentPedWeapon(PlayerPedId(), GetHashKey('WEAPON_UNARMED'), true)
+    if IsPedArmed(GetPlayerPed(-1), 7) then
+      SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey('WEAPON_UNARMED'), true)
     end
   end
 
@@ -380,8 +319,8 @@ function OnEmotePlay(EmoteName)
     CheckGender()
     if ChosenDict == "MaleScenario" then if InVehicle then return end
       if PlayerGender == "male" then
-        ClearPedTasks(PlayerPedId())
-        TaskStartScenarioInPlace(PlayerPedId(), ChosenAnimation, 0, true)
+        ClearPedTasks(GetPlayerPed(-1))
+        TaskStartScenarioInPlace(GetPlayerPed(-1), ChosenAnimation, 0, true)
         DebugPrint("Playing scenario = ("..ChosenAnimation..")")
         IsInAnimation = true
       else
@@ -389,14 +328,14 @@ function OnEmotePlay(EmoteName)
       end return
     elseif ChosenDict == "ScenarioObject" then if InVehicle then return end
       BehindPlayer = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 0 - 0.5, -0.5);
-      ClearPedTasks(PlayerPedId())
-      TaskStartScenarioAtPosition(PlayerPedId(), ChosenAnimation, BehindPlayer['x'], BehindPlayer['y'], BehindPlayer['z'], GetEntityHeading(PlayerPedId()), 0, 1, false)
+      ClearPedTasks(GetPlayerPed(-1))
+      TaskStartScenarioAtPosition(GetPlayerPed(-1), ChosenAnimation, BehindPlayer['x'], BehindPlayer['y'], BehindPlayer['z'], GetEntityHeading(PlayerPedId()), 0, 1, false)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
       IsInAnimation = true
       return
     elseif ChosenDict == "Scenario" then if InVehicle then return end
-      ClearPedTasks(PlayerPedId())
-      TaskStartScenarioInPlace(PlayerPedId(), ChosenAnimation, 0, true)
+      ClearPedTasks(GetPlayerPed(-1))
+      TaskStartScenarioInPlace(GetPlayerPed(-1), ChosenAnimation, 0, true)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
       IsInAnimation = true
     return end 
@@ -456,7 +395,7 @@ function OnEmotePlay(EmoteName)
     end
   end
 
-  TaskPlayAnim(PlayerPedId(), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
+  TaskPlayAnim(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
   RemoveAnimDict(ChosenDict)
   IsInAnimation = true
   MostRecentDict = ChosenDict

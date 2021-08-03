@@ -17,6 +17,7 @@ if Config.SharedEmotesEnabled then
                     dict, anim, ename = table.unpack(DP.Shared[emotename])
                     TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), emotename)
                     SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target).." ~w~(~g~"..ename.."~w~)")
+                    Wait(1500)
                 else
                     EmoteChatMessage("'"..emotename.."' "..Config.Languages[lang]['notvalidsharedemote'].."")
                 end
@@ -70,8 +71,14 @@ AddEventHandler("ClientEmoteRequestReceive", function(emotename, etype)
     requestedemote = emotename
 
     if etype == 'Dances' then
+        if DP.Dances[requestedemote] == nil then
+            return
+        end
         _,_,remote = table.unpack(DP.Dances[requestedemote])
     else
+        if DP.Shared[requestedemote] == nil then
+            return
+        end
         _,_,remote = table.unpack(DP.Shared[requestedemote])
     end
 
@@ -82,7 +89,7 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(5)
-        if IsControlJustPressed(1, 246) and isRequestAnim then
+        if IsControlJustPressed(1, 47) and isRequestAnim then
         target, distance = GetClosestPlayer()
             if(distance ~= -1 and distance < 3) then
                 if DP.Shared[requestedemote] ~= nil then
@@ -92,11 +99,12 @@ Citizen.CreateThread(function()
                 end
                 if otheremote == nil then otheremote = requestedemote end
                 TriggerServerEvent("ServerValidEmote", GetPlayerServerId(target), requestedemote, otheremote)
+                Wait(1500)
                 isRequestAnim = false
             else
                 SimpleNotify(Config.Languages[lang]['nobodyclose'])
             end
-        elseif IsControlJustPressed(1, 182) and isRequestAnim then
+        elseif IsControlJustPressed(1, 74) and isRequestAnim then
             SimpleNotify(Config.Languages[lang]['refuseemote'])
             isRequestAnim = false
         end
@@ -145,14 +153,14 @@ function GetClosestPlayer()
     local players = GetPlayers()
     local closestDistance = -1
     local closestPlayer = -1
-    local ply = PlayerPedId()
+    local ply = GetPlayerPed(-1)
     local plyCoords = GetEntityCoords(ply, 0)
 
     for index,value in ipairs(players) do
         local target = GetPlayerPed(value)
         if(target ~= ply) then
             local targetCoords = GetEntityCoords(GetPlayerPed(value), 0)
-            local distance = #(targetCoords - plyCoords)
+            local distance = GetDistanceBetweenCoords(targetCoords["x"], targetCoords["y"], targetCoords["z"], plyCoords["x"], plyCoords["y"], plyCoords["z"], true)
             if(closestDistance == -1 or closestDistance > distance) then
                 closestPlayer = value
                 closestDistance = distance
