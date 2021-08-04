@@ -82,7 +82,6 @@ $(document).on("click", ".identity-page-block", function(e){
         if (idType == "id_card") {
             $(".request-identity-button").fadeIn(100);
             $(".request-identity-button").html("<p>Haga clic aquí para comprar un certificado de nacimiento por $50</p>")
-        } else {
         } else if (idType == "driver_license") {
             $(".request-identity-button").fadeIn(100);
             $(".request-identity-button").html("<p>Haz clic aqui para comprar la licencia de conducir por 50$</p>")
