@@ -272,6 +272,7 @@ function CheckWeaponDamage(ped)
     if detected then
         TriggerServerEvent("hospital:server:SetWeaponDamage", CurrentDamageList)
     end
+    ClearEntityLastDamageEntity(ped)
 end
 
 function IsInDamageList(damage)
