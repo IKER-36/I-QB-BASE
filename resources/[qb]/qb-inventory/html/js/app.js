@@ -321,6 +321,9 @@ function FormatItemInfo(itemData) {
         } else if (itemData.name == "driver_license") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
             $(".item-info-description").html('<p><strong>Primer Nombre: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Apellido: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>Fecha de nacimiento: </strong><span>' + itemData.info.birthdate + '</span></p><p><strong>Licencias: </strong><span>' + itemData.info.type + '</span></p>');
+        } else if (itemData.name == "weaponlicense") {
+            $(".item-info-title").html('<p>'+itemData.label+'</p>')
+            $(".item-info-description").html('<p><strong>Nombre: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Apellido: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>Fecha de nacimiento: </strong><span>' + itemData.info.birthdate + '</span></p>');
         } else if (itemData.name == "lawyerpass") {
             $(".item-info-title").html('<p>'+itemData.label+'</p>')
             $(".item-info-description").html('<p><strong>ID: </strong><span>' + itemData.info.id + '</span></p><p><strong>Primer Nombre: </strong><span>' + itemData.info.firstname + '</span></p><p><strong>Apellido: </strong><span>' + itemData.info.lastname + '</span></p><p><strong>CSN: </strong><span>' + itemData.info.citizenid + '</span></p>');
