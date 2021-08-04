@@ -114,6 +114,10 @@ local idTypes = {
     ["driver_license"] = {
         label = "Licencia de conducir",
         item = "driver_license"
+    },
+    ["weaponlicense"] = {
+        label = "Licencia de armas",
+        item = "weaponlicense"
     }
 }
 
@@ -138,7 +142,13 @@ RegisterNUICallback('requestLicenses', function(data, cb)
             local licenseType = nil
             local label = nil
 
-            if type == "driver" then licenseType = "driver_license" label = "Licencias de conducir" end
+            if type == "driver" then 
+                licenseType = "driver_license" 
+                label = "Licencias de conducir" 
+            elseif type == "weapon" then
+                licenseType = "weaponlicense"
+                label = "Licencias de armas"
+            end
 
             table.insert(availableLicenses, {
                 idType = licenseType,

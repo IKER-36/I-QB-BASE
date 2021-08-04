@@ -57,41 +57,21 @@ $('.cityhall-option-block').click(function(e){
 
     if (blockPage == "identity") {
         $(".identity-page-blocks").html("");
-        $(".identity-page-blocks").html('<div class="identity-page-block" data-type="id_card" onmouseover="'+hoverDescription("id_card")+'" onmouseout="'+hoverDescription("id_card")+'"><p>Birth Certificate</p></div>');
+        $(".identity-page-blocks").html('<div class="identity-page-block" data-type="id_card"><p>Certificado de Nacimiento</p></div>');
 
         $.post('https://qb-cityhall/requestLicenses', JSON.stringify({}), function(licenses){
             $.each(licenses, function(i, license){
-                var elem = '<div class="identity-page-block" data-type="'+license.idType+'" onmouseover="hoverDescription("'+license.idType+'")" onmouseout="hoverDescription("'+license.idType+'")"><p>'+license.label+'</p></div>';
+                var elem = '<div class="identity-page-block" data-type="'+license.idType+'"><p>'+license.label+'</p></div>';
                 $(".identity-page-blocks").append(elem);
             });
         });
     }
 });
 
-hoverDescription = function(type) {
-    if (!mouseOver) {
-        if (type == "id_card") {
-            $(".hover-description").fadeIn(10);
-            $(".hover-description").html('<p>Debe llevar consigo una tarjeta de identificación mientras conduce.</p>');
-        } else if (type == "driver_license") {
-            $(".hover-description").fadeIn(10);
-            $(".hover-description").html('<p>Si está conduciendo un vehículo, debe presentar un permiso de conducir <br> en el momento en que se solicita</p>');
-        }
-    } else {
-        if(selectedIdentity == null) {
-            $(".hover-description").fadeOut(10);
-            $(".hover-description").html('');
-        }
-    }
-
-    mouseOver = !mouseOver;
-}
-
 $(document).on("click", ".identity-page-block", function(e){
     e.preventDefault();
 
     var idType = $(this).data('type');
-    console.log(idType)
 
     selectedIdentityType = idType;
 
@@ -103,8 +83,12 @@ $(document).on("click", ".identity-page-block", function(e){
             $(".request-identity-button").fadeIn(100);
             $(".request-identity-button").html("<p>Haga clic aquí para comprar un certificado de nacimiento por $50</p>")
         } else {
+        } else if (idType == "driver_license") {
             $(".request-identity-button").fadeIn(100);
-            $(".request-identity-button").html("<p>Haga clic aquí para comprar una licencia de conducir por $50</p>")
+            $(".request-identity-button").html("<p>Haz clic aqui para comprar la licencia de conducir por 50$</p>")
+        } else if (idType == "weaponlicense") {
+            $(".request-identity-button").fadeIn(100);
+            $(".request-identity-button").html("<p>Clic aqui para comprar la licencia de armas por $50</p>")
         }
     } else if (selectedIdentity == this) {
         $(this).removeClass("identity-selected");
@@ -114,13 +98,16 @@ $(document).on("click", ".identity-page-block", function(e){
         $(selectedIdentity).removeClass("identity-selected");
         $(this).addClass("identity-selected");
         selectedIdentity = this;
-        if($(this).data('type') == "id_card") {
+        if (idType == "id_card") {
             $(".request-identity-button").html("<p>Has pagado $50 para un certificado de nacimiento</p>")
-        } else {
+        } else if (idType == "driver_license") {
             $(".request-identity-button").html("<p>Has pagado $50 para una licencia de conducir</p>")
+        } else if (idType == "weaponlicense") {
+            $(".request-identity-button").html("<p>Has pagado 50$ por una licencia de armas</p>")
         }
     }
 });
+
 
 $(".request-identity-button").click(function(e){
     e.preventDefault();
