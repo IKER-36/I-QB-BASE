@@ -21,9 +21,13 @@ MariaDB: https://brouznouf.github.io/fivem-mysql-async/
 # CREDITS 🧾
 
 Total credits to https://github.com/qbcore-framework !
+<br>
 CherryozZ#0420
+<br>
 IKER#0069
+<br>
 Broncas#3949
+<br>
 Raz#5398
 
 # TO DO 💌
