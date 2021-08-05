@@ -1,6 +1,6 @@
 # SOBRE EL PROYECTO 🧰
 
-- Nuestra idea es crear en conjunto de la comunidad un servidor basado en el QB-CORE orignial ( full ingles ) pasandolo a español completamente y remodelando cosas
+- Nuestra idea es crear en conjunto de la comunidad un servidor basado en el QB-CORE original ( full ingles ) pasandolo a español completamente y remodelando cosas
 para hacer el servidor qb-core "español" creado para y por la comunidad totalmente gratuito y con soporte activo.
 
 
