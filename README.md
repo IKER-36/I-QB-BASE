@@ -10,7 +10,7 @@ Discord 🤖 ( https://discord.gg/2cFWKz8GAA ) 🤖
 - https://youtu.be/HCBAadVR14M
 
 # PROCESS 🔋
-59%
+80%
 
 # LINKS
 
