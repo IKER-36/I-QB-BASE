@@ -23,7 +23,7 @@ Config.CostMultiplier = 1.0
 -- Configure the strings as you wish here.
 Config.Strings = {
 	ExitVehicle = "Sal del vehículo para repostar",
-	EToRefuel = "Pulsa ~g~E ~w~to refuel vehicle",
+	EToRefuel = "Pulsa ~g~E ~w~repostar el vehiculo",
 	JerryCanEmpty = "El Bidon de Gasolina está vacío",
 	FullTank = "El tanque esta lleno",
 	PurchaseJerryCan = "Pulsa ~g~E ~w~comprar un bidón por ~g~$" .. Config.JerryCanCost,
