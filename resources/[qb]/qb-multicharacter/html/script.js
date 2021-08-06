@@ -96,13 +96,13 @@ function setupCharInfo(cData) {
         if (cData.charinfo.gender == 1) { gender = "Mujer" }
         $('.character-info-valid').html(
             '<div class="character-info-box"><span id="info-label">Nombre: </span><span class="char-info-js">' + cData.charinfo.firstname + ' ' + cData.charinfo.lastname + '</span></div>' +
-            '<div class="character-info-box"><span id="info-label">Fecha nacimiento: </span><span class="char-info-js">' + cData.charinfo.birthdate + '</span></div>' +
-            '<div class="character-info-box"><span id="info-label">Genero: </span><span class="char-info-js">' + gender + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Fecha de nacimiento: </span><span class="char-info-js">' + cData.charinfo.birthdate + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Género: </span><span class="char-info-js">' + gender + '</span></div>' +
             '<div class="character-info-box"><span id="info-label">Nacionlidad: </span><span class="char-info-js">' + cData.charinfo.nationality + '</span></div>' +
             '<div class="character-info-box"><span id="info-label">Trabajo: </span><span class="char-info-js">' + cData.job.label + '</span></div>' +
             '<div class="character-info-box"><span id="info-label">Cartera: </span><span class="char-info-js">&#36; ' + cData.money.cash + '</span></div>' +
             '<div class="character-info-box"><span id="info-label">Banco: </span><span class="char-info-js">&#36; ' + cData.money.bank + '</span></div>' +
-            '<div class="character-info-box"><span id="info-label">Numero Telefono: </span><span class="char-info-js">' + cData.charinfo.phone + '</span></div>' +
+            '<div class="character-info-box"><span id="info-label">Numero de Teléfono: </span><span class="char-info-js">' + cData.charinfo.phone + '</span></div>' +
             '<div class="character-info-box"><span id="info-label">Numero de cuenta: </span><span class="char-info-js">' + cData.charinfo.account + '</span></div>');
     }
 }

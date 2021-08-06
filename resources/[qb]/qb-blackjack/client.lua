@@ -22,7 +22,9 @@ Citizen.CreateThread(function()
             DisableControlAction(0, 142, true)        
             DisableControlAction(0, 135, true)        
             DisableControlAction(0, 19, true) 
-			FreezeEntityPosition(_lambo, true)			
+			FreezeEntityPosition(_lambo, true)
+		else
+			Citizen.Wait(1000)		
         end
         Wait(1)
     end
@@ -1244,11 +1246,12 @@ Citizen.CreateThread(function()
 		Citizen.Wait(5)
 		local ped = PlayerPedId()
 		local pos = GetEntityCoords(ped)
-
+		local sleep = true
 		local tploc_enter = elevator_entrance_location
 		local tploc_exit = elevator_roof_location
 		local dist = #(pos - vector3(tploc_enter.x, tploc_enter.y, tploc_enter.z))
 		if dist < 10 then
+			sleep = false
 			DrawMarker(2, tploc_enter.x, tploc_enter.y, tploc_enter.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
 			if dist < 1 then
 				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Usar el ascensor')
@@ -1263,6 +1266,7 @@ Citizen.CreateThread(function()
 		local tploc_exit = elevator_entrance_location
 		local dist = #(pos - vector3(tploc_enter.x, tploc_enter.y, tploc_enter.z))
 		if dist < 10 then
+			sleep = false
 			DrawMarker(2, tploc_enter.x, tploc_enter.y, tploc_enter.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 255, 255, 155, 0, 0, 0, 1, 0, 0, 0)
 			if dist < 1 then
 				DrawText3Ds(tploc_enter.x, tploc_enter.y, tploc_enter.z + 0.15, '~g~E~w~ - Usar el ascensor')
@@ -1272,6 +1276,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		if sleep then Citizen.Wait(1000) end
 	end
 end)
 

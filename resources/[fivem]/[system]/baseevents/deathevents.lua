@@ -50,6 +50,7 @@ Citizen.CreateThread(function()
             elseif not IsPedFatallyInjured(ped) then
                 isDead = false
                 diedAt = nil
+                Citizen.Wait(800)
             end
 
             -- check if the player has to respawn in order to trigger an event

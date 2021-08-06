@@ -928,6 +928,8 @@ Citizen.CreateThread(function()
 				TriggerServerEvent("qb-methlab:server:server")
 				Citizen.Wait(1000)
 			end
+        else
+            Citizen.Wait(100)
 		end
 
     end

@@ -29,9 +29,11 @@ end)
 Citizen.CreateThread(function()
 	while true do 
 		Citizen.Wait(1)
+		local sleep = true
 		if closestScrapyard ~= 0 then
 			local pos = GetEntityCoords(PlayerPedId())
 			if #(pos - vector3(Config.Locations[closestScrapyard]["deliver"].x, Config.Locations[closestScrapyard]["deliver"].y, Config.Locations[closestScrapyard]["deliver"].z)) < 10.0 then
+				sleep = false
 				if IsPedInAnyVehicle(PlayerPedId()) then
 					local vehicle = GetVehiclePedIsIn(PlayerPedId(), true)
 					if vehicle ~= 0 and vehicle ~= nil then 
@@ -54,6 +56,7 @@ Citizen.CreateThread(function()
 				end
 			end
 			if #(pos - vector3(Config.Locations[closestScrapyard]["list"].x, Config.Locations[closestScrapyard]["list"].y, Config.Locations[closestScrapyard]["list"].z)) < 1.5 then
+				sleep = false
 				if not IsPedInAnyVehicle(PlayerPedId()) and not emailSend then
 					DrawText3Ds(Config.Locations[closestScrapyard]["list"].x, Config.Locations[closestScrapyard]["list"].y, Config.Locations[closestScrapyard]["list"].z, "~g~E~w~ - Lista de vehículos por correo electrónico")
 					if IsControlJustReleased(0, 38) then
@@ -62,6 +65,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
+		if sleep then Citizen.Wait(222) end
 	end
 end)
 

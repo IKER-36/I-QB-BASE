@@ -91,7 +91,7 @@ Citizen.CreateThread(function()
                 local entrance = #(pos - vector3(Apartments.Locations[ClosestHouse].coords.enter.x, Apartments.Locations[ClosestHouse].coords.enter.y,Apartments.Locations[ClosestHouse].coords.enter.z))
 
                 if doorbelldist < 1.2 then
-                    QBCore.Functions.DrawText3D(Apartments.Locations[ClosestHouse].coords.doorbell.x, Apartments.Locations[ClosestHouse].coords.doorbell.y, Apartments.Locations[ClosestHouse].coords.doorbell.z, '~g~G~w~ - Timbre del timbre')
+                    QBCore.Functions.DrawText3D(Apartments.Locations[ClosestHouse].coords.doorbell.x, Apartments.Locations[ClosestHouse].coords.doorbell.y, Apartments.Locations[ClosestHouse].coords.doorbell.z, '~g~G~w~ - Tocar al timbre')
                     if IsControlJustPressed(0, 47) then -- G
                         MenuOwners()
                         Menu.hidden = not Menu.hidden
@@ -381,7 +381,7 @@ function OwnerList()
                 Menu.addButton(v, "RingDoor", k) 
             end
         end
-        Menu.addButton("Back", "MenuOwners",nil)
+        Menu.addButton("Volver Atrás", "MenuOwners",nil)
     end, ClosestHouse)
 end
 
@@ -395,8 +395,8 @@ function MenuOutfits()
     ped = PlayerPedId();
     MenuTitle = "Outfits"
     ClearMenu()
-    Menu.addButton("My Outfits", "OutfitsLijst", nil)
-    Menu.addButton("Close Menu", "closeMenuFull", nil) 
+    Menu.addButton("Mis Outfits", "OutfitsLijst", nil)
+    Menu.addButton("Cerrar Menú", "closeMenuFull", nil) 
 end
 
 function changeOutfit()
@@ -410,7 +410,7 @@ end
 function OutfitsLijst()
     QBCore.Functions.TriggerCallback('apartments:GetOutfits', function(outfits)
         ped = PlayerPedId();
-        MenuTitle = "My Outfits :"
+        MenuTitle = "Mis Outfits :"
         ClearMenu()
 
         if outfits == nil then
@@ -421,7 +421,7 @@ function OutfitsLijst()
                 Menu.addButton(outfits[k].outfitname, "optionMenu", outfits[k]) 
             end
         end
-        Menu.addButton("Back", "MenuOutfits",nil)
+        Menu.addButton("Volver Atrás", "MenuOutfits",nil)
     end)
 end
 
@@ -432,7 +432,7 @@ function optionMenu(outfitData)
 
     Menu.addButton("Choose Outfit", "selectOutfit", outfitData) 
     Menu.addButton("Delete Outfit", "removeOutfit", outfitData) 
-    Menu.addButton("Back", "OutfitsLijst",nil)
+    Menu.addButton("Volver Atrás", "OutfitsLijst",nil)
 end
 
 function selectOutfit(oData)

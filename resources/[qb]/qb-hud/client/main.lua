@@ -94,7 +94,7 @@ Citizen.CreateThread(function()
                 nos = nos,
                 fuel = fuel,
             })
-            Citizen.Wait(500)
+            Citizen.Wait(600)
         else
             Citizen.Wait(1000)
         end
@@ -240,13 +240,17 @@ end)
 Citizen.CreateThread(function() -- Shooting
     while true do
         if QBCore ~= nil and isLoggedIn then
-            if IsPedShooting(PlayerPedId()) then
-                local StressChance = math.random(1, 40) -- Generate Random # between 1-40
-                local odd = math.random(1, 40) -- Generate Random # between 1-40
-                if StressChance == odd then -- If Those Two Numbers Match Then
-                    local PlusStress = math.random(1, 3) / 100
-                    TriggerServerEvent('hud:server:GainStress', PlusStress)
+            if IsPedArmed(PlayerPedId()) then
+                if IsPedShooting(PlayerPedId()) then
+                    local StressChance = math.random(1, 40) -- Generate Random # between 1-40
+                    local odd = math.random(1, 40) -- Generate Random # between 1-40
+                    if StressChance == odd then -- If Those Two Numbers Match Then
+                        local PlusStress = math.random(1, 3) / 100
+                        TriggerServerEvent('hud:server:GainStress', PlusStress)
+                    end
                 end
+            else
+                Citizen.Wait(1100)
             end
         end
         Citizen.Wait(6)

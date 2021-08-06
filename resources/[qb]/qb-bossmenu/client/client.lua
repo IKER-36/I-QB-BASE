@@ -36,14 +36,14 @@ end
 CreateThread(function()
     while true do
         Citizen.Wait(5)
-        if isLoggedIn and PlayerJob.name ~= nil then
+        if isLoggedIn and PlayerJob.name ~= nil and QBCore.Shared.Jobs then
             local pos = GetEntityCoords(PlayerPedId())
             for k, v in pairs(QBCore.Shared.Jobs[PlayerJob.name]) do
                 v = QBCore.Shared.Jobs[PlayerJob.name]["bossmenu"]
                 if v ~= nil then
                     if #(pos - v) < 2 then
                         if #(pos - v) < 1.0 then
-                            DrawText3D(v, "~g~E~w~ - Menu de Jefe")
+                            DrawText3D(v, "~g~E~w~ - Menú de Jefe")
                             if IsControlJustReleased(0, 38) then
                                 TriggerServerEvent("qb-bossmenu:server:openMenu")
                             end

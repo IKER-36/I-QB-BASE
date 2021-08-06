@@ -350,7 +350,7 @@ function OpenPhone()
                 PhoneData.GarageVehicles = vehicles
             end)
         else
-            QBCore.Functions.Notify("You don't have a phone", "error")
+            QBCore.Functions.Notify("No tienes teléfono.", "error")
         end
     end)
 end
@@ -1535,7 +1535,7 @@ function AnswerCall()
             action = "PhoneNotification", 
             PhoneNotify = { 
                 title = "Phone", 
-                text = "You don't have a incoming call...", 
+                text = "No tienes una llamada entrante...", 
                 icon = "fas fa-phone", 
                 color = "#e84118", 
             }, 
@@ -1587,7 +1587,7 @@ AddEventHandler('qb-phone:client:AnswerCall', function()
             action = "PhoneNotification", 
             PhoneNotify = { 
                 title = "Phone", 
-                text = "You don't have a incoming call...", 
+                text = "No tienes una llamada entrante...", 
                 icon = "fas fa-phone", 
                 color = "#e84118", 
             }, 

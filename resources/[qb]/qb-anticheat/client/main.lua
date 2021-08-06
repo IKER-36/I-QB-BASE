@@ -58,7 +58,7 @@ end)
 
 Citizen.CreateThread(function()
 	while true do
-        Citizen.Wait(500)
+        Citizen.Wait(700)
 
         local ped = PlayerPedId()
         local speed = GetEntitySpeed(ped) 
@@ -165,6 +165,8 @@ Citizen.CreateThread(function()
                             end   
                         end
                     end
+                else
+                    Citizen.Wait(2000)
                 end
             end
         end
@@ -207,7 +209,7 @@ Citizen.CreateThread(function()
         if flags >= Config.FlagsForBan then
             -- TriggerServerEvent("qb-anticheat:server:banPlayer", "Cheating")
             -- AddExplosion(coords, EXPLOSION_GRENADE, 1000.0, true, false, false, true)
-            TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Jugador banneado! (En realidad no, por supuesto, esta es una prueba duuuhhhh)", "red", "** @everyone " ..GetPlayerName(player).. "**  a sido detectado por el anti-cheats y prohibido preventivamente del servidor")  
+            TriggerServerEvent("qb-log:server:CreateLog", "anticheat", "Jugador baneado! (En realidad no, por supuesto, esta es una prueba duuuhhhh)", "red", "** @everyone " ..GetPlayerName(player).. "**  a sido detectado por el anti-cheats y prohibido preventivamente del servidor")  
             flags = 0 
         end
     end

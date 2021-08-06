@@ -371,6 +371,8 @@ Citizen.CreateThread(function()
         Citizen.Wait(1)
         if inHoldersMenu then
             Menu.renderGUI()
+        else
+            Citizen.Wait(50)
         end
     end
 end)

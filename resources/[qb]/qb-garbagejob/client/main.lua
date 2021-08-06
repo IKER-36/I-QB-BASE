@@ -182,7 +182,7 @@ Citizen.CreateThread(function()
                     DrawMarker(2, Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.15, 233, 55, 22, 222, false, false, false, true, false, false, false)
                     if distance < 1.5 then
                         if InVehicle then
-                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Guardar Camion de Basura")
+                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Guardar Camión de Basura")
                             if IsControlJustReleased(0, 38) then
                                 QBCore.Functions.TriggerCallback('qb-garbagejob:server:CheckBail', function(DidBail)
                                     if DidBail then
@@ -194,7 +194,7 @@ Citizen.CreateThread(function()
                                 end)
                             end
                         else
-                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Camion de Basura")
+                            DrawText3D(Config.Locations["vehicle"].coords.x, Config.Locations["vehicle"].coords.y, Config.Locations["vehicle"].coords.z, "~g~E~w~ - Camión de Basura")
                             if IsControlJustReleased(0, 38) then
                                 QBCore.Functions.TriggerCallback('qb-garbagejob:server:HasMoney', function(HasMoney)
                                     if HasMoney then
@@ -223,7 +223,11 @@ Citizen.CreateThread(function()
                         end
                     end
                 end
+            else
+                Citizen.Wait(3000)
             end
+        else
+            Citizen.Wait(2000)
         end
 
         Citizen.Wait(1)

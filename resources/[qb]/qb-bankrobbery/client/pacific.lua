@@ -135,6 +135,8 @@ Citizen.CreateThread(function()
                         end
                     end
                 end
+            else
+                Citizen.Wait(700)
             end
         end
     end

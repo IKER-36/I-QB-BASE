@@ -841,7 +841,7 @@ function ToggleClothing(whic, extra)
 				end
 			end
 		end
-		Notify("There dont seem to be any variants for this.") return
+		Notify("No parece haber variantes para esto.") return
 	else
 		if not LastEquipped[which] then
 			if Cur.Drawable ~= Table then 
@@ -922,7 +922,7 @@ function ToggleProps(whic)
 				PlayToggleEmote(Prop.Emote.On, function() SetPedPropIndex(Ped, Prop.Prop, v, Cur.Texture, true) end) return true
 			end
 		end
-		Notify("There dont seem to be any variants for this.") return false
+		Notify("No parece haber variantes para esto.") return false
 	end
 end
 
