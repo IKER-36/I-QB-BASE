@@ -115,6 +115,8 @@ Citizen.CreateThread(function()
                     Buying = false
                 end
             end
+        else
+            Citizen.Wait(900)
         end
 
         Citizen.Wait(3)

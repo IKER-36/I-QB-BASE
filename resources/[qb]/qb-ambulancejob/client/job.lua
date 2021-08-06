@@ -17,10 +17,12 @@ local currentGarage = 1
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
+        local sleep = true
         if isLoggedIn and QBCore ~= nil then
             local ped = PlayerPedId()
             local pos = GetEntityCoords(ped)
             if PlayerJob.name =="ambulance" or PlayerJob.name == "ambulance" then
+                sleep = false
                 for k, v in pairs(Config.Locations["duty"]) do
                     local dist = #(pos - vector3(v.x, v.y, v.z))
                     if dist < 5 then
@@ -119,6 +121,7 @@ Citizen.CreateThread(function()
             for k, v in pairs(Config.Locations["main"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
                 if dist < 1.5 then
+                    sleep = false
                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take the elevator to the roof")
                     if IsControlJustReleased(0, 38) then
                         DoScreenFadeOut(500)
@@ -142,6 +145,7 @@ Citizen.CreateThread(function()
             for k, v in pairs(Config.Locations["roof"]) do
                 local dist = #(pos - vector3(v.x, v.y, v.z))
                 if dist < 1.5 then
+                    sleep = false
                     DrawText3D(v.x, v.y, v.z, "~g~E~w~ - Take the elevator down")
                     if IsControlJustReleased(0, 38) then
                         DoScreenFadeOut(500)
@@ -164,13 +168,16 @@ Citizen.CreateThread(function()
         else
             Citizen.Wait(1000)
         end
+        if sleep then Citizen.Wait(350) end
     end
 end)
 
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(1)
+        local sleep = true
         if isStatusChecking then
+            sleep = false
             for k, v in pairs(statusChecks) do
                 local x,y,z = table.unpack(GetPedBoneCoords(statusCheckPed, v.bone))
                 DrawText3D(x, y, z, v.label)
@@ -178,12 +185,14 @@ Citizen.CreateThread(function()
         end
 
         if isHealingPerson then
+            sleep = false
             local ped = PlayerPedId()
             if not IsEntityPlayingAnim(ped, healAnimDict, healAnim, 3) then
                 loadAnimDict(healAnimDict)	
                 TaskPlayAnim(ped, healAnimDict, healAnim, 3.0, 3.0, -1, 49, 0, 0, 0, 0)
             end
         end
+        if sleep then Citizen.Wait(100) end
     end
 end)
 

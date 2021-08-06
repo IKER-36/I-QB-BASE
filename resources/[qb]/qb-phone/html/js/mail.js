@@ -73,7 +73,7 @@ QB.Phone.Functions.SetupMails = function(Mails) {
     var MessageTime = Hourssssss + ":" + Minutessss;
 
     $("#mail-header-mail").html(QB.Phone.Data.PlayerData.charinfo.firstname+"."+QB.Phone.Data.PlayerData.charinfo.lastname+"@qbcore.com");
-    $("#mail-header-lastsync").html("Last synchronized "+MessageTime);
+    $("#mail-header-lastsync").html("Última sincronización: "+MessageTime);
     if (Mails !== null && Mails !== undefined) {
         if (Mails.length > 0) {
             $(".mail-list").html("");
@@ -86,7 +86,7 @@ QB.Phone.Functions.SetupMails = function(Mails) {
                 $("#mail-"+mail.mailid).data('MailData', mail);
             });
         } else {
-            $(".mail-list").html('<p class="nomails">You don\'t have any mails..</p>');
+            $(".mail-list").html('<p class="nomails">No tienes ningún mail..</p>');
         }
 
     }
@@ -171,7 +171,7 @@ QB.Phone.Functions.RefreshAdverts = function(Adverts) {
         });
     } else {
         $(".advert-list").html("");
-        var element = '<div class="advert"><span class="advert-sender">There are no advertisements yet!</span></div>';
+        var element = '<div class="advert"><span class="advert-sender">No hay ningún anuncio aún!</span></div>';
         $(".advert-list").append(element);
     }
 }

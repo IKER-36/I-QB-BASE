@@ -44,7 +44,7 @@ Citizen.CreateThread(function()
 				currentSeat = 0
 			end
 		end
-		Citizen.Wait(50)
+		Citizen.Wait(100)
 	end
 end)
 

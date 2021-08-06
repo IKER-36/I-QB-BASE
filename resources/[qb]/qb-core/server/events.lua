@@ -83,7 +83,7 @@ AddEventHandler('QBCore:server:OpenServer', function()
         QBCore.Config.Server.closed = false
         TriggerClientEvent("qbadmin:client:SetServerStatus", -1, false)
     else
-        QBCore.Functions.Kick(src, "Usted no tiene permiso para realizar esta acción..", nil, nil)
+        QBCore.Functions.Kick(src, "No tienes permisos para realizar esta acción..", nil, nil)
     end
 end)
 
@@ -206,7 +206,7 @@ AddEventHandler('QBCore:CallCommand', function(command, args)
 					QBCore.Commands.List[command].callback(source, args)
 				end
 			else
-				TriggerClientEvent('QBCore:Notify', source, "Usted no tiene permiso para realizar esta acción", "Error")
+				TriggerClientEvent('QBCore:Notify', source, "No tienes permiso para realizar esta acción", "Error")
 			end
 		end
 	end

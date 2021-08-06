@@ -55,14 +55,19 @@
     transition: all 0.2s ease;
 }
 
+#registerpersonaje {
+    position: absolute;
+    bottom: 1px;
+    color: white;
+    font-size: 13px;
+}
+
 #close-reg {
     position: absolute;
     right: 8px;
-    bottom: 6px;
-    color: rgba(0, 0, 0, 1.0);
-    background: rgb(214, 50, 50);
-    border-radius: 50%;
-    font-size: 18px;
+    bottom: 2px;
+    color: white;
+    font-size: 13px;
 }
 
 #close-log {
@@ -415,6 +420,8 @@
     line-height: 29px;
     font-family: 'Lato', monospace;
     border-bottom: 2px solid #1a55d4b9;
+    display: flex;
+    justify-content: center;
 }
 
 .char-register-inputs {

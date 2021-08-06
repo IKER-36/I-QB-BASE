@@ -13,8 +13,10 @@ Citizen.CreateThread(function ()
     while true do
         Citizen.Wait(0)
         local pos = GetEntityCoords(PlayerPedId(), true)
+        local sleep = true
         ---- BUITEN
         if #(pos - vector3(Config['delivery'].outsideLocation.x, Config['delivery'].outsideLocation.y, Config['delivery'].outsideLocation.z)) < 1.3 then
+            sleep = false
             DrawText3D(Config['delivery'].outsideLocation.x, Config['delivery'].outsideLocation.y, Config['delivery'].outsideLocation.z + 1, "~g~E~w~ - Entrar")
             if IsControlJustReleased(0, 38) then
                 DoScreenFadeOut(500)
@@ -28,6 +30,7 @@ Citizen.CreateThread(function ()
         ---- BINNEN
 
             if #(pos - vector3(Config['delivery'].insideLocation.x, Config['delivery'].insideLocation.y, Config['delivery'].insideLocation.z)) < 1.3 then
+                sleep = false
                 DrawText3D(Config['delivery'].insideLocation.x, Config['delivery'].insideLocation.y, Config['delivery'].insideLocation.z + 1, "~g~E~w~ - Salir")
                 if IsControlJustReleased(0, 38) then
                     DoScreenFadeOut(500)
@@ -41,6 +44,7 @@ Citizen.CreateThread(function ()
      
         ---- INKLOKKEN
         if #(pos - vector3(1049.15, -3100.63, -39.95)) < 15 and not IsPedInAnyVehicle(PlayerPedId(), false) and carryPackage == nil then
+            sleep = false
             DrawMarker(2, 1049.15, -3100.63, -39.20, 0.9, 0, 0, 0, 0, 0, 0.2001, 0.2001, 0.2001, 255, 255, 255, 255, 0, 0, 0, 0)
             if #(pos - vector3(1049.15, -3100.63, -39.95)) < 1.3 then
                 if onDuty then
@@ -58,6 +62,7 @@ Citizen.CreateThread(function ()
                 end
             end
         end
+        if sleep then Citizen.Wait(600) end
     end
 end)
 
@@ -117,6 +122,8 @@ Citizen.CreateThread(function ()
             else
                 GetRandomPackage()
             end
+        else
+            Citizen.Wait(200)
         end
     end
 end)

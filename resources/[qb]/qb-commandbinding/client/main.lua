@@ -60,10 +60,10 @@ Citizen.CreateThread(function()
                             TriggerServerEvent('QBCore:CallCommand', keyMeta[v[2]]["command"], args)
                             keyPressed = true
                         else
-                            QBCore.Functions.Notify('Aun no hay nada ['..v[2]..'] enlazado, /binds para enlazar un comando', 'primary', 4000)
+                            QBCore.Functions.Notify('Aún no hay nada ['..v[2]..'] enlazado, /binds para enlazar un comando', 'primary', 4000)
                         end
                     else
-                        QBCore.Functions.Notify('No ha vinculado ningún comando, /binds para vincular un comando', 'primary', 4000)
+                        QBCore.Functions.Notify('No has vinculado ningún comando. Usa /binds para vincular uno', 'primary', 4000)
                     end
                 end
             end

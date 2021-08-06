@@ -2025,7 +2025,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["phone"] = {"cellphone@", "cellphone_text_read_base", "Telefono", AnimationOptions =
+   ["phone"] = {"cellphone@", "cellphone_text_read_base", "Teléfono", AnimationOptions =
    {
        Prop = "prop_npc_phone_02",
        PropBone = 28422,

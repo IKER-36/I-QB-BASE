@@ -91,6 +91,8 @@ Citizen.CreateThread(function()
 					end
 				end
             end
+		else
+			Citizen.Wait(100)
 		end
 	end
 end)
@@ -107,6 +109,8 @@ Citizen.CreateThread(function()
 				closeDecorateUI()
 				QBCore.Functions.Notify("Has salido de rango!")
 			end
+		else
+			Citizen.Wait(80)
 		end
 	end
 end)
