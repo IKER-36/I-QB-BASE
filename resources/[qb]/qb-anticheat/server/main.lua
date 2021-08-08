@@ -18,7 +18,7 @@ AddEventHandler('qb-anticheat:server:banPlayer', function(reason)
         ['@ip'] = QBCore.Functions.GetIdentifier(src, 'ip'),
         ['@reason'] = reason,
         ['@expire'] = 2145913200,
-        ['@banneby'] = 'Anti-Cheat'
+        ['@bannedby'] = 'Anti-Cheat'
     })
     DropPlayer(src, "Fuiste banneado por el anticheat. Contacta al Staff: https://discord.gg/")
 end)
