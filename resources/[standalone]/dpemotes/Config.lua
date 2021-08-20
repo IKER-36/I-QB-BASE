@@ -26,7 +26,7 @@ Config = {
 	MenuPosition = "right", -- (left, right)
 -- You can disable the Ragdoll keybinding here.
 	RagdollEnabled = true,
-	RagdollKeybind = 244, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	RagdollKeybind = 303, -- Boton ragdoll, cambia en https://docs.fivem.net/game-references/controls/
 -- You can disable the Facial Expressions menu here.
 	ExpressionsEnabled = true,
 -- You can disable the Walking Styles menu here.
