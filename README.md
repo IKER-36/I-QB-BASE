@@ -1,3 +1,5 @@
+# ❌ Discontinued and too old to use ❌
+
 # ABOUT THIS PROJECT 👀
 - Hello, welcome to our project, the first qb-core base fully translated to Spanish and open-sourced! 👥
 The goal is to create a free database with the new qb-core free for everyone!
